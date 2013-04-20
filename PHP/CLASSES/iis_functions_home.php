@@ -3,7 +3,8 @@
 
     include_once "database_connection.php";
 
-    class Iis_data extends Database_connection {
+
+    class Iis_functions_home extends Database_connection {
 
         function check_user($username_entered, $password_entered) {
             $this->open_connection();
