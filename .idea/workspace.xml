@@ -2,9 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="144946ef-b9d1-49af-95c6-c78cfa25b5de" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/images/IIS logos/IIS-blog.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/images/IIS logos/dcd55b4b401dec8ecf00ba9536d92293.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/images/IIS logos/iis1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/images/IIS logos/iis7.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/images/IIS logos/iis_icon.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/images/IIS logos/iis_icon1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/images/IIS logos/iis_logo.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/log_in.php" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/openme.txt" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/readme.md" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PHP/CLASSES/iis_data.php" afterPath="$PROJECT_DIR$/PHP/CLASSES/iis_data.php" />
     </list>
     <ignored path="IIS_PROJECT_HUB.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,19 +40,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="log_in.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/log_in.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="0" selection-start="29" selection-end="29" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="iis_data.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/PHP/CLASSES/iis_data.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="28" selection-start="892" selection-end="892" vertical-scroll-proportion="0.4351145">
+            <state line="22" column="22" selection-start="930" selection-end="930" vertical-scroll-proportion="0.5038168">
               <folding />
             </state>
           </provider>
@@ -302,13 +300,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/log_in.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="29" selection-end="29" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/PHP/CLASSES/iis_data.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="10" column="89" selection-start="283" selection-end="283" vertical-scroll-proportion="0.0">
@@ -326,13 +317,6 @@
     <entry file="file://$PROJECT_DIR$/PHP/CLASSES/database_connection.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="1" column="10" selection-start="16" selection-end="16" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/log_in.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="29" selection-end="29" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -358,7 +342,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/PHP/CLASSES/iis_data.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="28" selection-start="892" selection-end="892" vertical-scroll-proportion="0.4351145">
+        <state line="22" column="22" selection-start="930" selection-end="930" vertical-scroll-proportion="0.5038168">
           <folding />
         </state>
       </provider>
