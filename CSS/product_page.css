@@ -1,0 +1,12 @@
+
+#display_products_div {
+    width: 500px;
+    height: 500px;
+    float: left;
+    margin: 20px;
+}
+
+#add_product_div {
+    margin: 30px;
+    padding: 20px;
+}

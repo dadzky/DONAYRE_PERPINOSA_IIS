@@ -1,8 +1,13 @@
 <?php
-/**
- * Created by JetBrains PhpStorm.
- * User: root
- * Date: 4/22/13
- * Time: 2:18 PM
- * To change this template use File | Settings | File Templates.
- */
+
+    include "../../CLASSES/Products_functions_home.php";
+    $execute_add = new Products_functions_home();
+
+    $products_data = $_POST["products_data"];
+    $decoded_products_data = json_decode($products_data, true);
+
+    foreach($decoded_products_data as $content) {
+        $$content['name'] = $content['value'];
+    }
+
+    $execute_add->add_product($product_name, $product_price, $number_of_stocks, $stock_unit);

@@ -1,17 +1,20 @@
 
-
-input[type = "text"], input[type = "password"] {
-    height: 50px;
-    width: 200px;
-    text-align: center;
-    border: none;
+#main_container_div {
+    width: 890px;
+    margin: 0 auto;
 }
 
-.blured_input {
-    -moz-box-shadow: 5px 5px 5px 5px black;
-    -webkit-box-shadow: 5px 5px 5px 1px black;
-    -moz-border-top-left-radius: 20px;
-    -moz-border-bottom-right-radius: 20px;
-    -webkit-border-top-left-radius: 20px;
-    -webkit-border-bottom-right-radius: 20px;
+#main_container_div {
+    padding: 20px;
+}
+
+#iis_related_content_div {
+    width: 400px;
+    height: 600px;
+    float: left;
+}
+
+#log_in_div {
+    height: 600px;
+    padding: 20px;
 }
