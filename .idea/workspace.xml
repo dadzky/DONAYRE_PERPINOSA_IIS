@@ -2,15 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="144946ef-b9d1-49af-95c6-c78cfa25b5de" name="Default" comment="">
+<<<<<<< HEAD
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PHP/CLASSES/database_connection.php" afterPath="$PROJECT_DIR$/PHP/CLASSES/database_connection.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PHP/OBJECTS/log_in_validation.php" afterPath="$PROJECT_DIR$/PHP/OBJECTS/log_in_validation.php" />
+=======
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Inventory System Major Features.txt" afterPath="$PROJECT_DIR$/InventorySystemMajorFeatures.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JS/log_in_page_functionality.js" afterPath="$PROJECT_DIR$/JS/log_in_page_functionality.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+>>>>>>> 35a84920744dacf042dcdfee6e2bba21fd3a09da
     </list>
     <ignored path="IIS_PROJECT_HUB.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="144946ef-b9d1-49af-95c6-c78cfa25b5de" time="1366605780860" ignored="false" />
     <file path="/log_in.php" changelist="144946ef-b9d1-49af-95c6-c78cfa25b5de" time="1366424380552" ignored="false" />
     <file path="/log_in_page.css" changelist="144946ef-b9d1-49af-95c6-c78cfa25b5de" time="1366432759570" ignored="false" />
-    <file path="/log_in_page_functionality.js" changelist="144946ef-b9d1-49af-95c6-c78cfa25b5de" time="1366422008405" ignored="false" />
+    <file path="/log_in_page_functionality.js" changelist="144946ef-b9d1-49af-95c6-c78cfa25b5de" time="1366589125578" ignored="false" />
     <file path="/iis_data.php" changelist="144946ef-b9d1-49af-95c6-c78cfa25b5de" time="1366441345345" ignored="false" />
     <file path="/database_connection.php" changelist="144946ef-b9d1-49af-95c6-c78cfa25b5de" time="1366425268608" ignored="false" />
     <file path="/log_in_validation.php" changelist="144946ef-b9d1-49af-95c6-c78cfa25b5de" time="1366446446569" ignored="false" />
@@ -46,6 +52,7 @@
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="searchProductWithCost.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PHP/OBJECTS/searchProductWithCost.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -68,6 +75,21 @@
         <entry file="file://$PROJECT_DIR$/PAGES/login.php">
           <provider selected="true" editor-type-id="text-editor">
             <state line="9" column="33" selection-start="255" selection-end="255" vertical-scroll-proportion="-5.625">
+=======
+      <file leaf-file-name="login.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PAGES/login.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="11" column="94" selection-start="509" selection-end="509" vertical-scroll-proportion="-5.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="log_in_page_functionality.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/JS/log_in_page_functionality.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="1" column="0" selection-start="31" selection-end="31" vertical-scroll-proportion="0.024038462">
+>>>>>>> 35a84920744dacf042dcdfee6e2bba21fd3a09da
               <folding />
             </state>
           </provider>
@@ -127,7 +149,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/JS/log_in_page_functionality.js" />
         <option value="$PROJECT_DIR$/log_in.php" />
         <option value="$PROJECT_DIR$/CSS/log_in_page.css" />
         <option value="$PROJECT_DIR$/PHP/CLASSES/iis_data.php" />
@@ -137,7 +158,11 @@
         <option value="$PROJECT_DIR$/PAGES/home.php" />
         <option value="$PROJECT_DIR$/login.php" />
         <option value="$PROJECT_DIR$/PAGES/login.php" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/PHP/CLASSES/database_connection.php" />
+=======
+        <option value="$PROJECT_DIR$/JS/log_in_page_functionality.js" />
+>>>>>>> 35a84920744dacf042dcdfee6e2bba21fd3a09da
       </list>
     </option>
   </component>
@@ -279,6 +304,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/PAGES" />
     </key>
   </component>
@@ -302,14 +328,24 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
+<<<<<<< HEAD
     <frame x="0" y="24" width="1440" height="852" extended-state="0" />
     <editor active="false" />
+=======
+    <frame x="-1" y="24" width="1442" height="853" extended-state="6" />
+    <editor active="true" />
+>>>>>>> 35a84920744dacf042dcdfee6e2bba21fd3a09da
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.04957507" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18031609" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+=======
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1779053" sideWeight="0.9504249" order="1" side_tool="false" content_ui="combo" />
+>>>>>>> 35a84920744dacf042dcdfee6e2bba21fd3a09da
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -318,7 +354,6 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -434,12 +469,16 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/JS/log_in_page_functionality.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="9" column="62" selection-start="384" selection-end="384" vertical-scroll-proportion="0.1985294" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/CSS/bootstrap.min.css">
+=======
+    <entry file="file://$PROJECT_DIR$/CSS/log_in_page.css">
+>>>>>>> 35a84920744dacf042dcdfee6e2bba21fd3a09da
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="13725" selection-start="13954" selection-end="13954" vertical-scroll-proportion="0.0">
           <folding />
@@ -490,7 +529,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/PHP/CLASSES/database_connection.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state line="12" column="0" selection-start="372" selection-end="372" vertical-scroll-proportion="0.2857143">
+=======
+        <state line="11" column="94" selection-start="509" selection-end="509" vertical-scroll-proportion="-5.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JS/log_in_page_functionality.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="0" selection-start="31" selection-end="31" vertical-scroll-proportion="0.024038462">
+>>>>>>> 35a84920744dacf042dcdfee6e2bba21fd3a09da
           <folding />
         </state>
       </provider>
