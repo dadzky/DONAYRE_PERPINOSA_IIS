@@ -2,30 +2,38 @@ $(function(){
 
 	 searchProductForTransaction();
 
+	 $('.pagination').on('click','li a', function(){
+	 	var page = parseInt($(this).html());
+		$('#currentPage').val(page-1);
+		searchProductForTransaction()
+	 })
+	 $('.pagination').on('click','li img', function(){
+	 	var page = parseInt($(this).html());
+		$('#currentPage').val(page-1);
+		alert('wew')
+	 })
 
 })
 
  function searchProductForTransaction(){
- 	var page = 0;
- 	var pageLimit = $('#page_limit_select').val();
+
+ 	var pageLimit = 5;
  	var toSearch = $('#search_item').val();
-
-	$('.pagination ul li').each(function(){
-		var cls = $(this).attr('class');		
-		if(cls == "active"){
-			page = $('li.'+cls+" a").html();
-			return false;
-		}
-	})
-
-	var obj = {page:page, pageLimit:pageLimit, toSearch:toSearch};
-
+ 	var pageActive = $('#currentPage').val();
+ 	var page = parseInt(pageActive) * parseInt(pageLimit);
+		
+	var obj = {page:page,pageActive:pageActive, pageLimit:pageLimit, toSearch:toSearch};
+	
 	$.ajax({
-		type:"GET",
+		type:"POST",
 		data: obj,
 		url: "../PHP/OBJECTS/searchProductWithCost.php",
 		success:function(data){
-			alert("data = " + data);
+			//alert(data);
+			var obj2 = JSON.parse(data);
+			$('#products_to_transact_tbody').html(obj2.tbody);
+			$('.pagination').html(obj2.pager);
+
 		},
 		error:function(data){
 			alert("Error on Searching products => "+ data);

@@ -1,0 +1,22 @@
+#transaction_wrapper_div{
+	width: 900px;
+	margin: 0 auto;
+	border: 1px solid;
+}
+#pager_next, #pager_prev{
+	margin-top: -23px;
+	height: 30px;
+	background-color:#fff;
+
+}
+#pager_next{
+	margin-right: -5px;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+#pager_prev{
+	margin-left: -5px;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+
+}
