@@ -51,6 +51,26 @@ $(function(){
 	 })
 
 	 /*--------------------Editing Quantity at the Shopping List--------------------*/
+	 $('#shopping_list_tbody').on('click','tr img',function(){
+	 	var cell_id=$(this).context.parentNode.id;
+	 	var quantity = cell_id.substring(17);
+	 	$('#'+cell_id).html("<input type='text' id='edited_quantity' class='input-medium' value='"+quantity+"'/><input type='hidden' id='cell_id' value='"+cell_id+"'>");
+	 	$('#edited_quantity').focus();
+	 })
+	 $('#shopping_list_tbody').on('blur','input',function(){
+	 	var newQuantity = $(this).val();
+	 	var cell_id = $('#cell_id').val();
+	 	$('#'+cell_id).html(newQuantity +"<img src='../CSS/img_tbls/editShoppingList.png' id =edit_quantity_img alt = edit quanity title=edit quantity/>");
+	 	$('#'+cell_id).removeAttr('id').attr('id','td_shopping_list_'+newQuantity);
+	 	var cost = parseInt($('#td_shopping_list_'+newQuantity).prev('td').find('span').html());
+	 	var subTotal = parseInt($('#td_shopping_list_'+newQuantity).next().find('span').html());
+	 	var newSubtotal = cost * parseInt(newQuantity);
+	 	var newSubtotal2 = parseInt($('#td_shopping_list_'+newQuantity).next().find('span').html(newSubtotal));
+	 	var total = parseInt($('#shopping_list_total_tfoot td:last span').html());
+		var newTotal = (total - subTotal)+newSubtotal;
+		$('#shopping_list_total_tfoot td:last span').html(newTotal)
+		
+	 })
 
 
 })
@@ -148,13 +168,13 @@ function displayToShoppingList(prodId,prodName,prodCost,prodUnit,productQuantity
 	
 	var tbody = "<tr  id='"+newId+"'>"+
 				"<td>"+prodName+"</td>"+
-				"<td>"+prodCost+"/"+prodUnit+"</td>"+
-				"<td>"+productQuantity+"<img src='../CSS/img_tbls/editShoppingList.png' id =edit_quantity_img alt = edit quanity title=edit quantity/></td>"+
-				"<td>&#8369; "+subTotal+".00</td>"+
+				"<td><span>"+prodCost+"</span>/"+prodUnit+"</td>"+
+				"<td id='td_shopping_list_"+productQuantity+"'>"+productQuantity+"<img src='../CSS/img_tbls/editShoppingList.png' id =edit_quantity_img alt = edit quanity title=edit quantity/></td>"+
+				"<td>&#8369; <span>"+subTotal+"</span></td>"+
 				"</tr>";
 	var tfoot = "<tr>"+
 				"<td colspan='4'>Total</td>"+
-				"<td>&#8369; "+totalPayment+".00</td>"+
+				"<td>&#8369; <span>"+totalPayment+"</span></td>"+
 				"</tr>";
 	
 	var tbody = $('#shopping_list_tbody').append(tbody);
