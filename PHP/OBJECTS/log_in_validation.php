@@ -1,7 +1,11 @@
 <?php
     session_start();
 
+<<<<<<< HEAD
     include "../CLASSES/iis_functions_home.php";
+=======
+    include_once "../CLASSES/iis_data_functions_home.php";
+>>>>>>> d2810f54815db0ea13b25b4d6adc99420e93215c
     $execute_check = new Iis_functions_home();
 
     if(isset($_POST["username_entered"]) && isset($_POST["password_entered"])) {

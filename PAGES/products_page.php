@@ -3,17 +3,23 @@
     <head>
     </head>
     <body>
-        <div id = "products_main_div_container">
-            <?php include_once "page_header.html"; ?>
+        <div id = "products_main_div_container" class = "container">
 
-            <div id = "display_products_div">
+            <div id = "display_products_div" class = "control-group">
                 <h2>PRODUCTS</h2>
-                <table id = "display_products_table" class = "table table-striped table-bordered table-condensed">
+                <div id = "product_actions">
+                    <button id = 'delete_products_button' class = "btn-warning">delete products</button>
+                    <button id = 'hide_delete_action_button' class = 'btn-primary'>HIDE ACTION</button>
+                    |<input type = "text" class = 'search-query' />
+                </div><!-- ========  Product actions div ends ======== -->
+                <table id = "display_products_table" class = "table">
                 </table>
+                <div class = "pagination"></div>
             </div><!-- ======= display products div ends ======= -->
             <div id = "add_product_div">
+                <h4>Add Product here:</h4>
                 <form id = "add_product_form">
-                    <dt>Product Name:<dt>
+                    <dt>Product Name:</dt>
                         <dd><input type = "text" name = "product_name" id = "product_id" /></dd>
                     <dt>Product Price:</dt>
                         <dd>&#8369;<input type = "text" name = "product_price" id = "product_price" /></dd>
@@ -28,11 +34,12 @@
                                 <option>lbs</option>
                             </select></dd>
                 </form>
-                <button id = "add_product_button">ADD</button>
+                <button id = "add_product_button" class = "btn btn-large">ADD</button>
             </div><!-- ======= add products div ends ======== -->
-
-            <?php include_once "page_footer.html"; ?>
         </div>
+
+        <!-- ================ FOR DIALOGS ================== -->
+        <div id = "delete_product_confirmation_div"></div>
 
         <!-- ============ IMPORTS ===============-->
         <link rel = "stylesheet" href = "../CSS/includes_all_css_files.css" />
