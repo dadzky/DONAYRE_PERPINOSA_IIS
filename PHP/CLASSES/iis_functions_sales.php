@@ -9,7 +9,7 @@
 
     		$this->open_connection();
 
-    			$sql= "SELECT product_id,product_name,product_price
+    			$sql= "SELECT product_id,product_name,product_price,stock_unit
                         FROM products
                         WHERE product_name LIKE ?
                         LIMIT $page,$pageLimit";
@@ -19,8 +19,11 @@
                 $stmt->execute();
 
                 $sql2 = "SELECT COUNT(product_id)
-                         FROM products";
-                $stmt2 = $this->db_holder->query($sql2);
+                         FROM products
+                         WHERE product_name LIKE ?";
+                $stmt2 = $this->db_holder->prepare($sql2);
+                $stmt2->bindParam(1, $toSearch);
+                $stmt2->execute();
                 $totalProducts = $stmt2->fetch();
                 $pagesToDisplay = $totalProducts[0]/$pageLimit;
 
@@ -30,14 +33,16 @@
             $pagerLI = "";
             $pager = "";
             $tbody = "";
-            $pagerbtnNext = "";
-            $pagerbtnPrev = "";
 
             while($row = $stmt->fetch()){
-                $tbody .= "<tr id='tr_transact_".$row[0]."'>";
+                $tbody .= "<tr id='tr_transact_search_".$row[0]."'>";
                 $tbody .= "<td>".$row[1]."</td>";
                 $tbody .= "<td>".$row[2]."</td>";
+                $tbody .= "<td>".$row[3]."</td>";
                 $tbody .= "</tr>";
+            }
+            if($tbody == ""){
+                  $tbody = "<tr><td colspan='3'>No Product Found!</td></tr>";
             }
             if(is_float($pagesToDisplay)){
                $pagesToDisplay = $pagesToDisplay+1; 
@@ -55,11 +60,11 @@
                 $pagerLI = "<li class='active'><a href='#' class='page_number'>1</a></li>";
             }
 
-            $pager =    "<button class='btn-primary' id='pager_next'>next</button>
+            $pager =    "<button class='btn-primary' id='pager_prev' >prev</button>
                         <ul>".$pagerLI."</ul>
-                        <button class='btn-primary' id='pager_prev'>prev</button>";
+                        <button class='btn-primary' id='pager_next'>next</button>";
 
-            $json_array = array('tbody'=>$tbody,'pager'=>$pager);
+            $json_array = array('tbody'=>$tbody,'pager'=>$pager, 'pagesToDisplay'=> intval($pagesToDisplay));
             $encoded = json_encode($json_array);
             echo $encoded;
 
