@@ -20,15 +20,15 @@
             $counter = 0;
             while($content = $select_statement->fetch()) {
                 while($counter < 1) {
-                    echo "<tr><th>NAME</th><th>PRICE</th><th>STOCKS</th><th>UNIT</th><th class = 'product_delete_action'>ACTION</th></tr>";
+                    echo "<tr><th>NAME</th><th>PRICE</th><th>STOCKS</th><th>UNIT</th><th class = 'product_delete_action'><img src = '../CSS/images/red_trash.png' onclick = 'delete_products(".$content[0].")' /></th></tr>";
                     $counter++;
                 }
-                echo "<tr id = 'product_".$content[0]."'>";
-                echo "<td ondblclick = 'edit_products_name(".$content[0].")'>".$content[1]."</td>";
-                echo "<td ondblclick = 'edit_products_price(".$content[0].")'>".$content[2]."</td>";
-                echo "<td ondblclick = 'edit_products_number_of_stocks(".$content[0].")'>".$content[3]."</td>";
-                echo "<td ondblclick = 'edit_products_stock_unit(".$content[0].")'>".$content[4]."</td>";
-                echo "<td class = 'product_delete_action'><img src = '../CSS/images/red_trash.png' onclick = 'delete_product(".$content[0].")' /></td>";
+                echo "<tr id = '".$content[0]."'>";
+                echo    "<td ondblclick = 'edit_products_name(".$content[0].")'>".$content[1]."</td>";
+                echo    "<td ondblclick = 'edit_products_price(".$content[0].")'>".$content[2]."</td>";
+                echo    "<td ondblclick = 'edit_products_number_of_stocks(".$content[0].")'>".$content[3]."</td>";
+                echo    "<td ondblclick = 'edit_products_stock_unit(".$content[0].")'>".$content[4]."</td>";
+                echo    "<td class = 'product_delete_action'><input type = 'checkbox' id = 'product_check_box_".$content[0]."'></td>";
                 echo "</tr>";
 
             }

@@ -39,12 +39,14 @@
         </div>
 
         <!-- ================ FOR DIALOGS ================== -->
-        <div id = "delete_product_confirmation_div"></div>
+        <div id = "delete_product_confirmation_div">
+            Sure to delete this product?
+        </div><!-- ================= delete product confirmation div ends-->
 
         <!-- ============ IMPORTS ===============-->
         <link rel = "stylesheet" href = "../CSS/includes_all_css_files.css" />
         <script src = "../JS/jquery-1.9.1.min.js"></script>
-        <script src = "../JS/jquery-ui-1.9.0.custom.min.js"></script>
+        <script src = "../JS/jquery-ui-1.10.2.min.js"></script>
         <script src = "../JS/products.js"></script>
     </body>
 </html>

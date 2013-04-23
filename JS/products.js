@@ -93,6 +93,20 @@ function edit_products_name(id) {
         });
         return false;
     });
+
+    $("#new_product_name").blur(function() {
+        $.ajax({
+            type: "POST",
+            url: "../PHP/OBJECTS/PRODUCTS/update_products_info.php",
+            data: {"id": id, "product_name": $("#new_product_name").val(), "product_price": "", "products_number_of_stocks": "", "stock_unit": ""},
+            success: function(data) {
+                $(document.getElementById(id).getElementsByTagName('td')[0]).html(data);
+            },
+            error: function(data) {
+                console.log("There's an error in retrieving product's name. It says " + JSON.stringify(data));
+            }
+        });
+    });
 }
 
 function edit_products_price(id) {
@@ -114,6 +128,20 @@ function edit_products_price(id) {
         });
         return false;
     });
+
+    $("#new_product_price").blur(function() {
+        $.ajax({
+            type: "POST",
+            url: "../PHP/OBJECTS/PRODUCTS/update_products_info.php",
+            data: {"id": id, "product_name": "", "product_price": $("#new_product_price").val(), "products_number_of_stocks": "", "stock_unit": ""},
+            success: function(data) {
+                $(document.getElementById(id).getElementsByTagName('td')[1]).html(data);
+            },
+            error: function(data) {
+                console.log("There's an error in updating product's price. It says " + JSON.stringify(data));
+            }
+        });
+    });
 }
 
 function edit_products_number_of_stocks(id) {
@@ -133,6 +161,20 @@ function edit_products_number_of_stocks(id) {
             }
         });
         return false;
+    });
+
+    $("#new_products_number_of_stocks").blur(function() {
+        $.ajax({
+            type: "POST",
+            url: "../PHP/OBJECTS/PRODUCTS/update_products_info.php",
+            data: {"id": id, "product_name": "", "product_price": "", "products_number_of_stocks": $("#new_products_number_of_stocks").val(), "stock_unit": ""},
+            success: function(data) {
+                $(document.getElementById(id).getElementsByTagName('td')[2]).html(data);
+            },
+            error: function(data) {
+                console.log("There's an error in updating product's stock info. It says " + JSON.stringify(data));
+            }
+        });
     });
 }
 
@@ -156,13 +198,49 @@ function edit_products_stock_unit(id) {
     });
 }
 
-function delete_product(id) {
+function delete_products(id) {
     $("#delete_product_confirmation_div").dialog({
         title: "DELETE CONFIRMATION",
         show: {effect: 'slide', direction: 'up'},
         hide: {effect: 'slide', direction: 'up'},
         modal: true,
         resizable: false,
-        draggable: false
+        draggable: false,
+        buttons: {
+            "YES": function() {
+                var product_ids_to_delete = new Array();
+                var product_table = document.getElementById("display_products_table");
+                var table_rows = product_table.getElementsByTagName("tr");
+                var counter = 1;
+                while(counter <= table_rows.length) {
+                    var tr_id = document.getElementById(table_rows[counter].id);
+                    var check_box = document.getElementById('product_check_box_' + tr_id.id);
+                    if(check_box.checked) {
+                        product_ids_to_delete.push(tr_id.id);
+                    }
+                }
+                alert(product_ids_to_delete);
+                $.ajax({
+                    type: "POST",
+                    url: "../PHP/OBJECTS/PRODUCTS/delete_product.php",
+                    data: {"product_ids_to_delete": product_ids_to_delete},
+                    success: function() {
+                        var ctr = 0;
+                        while(counter < product_ids_to_delete.length) {
+                            $("#" + product_ids_to_delete[counter]).remove();
+                            ctr++;
+                        }
+                    },
+                    error: function(data) {
+                        console.log("There's an error in deleting products. It says " + JSON.stringify(data));
+                    }
+                });
+            },
+            "CANCEL": function() {
+                $("#delete_product_confirmation_div").dialog("close");
+            }
+        }
     });
+
+
 }
