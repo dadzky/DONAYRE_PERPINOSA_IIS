@@ -1,5 +1,5 @@
 $(function(){
-
+	
 	 searchProductForTransaction(); //To display the default products
 
 
@@ -38,20 +38,24 @@ $(function(){
 		 	var prodUnit = cell[2].innerHTML;
 
 			if(!checkIfExistAtShoppingList(prodName)){
-				saveToShoppingList(prodId,prodName,prodCost,prodUnit);
+				saveToShoppingList(prodId,prodName,prodCost,prodUnit,$(this));
 			}else{
-				//alert(checkIfExistAtShoppingList(prodName));
-			}
+				$('#dialog2_div').html("It is already on your shopping list\nYou can change it's quantity by clicking edit icon");
+				$('#dialog2_div').dialog({
+					title:'Exist',
+					modal:true
+				});
+			}		 	
 		 	
-		 	
-	 	}
-	 	$(this).css({"text-decoration":"line-through"});
-	 	
-
+	 	}	 	
 	 })
 
+	 /*--------------------Editing Quantity at the Shopping List--------------------*/
+
+
 })
- 
+ var totalPayment = 0; //Global variable for the total payment of the products bought...
+
  /*-----------FUNCTION FOR SEARCHING PRODUCTS----------*/
  function searchProductForTransaction(){
 
@@ -102,30 +106,60 @@ function checkIfExistAtShoppingList(prodName){
 }
 
 /*------------------Function for saving products to shopping List--------------*/
-function saveToShoppingList(prodId,prodName,prodCost,prodUnit){
-
+function saveToShoppingList(prodId,prodName,prodCost,prodUnit,tblRow){
+	$('#product_name_to_transact').val(prodName);
+	$('#product_cost_to_transact').val(prodCost+"/"+prodUnit);
+	$('.add-on').html(prodUnit);
+	var regexInt = /^[0-9]+$/;
 	if(prodId != "" || prodId != null){
-		$('#shopping_list_table').show('blind',1000);;
-		var id = prodId.substring(19);
-		var subTotal = parseInt(prodCost)*5;;
-		var total = 10;
-		var newId = "tr_to_transact_"+id;
-		
-		var tbody = "<tr id='"+newId+"'>"+
-					"<td>"+prodName+"</td>"+
-					"<td>"+prodCost+"/"+prodUnit+"</td>"+
-					"<td>50</td>"+
-					"<td>"+subTotal+"</td>"+
-					"</tr>";
-		var tfoot = "<tr>"+
-					"<td colspan='4'>Total</td>"+
-					"<td>"+total+"</td>"+
-					"</tr>";
-		
-		var tbody = $('#shopping_list_tbody').append(tbody);
-		var tfoot = $('#shopping_list_total_tfoot').html(tfoot);
+		$('#dialog_div').dialog({
+				resizable:false,
+				show: 'blind',
+				hide:'blind',
+				modal:true,
+				title: "Quantity",
+			    buttons: {
+			    	"Proceed": function(){
+			    		if(regexInt.test($('#product_quantity').val())){
+			    			displayToShoppingList(prodId,prodName,prodCost,prodUnit,$('#product_quantity').val());
+			    			$('#quantity_div').removeClass('control-group error');
+			    			$(tblRow).css({'text-decoration':'line-through'});
+			    			$(this).dialog('close');
+			    		}else{
+			    			$('#quantity_div').addClass('control-group error');
+			    		}	    		
+						
+			    	},
+			    	"Cancel": function(){
+			    		$(this).dialog('close');
+			    	}
 
+			    }
+			     
+			})
 	}
+}
+
+function displayToShoppingList(prodId,prodName,prodCost,prodUnit,productQuantity){
+	var id = prodId.substring(19);
+	var subTotal = parseInt(prodCost)*parseInt(productQuantity);
+	totalPayment += subTotal;
+	var newId = "tr_to_transact_"+id;
+	
+	var tbody = "<tr  id='"+newId+"'>"+
+				"<td>"+prodName+"</td>"+
+				"<td>"+prodCost+"/"+prodUnit+"</td>"+
+				"<td>"+productQuantity+"<img src='../CSS/img_tbls/editShoppingList.png' id =edit_quantity_img alt = edit quanity title=edit quantity/></td>"+
+				"<td>&#8369; "+subTotal+".00</td>"+
+				"</tr>";
+	var tfoot = "<tr>"+
+				"<td colspan='4'>Total</td>"+
+				"<td>&#8369; "+totalPayment+".00</td>"+
+				"</tr>";
+	
+	var tbody = $('#shopping_list_tbody').append(tbody);
+	var tfoot = $('#shopping_list_total_tfoot').html(tfoot);
+	$('#shopping_list_table').show('blind',1000);
 }
 
 

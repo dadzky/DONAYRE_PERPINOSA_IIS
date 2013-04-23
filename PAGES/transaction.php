@@ -2,9 +2,13 @@
 <html>
     <head>
         <title>Transactions</title>
+        <link rel = "stylesheet" href = "../CSS/jquery-ui.min.css" />
+        <link rel = "stylesheet" href = "../CSS/bootstrap.min.css" />
+        <link rel = "stylesheet" href = "../CSS/transaction_page.css" />
 
     </head>
     <body>
+ 
         <div id = "transaction_wrapper_div">
 
             <table class='table table-striped table-hover table-bordered'>
@@ -40,17 +44,28 @@
                 <tfoot id='shopping_list_total_tfoot'></tfoot>
                 
 
-            </table>               
+            </table>
+            <div id='dialog_div'>
+                Product Name: <br/>
+                <input type='text' id='product_name_to_transact' readonly='readonly' /><br/>
+                Product Cost: <br/>
+                <input type='text' id='product_cost_to_transact' readonly='readonly' /> <br/>             
+                <div id='quantity_div' class="input-prepend">     
+                 <label class='control-label' for='product_quantity' > Product Quantity:</label> <br/>              
+                    <span class="add-on"></span>
+                    <input type='text' id='product_quantity' />
+                </div>
+            </div>
+            <div id='dialog2_div'></div>
+                
+                      
            
         </div> <!-- ======= transaction_wrapper_div ======= -->
 
-
         <!-- ========= IMPORTS =======-->
         <script src = "../JS/jquery-1.9.1.min.js"></script>
-        <script src = "../JS/jquery-ui-1.9.0.custom.min.js"></script>
+        <script src = "../JS/jquery-ui-1.10.2.min.js"></script>
         <script src = "../JS/transaction_functionality.js"></script>
-        <link rel = "stylesheet" href = "../CSS/jquery-ui.min.css" />
-        <link rel = "stylesheet" href = "../CSS/bootstrap.min.css" />
-        <link rel = "stylesheet" href = "../CSS/transaction_page.css" />
+
     </body>
 </html>

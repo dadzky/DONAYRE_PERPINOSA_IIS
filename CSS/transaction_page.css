@@ -37,3 +37,13 @@
 #shopping_list_table{
 	display:none;
 }
+#shopping_list_total_tfoot{
+	background-color: #DDD;
+}
+#dialog_div{
+	display:none;
+}
+#edit_quantity_img{
+	float:right;
+	cursor:pointer;
+}
