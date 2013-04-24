@@ -1,4 +1,8 @@
 
+#products_main_div_container {
+    border: 2px inset black;
+}
+
 #display_products_div {
     width: 600px;
     height: 500px;

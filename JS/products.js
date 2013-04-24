@@ -297,7 +297,7 @@ function edit_products_stock_unit(id) {
     $("#new_stock_unit").val(stock_unit);
     $("#new_stock_unit_form").change(function() {
         if($("#new_stock_unit").val() == "others") {
-            $(document.getElementById(id).getElementsByTagName('td')[3]).html("<form id = 'new_stock_unit_form'><input type = 'text' id = 'new_inputted_stock_unit' class = 'input-medium' /></form>");
+            $(document.getElementById(id).getElementsByTagName('td')[3]).html("<form id = 'new_stock_unit_form'><input type = 'text' id = 'new_inputted_stock_unit' class = 'input-medium' placeholder = 'stock unit' /></form>");
             $("#new_stock_unit_form").submit(function() {
                 $.ajax({
                     type: "POST",
