@@ -43,7 +43,14 @@
 #dialog_div{
 	display:none;
 }
-#edit_quantity_img{
+.edit_quantity_img{
 	float:right;
 	cursor:pointer;
+}
+.shopping_list_del_option{
+	display:none;
+}
+.totalpayment_tr{
+	text-decoration: underline;
+	color:#00f;
 }

@@ -34,6 +34,7 @@
                 <thead>
                      <tr>
                         <th></th>
+                        <th></th>
                         <th>Product Name</th>
                         <th>Product Cost</th>
                         <th>Quantity</th>

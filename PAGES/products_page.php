@@ -9,9 +9,7 @@
             <div id = "display_products_div" class = "control-group">
                 <h2>PRODUCTS</h2>
                 <div id = "product_actions">
-                    <img src = "../CSS/images/trash_can.gif" id = "delete_products_image" class = 'img-circle'/>
-                    <button id = 'hide_delete_action_button' class = 'btn-primary'>HIDE ACTION</button>
-                    |<input type = "text" class = 'search-query' />
+                    <input type = "text" class = 'search-query' />
                 </div><!-- ========  Product actions div ends ======== -->
                 <table id = "display_products_table" class = "table table-hover">
                 </table>
@@ -36,6 +34,7 @@
                             </select></dd>
                 </form>
                 <button id = "add_product_button" class = "btn btn-primary">ADD</button>
+
 
             </div><!-- ======= add products div ends ======== -->
         </div>
