@@ -3,19 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="87d425db-7783-46e0-aae5-65da98872ee1" name="Default" comment="">
       <change type="DELETED" beforePath="$PROJECT_DIR$/JS/jquery-ui-1.9.0.custom.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/JS/saveTransaction.php" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/PHP/OBJECTS/searchProductWithCost.php" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CSS/img_tbls/deleteShoppingList.png" afterPath="$PROJECT_DIR$/CSS/img_tbls/deleteShoppingList.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CSS/images/trash_can.gif" afterPath="$PROJECT_DIR$/CSS/images/trash_can.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CSS/images/warning.png" afterPath="$PROJECT_DIR$/CSS/images/warning.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CSS/images/warning2.png" afterPath="$PROJECT_DIR$/CSS/images/warning2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PHP/CLASSES/Products_functions_home.php" afterPath="$PROJECT_DIR$/PHP/CLASSES/Products_functions_home.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PHP/OBJECTS/PRODUCTS/check_if_product_to_add_already_exist.php" afterPath="$PROJECT_DIR$/PHP/OBJECTS/PRODUCTS/check_if_product_to_add_already_exist.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PHP/CLASSES/iis_functions_sales.php" afterPath="$PROJECT_DIR$/PHP/CLASSES/iis_functions_sales.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CSS/product_page.css" afterPath="$PROJECT_DIR$/CSS/product_page.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JS/products.js" afterPath="$PROJECT_DIR$/JS/products.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PAGES/products_page.php" afterPath="$PROJECT_DIR$/PAGES/products_page.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PHP/OBJECTS/transaction/searchProductWithCost.php" afterPath="$PROJECT_DIR$/PHP/OBJECTS/transaction/searchProductWithCost.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JS/transaction_functionality.js" afterPath="$PROJECT_DIR$/JS/transaction_functionality.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="IIS_PROJECT_HUB.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,9 +25,9 @@
     <file path="/for_dialogs.html" changelist="87d425db-7783-46e0-aae5-65da98872ee1" time="1366703366102" ignored="false" />
     <file path="/check_if_product_to_add_already_exist.php" changelist="87d425db-7783-46e0-aae5-65da98872ee1" time="1366762546731" ignored="false" />
     <file path="/add_product.php" changelist="87d425db-7783-46e0-aae5-65da98872ee1" time="1366761854744" ignored="false" />
-    <file path="/transaction_functionality.js" changelist="87d425db-7783-46e0-aae5-65da98872ee1" time="1366790580623" ignored="false" />
+    <file path="/transaction_functionality.js" changelist="87d425db-7783-46e0-aae5-65da98872ee1" time="1366793882694" ignored="false" />
     <file path="/saveTransaction.php" changelist="87d425db-7783-46e0-aae5-65da98872ee1" time="1366791105152" ignored="false" />
-    <file path="/iis_functions_sales.php" changelist="87d425db-7783-46e0-aae5-65da98872ee1" time="1366792511662" ignored="false" />
+    <file path="/iis_functions_sales.php" changelist="87d425db-7783-46e0-aae5-65da98872ee1" time="1366794307488" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +68,7 @@
       <file leaf-file-name="iis_functions_sales.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/PHP/CLASSES/iis_functions_sales.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="107" column="24" selection-start="4064" selection-end="4064" vertical-scroll-proportion="0.9539877">
+            <state line="112" column="24" selection-start="4241" selection-end="4241" vertical-scroll-proportion="0.78834355">
               <folding />
             </state>
           </provider>
@@ -85,7 +77,16 @@
       <file leaf-file-name="transaction_functionality.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/JS/transaction_functionality.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="251" column="52" selection-start="8541" selection-end="8551" vertical-scroll-proportion="-6.94">
+            <state line="249" column="41" selection-start="8486" selection-end="8486" vertical-scroll-proportion="-6.52">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="searchProductWithCost.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PHP/OBJECTS/transaction/searchProductWithCost.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2" column="21" selection-start="27" selection-end="27" vertical-scroll-proportion="-1.25">
               <folding />
             </state>
           </provider>
@@ -118,7 +119,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/PAGES/page_header.html" />
         <option value="$PROJECT_DIR$/PAGES/page_footer.html" />
         <option value="$PROJECT_DIR$/PHP/OBJECTS/PRODUCTS/update_products_info.php" />
         <option value="$PROJECT_DIR$/JS/admins_page_functionality.js" />
@@ -131,8 +131,9 @@
         <option value="$PROJECT_DIR$/PHP/CLASSES/Products_functions_home.php" />
         <option value="$PROJECT_DIR$/JS/products.js" />
         <option value="$PROJECT_DIR$/JS/saveTransaction.php" />
-        <option value="$PROJECT_DIR$/JS/transaction_functionality.js" />
         <option value="$PROJECT_DIR$/PHP/OBJECTS/transaction/saveTransaction.php" />
+        <option value="$PROJECT_DIR$/PHP/OBJECTS/transaction/searchProductWithCost.php" />
+        <option value="$PROJECT_DIR$/JS/transaction_functionality.js" />
         <option value="$PROJECT_DIR$/PHP/CLASSES/iis_functions_sales.php" />
       </list>
     </option>
@@ -411,13 +412,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/PHP/OBJECTS/PRODUCTS/check_if_product_to_add_already_exist.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="46" selection-start="305" selection-end="305" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/PHP/OBJECTS/PRODUCTS/delete_product.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="0" selection-start="244" selection-end="244" vertical-scroll-proportion="0.0">
@@ -500,9 +494,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JS/transaction_functionality.js">
+    <entry file="file://$PROJECT_DIR$/PHP/OBJECTS/transaction/searchProductWithCost.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="251" column="52" selection-start="8541" selection-end="8551" vertical-scroll-proportion="-6.94">
+        <state line="2" column="21" selection-start="27" selection-end="27" vertical-scroll-proportion="-1.25">
           <folding />
         </state>
       </provider>
@@ -514,9 +508,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/JS/transaction_functionality.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="249" column="41" selection-start="8486" selection-end="8486" vertical-scroll-proportion="-6.52">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/PHP/CLASSES/iis_functions_sales.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="107" column="24" selection-start="4064" selection-end="4064" vertical-scroll-proportion="0.9539877">
+        <state line="112" column="24" selection-start="4241" selection-end="4241" vertical-scroll-proportion="0.78834355">
           <folding />
         </state>
       </provider>

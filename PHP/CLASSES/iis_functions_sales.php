@@ -78,15 +78,18 @@
                 $stmt1 = $this->db_holder->query($sql1);
                 $dateTime = $stmt1->fetch();
                 for($ctr=0; $ctr<sizeof($employeeID); $ctr++){
+                    $prodID = $productIDs[$ctr];
+                    $quantity = $quantities[$ctr];
                     $sql2 = "SELECT transaction_id
                             FROM transactions
                             WHERE product_id = ?
                             AND employee_id = ?";
 
                     $stmt2  = $this->db_holder->prepare($sql2);
-                    $stmt2 -> execute(array($productIDs[$ctr]),$employeeID);
-                    if($stmt2->fetch()){
-                        insertToTransactionsTbl($productIDs[$ctr],$employeeID,$dateTime,$quantities[$ctr]);
+                    $stmt2 -> execute(array($prodID, $employeeID));
+                    if(!$stmt2->fetch()){
+
+                        $this->insertToTransactionsTbl($prodID, $employeeID, $dateTime[0], $quantity);
                     }
 
                 }
@@ -94,18 +97,26 @@
             $this->close_connection();
         }
 
-        function insertToTransactionsTbl($productID,$employeeID,$dateTime,$quantity){
+        function insertToTransactionsTbl($prodID, $employeeID, $dateTime, $quantity){
             $this->open_connection();
-
+                echo $prodID;
+            echo $employeeID;
+            echo $dateTime;
+            try{
                 $sql1 = "INSERT INTO transactions
-                        VALUES(?,?,?)";
+                        VALUES(null,?,?,?)";
                 $stmt1  = $this->db_holder->prepare($sql1);
-                $stmt1 -> execute(array($productID,$employeeID,$dateTime));
+                $stmt1 -> execute(array($prodID, $employeeID, $dateTime));
 
                 $transactionID = $this->db_holder->lastInsertId();
-
+            }catch(PDOException $e){
+                echo $e;
+            }
+                echo  $transactionID;
                 $sql2 = "INSERT INTO transactions_info
-                        ";
+                        VALUES(?,?)";
+                $stmt2  = $this->db_holder->prepare($sql2);
+                $stmt2 -> execute(array($transactionID,$quantity));
 
             $this->close_connection();
         }

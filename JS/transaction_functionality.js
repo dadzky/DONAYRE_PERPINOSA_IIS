@@ -143,6 +143,7 @@ $(function(){
 		data: obj,
 		url: "../PHP/OBJECTS/transaction/searchProductWithCost.php",
 		success:function(data){
+            //alert(data);
 			var obj2 = JSON.parse(data);
 			$('#products_to_transact_tbody').html(obj2.tbody);
 			$('.pagination').html(obj2.pager);
@@ -245,9 +246,11 @@ function saveTransaction(){
     for(var ctr=1; ctr<row.length;ctr++){
         var row_id = row[ctr].id;
         var quantity = $('#'+row_id+ " td span");
-        quantity = quantity[1].html();
+        row_id = row_id.substring(15);
+        quantity = quantity[1].innerHTML;
         productIDs.push(row_id);
         productQuantities.push(quantity);
+        console.log(quantity);
     }
     var obj = {'productIDs': productIDs, 'quantities': productQuantities};
     $.ajax({
@@ -255,7 +258,7 @@ function saveTransaction(){
         url: "../PHP/OBJECTS/transaction/saveTransaction.php",
         data: obj,
         success:function(data){
-
+            alert(data);
         },
         error:function(data){
             alert("Error on saving transaction => "+ data);
