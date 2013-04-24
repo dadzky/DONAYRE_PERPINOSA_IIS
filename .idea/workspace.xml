@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="87d425db-7783-46e0-aae5-65da98872ee1" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHP/OBJECTS/PRODUCTS/check_if_product_to_add_already_exist.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PHP/CLASSES/Products_functions_home.php" afterPath="$PROJECT_DIR$/PHP/CLASSES/Products_functions_home.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PHP/OBJECTS/PRODUCTS/delete_product.php" afterPath="$PROJECT_DIR$/PHP/OBJECTS/PRODUCTS/delete_product.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PHP/OBJECTS/PRODUCTS/add_product.php" afterPath="$PROJECT_DIR$/PHP/OBJECTS/PRODUCTS/add_product.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CSS/product_page.css" afterPath="$PROJECT_DIR$/CSS/product_page.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JS/products.js" afterPath="$PROJECT_DIR$/JS/products.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PAGES/products_page.php" afterPath="$PROJECT_DIR$/PAGES/products_page.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
@@ -11,17 +13,19 @@
     <ignored path="IIS_PROJECT_HUB.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="87d425db-7783-46e0-aae5-65da98872ee1" time="1366758617894" ignored="false" />
-    <file path="/products_page.php" changelist="87d425db-7783-46e0-aae5-65da98872ee1" time="1366705798091" ignored="false" />
+    <file path="/products_page.php" changelist="87d425db-7783-46e0-aae5-65da98872ee1" time="1366777484467" ignored="false" />
     <file path="/page_header.html" changelist="87d425db-7783-46e0-aae5-65da98872ee1" time="1366675643762" ignored="false" />
-    <file path="/product_page.css" changelist="87d425db-7783-46e0-aae5-65da98872ee1" time="1366705857768" ignored="false" />
+    <file path="/product_page.css" changelist="87d425db-7783-46e0-aae5-65da98872ee1" time="1366767229381" ignored="false" />
     <file path="/page_footer.html" changelist="87d425db-7783-46e0-aae5-65da98872ee1" time="1366675971667" ignored="false" />
     <file path="/admins.php" changelist="87d425db-7783-46e0-aae5-65da98872ee1" time="1366675849750" ignored="false" />
     <file path="/admins_page_functionality.js" changelist="87d425db-7783-46e0-aae5-65da98872ee1" time="1366684901421" ignored="false" />
-    <file path="/products.js" changelist="87d425db-7783-46e0-aae5-65da98872ee1" time="1366707711141" ignored="false" />
-    <file path="/Products_functions_home.php" changelist="87d425db-7783-46e0-aae5-65da98872ee1" time="1366706492662" ignored="false" />
+    <file path="/products.js" changelist="87d425db-7783-46e0-aae5-65da98872ee1" time="1366777052981" ignored="false" />
+    <file path="/Products_functions_home.php" changelist="87d425db-7783-46e0-aae5-65da98872ee1" time="1366764070720" ignored="false" />
     <file path="/update_products_info.php" changelist="87d425db-7783-46e0-aae5-65da98872ee1" time="1366697558375" ignored="false" />
     <file path="/delete_product.php" changelist="87d425db-7783-46e0-aae5-65da98872ee1" time="1366707911598" ignored="false" />
     <file path="/for_dialogs.html" changelist="87d425db-7783-46e0-aae5-65da98872ee1" time="1366703366102" ignored="false" />
+    <file path="/check_if_product_to_add_already_exist.php" changelist="87d425db-7783-46e0-aae5-65da98872ee1" time="1366762546731" ignored="false" />
+    <file path="/add_product.php" changelist="87d425db-7783-46e0-aae5-65da98872ee1" time="1366761854744" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,19 +45,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="products_page.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="products_page.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/PAGES/products_page.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="24" selection-start="758" selection-end="758" vertical-scroll-proportion="0.0">
+            <state line="37" column="88" selection-start="2168" selection-end="2168" vertical-scroll-proportion="0.87539434">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="products.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="products.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/JS/products.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="216" column="47" selection-start="9590" selection-end="9590" vertical-scroll-proportion="0.25426358">
+            <state line="83" column="109" selection-start="3893" selection-end="3893" vertical-scroll-proportion="-6.254902">
               <folding />
             </state>
           </provider>
@@ -62,7 +66,25 @@
       <file leaf-file-name="Products_functions_home.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PHP/CLASSES/Products_functions_home.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="110" selection-start="1746" selection-end="1746" vertical-scroll-proportion="0.0">
+            <state line="51" column="88" selection-start="2565" selection-end="2565" vertical-scroll-proportion="-16.291666">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="add_product.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PHP/OBJECTS/PRODUCTS/add_product.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="3" column="49" selection-start="113" selection-end="113" vertical-scroll-proportion="-1.875">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="check_if_product_to_add_already_exist.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PHP/OBJECTS/PRODUCTS/check_if_product_to_add_already_exist.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="8" column="46" selection-start="305" selection-end="305" vertical-scroll-proportion="-5.0">
               <folding />
             </state>
           </provider>
@@ -80,7 +102,7 @@
       <file leaf-file-name="admins.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PAGES/admins.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="35" selection-start="238" selection-end="238" vertical-scroll-proportion="0.0">
+            <state line="9" column="35" selection-start="238" selection-end="238" vertical-scroll-proportion="-5.625">
               <folding />
             </state>
           </provider>
@@ -95,19 +117,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="includes_all_css_files.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CSS/includes_all_css_files.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="product_page.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CSS/product_page.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="1" selection-start="209" selection-end="209" vertical-scroll-proportion="0.0">
+            <state line="35" column="19" selection-start="668" selection-end="668" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -140,11 +153,13 @@
         <option value="$PROJECT_DIR$/PHP/OBJECTS/PRODUCTS/update_products_info.php" />
         <option value="$PROJECT_DIR$/JS/admins_page_functionality.js" />
         <option value="$PROJECT_DIR$/PAGES/for_dialogs.html" />
-        <option value="$PROJECT_DIR$/CSS/product_page.css" />
-        <option value="$PROJECT_DIR$/PAGES/products_page.php" />
-        <option value="$PROJECT_DIR$/PHP/CLASSES/Products_functions_home.php" />
         <option value="$PROJECT_DIR$/PHP/OBJECTS/PRODUCTS/delete_product.php" />
+        <option value="$PROJECT_DIR$/PHP/OBJECTS/PRODUCTS/add_product.php" />
+        <option value="$PROJECT_DIR$/PHP/OBJECTS/PRODUCTS/check_if_product_to_add_already_exist.php" />
+        <option value="$PROJECT_DIR$/CSS/product_page.css" />
         <option value="$PROJECT_DIR$/JS/products.js" />
+        <option value="$PROJECT_DIR$/PHP/CLASSES/Products_functions_home.php" />
+        <option value="$PROJECT_DIR$/PAGES/products_page.php" />
       </list>
     </option>
   </component>
@@ -423,18 +438,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/CSS/product_page.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="1" selection-start="209" selection-end="209" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PAGES/transaction.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="10" selection-start="93" selection-end="93" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/PAGES/page_header.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="5" column="0" selection-start="145" selection-end="145" vertical-scroll-proportion="0.0" />
@@ -447,7 +450,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/PHP/CLASSES/database_connection.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="5" selection-start="471" selection-end="471" vertical-scroll-proportion="0.4022082" />
+        <state line="17" column="5" selection-start="471" selection-end="471" vertical-scroll-proportion="0.4022082">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/JS/booo.js">
@@ -461,12 +466,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/CSS/page_header.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="13" selection-start="63" selection-end="63" vertical-scroll-proportion="0.066273935" />
+        <state line="3" column="13" selection-start="63" selection-end="63" vertical-scroll-proportion="0.066273935">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/PHP/OBJECTS/PRODUCTS/update_products_info.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="115" selection-start="458" selection-end="458" vertical-scroll-proportion="-6.875" />
+        <state line="11" column="115" selection-start="458" selection-end="458" vertical-scroll-proportion="-6.875">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PHP/OBJECTS/PRODUCTS/delete_product.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="0" selection-start="244" selection-end="244" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/CSS/includes_all_css_files.css">
@@ -483,44 +499,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CSS/product_page.css">
+    <entry file="file://$PROJECT_DIR$/PHP/OBJECTS/PRODUCTS/add_product.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="1" selection-start="209" selection-end="209" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PAGES/products_page.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="24" selection-start="758" selection-end="758" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PHP/OBJECTS/PRODUCTS/delete_product.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="0" selection-start="244" selection-end="244" vertical-scroll-proportion="0.0">
+        <state line="3" column="49" selection-start="113" selection-end="113" vertical-scroll-proportion="-1.875">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/PAGES/admins.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="35" selection-start="238" selection-end="238" vertical-scroll-proportion="0.0">
+        <state line="9" column="35" selection-start="238" selection-end="238" vertical-scroll-proportion="-5.625">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PHP/CLASSES/Products_functions_home.php">
+    <entry file="file://$PROJECT_DIR$/CSS/product_page.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="110" selection-start="1746" selection-end="1746" vertical-scroll-proportion="0.0">
+        <state line="35" column="19" selection-start="668" selection-end="668" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PHP/OBJECTS/PRODUCTS/check_if_product_to_add_already_exist.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="46" selection-start="305" selection-end="305" vertical-scroll-proportion="-5.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/JS/products.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="216" column="47" selection-start="9590" selection-end="9590" vertical-scroll-proportion="0.25426358">
+        <state line="83" column="109" selection-start="3893" selection-end="3893" vertical-scroll-proportion="-6.254902">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PHP/CLASSES/Products_functions_home.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="51" column="88" selection-start="2565" selection-end="2565" vertical-scroll-proportion="-16.291666">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PAGES/products_page.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="88" selection-start="2168" selection-end="2168" vertical-scroll-proportion="0.87539434">
           <folding />
         </state>
       </provider>
