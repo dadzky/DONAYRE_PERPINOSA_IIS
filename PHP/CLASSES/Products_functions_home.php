@@ -31,6 +31,16 @@
             } else {
                 $insert_statement = $this->db_holder->prepare("INSERT INTO products VALUES (null, ?, ?, ?, ?);");
                 $insert_statement->execute(array($product_name, $product_price, $number_of_stocks, $stock_unit));
+
+                $product_id = $this->db_holder->lastInsertId();
+
+                echo "<tr id = '".$product_id."'>";
+                echo    "<td ondblclick = 'edit_products_name(".$product_id.")'>".$product_name."</td>";
+                echo    "<td ondblclick = 'edit_products_price(".$product_id.")'>&#8369;<span id = 'product_price_span'>".$product_price."</span></td>";
+                echo    "<td ondblclick = 'edit_products_number_of_stocks(".$product_id.")'>".$number_of_stocks."</td>";
+                echo    "<td ondblclick = 'edit_products_stock_unit(".$product_id.")'>".$stock_unit."</td>";
+                echo    "<td class = 'product_delete_action'><input type = 'checkbox' id = 'product_check_box_".$product_id."'></td>";
+                echo "</tr>";
             }
 
             $this->close_connection();
@@ -44,12 +54,12 @@
             $counter = 0;
             while($content = $select_statement->fetch()) {
                 while($counter < 1) {
-                    echo "<tr><th>NAME</th><th>PRICE</th><th>STOCKS</th><th>UNIT</th><th class = 'product_delete_action'><img src = '../CSS/images/red_trash.png' onclick = 'delete_products(".$content[0].")' /><ul><li id = 'mark_all_delete_action'>Mark All</li><li id = 'unmark_all_delete_action'>UnMark All</li></ul></th></tr>";
+                    echo "<tr><th>NAME</th><th>PRICE</th><th>STOCKS</th><th>UNIT</th><th class = 'product_delete_action'><img src = '../CSS/images/trash_can.gif' id = 'delete_trash_icon' onclick = 'delete_products(".$content[0].")' /><ul><li id = 'mark_all_delete_action' onclick = 'mark_all_check_boxes()' >Mark All</li><li id = 'unmark_all_delete_action'>UnMark All</li></ul></th></tr>";
                     $counter++;
                 }
                 echo "<tr id = '".$content[0]."'>";
                 echo    "<td ondblclick = 'edit_products_name(".$content[0].")'>".$content[1]."</td>";
-                echo    "<td ondblclick = 'edit_products_price(".$content[0].")'>&#8369;".$content[2]."</td>";
+                echo    "<td ondblclick = 'edit_products_price(".$content[0].")'>&#8369;<span id = 'product_price_span'>".$content[2]."</span></td>";
                 echo    "<td ondblclick = 'edit_products_number_of_stocks(".$content[0].")'>".$content[3]."</td>";
                 echo    "<td ondblclick = 'edit_products_stock_unit(".$content[0].")'>".$content[4]."</td>";
                 echo    "<td class = 'product_delete_action'><input type = 'checkbox' id = 'product_check_box_".$content[0]."'></td>";

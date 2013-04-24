@@ -70,4 +70,44 @@
 
     	}
 
+        function saveTransaction($employeeID, $productIDs, $quantities){
+
+            $this->open_connection();
+
+                $sql1 = "SELECT CONCAT(CURDATE(),' ', CURTIME())";
+                $stmt1 = $this->db_holder->query($sql1);
+                $dateTime = $stmt1->fetch();
+                for($ctr=0; $ctr<sizeof($employeeID); $ctr++){
+                    $sql2 = "SELECT transaction_id
+                            FROM transactions
+                            WHERE product_id = ?
+                            AND employee_id = ?";
+
+                    $stmt2  = $this->db_holder->prepare($sql2);
+                    $stmt2 -> execute(array($productIDs[$ctr]),$employeeID);
+                    if($stmt2->fetch()){
+                        insertToTransactionsTbl($productIDs[$ctr],$employeeID,$dateTime,$quantities[$ctr]);
+                    }
+
+                }
+
+            $this->close_connection();
+        }
+
+        function insertToTransactionsTbl($productID,$employeeID,$dateTime,$quantity){
+            $this->open_connection();
+
+                $sql1 = "INSERT INTO transactions
+                        VALUES(?,?,?)";
+                $stmt1  = $this->db_holder->prepare($sql1);
+                $stmt1 -> execute(array($productID,$employeeID,$dateTime));
+
+                $transactionID = $this->db_holder->lastInsertId();
+
+                $sql2 = "INSERT INTO transactions_info
+                        ";
+
+            $this->close_connection();
+        }
+
     }

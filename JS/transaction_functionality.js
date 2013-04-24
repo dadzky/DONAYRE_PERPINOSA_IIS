@@ -53,7 +53,7 @@ $(function(){
 
 	 /*--------------------Editing Quantity at the Shopping List--------------------*/
 	 $('#shopping_list_tbody').on('click','td img',function(){
-	 	//var cell_id=$(this).context.parentNode.id;
+
 	 	var row_id = $(this).context.parentNode.parentNode.id;
 	 	var cell_id = document.getElementById(row_id).getElementsByTagName('td')[2];
 	 	var quantity =cell_id.getElementsByTagName('span')[0].innerHTML;
@@ -105,7 +105,10 @@ $(function(){
 					$(this).dialog('close');
 					$('#'+row_id).removeClass('error');
 				}
-			}
+			},
+            close: function (){
+                $('#'+row_id).removeClass('error');
+            }
 		});
 
 
@@ -114,12 +117,11 @@ $(function(){
 
 	 /*---------------------TRANSACTION OF ITEMS [saving to database]-------------------*/
 	 $('#shopping_list_total_tfoot').on('click','button',function(){
-	 	alert('soon'); 
+         saveTransaction();
 	 })
 	 $(document).keypress(function(e){
-	 	console.log(e.charCode)
 	 	if(e.charCode == 66){
-	 		alert('buy?')
+            saveTransaction();
 	 	}
 	 })
 
@@ -139,7 +141,7 @@ $(function(){
 	$.ajax({
 		type:"POST",
 		data: obj,
-		url: "../PHP/OBJECTS/searchProductWithCost.php",
+		url: "../PHP/OBJECTS/transaction/searchProductWithCost.php",
 		success:function(data){
 			var obj2 = JSON.parse(data);
 			$('#products_to_transact_tbody').html(obj2.tbody);
@@ -205,7 +207,7 @@ function saveToShoppingList(prodId,prodName,prodCost,prodUnit,tblRow){
 			    	}
 
 			    }
-			     
+
 			})
 	}
 }
@@ -233,6 +235,35 @@ function displayToShoppingList(prodId,prodName,prodCost,prodUnit,productQuantity
 	var tbody = $('#shopping_list_tbody').append(tbody);
 	var tfoot = $('#shopping_list_total_tfoot').html(tfoot);
 	$('#shopping_list_table').show('blind',1000);
+}
+
+function saveTransaction(){
+    var productIDs = new Array();
+    var productQuantities = new Array();
+    var row = $('#shopping_list_tbody tr');
+
+    for(var ctr=1; ctr<row.length;ctr++){
+        var row_id = row[ctr].id;
+        var quantity = $('#'+row_id+ " td span");
+        quantity = quantity[1].html();
+        productIDs.push(row_id);
+        productQuantities.push(quantity);
+    }
+    var obj = {'productIDs': productIDs, 'quantities': productQuantities};
+    $.ajax({
+        type:"POST",
+        url: "../PHP/OBJECTS/transaction/saveTransaction.php",
+        data: obj,
+        success:function(data){
+
+        },
+        error:function(data){
+            alert("Error on saving transaction => "+ data);
+        }
+    })
+
+
+
 }
 
 

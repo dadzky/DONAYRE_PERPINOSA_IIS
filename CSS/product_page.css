@@ -11,10 +11,6 @@
     padding: 20px;
 }
 
-.product_delete_action{
-    visibility: hidden;
-}
-
 .product_delete_action ul {
     position: absolute;
     z-index: 500;
@@ -38,7 +34,7 @@
     cursor: pointer;
 }
 
-#delete_products_image {
+#delete_trash_icon {
     width: 25px;
     height: 30px;
 }

@@ -6,38 +6,18 @@ $(function() {
     $("#add_product_confirmation_div").hide();
     $(".warning").hide();
 
-    $("#delete_products_image").click(function() {
-        $(this).hide();
-        $(".product_delete_action").css('visibility', 'visible');
-        $("#hide_delete_action_button").show();
+    // =============== MARK and UNMARK CHECKBOXES
 
-        // =============== MARK and UNMARK CHECKBOXES
-
-        $("#display_products_table").find("tr").click(function() {
-            if($(this).find("input").attr('checked')) {
-                $(this).find("input").attr('checked', false);
-            }  else {
-                $(this).find("input").attr('checked', true);
-            }
-        });
-
-        $("#mark_all_delete_action").click(function() {
-                $("#display_products_table").find("tr").find('input').attr("checked", true);
-        });
-
-        $("#unmark_all_delete_action").click(function() {
-            $("#display_products_table").find("tr").find('input').attr("checked", false);
-        });
-    });
-    $("#hide_delete_action_button").click(function() {
-        $(this).hide();
-        $(".product_delete_action").css('visibility', 'hidden');
-        $("#delete_products_image").show();
+    $("#display_products_table").find("tr").click(function() {
+        if($(this).find("input").attr('checked')) {
+            $(this).find("input").attr('checked', false);
+        }  else {
+            $(this).find("input").attr('checked', true);
+        }
     });
 
 
     // ================= PRODUCT DATA CONTROLLERS > FUNCTIONS ====================
-
 
     display_products();
 
@@ -101,7 +81,8 @@ $(function() {
                                     url: "../PHP/OBJECTS/PRODUCTS/add_product.php",
                                     data: {"products_data": JSON.stringify($("#add_product_form").serializeArray()), "update": "no"},
                                     success: function(data) {
-                                        display_products();
+                                        //display_products();
+                                        $("#display_products_table").append(data);
                                         $("#add_product_form").addClass("control-group success");
                                     },
                                     error: function(data) {
@@ -195,9 +176,9 @@ function edit_products_name(id) {
 }
 
 function edit_products_price(id) {
-    var product_price = document.getElementById(id).getElementsByTagName('td')[1].innerHTML;
-    $(document.getElementById(id).getElementsByTagName('td')[1]).html("<form id = 'new_product_price_form'><input type = 'text' id = 'new_product_price' class = 'input-mini'/></form>");
-    $("#invalid_new_product_price_warning").hide();
+    var td = document.getElementById(id).getElementsByTagName('td')[1];
+    var product_price = td.getElementsByTagName('span')[0].innerHTML;
+    $(document.getElementById(id).getElementsByTagName('td')[1].getElementsByTagName('span')).html("<form id = 'new_product_price_form'><input type = 'text' id = 'new_product_price' class = 'input-mini'/></form>");
     $("#new_product_price").val(product_price);
     $("#new_product_price_form").submit(function() {
         var numeric_pattern = /^[0-9, .]*$/;
@@ -209,7 +190,7 @@ function edit_products_price(id) {
                 url: "../PHP/OBJECTS/PRODUCTS/update_products_info.php",
                 data: {"id": id, "product_name": "", "product_price": new_product_price, "products_number_of_stocks": "", "stock_unit": ""},
                 success: function(data) {
-                    $(document.getElementById(id).getElementsByTagName('td')[1]).html(data);
+                    display_products();
                 },
                 error: function(data) {
                     console.log("There's an error in updating product's price. It says " + JSON.stringify(data));
@@ -231,7 +212,7 @@ function edit_products_price(id) {
                 url: "../PHP/OBJECTS/PRODUCTS/update_products_info.php",
                 data: {"id": id, "product_name": "", "product_price": $("#new_product_price").val(), "products_number_of_stocks": "", "stock_unit": ""},
                 success: function(data) {
-                    $(document.getElementById(id).getElementsByTagName('td')[1]).html(data);
+                    display_products();
                 },
                 error: function(data) {
                     console.log("There's an error in updating product's price. It says " + JSON.stringify(data));
@@ -368,7 +349,6 @@ function delete_products(id) {
                     if(check_box.checked) {
                         product_ids_to_delete.push(table_rows[counter].id);
                     }
-                    $('#' + table_rows[counter].id).remove();
                     counter++;
                 }
                 $.ajax({
@@ -377,6 +357,10 @@ function delete_products(id) {
                     data: {"product_ids_to_delete": product_ids_to_delete},
                     success: function() {
                         $("#delete_product_confirmation_div").dialog("close");
+                        for(var counter = 0; counter < product_ids_to_delete.length; counter++) {
+                            $('#' + product_ids_to_delete[counter]).remove();
+                        }
+
                     },
                     error: function(data) {
                         console.log("There's an error in deleting products. It says " + JSON.stringify(data));
@@ -388,6 +372,13 @@ function delete_products(id) {
             }
         }
     });
-
-
 }
+
+ function mark_all_check_boxes() {
+
+         $("#display_products_table").find("tr").find('input').attr("checked", true);
+
+     /////$("#unmark_all_delete_action").click(function() {
+         $("#display_products_table").find("tr").find('input').attr("checked", false);
+     //});
+ }
