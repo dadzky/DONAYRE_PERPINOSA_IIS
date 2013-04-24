@@ -40,10 +40,11 @@ $(function(){
 			if(!checkIfExistAtShoppingList(prodName)){
 				saveToShoppingList(prodId,prodName,prodCost,prodUnit,$(this));
 			}else{
-				$('#dialog2_div').html("It is already on your shopping list\nYou can change it's quantity by clicking edit icon");
+				$('#dialog2_div').html("It is already on your shopping list\nYou can change its quantity by clicking edit icon");
 				$('#dialog2_div').dialog({
 					title:'Exist',
-					modal:true
+					modal:true,
+					buttons: false
 				});
 			}		 	
 		 	
@@ -51,27 +52,76 @@ $(function(){
 	 })
 
 	 /*--------------------Editing Quantity at the Shopping List--------------------*/
-	 $('#shopping_list_tbody').on('click','tr img',function(){
-	 	var cell_id=$(this).context.parentNode.id;
-	 	var quantity = cell_id.substring(17);
-	 	$('#'+cell_id).html("<input type='text' id='edited_quantity' class='input-medium' value='"+quantity+"'/><input type='hidden' id='cell_id' value='"+cell_id+"'>");
+	 $('#shopping_list_tbody').on('click','td img',function(){
+	 	//var cell_id=$(this).context.parentNode.id;
+	 	var row_id = $(this).context.parentNode.parentNode.id;
+	 	var cell_id = document.getElementById(row_id).getElementsByTagName('td')[2];
+	 	var quantity =cell_id.getElementsByTagName('span')[0].innerHTML;
+	 	$(cell_id).html("<input type='text' id='edited_quantity' class='input-small' value='"+quantity+"'/><input type='hidden' id='cell_id' value='"+row_id+"'>");
 	 	$('#edited_quantity').focus();
 	 })
+
 	 $('#shopping_list_tbody').on('blur','input',function(){
+	 	var regexInt = /^[0-9]+$/;
+
 	 	var newQuantity = $(this).val();
-	 	var cell_id = $('#cell_id').val();
-	 	$('#'+cell_id).html(newQuantity +"<img src='../CSS/img_tbls/editShoppingList.png' id =edit_quantity_img alt = edit quanity title=edit quantity/>");
-	 	$('#'+cell_id).removeAttr('id').attr('id','td_shopping_list_'+newQuantity);
-	 	var cost = parseInt($('#td_shopping_list_'+newQuantity).prev('td').find('span').html());
-	 	var subTotal = parseInt($('#td_shopping_list_'+newQuantity).next().find('span').html());
-	 	var newSubtotal = cost * parseInt(newQuantity);
-	 	var newSubtotal2 = parseInt($('#td_shopping_list_'+newQuantity).next().find('span').html(newSubtotal));
-	 	var total = parseInt($('#shopping_list_total_tfoot td:last span').html());
-		var newTotal = (total - subTotal)+newSubtotal;
-		$('#shopping_list_total_tfoot td:last span').html(newTotal)
+	 	if(regexInt.test(newQuantity)){
+	 		var row_id = $('#cell_id').val();
+		 	var cell_id = document.getElementById(row_id).getElementsByTagName('td')[2];
+		 	$(cell_id).html("<span>"+newQuantity +"</span>"+"<img src='../CSS/img_tbls/editShoppingList.png' class =edit_quantity_img alt = edit quanity title=edit quantity/>");
+		 	var cost = parseFloat($(cell_id).prev('td').find('span').html());
+		 	var subTotal = parseFloat($(cell_id).next().find('span').html());
+		 	var newSubtotal = cost * parseInt(newQuantity);
+		 	$(cell_id).next().find('span').html(newSubtotal);
+			totalPayment = (totalPayment - subTotal)+newSubtotal;
+			$('#shopping_list_total_tfoot td:last span').html(totalPayment)
+			$('#edited_quantity').removeClass('error');
+	 	}else{
+	 		$('#edited_quantity').css({"border-color":"red", "box-shadow":"0 0 1px 2px pink", "color":"#f00"});
+	 	}
+
 		
 	 })
+	 /*----------------------Deleting Item on the shopping-------------*/
+	 $('#shopping_list_tbody').on('click','th img',function(){
+	 	var row_id = $(this).context.parentNode.parentNode.parentNode.id;
+	 	$('#'+row_id).addClass('error');
+	 	$('#dialog2_div').html('Delete From Shopping List');
+	 	$('#dialog2_div').dialog({
+			title:'Delete',
+			modal:true,
+			show:'blind',
+			hide:'blind',
+			buttons:{
+				"Delete" : function(){
+				 	var subTotal =  $('#'+row_id).find('td:last span').html();
+				 	var newTotal = totalPayment - parseFloat(subTotal);
+				 	$('#shopping_list_total_tfoot').find('td:last span').html(newTotal);
+				 	$('#'+row_id).remove();
+				 	$('#'+row_id).removeClass('error');
+				 	$(this).dialog('close');
+				},
+				"Cancel" : function(){
+					$(this).dialog('close');
+					$('#'+row_id).removeClass('error');
+				}
+			}
+		});
 
+
+
+	 });
+
+	 /*---------------------TRANSACTION OF ITEMS [saving to database]-------------------*/
+	 $('#shopping_list_total_tfoot').on('click','button',function(){
+	 	alert('soon'); 
+	 })
+	 $(document).keypress(function(e){
+	 	console.log(e.charCode)
+	 	if(e.charCode == 66){
+	 		alert('buy?')
+	 	}
+	 })
 
 })
  var totalPayment = 0; //Global variable for the total payment of the products bought...
@@ -162,18 +212,21 @@ function saveToShoppingList(prodId,prodName,prodCost,prodUnit,tblRow){
 
 function displayToShoppingList(prodId,prodName,prodCost,prodUnit,productQuantity){
 	var id = prodId.substring(19);
-	var subTotal = parseInt(prodCost)*parseInt(productQuantity);
-	totalPayment += subTotal;
+	var subTotal = parseFloat(prodCost)*parseInt(productQuantity);
+	totalPayment += subTotal; /*-global ini na totalPayment variable-*/
+
 	var newId = "tr_to_transact_"+id;
 	
 	var tbody = "<tr  id='"+newId+"'>"+
+				"<th><a href='#'><img src='../CSS/img_tbls/deleteShoppingList.png' class ='delete_list_img' alt = 'delete quanity' title='delete' /></a></th>"+
 				"<td>"+prodName+"</td>"+
-				"<td><span>"+prodCost+"</span>/"+prodUnit+"</td>"+
-				"<td id='td_shopping_list_"+productQuantity+"'>"+productQuantity+"<img src='../CSS/img_tbls/editShoppingList.png' id =edit_quantity_img alt = edit quanity title=edit quantity/></td>"+
+				"<td>&#8369; <span>"+prodCost+"</span> / "+prodUnit+"</td>"+
+				"<td><span>"+productQuantity+"</span><img src='../CSS/img_tbls/editShoppingList.png' class =edit_quantity_img alt = edit quanity title=edit quantity/></td>"+
 				"<td>&#8369; <span>"+subTotal+"</span></td>"+
 				"</tr>";
-	var tfoot = "<tr>"+
-				"<td colspan='4'>Total</td>"+
+	var tfoot = "<tr  class='totalpayment_tr'>"+
+				"<td>Total</td>"+
+				"<td colspan='4'><button class='btn btn-block btn-primary'>PAY</button></td>"+
 				"<td>&#8369; <span>"+totalPayment+"</span></td>"+
 				"</tr>";
 	
