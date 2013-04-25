@@ -124,7 +124,11 @@ $(function() {
             url: "../PHP/OBJECTS/PRODUCTS/display_products_by_select_letter.php",
             data: {"selected_letter": $("#display_product_selected_letter").val()},
             success: function(data) {
-                $("#display_products_table").html(data);
+                if(data != "") {
+                    $("#display_products_table").html(data);
+                } else {
+                    $("#display_products_table").html("<tr><td>No results for '<b>" + $("#display_product_selected_letter").val() + "</b>'.</td></tr>");
+                }
             },
             error: function(data) {
                 console.log("THERE'S AN ERROR IN DISPLAYING PRODUCTS BY SELECTED LETTER. IT SAYS " + JSON.stringify(data));
@@ -152,14 +156,12 @@ function display_products() {
 
 function edit_products_name(id) {
     var product_name = document.getElementById(id).getElementsByTagName('td')[0].innerHTML;
-    $(document.getElementById(id).getElementsByTagName('td')[0]).html("<form id = 'new_product_name_form'><input type = 'text' id = 'new_product_name'/></form>");
-    $("#invalid_new_product_name_warning").hide();
+    $(document.getElementById(id).getElementsByTagName('td')[0]).html("<form id = 'new_product_name_form'><input type = 'text' id = 'new_product_name' class = 'input-medium'/></form>");
     $("#new_product_name").val(product_name);
+    $("#new_product_name").focus();
     $("#new_product_name_form").submit(function() {
         var new_product_name = $("#new_product_name").val();
-        var string_pattern = /^[a-z, A-Z]*$/;
-        var new_product_name_valid = string_pattern.test(new_product_name);
-        if(new_product_name != "" && new_product_name_valid) {
+        if(new_product_name != "") {
             $.ajax({
                 type: "POST",
                 url: "../PHP/OBJECTS/PRODUCTS/update_products_info.php",
@@ -179,9 +181,7 @@ function edit_products_name(id) {
 
     $("#new_product_name").blur(function() {
         var new_product_name = $("#new_product_name").val();
-        var string_pattern = /^[a-z, A-Z]*$/;
-        var new_product_name_valid = string_pattern.test(new_product_name);
-        if(new_product_name != "" && new_product_name_valid) {
+        if(new_product_name != "") {
             $.ajax({
                 type: "POST",
                 url: "../PHP/OBJECTS/PRODUCTS/update_products_info.php",
@@ -204,6 +204,7 @@ function edit_products_price(id) {
     var product_price = td.getElementsByTagName('span')[0].innerHTML;
     $(document.getElementById(id).getElementsByTagName('td')[1].getElementsByTagName('span')).html("<form id = 'new_product_price_form'><input type = 'text' id = 'new_product_price' class = 'input-mini'/></form>");
     $("#new_product_price").val(product_price);
+    $("#new_product_price").focus();
     $("#new_product_price_form").submit(function() {
         var numeric_pattern = /^[0-9, .]*$/;
         var new_product_price = $("#new_product_price").val();
@@ -252,6 +253,7 @@ function edit_products_number_of_stocks(id) {
     var number_of_stocks = document.getElementById(id).getElementsByTagName('td')[2].innerHTML;
     $(document.getElementById(id).getElementsByTagName('td')[2]).html("<form id = 'new_products_number_of_stock_form'><input type = 'text' id = 'new_products_number_of_stocks' class = 'input-mini'/></form>");
     $("#new_products_number_of_stocks").val(number_of_stocks);
+    $("#new_products_number_of_stocks").focus();
     $("#new_products_number_of_stock_form").submit(function() {
         var numeric_pattern = /^[0-9]*$/;
         var new_products_number_of_stocks = $("#new_products_number_of_stocks").val();
@@ -302,33 +304,42 @@ function edit_products_stock_unit(id) {
     $("#new_stock_unit").val(stock_unit);
     $("#new_stock_unit_form").change(function() {
         if($("#new_stock_unit").val() == "others") {
-            $(document.getElementById(id).getElementsByTagName('td')[3]).html("<form id = 'new_stock_unit_form'><input type = 'text' id = 'new_inputted_stock_unit' class = 'input-medium' placeholder = 'stock unit' /></form>");
+            $(document.getElementById(id).getElementsByTagName('td')[3]).html("<form id = 'new_stock_unit_form'><input type = 'text' id = 'new_inputted_stock_unit' class = 'input-mini' placeholder = 'stock unit' /></form>");
+            $("#new_inputted_stock_unit").focus();
             $("#new_stock_unit_form").submit(function() {
-                $.ajax({
-                    type: "POST",
-                    url: "../PHP/OBJECTS/PRODUCTS/update_products_info.php",
-                    data: {"id": id, "product_name": "", "product_price": "", "products_number_of_stocks": "", "stock_unit": $("#new_inputted_stock_unit").val()},
-                    success: function(data) {
-                        $(document.getElementById(id).getElementsByTagName('td')[3]).html(data);
-                    },
-                    error: function(data) {
-                        console.log("There's an error in updating product's stock unit. It says " + JSON.stringify(data));
-                    }
-                });
+                if($("#new_inputted_stock_unit").val() != "") {
+                    $.ajax({
+                        type: "POST",
+                        url: "../PHP/OBJECTS/PRODUCTS/update_products_info.php",
+                        data: {"id": id, "product_name": "", "product_price": "", "products_number_of_stocks": "", "stock_unit": $("#new_inputted_stock_unit").val()},
+                        success: function(data) {
+                            $(document.getElementById(id).getElementsByTagName('td')[3]).html(data);
+                        },
+                        error: function(data) {
+                            console.log("There's an error in updating product's stock unit. It says " + JSON.stringify(data));
+                        }
+                    });
+                } else {
+                    $("#new_stock_unit_form").addClass("control-group error");
+                }
                 return false;
             });
             $("#new_inputted_stock_unit").blur(function() {
-                $.ajax({
-                    type: "POST",
-                    url: "../PHP/OBJECTS/PRODUCTS/update_products_info.php",
-                    data: {"id": id, "product_name": "", "product_price": "", "products_number_of_stocks": "", "stock_unit": $("#new_inputted_stock_unit").val()},
-                    success: function(data) {
-                        $(document.getElementById(id).getElementsByTagName('td')[3]).html(data);
-                    },
-                    error: function(data) {
-                        console.log("There's an error in updating product's stock unit. It says " + JSON.stringify(data));
-                    }
-                });
+                if($("#new_inputted_stock_unit").val() != "") {
+                    $.ajax({
+                        type: "POST",
+                        url: "../PHP/OBJECTS/PRODUCTS/update_products_info.php",
+                        data: {"id": id, "product_name": "", "product_price": "", "products_number_of_stocks": "", "stock_unit": $("#new_inputted_stock_unit").val()},
+                        success: function(data) {
+                            $(document.getElementById(id).getElementsByTagName('td')[3]).html(data);
+                        },
+                        error: function(data) {
+                            console.log("There's an error in updating product's stock unit. It says " + JSON.stringify(data));
+                        }
+                    });
+                } else {
+                    $("#new_stock_unit_form").addClass("control-group error");
+                }
             });
         } else {
             edit_products_stock_unit_ajax_request(id);

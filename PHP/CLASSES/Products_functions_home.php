@@ -50,7 +50,7 @@
         function display_products() {
             $this->open_connection();
 
-            $select_statement = $this->db_holder->query("SELECT * FROM products ORDER BY product_name;");
+            $select_statement = $this->db_holder->query("SELECT product_id, LEFT(product_name, 30), product_price, number_of_stocks, stock_unit FROM products ORDER BY product_name;");
 
             $counter = 0;
             while($content = $select_statement->fetch()) {
@@ -74,12 +74,13 @@
         function display_products_by_select_letter($selected_letter) {
             $this->open_connection();
 
-            $select_statement = $this->db_holder->query("SELECT * FROM products WHERE product_name LIKE '".$selected_letter."%';");
-
+            $select_statement = $this->db_holder->prepare("SELECT product_id, LEFT(product_name, 30), product_price, number_of_stocks, stock_unit FROM products WHERE product_name LIKE ? ORDER BY product_name;");
+            $select_statement->execute(array($selected_letter));
             $counter = 0;
             while($content = $select_statement->fetch()) {
                 while($counter < 1) {
                     echo "<tr><th>NAME</th><th>PRICE</th><th>STOCKS</th><th>UNIT</th><th class = 'product_delete_action'><img src = '../CSS/images/trash_can.gif' id = 'delete_trash_icon' onclick = 'delete_products(".$content[0].")' /><ul><li id = 'mark_all_delete_action' onclick = 'mark_all_check_boxes()' >Mark All</li><li id = 'unmark_all_delete_action'>UnMark All</li></ul></th></tr>";
+                    $counter++;
                 }
                 echo "<tr id = '".$content[0]."'>";
                 echo    "<td ondblclick = 'edit_products_name(".$content[0].")'>".$content[1]."</td>";

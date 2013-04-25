@@ -1,6 +1,8 @@
 <!Doctype html>
 <html xmlns="http://www.w3.org/1999/html">
     <head>
+        <title>Products</title>
+        <link rel = "shortcut icon" href = "../CSS/images/IIS logos/iis0.jpg" />
         <link rel = "stylesheet" href = "../CSS/includes_all_css_files.css" />
     </head>
     <body>
