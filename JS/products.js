@@ -16,6 +16,14 @@ $(function() {
         }
     });
 
+    // ============== APPENDING OPTIONS TO SELECT TAG (display_product_selected_letter) ===================
+
+    var alphabet_array = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',];
+    var counter = 0;
+    while(counter < alphabet_array.length) {
+        $("#display_product_selected_letter").append("<option>" + alphabet_array[counter] + "</option>");
+        counter++;
+    }
 
     // ================= PRODUCT DATA CONTROLLERS > FUNCTIONS ====================
 
@@ -81,8 +89,7 @@ $(function() {
                                     url: "../PHP/OBJECTS/PRODUCTS/add_product.php",
                                     data: {"products_data": JSON.stringify($("#add_product_form").serializeArray()), "update": "no"},
                                     success: function(data) {
-                                        //display_products();
-                                        $("#display_products_table").append(data);
+                                        display_products();
                                         $("#add_product_form").addClass("control-group success");
                                     },
                                     error: function(data) {
@@ -109,6 +116,22 @@ $(function() {
         }
     });
 
+    // ===================== DISPLAYING PRODUCTS BY SELECTED letter ===================
+
+    $("#display_product_selected_letter").change(function() {
+        $.ajax({
+            type: "POST",
+            url: "../PHP/OBJECTS/PRODUCTS/display_products_by_select_letter.php",
+            data: {"selected_letter": $("#display_product_selected_letter").val()},
+            success: function(data) {
+                $("#display_products_table").html(data);
+            },
+            error: function(data) {
+                console.log("THERE'S AN ERROR IN DISPLAYING PRODUCTS BY SELECTED LETTER. IT SAYS " + JSON.stringify(data));
+            }
+        });
+    });
+
 });
 
 // =================== DISPLAYS PRODUCTS ============== //
@@ -124,6 +147,7 @@ function display_products() {
         }
     })
 }
+
 // =================== UPDATES PRODUCTS DATA================ //
 
 function edit_products_name(id) {

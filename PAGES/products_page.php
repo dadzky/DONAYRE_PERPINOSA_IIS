@@ -10,6 +10,7 @@
                 <h2>PRODUCTS</h2>
                 <div id = "product_actions">
                     <input type = "text" class = 'search-query' />
+                    <select id = "display_product_selected_letter" class = "span1"></select>
                 </div><!-- ========  Product actions div ends ======== -->
                 <table id = "display_products_table" class = "table table-hover">
                 </table>
@@ -18,6 +19,7 @@
             <div id = "add_product_div">
                 <h4>Add Product here:</h4>
                 <form id = "add_product_form">
+                    <dl>
                     <dt>Product Name:</dt>
                         <dd id = 'product_name_dd'><input type = "text" name = "product_name" id = "product_id" /></dd>
                     <dt>Product Price:</dt>
@@ -31,7 +33,9 @@
                                 <option>klg</option>
                                 <option>g</option>
                                 <option>lbs</option>
+                                <option>others</option>
                             </select></dd>
+                    </dl>
                 </form>
                 <button id = "add_product_button" class = "btn btn-primary">ADD</button>
 
