@@ -1,7 +1,13 @@
 
+#products_main_div_container {
+    border: 2px inset black;
+}
+
 #display_products_div {
     width: 600px;
-    height: 500px;
+    height: 590px;
+    overflow-y: scroll;
+    overflow-style: panner;
     float: left;
     margin: 20px;
 }
@@ -37,4 +43,8 @@
 #delete_trash_icon {
     width: 25px;
     height: 30px;
+}
+
+#display_product_selected_letter {
+    float: right;
 }

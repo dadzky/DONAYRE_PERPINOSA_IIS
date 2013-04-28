@@ -9,8 +9,8 @@
 	background-color:#fff;
 	border: none;
 }
-	#pager_prev{
-	margin-right: 6px;
+#pager_prev{
+	margin-right: -5px;
 	-moz-border-top0-left-radius: 5px;
 	-webkit-border-top-left-radius: 5px;
 	-o-border-top-left-radius: 5px;
