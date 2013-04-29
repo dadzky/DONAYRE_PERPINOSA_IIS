@@ -1,7 +1,7 @@
 <!Doctype html>
 <html>
     <head>
-        <title>Transactions</title>
+        <title>Transaction</title>
         <link rel = "stylesheet" href = "../CSS/jquery-ui.min.css" />
         <link rel = "stylesheet" href = "../CSS/bootstrap.min.css" />
         <link rel = "stylesheet" href = "../CSS/transaction_page.css" />

@@ -11,7 +11,7 @@
 }
 #pager_prev{
 	margin-right: -5px;
-	-moz-border-top-left-radius: 5px;
+	-moz-border-top0-left-radius: 5px;
 	-webkit-border-top-left-radius: 5px;
 	-o-border-top-left-radius: 5px;
 	border-top-left-radius: 5px;
@@ -39,6 +39,9 @@
 }
 #shopping_list_total_tfoot{
 	background-color: #DDD;
+}
+#edited_quantity{
+	margin: -10px -90px -10px 0;
 }
 #dialog_div{
 	display:none;
