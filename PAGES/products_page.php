@@ -11,8 +11,9 @@
             <div id = "display_products_div" class = "control-group">
                 <h2>PRODUCTS</h2>
                 <div id = "product_actions">
-                    <input type = "text" class = 'search-query' />
-                    <select id = "display_product_selected_letter" class = "span1"></select>
+                    <span class = 'add-on'><img src = "../CSS/images/search_icon1.png"></span>
+                    <input type = "text" id = "search_product_input_field" class = 'search-query' placeholder = "Search product here" />
+                    <select id = "display_product_selected_letter" class = "span1"><option>all</option></select>
                 </div><!-- ========  Product actions div ends ======== -->
                 <table id = "display_products_table" class = "table table-hover">
                 </table>
@@ -29,7 +30,7 @@
                     <dt>Number of Stock(s):</dt>
                         <dd id = 'number_of_stocks_dd'><input type = "text" name = "number_of_stocks" id = "number_of_stocks" /></dd>
                     <dt>Stock Unit:</dt>
-                        <dd><select name = "stock_unit" id = "stock_unit">
+                        <dd id = "stock_unit_dd"><select name = "stock_unit" id = "stock_unit">
                                 <option>pieces</option>
                                 <option>packs</option>
                                 <option>klg</option>
@@ -38,6 +39,7 @@
                                 <option>others</option>
                             </select></dd>
                     </dl>
+                    <input type = "reset" value = "reset" class = "btn btn-danger" />
                 </form>
                 <button id = "add_product_button" class = "btn btn-primary">ADD</button>
 
@@ -47,7 +49,7 @@
 
         <!-- ================ FOR DIALOGS ================== -->
         <div id = "delete_product_confirmation_div">
-            Sure to delete this product?
+            Sure to delete the selected product(s)?
         </div><!-- ================= delete product confirmation div ends ==================-->
         <div id = "add_product_confirmation_div">
             The product you've entered was already on the list.<br />

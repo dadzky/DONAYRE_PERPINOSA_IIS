@@ -4,17 +4,7 @@ $(function() {
     $("#hide_delete_action_button").hide();
     $("#delete_product_confirmation_div").hide();
     $("#add_product_confirmation_div").hide();
-    $(".warning").hide();
-
-    // =============== MARK and UNMARK CHECKBOXES
-
-    $("#display_products_table").find("tr").click(function() {
-        if($(this).find("input").attr('checked')) {
-            $(this).find("input").attr('checked', false);
-        }  else {
-            $(this).find("input").attr('checked', true);
-        }
-    });
+    $("#select_stock_unit_first_option").hide();
 
     // ============== APPENDING OPTIONS TO SELECT TAG (display_product_selected_letter) ===================
 
@@ -30,6 +20,13 @@ $(function() {
     display_products();
 
     // ================ ADDING PRODUCTS ===============
+
+    $("#stock_unit").change(function() {
+        if($("#stock_unit").val() == "others") {
+            $("#stock_unit_dd").html("<input type = 'text' name = 'stock_unit' id = 'stock_unit' />");
+            $("#stock_unit").focus();
+        }
+    })
 
     $("#add_product_button").click(function() {
         var product_name = $("#product_name").val();
@@ -71,6 +68,7 @@ $(function() {
                                                     display_products();
                                                     $("#add_product_form").addClass("control-group success");
                                                     $("#add_product_confirmation_div").dialog("close");
+                                                    $("#stock_unit_dd").html("<select name = 'stock_unit' id = 'stock_unit'><option>pieces</option><option>packs</option><option>klg</option><option>g</option> <option>lbs</option><option>others</option></select>");
                                                 },
                                                 error: function(data) {
                                                     console.log("There's an error in adding a product. It says " + JSON.stringify(data));
@@ -91,6 +89,7 @@ $(function() {
                                     success: function(data) {
                                         display_products();
                                         $("#add_product_form").addClass("control-group success");
+                                        $("#stock_unit_dd").html("<select name = 'stock_unit' id = 'stock_unit'><option>pieces</option><option>packs</option><option>klg</option><option>g</option> <option>lbs</option><option>others</option></select>");
                                     },
                                     error: function(data) {
                                         console.log("There's an error in adding a product. It says " + JSON.stringify(data));
@@ -129,11 +128,38 @@ $(function() {
                 } else {
                     $("#display_products_table").html("<tr><td>No results for '<b>" + $("#display_product_selected_letter").val() + "</b>'.</td></tr>");
                 }
+                if($("#display_product_selected_letter").val() == "all") {
+                    display_products();
+                }
             },
             error: function(data) {
                 console.log("THERE'S AN ERROR IN DISPLAYING PRODUCTS BY SELECTED LETTER. IT SAYS " + JSON.stringify(data));
             }
         });
+    });
+
+    // ================== SEARCHING SPECIFIC PRODUCT ====================
+
+    $("#search_product_input_field").keyup(function() {
+        $.ajax({
+            type: "POST",
+            url: "../PHP/OBJECTS/PRODUCTS/search_product.php",
+            data: {"product_name_to_search": $("#search_product_input_field").val()},
+            success: function(data) {
+                if(data != "") {
+                    $("#display_products_table").html(data);
+                } else {
+                    $("#display_products_table").html("<tr><td>No results for '<b>" + $("#search_product_input_field").val() + "</b>'.</td></tr>");
+                }
+            },
+            error: function(data) {
+                console.log("There's an error in searching product. It says " + JSON.stringify(data));
+            }
+        });
+
+        if($("#search_product_input_field").val() == "") {
+            display_products();
+        }
     });
 
 });
@@ -366,54 +392,58 @@ function edit_products_stock_unit_ajax_request(id) {
 }
 
 function delete_products(id) {
-    $("#delete_product_confirmation_div").dialog({
-        title: "DELETE CONFIRMATION",
-        show: {effect: 'slide', direction: 'up'},
-        hide: {effect: 'slide', direction: 'up'},
-        modal: true,
-        resizable: false,
-        draggable: false,
-        buttons: {
-            "YES": function() {
-                var product_ids_to_delete = new Array();
-                var product_table = document.getElementById("display_products_table");
-                var table_rows = product_table.getElementsByTagName("tr");
-                var counter = 1;
-                while(counter < table_rows.length) {
-                    var check_box = document.getElementById('product_check_box_' + table_rows[counter].id);
-                    if(check_box.checked) {
-                        product_ids_to_delete.push(table_rows[counter].id);
-                    }
-                    counter++;
-                }
-                $.ajax({
-                    type: "POST",
-                    url: "../PHP/OBJECTS/PRODUCTS/delete_product.php",
-                    data: {"product_ids_to_delete": product_ids_to_delete},
-                    success: function() {
-                        $("#delete_product_confirmation_div").dialog("close");
-                        for(var counter = 0; counter < product_ids_to_delete.length; counter++) {
-                            $('#' + product_ids_to_delete[counter]).remove();
-                        }
-
-                    },
-                    error: function(data) {
-                        console.log("There's an error in deleting products. It says " + JSON.stringify(data));
-                    }
-                });
-            },
-            "CANCEL": function() {
-                $("#delete_product_confirmation_div").dialog("close");
-            }
+    var product_ids_to_delete = new Array();
+    var product_table = document.getElementById("display_products_table");
+    var table_rows = product_table.getElementsByTagName("tr");
+    var counter = 1;
+    while(counter < table_rows.length) {
+        var check_box = document.getElementById('product_check_box_' + table_rows[counter].id);
+        if(check_box.checked) {
+            product_ids_to_delete.push(table_rows[counter].id);
         }
-    });
+        counter++;
+    }
+
+    if(product_ids_to_delete == "") {
+        alert("Nothing to delete!");
+    } else {
+        $("#delete_product_confirmation_div").dialog({
+            title: "DELETE CONFIRMATION",
+            show: {effect: 'slide', direction: 'up'},
+            hide: {effect: 'slide', direction: 'up'},
+            modal: true,
+            resizable: false,
+            draggable: false,
+            buttons: {
+                "YES": function() {
+                    $.ajax({
+                        type: "POST",
+                        url: "../PHP/OBJECTS/PRODUCTS/delete_product.php",
+                        data: {"product_ids_to_delete": product_ids_to_delete},
+                        success: function() {
+                            $("#delete_product_confirmation_div").dialog("close");
+                            for(var counter = 0; counter < product_ids_to_delete.length; counter++) {
+                                $('#' + product_ids_to_delete[counter]).remove();
+                            }
+
+                        },
+                        error: function(data) {
+                            console.log("There's an error in deleting products. It says " + JSON.stringify(data));
+                        }
+                    });
+                },
+                "CANCEL": function() {
+                    $("#delete_product_confirmation_div").dialog("close");
+                }
+            }
+        });
+    }
 }
 
  function mark_all_check_boxes() {
-
          $("#display_products_table").find("tr").find('input').attr("checked", true);
-
-     /////$("#unmark_all_delete_action").click(function() {
-         $("#display_products_table").find("tr").find('input').attr("checked", false);
-     //});
  }
+
+function unmark_all_check_boxes() {
+    $("#display_products_table").find("tr").find('input').attr("checked", false);
+}

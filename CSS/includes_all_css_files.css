@@ -4,7 +4,5 @@
     @import url('log_in_page.css');
     @import url('page_header.css');
     @import url('page_footer.css');
-
-    /* FOR PRODUCTS PAGE */
-
     @import url('product_page.css');
+    @import url('employees_page.css');

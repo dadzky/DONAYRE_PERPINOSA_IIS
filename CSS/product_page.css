@@ -6,15 +6,24 @@
 #display_products_div {
     width: 600px;
     height: 590px;
-    overflow-y: scroll;
-    overflow-style: panner;
+    overflow-y: auto;
+    overflow-style: move;
     float: left;
     margin: 20px;
+    border-right: 1px solid #d3d3d3;
 }
 
 #add_product_div {
-    margin: 30px;
-    padding: 20px;
+    margin-top: 50px;
+    padding: 15px;
+}
+
+#add_product_div dd {
+    text-indent: 20px;
+}
+
+#add_product_div input[type = "reset"] {
+    float: right;
 }
 
 .product_delete_action ul {
@@ -22,21 +31,22 @@
     z-index: 500;
     visibility: hidden;
     list-style: none;
+    border: 1px double dodgerblue;
 }
 
-.product_delete_action:hover ul, .product_delete_action ul:hover ul{
-    background-color: ghostwhite;
-    border-top-right-radius: 10px;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    padding: 7px;
-    position: absolute;
+.product_delete_action:hover ul, .product_delete_action ul:hover ul, #display_products_table tr td input:hover{
     visibility: visible;
+    background-color: ghostwhite;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    padding: 7px;
+    z-index: 500;
+    position: absolute;
 }
 
 .product_delete_action ul li:hover {
-    color: #808080;
-    color: black;
+    color: dodgerblue;
     cursor: pointer;
 }
 
@@ -47,4 +57,8 @@
 
 #display_product_selected_letter {
     float: right;
+}
+
+#select_stock_unit_first_option {
+    font-weight: bolder;
 }
