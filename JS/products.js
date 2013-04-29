@@ -35,7 +35,7 @@ $(function() {
         var stock_unit = $("#stock_unit").val();
 
         var string_pattern = /^[a-z, A-Z]*$/;
-        var numeric_pattern = /^[0-9]*$/;
+        var numeric_pattern = /^[0-9, .]*$/;
 
         var product_name_valid = string_pattern.test(product_name);
         var product_price_valid = numeric_pattern.test(product_price);
@@ -75,7 +75,7 @@ $(function() {
                                                 }
                                             });
                                         },
-                                        "NO THANKS": function() {
+                                          "NO THANKS": function() {
                                             $("#add_product_confirmation_div").dialog("close");
                                         }
                                     }
@@ -180,57 +180,69 @@ function display_products() {
 
 // =================== UPDATES PRODUCTS DATA================ //
 
-function edit_products_name(id) {
-    var product_name = document.getElementById(id).getElementsByTagName('td')[0].innerHTML;
-    $(document.getElementById(id).getElementsByTagName('td')[0]).html("<form id = 'new_product_name_form'><input type = 'text' id = 'new_product_name' class = 'input-medium'/></form>");
-    $("#new_product_name").val(product_name);
-    $("#new_product_name").focus();
-    $("#new_product_name_form").submit(function() {
-        var new_product_name = $("#new_product_name").val();
-        if(new_product_name != "") {
-            $.ajax({
-                type: "POST",
-                url: "../PHP/OBJECTS/PRODUCTS/update_products_info.php",
-                data: {"id": id, "product_name": new_product_name, "product_price": "", "products_number_of_stocks": "", "stock_unit": ""},
-                success: function(data) {
-                    $(document.getElementById(id).getElementsByTagName('td')[0]).html(data);
-                },
-                error: function(data) {
-                    console.log("There's an error in retrieving product's name. It says " + JSON.stringify(data));
-                }
-            });
-        } else {
-            $("#new_product_name_form").addClass("control-group error");
+function retrieve_product_data(id, data_to_retrieve) {
+    return $.ajax({
+        async: true,
+        type: "POST",
+        url: "../PHP/OBJECTS/PRODUCTS/retrieve_product_data.php",
+        data: {"id":id, "data_to_retrieve": data_to_retrieve},
+        error: function(data) {
+            console.log("Error in retrieving products' data = " + JSON.stringify(data));
         }
-        return false;
+    });
+}
+
+function edit_products_name(id) {
+    $(document.getElementById(id).getElementsByTagName('td')[0]).html("<form id = 'new_product_name_form'><input type = 'text' id = 'new_product_name' class = 'input-medium'/></form>");
+    var data_to_retrieve = "product_name";
+    var retrieve_product_name_to_edit = retrieve_product_data(id, data_to_retrieve);
+    retrieve_product_name_to_edit.success(function(data) {
+        $("#new_product_name").val(data);
+        $("#new_product_name").focus();
     });
 
     $("#new_product_name").blur(function() {
         var new_product_name = $("#new_product_name").val();
         if(new_product_name != "") {
-            $.ajax({
-                type: "POST",
-                url: "../PHP/OBJECTS/PRODUCTS/update_products_info.php",
-                data: {"id": id, "product_name": $("#new_product_name").val(), "product_price": "", "products_number_of_stocks": "", "stock_unit": ""},
-                success: function(data) {
-                    $(document.getElementById(id).getElementsByTagName('td')[0]).html(data);
-                },
-                error: function(data) {
-                    console.log("There's an error in retrieving product's name. It says " + JSON.stringify(data));
-                }
-            });
+            request_for_editing_product_name(id, new_product_name);
         } else {
             $("#new_product_name_form").addClass("control-group error");
+        }
+    });
+
+    $("#new_product_name_form").submit(function() {
+        var new_product_name = $("#new_product_name").val();
+        if(new_product_name != "") {
+            request_for_editing_product_name(id, new_product_name);
+        } else {
+            $("#new_product_name_form").addClass("control-group error");
+        }
+        return false;
+    });
+}
+
+function request_for_editing_product_name(id, new_product_name) {
+    $.ajax({
+        type: "POST",
+        url: "../PHP/OBJECTS/PRODUCTS/update_products_info.php",
+        data: {"id": id, "product_name": new_product_name, "product_price": "", "products_number_of_stocks": "", "stock_unit": ""},
+        success: function(data) {
+            display_products();
+        },
+        error: function(data) {
+            console.log("There's an error in retrieving product's name. It says " + JSON.stringify(data));
         }
     });
 }
 
 function edit_products_price(id) {
-    var td = document.getElementById(id).getElementsByTagName('td')[1];
-    var product_price = td.getElementsByTagName('span')[0].innerHTML;
     $(document.getElementById(id).getElementsByTagName('td')[1].getElementsByTagName('span')).html("<form id = 'new_product_price_form'><input type = 'text' id = 'new_product_price' class = 'input-mini'/></form>");
-    $("#new_product_price").val(product_price);
-    $("#new_product_price").focus();
+    var data_to_retrieve = "product_price";
+    var retrieve_product_price_to_edit = retrieve_product_data(id, data_to_retrieve);
+    retrieve_product_price_to_edit.success(function(data) {
+        $("#new_product_price").val(data);
+        $("#new_product_price").focus();
+    });
     $("#new_product_price_form").submit(function() {
         var numeric_pattern = /^[0-9, .]*$/;
         var new_product_price = $("#new_product_price").val();
@@ -276,12 +288,15 @@ function edit_products_price(id) {
 }
 
 function edit_products_number_of_stocks(id) {
-    var number_of_stocks = document.getElementById(id).getElementsByTagName('td')[2].innerHTML;
     $(document.getElementById(id).getElementsByTagName('td')[2]).html("<form id = 'new_products_number_of_stock_form'><input type = 'text' id = 'new_products_number_of_stocks' class = 'input-mini'/></form>");
-    $("#new_products_number_of_stocks").val(number_of_stocks);
-    $("#new_products_number_of_stocks").focus();
+    var data_to_retrieve = "number_of_stocks";
+    var retrieve_number_of_stocks_to_edit = retrieve_product_data(id, data_to_retrieve);
+    retrieve_number_of_stocks_to_edit.success(function(data) {
+        $("#new_products_number_of_stocks").val(data);
+        $("#new_products_number_of_stocks").focus();
+    });
     $("#new_products_number_of_stock_form").submit(function() {
-        var numeric_pattern = /^[0-9]*$/;
+        var numeric_pattern = /^[0-9, .]*$/;
         var new_products_number_of_stocks = $("#new_products_number_of_stocks").val();
         var new_products_number_of_stocks_valid = numeric_pattern.test(new_products_number_of_stocks);
         if(new_products_number_of_stocks != "" && new_products_number_of_stocks_valid) {
@@ -303,7 +318,7 @@ function edit_products_number_of_stocks(id) {
     });
 
     $("#new_products_number_of_stocks").blur(function() {
-        var numeric_pattern = /^[0-9]*$/;
+        var numeric_pattern = /^[0-9, .]*$/;
         var new_products_number_of_stocks = $("#new_products_number_of_stocks").val();
         var new_products_number_of_stocks_valid = numeric_pattern.test(new_products_number_of_stocks);
         if(new_products_number_of_stocks != "" && new_products_number_of_stocks_valid) {
@@ -328,56 +343,52 @@ function edit_products_stock_unit(id) {
     var stock_unit = document.getElementById(id).getElementsByTagName('td')[3].innerHTML;
     $(document.getElementById(id).getElementsByTagName('td')[3]).html("<form id = 'new_stock_unit_form'><select id = 'new_stock_unit' class = 'span1'><option>pieces</option><option>packs</option><option>klg</option><option>g</option><option>lbs</option><option id = 'new_stock_unit_others_option'>others</option></select></form>")
     $("#new_stock_unit").val(stock_unit);
+    $("#new_stock_unit").focus();
     $("#new_stock_unit_form").change(function() {
         if($("#new_stock_unit").val() == "others") {
             $(document.getElementById(id).getElementsByTagName('td')[3]).html("<form id = 'new_stock_unit_form'><input type = 'text' id = 'new_inputted_stock_unit' class = 'input-mini' placeholder = 'stock unit' /></form>");
             $("#new_inputted_stock_unit").focus();
             $("#new_stock_unit_form").submit(function() {
                 if($("#new_inputted_stock_unit").val() != "") {
-                    $.ajax({
-                        type: "POST",
-                        url: "../PHP/OBJECTS/PRODUCTS/update_products_info.php",
-                        data: {"id": id, "product_name": "", "product_price": "", "products_number_of_stocks": "", "stock_unit": $("#new_inputted_stock_unit").val()},
-                        success: function(data) {
-                            $(document.getElementById(id).getElementsByTagName('td')[3]).html(data);
-                        },
-                        error: function(data) {
-                            console.log("There's an error in updating product's stock unit. It says " + JSON.stringify(data));
-                        }
-                    });
+                    edit_products_stock_unit_using_select(id);
                 } else {
                     $("#new_stock_unit_form").addClass("control-group error");
                 }
                 return false;
             });
             $("#new_inputted_stock_unit").blur(function() {
+
                 if($("#new_inputted_stock_unit").val() != "") {
-                    $.ajax({
-                        type: "POST",
-                        url: "../PHP/OBJECTS/PRODUCTS/update_products_info.php",
-                        data: {"id": id, "product_name": "", "product_price": "", "products_number_of_stocks": "", "stock_unit": $("#new_inputted_stock_unit").val()},
-                        success: function(data) {
-                            $(document.getElementById(id).getElementsByTagName('td')[3]).html(data);
-                        },
-                        error: function(data) {
-                            console.log("There's an error in updating product's stock unit. It says " + JSON.stringify(data));
-                        }
-                    });
+                    edit_products_stock_unit_using_select(id);
                 } else {
                     $("#new_stock_unit_form").addClass("control-group error");
                 }
             });
         } else {
-            edit_products_stock_unit_ajax_request(id);
+            edit_products_stock_unit_using_input(id);
         }
     });
 
     $("#new_stock_unit").blur(function() {
-        edit_products_stock_unit_ajax_request(id);
+        edit_products_stock_unit_using_input(id);
     });
 }
 
-function edit_products_stock_unit_ajax_request(id) {
+function edit_products_stock_unit_using_select(id) {
+    $.ajax({
+        type: "POST",
+        url: "../PHP/OBJECTS/PRODUCTS/update_products_info.php",
+        data: {"id": id, "product_name": "", "product_price": "", "products_number_of_stocks": "", "stock_unit": $("#new_inputted_stock_unit").val()},
+        success: function(data) {
+            $(document.getElementById(id).getElementsByTagName('td')[3]).html(data);
+        },
+        error: function(data) {
+            console.log("There's an error in updating product's stock unit. It says " + JSON.stringify(data));
+        }
+    });
+}
+
+function edit_products_stock_unit_using_input(id) {
     $.ajax({
         type: "POST",
         url: "../PHP/OBJECTS/PRODUCTS/update_products_info.php",
@@ -391,7 +402,7 @@ function edit_products_stock_unit_ajax_request(id) {
     });
 }
 
-function delete_products(id) {
+function delete_products() {
     var product_ids_to_delete = new Array();
     var product_table = document.getElementById("display_products_table");
     var table_rows = product_table.getElementsByTagName("tr");

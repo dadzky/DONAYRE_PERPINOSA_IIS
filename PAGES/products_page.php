@@ -47,7 +47,7 @@
             </div><!-- ======= add products div ends ======== -->
         </div>
 
-        <!-- ================ FOR DIALOGS ================== -->
+        <!-- ================ HIDDEN FOR DIALOGS ================== -->
         <div id = "delete_product_confirmation_div">
             Sure to delete the selected product(s)?
         </div><!-- ================= delete product confirmation div ends ==================-->
