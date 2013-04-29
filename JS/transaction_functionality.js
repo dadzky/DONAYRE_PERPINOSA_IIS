@@ -2,11 +2,11 @@ $(function(){
 	
 	 searchProductForTransaction(); //To display the default products
 
-
 	 /*---------PAGINATION---------*/
 	 $('.pagination').on('click','li a', function(){
 	 	var page = parseInt($(this).html());
 		$('#currentPage').val(page-1);
+		//alert(page);
 		searchProductForTransaction()
 	 })
 	 $('.pagination').on('click','button', function(){
@@ -117,11 +117,13 @@ $(function(){
 
 	 /*---------------------TRANSACTION OF ITEMS [saving to database]-------------------*/
 	 $('#shopping_list_total_tfoot').on('click','button',function(){
-         saveTransaction();
+		confirmationDialogForTransaction()
 	 })
 	 $(document).keypress(function(e){
-	 	if(e.charCode == 66){
-            saveTransaction();
+	 	var rows = $('#shopping_list_tbody tr').length;
+
+	 	if(e.charCode == 66 && rows > 1){
+            confirmationDialogForTransaction();
 	 	}
 	 })
 
@@ -137,13 +139,13 @@ $(function(){
  	var page = pageActive * pageLimit;
 		
 	var obj = {page:page,pageActive:pageActive, pageLimit:pageLimit, toSearch:toSearch};
-	
+
 	$.ajax({
 		type:"POST",
 		data: obj,
 		url: "../PHP/OBJECTS/transaction/searchProductWithCost.php",
 		success:function(data){
-            //alert(data);
+            //console.log(data);
 			var obj2 = JSON.parse(data);
 			$('#products_to_transact_tbody').html(obj2.tbody);
 			$('.pagination').html(obj2.pager);
@@ -229,7 +231,7 @@ function displayToShoppingList(prodId,prodName,prodCost,prodUnit,productQuantity
 				"</tr>";
 	var tfoot = "<tr  class='totalpayment_tr'>"+
 				"<td>Total</td>"+
-				"<td colspan='4'><button class='btn btn-block btn-primary'>PAY</button></td>"+
+				"<td colspan='4'><button id='payment_btn' class='btn btn-block btn-primary' title='Shift+b for a shortcut'>PAY</button></td>"+
 				"<td>&#8369; <span>"+totalPayment+"</span></td>"+
 				"</tr>";
 	
@@ -250,7 +252,6 @@ function saveTransaction(){
         quantity = quantity[1].innerHTML;
         productIDs.push(row_id);
         productQuantities.push(quantity);
-        console.log(quantity);
     }
     var obj = {'productIDs': productIDs, 'quantities': productQuantities};
     $.ajax({
@@ -258,15 +259,38 @@ function saveTransaction(){
         url: "../PHP/OBJECTS/transaction/saveTransaction.php",
         data: obj,
         success:function(data){
-            alert(data);
+        	alert(data);
+        	$('#shopping_list_table').hide('blind',500);
+            $('#shopping_list_tbody tr').each(function( index ){
+            	if(index != 0)
+            	$(this).remove();
+            });
+
+            $('#products_to_transact_tbody tr').css({'text-decoration':'none'});
         },
         error:function(data){
             alert("Error on saving transaction => "+ data);
         }
     })
-
-
-
 }
+
+ function confirmationDialogForTransaction(){
+	$('#dialog2_div').html("Everything will be recorded <br/>Do you want to continue?");
+ 	$('#dialog2_div').dialog({
+		title:'Confirmation',
+		modal:true,
+		show:'blind',
+		hide:'blind',
+		buttons:{
+			"Continue" : function(){
+			 	saveTransaction();
+			 	$(this).dialog('close');
+			},
+			"Cancel" : function(){
+				$(this).dialog('close');
+			}
+		},
+	});
+ }
 
 

@@ -74,51 +74,66 @@
 
             $this->open_connection();
 
-                $sql1 = "SELECT CONCAT(CURDATE(),' ', CURTIME())";
+                $sql1 = "SELECT CURDATE() AS c_date,CURTIME() AS c_time";
                 $stmt1 = $this->db_holder->query($sql1);
-                $dateTime = $stmt1->fetch();
-                for($ctr=0; $ctr<sizeof($employeeID); $ctr++){
+                $dateTime = $stmt1->fetch(PDO::FETCH_ASSOC);
+                for($ctr=0; $ctr<sizeof($productIDs); $ctr++){
                     $prodID = $productIDs[$ctr];
                     $quantity = $quantities[$ctr];
                     $sql2 = "SELECT transaction_id
                             FROM transactions
                             WHERE product_id = ?
-                            AND employee_id = ?";
+                            AND employee_id = ?
+                            AND transaction_date = ?";
 
                     $stmt2  = $this->db_holder->prepare($sql2);
-                    $stmt2 -> execute(array($prodID, $employeeID));
-                    if(!$stmt2->fetch()){
+                    $stmt2 -> execute(array($prodID, $employeeID, $dateTime['c_date']));
+                    $transactionID = $stmt2->fetch();
 
-                        $this->insertToTransactionsTbl($prodID, $employeeID, $dateTime[0], $quantity);
+                    if($transactionID[0] == ""){
+                        $transactionID[0]=$this->addToTransactionsRecord($prodID, $employeeID, $dateTime['c_date'],$dateTime['c_time'], $quantity);
+                    }else{
+                        $this->updateTransactionsInfo($transactionID[0],$quantity);
                     }
 
+                    $sql3 = "UPDATE products AS p, transactions AS t
+                            SET p.number_of_stocks = p.number_of_stocks - ?
+                            WHERE p.product_id = t.product_id
+                            AND t.transaction_id = ?";
+                    $stmt3  = $this->db_holder->prepare($sql3);
+                    $stmt3 -> execute(array($quantity,$transactionID[0]));
+
                 }
+
 
             $this->close_connection();
         }
 
-        function insertToTransactionsTbl($prodID, $employeeID, $dateTime, $quantity){
-            $this->open_connection();
-                echo $prodID;
-            echo $employeeID;
-            echo $dateTime;
-            try{
-                $sql1 = "INSERT INTO transactions
-                        VALUES(null,?,?,?)";
-                $stmt1  = $this->db_holder->prepare($sql1);
-                $stmt1 -> execute(array($prodID, $employeeID, $dateTime));
+        function addToTransactionsRecord($prodID, $employeeID, $date,$time,$quantity){
 
-                $transactionID = $this->db_holder->lastInsertId();
-            }catch(PDOException $e){
-                echo $e;
-            }
-                echo  $transactionID;
-                $sql2 = "INSERT INTO transactions_info
-                        VALUES(?,?)";
-                $stmt2  = $this->db_holder->prepare($sql2);
-                $stmt2 -> execute(array($transactionID,$quantity));
+            $sql1 = "INSERT INTO transactions
+                    VALUES(null,?,?,?,?)";
+            $stmt1  = $this->db_holder->prepare($sql1);
+            $stmt1 -> execute(array($prodID, $employeeID, $date,$time));
 
-            $this->close_connection();
+            $transactionID = $this->db_holder->lastInsertId();
+
+            $sql2 = "INSERT INTO transactions_info
+                    VALUES(?,?)";
+            $stmt2  = $this->db_holder->prepare($sql2);
+            $stmt2 -> execute(array($transactionID,$quantity));
+            return $transactionID;
+
+        }
+
+        function updateTransactionsInfo($transactionID,$quantity){
+
+            $sql = "UPDATE transactions_info
+                    SET number_of_items = number_of_items + ?
+                    WHERE transaction_id = ?";
+            $stmt  = $this->db_holder->prepare($sql);
+            $stmt -> execute(array($quantity,$transactionID));
+
         }
 
     }
