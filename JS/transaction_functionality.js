@@ -6,7 +6,6 @@ $(function(){
 	 $('.pagination').on('click','li a', function(){
 	 	var page = parseInt($(this).html());
 		$('#currentPage').val(page-1);
-		//alert(page);
 		searchProductForTransaction()
 	 })
 	 $('.pagination').on('click','button', function(){
@@ -132,7 +131,10 @@ $(function(){
 
  /*-----------FUNCTION FOR SEARCHING PRODUCTS----------*/
  function searchProductForTransaction(){
-
+ 	$('#search_item').css({'background':'url(../CSS/img_tbls/loading.gif)',
+ 					 'background-repeat':'no-repeat',
+ 					 'background-size':'100% 100%;',
+ 					 'background-position':'right'})
  	var pageLimit = 5;
  	var toSearch = $('#search_item').val();
  	var pageActive = parseInt($('#currentPage').val());
@@ -158,6 +160,9 @@ $(function(){
 		},
 		error:function(data){
 			alert("Error on Searching products => "+ data);
+		},
+		complete:function(){
+			$('#search_item').css({'background':'none'});
 		}
 
 	})
@@ -258,8 +263,7 @@ function saveTransaction(){
         type:"POST",
         url: "../PHP/OBJECTS/transaction/saveTransaction.php",
         data: obj,
-        success:function(data){
-        	alert(data);
+        success:function(data){	
         	$('#shopping_list_table').hide('blind',500);
             $('#shopping_list_tbody tr').each(function( index ){
             	if(index != 0)
@@ -267,6 +271,7 @@ function saveTransaction(){
             });
 
             $('#products_to_transact_tbody tr').css({'text-decoration':'none'});
+            totalPayment = 0;
         },
         error:function(data){
             alert("Error on saving transaction => "+ data);
