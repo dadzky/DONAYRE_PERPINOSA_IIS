@@ -25,6 +25,7 @@
     padding: 10px;
     width: 700px;
     margin: 0 auto;
+    text-align: center;
 }
 
 #overlay_div_container {
@@ -37,6 +38,7 @@
     width: 100%;
     height: 100%;
     z-index: 5;
+    text-align: center;
 }
 
 #add_employees_div {
@@ -68,7 +70,7 @@
     margin: 0 auto;
 }
 
-#add_employee_button {
+#add_employee_button, #save_employee_button {
     float: left;
     left: 0px;
 }
@@ -88,4 +90,32 @@
     border-top: 1px double #000000;
     text-align: center;
     padding: 20px;
+    text-align: center;
+}
+
+#display_employees_div table tr th, #display_employees_div table tr td {
+    text-align: center;
+}
+
+
+#action_options_div {
+    position: absolute;
+    z-index: 10;
+    text-align: center;
+    background: #ffffff;
+    height: 100px;
+    width: 400px;
+    padding: 20px;
+    top: 200px;
+    left: 35%;
+}
+
+#action_options_div div {
+    margin-top: 50px;
+}
+
+#close_action_options_span {
+    float: right;
+    margin-right: -35px;
+    margin-top: -35px;
 }

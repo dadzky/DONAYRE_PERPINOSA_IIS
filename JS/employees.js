@@ -9,6 +9,9 @@ $(function() {
     $("#packers_table").hide();
     $("#porters_table").hide();
     $("#employee_added_successfully_p").hide();
+    $("#job_type_jobs_option").hide();
+    $("#action_options_div").hide();
+    $("#save_employee_button").hide();
 
     $("#employees_category_div").buttonset();
 
@@ -41,11 +44,13 @@ $(function() {
         $("#porters_table").hide();
         //$(this).css("color", "dodgerblue");
     });
+
     $("#packers_category_button").click(function() {
         $("#cashiers_table").hide();
         $("#packers_table").slideDown(300);
         $("#porters_table").hide();
     });
+
     $("#porters_category_button").click(function() {
         $("#cashiers_table").hide();
         $("#packers_table").hide();
@@ -135,16 +140,83 @@ $(function() {
 
     // ====================== SEARCH EMPLOYEE ===============
 
-    $("#search_employee_input_field").keyup(function() {
+    $("#search_cashier_input_field").keyup(function() {
+        var job_type = "cashier";
         $.ajax({
             type: "POST",
             url: "../PHP/OBJECTS/EMPLOYEES/search_employee.php",
-            data: {"name_to_search": $("#search_employee_input_field").val()},
+            data: {"name_to_search": $("#search_cashier_input_field").val(), "job_type": job_type},
             success: function(data) {
-                $("#display_employees_div").html(data);
+                if(data != "") {
+                    $("#display_cashier_employees_table").html(data);
+                } else {
+                    $("#display_cashier_employees_table").html("<tr><td colspan='5'>No result....</td></tr>");
+                }
             },
             error: function(data) {
                 console.log("Error in searching employee = " + JSON.stringify(data));
+            }
+        });
+        if($("#search_cashier_input_field").val() == "") {
+            display_employees();
+        }
+    });
+
+    $("#search_packer_input_field").keyup(function() {
+        var job_type = "packer";
+        $.ajax({
+            type: "POST",
+            url: "../PHP/OBJECTS/EMPLOYEES/search_employee.php",
+            data: {"name_to_search": $("#search_packer_input_field").val(), "job_type": job_type},
+            success: function(data) {
+                if(data != "") {
+                    $("#display_packer_employees_table").html(data);
+                } else {
+                    $("#display_packer_employees_table").html("<tr><td colspan='5'>No result....</td></tr>");
+                }
+            },
+            error: function(data) {
+                console.log("Error in searching employee = " + JSON.stringify(data));
+            }
+        });
+        if($("#search_packer_input_field").val() == "") {
+            display_employees();
+        }
+    });
+
+    $("#search_porter_input_field").keyup(function() {
+        var job_type = "porter";
+        $.ajax({
+            type: "POST",
+            url: "../PHP/OBJECTS/EMPLOYEES/search_employee.php",
+            data: {"name_to_search": $("#search_porter_input_field").val(), "job_type": job_type},
+            success: function(data) {
+                if(data != "") {
+                    $("#display_porter_employees_table").html(data);
+                } else {
+                    $("#display_porter_employees_table").html("<tr><td colspan='5'>No result....</td></tr>");
+                }
+            },
+            error: function(data) {
+                console.log("Error in searching employee = " + JSON.stringify(data));
+            }
+        });
+        if($("#search_porter_input_field").val() == "") {
+            display_employees();
+        }
+    });
+
+    // ============== SAVING EMPLOYEES DATA ===========
+    $("#save_employee_button").click(function() {
+        $.ajax({
+            type: "POST",
+            url: "",
+            data: {},
+            success: function() {
+
+            },
+            error: function(data) {
+                console.log("Error in saving employee's data = " + JSON.stringify(data));
             }
         });
     });
@@ -163,4 +235,52 @@ function display_employees() {
             console.log("Error in displaying employees = " + JSON.stringify(data));
         }
     });
+}
+
+function show_action_options(id) {
+    $("#overlay_div_container").show();
+    $("#action_options_div").show();
+
+    $("#edit_employees_info_button").click(function() {
+        $.ajax({
+            type: "POST",
+            url: "../PHP/OBJECTS/EMPLOYEES/retrieve_employees_data_to_update.php",
+            data: {"id": id},
+            success: function(data) {
+                var parsed_data = JSON.parse(data);
+                $("#id").val(parsed_data.employee_id);
+                $("#firstname").val(parsed_data.firstname);
+                $("#lastname").val(parsed_data.lastname);
+                $("#gender").val(parsed_data.gender);
+                $("#birthday_month").val(parsed_data.birth_month);
+                $("#birthday_date").val(parsed_data.birth_date);
+                $("#birthday_year").val(parsed_data.birth_year);
+                $("#address").val(parsed_data.address);
+                $("#contact_number").val(parsed_data.contact_number);
+                $("#job_type").val(parsed_data.type_of_job);
+
+                if(parsed_data.type_of_job == "cashier") {
+                    $("#username").val(parsed_data.username);
+                    $("#add_employees_form h5").html("UPDATE CASHIER'S ACCOUNT");
+                    $("#add_account_for_cashier_div").show();
+                } else {
+                    $("#add_account_for_cashier_div").hide();
+                }
+                $("#action_options_div").hide();
+                $("#add_employee_button").hide();
+                $("#save_employee_button").show();
+
+                $("#add_employees_form h4").html("UPDATE EMPLOYEE'S INFORMATION")
+                $("#overlay_div_container").show();
+                $("#add_employees_div").slideDown(200);
+            },
+            error: function(data) {
+                console.log("Error in retrieving employees data to update = " + JSON.stringify(data));
+            }
+        });
+    });
+}
+
+function validate_employees_info() {
+
 }
