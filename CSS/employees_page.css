@@ -48,7 +48,7 @@
     width: 500px;
     margin-left: 200px;
     background: ghostwhite;
-    z-index: 500;
+    z-index: 20;
     text-align: center;
 }
 
@@ -70,14 +70,13 @@
     margin: 0 auto;
 }
 
-#add_employee_button, #save_employee_button {
+#add_employee_button, #save_employee_button, #fire_employee_remarks_div button {
     float: left;
     left: 0px;
 }
 
-#add_employees_form input[type = "reset"] {
+#add_employees_form input[type = "reset"], #fire_employee_remarks_div input[type = "reset"] {
     float: right;
-    /*margin-right: 145px;*/
 }
 
 .warning {
@@ -118,4 +117,28 @@
     float: right;
     margin-right: -35px;
     margin-top: -35px;
+}
+
+#fire_employee_remarks_div {
+    top: 40px;
+    position: absolute;
+    padding: 30px;
+    width: 500px;
+    margin-left: 33%;
+    background: ghostwhite;
+    z-index: 20;
+    text-align: center;
+}
+
+#fire_employee_remarks_div textarea {
+    resize: none;
+    width: 400px;
+    height: 150px;
+    margin: 0 auto;
+}
+
+#fire_employee_remarks_div #close_remarks_div_span {
+    float: right;
+    margin-right: -45px;
+    margin-top: -45px;
 }

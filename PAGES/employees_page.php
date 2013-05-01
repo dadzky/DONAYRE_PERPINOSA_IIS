@@ -118,11 +118,14 @@
                     </dl><!-- ============= add employees dl ends -->
                     <p class = "warning" id = "add_employee_warning">Please fill-up all fields and check the inputted employee's data!</p>
                     <input type = "reset" value = "reset" class = "btn btn-danger" />
-                </form>
+                </form><!-- ============= Add employees form ends ================ -->
                 <p id = "employee_added_successfully_p">New employee was added successfully!</p>
                 <button id = "add_employee_button" class = "btn btn-primary">&nbsp;add&nbsp;</button>
                 <button id = "save_employee_button" class = "btn btn-primary">&nbsp;save&nbsp;</button>
             </div><!-- ==================== add employees div ends ========================= -->
+            <div id = "fired_employees_div">
+                <table id = "fired_employees_table"></table>
+            </div><!-- ========== fired enployees div ends =========== -->
         </div><!-- ================== employees main div container ends ==================== -->
 
         <!-- ======================== HIDDEN FOR POP-UPS / OVERLAYS AND OTHERS =========================-->
@@ -135,6 +138,27 @@
                 <button class = "btn btn-danger" id = "fire_employee_button"><li class = "icon-remove"></li>fire employee</button>
             </div>
         </div><!--============ action_options_div ends ============== -->
+        <div id = "fire_employee_confirmation_div">
+            Sure to fire the selected employee?
+        </div><!-- =========== fire_employee_confirmation div ends ==============-->
+        <div id = "fire_employee_remarks_div">
+            <span id = "close_remarks_div_span"><img src="../CSS/images/close_icon.png"></span>
+            <h3>FIRING EMPLOYEE</h3>
+            <form id = "fire_employee_remarks_form">
+                <dl>
+                    <dt>
+                        Employee Name:
+                    </dt>
+                        <dd id = "fire_employee_name"></dd>
+                    <dt>Date fired:</dt>
+                        <dd id = "date_fired"></dd>
+                    <dt>FIRING REMARKS:</dt>
+                        <dd><textarea id = "firing_remarks_textarea" name = "firing_remarks_textarea" placeholder = "Please leave a firing remarks here"></textarea></dd>
+                </dl>
+                <input type = "reset" class = "btn btn-danger" id = "cancel_firing_button" value = " cancel firing " />
+            </form>
+            <button class = "btn btn-primary" id = "submit_firing_remarks_button">submit remarks</button>
+        </div>
         <input type = "hidden" id = "id" name = "id" />
 
         <!-- ======================== IMPORTS [ IMPORTSTANTS :D ]========================= -->

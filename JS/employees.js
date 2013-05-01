@@ -12,8 +12,11 @@ $(function() {
     $("#job_type_jobs_option").hide();
     $("#action_options_div").hide();
     $("#save_employee_button").hide();
+    $("#fire_employee_confirmation_div").hide();
+    $("#fire_employee_remarks_div").hide();
 
     $("#employees_category_div").buttonset();
+    get_current_date_and_time();
 
     // ============ ADDING OPTIONS TO SELECT TAGS ================
 
@@ -42,7 +45,6 @@ $(function() {
         $("#cashiers_table").slideDown(300);
         $("#packers_table").hide();
         $("#porters_table").hide();
-        //$(this).css("color", "dodgerblue");
     });
 
     $("#packers_category_button").click(function() {
@@ -60,13 +62,44 @@ $(function() {
     $("#add_employees_close_span").click(function() {
         $("#add_employees_div").slideUp(300);
         $("#overlay_div_container").slideUp(300);
+        $("#add_account_for_cashier_div").hide();
+        $("#add_employee_button").show();
+        $("#save_employee_button").hide();
+        $("#add_employees_form h4").html("EMPLOYEE'S REGISTRATION FORM");
+        $("#add_employees_form h5").html("Create Cashier's Account:");
+    });
+
+    $("#close_action_options_span").click(function() {
+        $("#overlay_div_container").hide();
+        $("#action_options_div").hide();
+    });
+
+    $("#close_remarks_div_span").click(function() {
+        $("#overlay_div_container").slideUp(200);
+        $("#fire_employee_remarks_div").slideUp(200);
+    });
+
+    $("#submit_firing_remarks_button").click(function() {
+        if($("#firing_remarks_textarea").val() != "") {
+            $.ajax({
+                type: "POST",
+                url: "../PHP/OBJECTS/EMPLOYEES/fire_employee.php",
+                data: {"id": $("#id").val(), "date": $("#date_fired").html(), "remarks": $("#firing_remarks_textarea").val()},
+                success: function() {
+                    alert("succeed");
+                },
+                error: function(data) {
+                    console.log("Error in firing employee = " + data['statusText']);
+                }
+            });
+        }
     });
 
     // ====================== EMPLOYEES' DATA CONTROLLERS (functions) ===========
 
     display_employees();
 
-    // ============= ADDNING EMPLOYEES ======================
+    // ============= ADDING EMPLOYEES ======================
 
     $("#job_type").change(function() {
         $("#job_type").val() == "cashier" ? $("#add_account_for_cashier_div").slideDown() :  $("#add_account_for_cashier_div").slideUp(300);
@@ -78,6 +111,7 @@ $(function() {
         var firstname = $("#firstname").val();
         var lastname = $("#lastname").val();
         var contact_number = $("#contact_number").val();
+        var address = $("#address").val();
         var job_type = $("#job_type").val();
 
         var username = $("#username").val();
@@ -88,7 +122,7 @@ $(function() {
         var firstname_valid = string_pattern.test(firstname);
         var contact_number_valid = /^[0-9]*$/.test(contact_number);
 
-        if(firstname != "" && firstname_valid && lastname != "" && lastname_valid && contact_number != "" && contact_number_valid && contact_number.length == 11) {
+        if(firstname != "" && firstname_valid && lastname != "" && lastname_valid && contact_number != "" && address != "" && contact_number_valid && contact_number.length == 11) {
             if(job_type == "cashier") {
                 if(username != "" && password != "") {
                     if(password == password_confirmation) {
@@ -108,9 +142,11 @@ $(function() {
                             }
                         });
                     } else {
+                        //password didn't match error
                         $("#password_confirmation_dd").addClass("control-group error");
                     }
                 } else {
+                    // username or password field empty warning
                     $("#username_dd").addClass("control-group error");
                     $("#password_dd").addClass("control-group error");
                 }
@@ -207,18 +243,65 @@ $(function() {
     });
 
     // ============== SAVING EMPLOYEES DATA ===========
-    $("#save_employee_button").click(function() {
-        $.ajax({
-            type: "POST",
-            url: "",
-            data: {},
-            success: function() {
 
-            },
-            error: function(data) {
-                console.log("Error in saving employee's data = " + JSON.stringify(data));
+    $("#save_employee_button").click(function() {
+        var lastname = $("#lastname").val();
+        var firstname = $("#firstname").val();
+        var contact_number = $("#contact_number").val();
+        var address = $("#address").val();
+
+        var string_pattern = /^[a-z, A-Z, -]*$/;
+        var integer_pattern = /^[0-9]*$/;
+
+        var lastname_valid = string_pattern.test(lastname);
+        var firstname_valid = string_pattern.test(firstname);
+        var contact_number_valid = integer_pattern.test(contact_number);
+
+        if(lastname!= "" && lastname_valid && firstname != "" && firstname_valid && address != "" && contact_number != "" && contact_number_valid && contact_number.length == 11) {
+            if($("#job_type").val() == "cashier") {
+                if($("#username").val() != "" && $("#password").val() != "") {
+                    if($("#password").val() == $("#password_confirmation").val()) {
+                        $.ajax({
+                            type: "POST",
+                            url: "../PHP/OBJECTS/EMPLOYEES/update_employees_data.php",
+                            data: {"employees_data": JSON.stringify($("#add_employees_form").serializeArray()), "id": $("#id").val()},
+                            success: function(data) {
+                                display_employees();
+                                $("#overlay_div_container").slideUp(200);
+                                $("#add_employees_div").slideUp(200);
+                            },
+                            error: function(data) {
+                                console.log("Error in saving employee's data = " + JSON.stringify(data));
+                            }
+                        });
+                    } else {
+                        // password didn't match warning!
+                        $("#password_confirmation_dd").addClass("control-group error");
+                    }
+                } else {
+                    // username or password empty warning
+                    $("#username_dd").addClass("control-group error");
+                    $("#password_dd").addClass("control-group error");
+                }
+            } else {
+                // job type is not a cashier, so proceed saving
+                $.ajax({
+                    type: "POST",
+                    url: "../PHP/OBJECTS/EMPLOYEES/update_employees_data.php",
+                    data: {"employees_data": JSON.stringify($("#add_employees_form").serializeArray()), "id": $("#id").val()},
+                    success: function(data) {
+                        display_employees();
+                        $("#overlay_div_container").slideUp(200);
+                        $("#add_employees_div").slideUp(200);
+                    },
+                    error: function(data) {
+                        console.log("Error in saving employee's data = " + JSON.stringify(data));
+                    }
+                });
             }
-        });
+
+        }
+
     });
 });
 
@@ -238,6 +321,7 @@ function display_employees() {
 }
 
 function show_action_options(id) {
+
     $("#overlay_div_container").show();
     $("#action_options_div").show();
 
@@ -261,7 +345,7 @@ function show_action_options(id) {
 
                 if(parsed_data.type_of_job == "cashier") {
                     $("#username").val(parsed_data.username);
-                    $("#add_employees_form h5").html("UPDATE CASHIER'S ACCOUNT");
+                    $("#add_employees_form h5").html("Update Cashier's Account");
                     $("#add_account_for_cashier_div").show();
                 } else {
                     $("#add_account_for_cashier_div").hide();
@@ -279,8 +363,51 @@ function show_action_options(id) {
             }
         });
     });
+
+    $("#fire_employee_button").click(function() {
+
+        $("#overlay_div_container").hide();
+        $("#action_options_div").hide();
+        $("#fire_employee_confirmation_div").dialog({
+            title: "FIRING CONFIRMATION",
+            show: "bounce",
+            hide: {effect: "slide", direction: "up"},
+            modal: true,
+            resizable: false,
+            draggable: false,
+            buttons: {
+                "YES": function() {
+                    $("#fire_employee_confirmation_div").dialog("close");
+                    $("#overlay_div_container").show();
+                    var employee_name = document.getElementById("employee_" + id).getElementsByTagName("td")[0].innerHTML;
+                    $("#fire_employee_name").html(employee_name);
+                    $("#fire_employee_remarks_div").slideDown(200);
+                    $("#firing_remarks_textarea").focus();
+                    $("#id").val(id);
+
+                },
+                "NO": function() {
+                    $("#fire_employee_confirmation_div").dialog("close");
+                }
+            }
+        });
+    });
 }
 
-function validate_employees_info() {
+function get_current_date_and_time() {
+    var time = new Date();
+    var month = time.getMonth();
+    var date = time.getDate();
+    var year = time.getFullYear();
 
+    month = month + 1;
+    if(month < 10) {
+        month = "0" + month;
+    }
+    if(date < 10) {
+        date = "0" + date;
+    }
+    $("#date_fired").html(year + "-" + month + "-" + date);
+
+    setTimeout(get_current_date_and_time, 1000);
 }

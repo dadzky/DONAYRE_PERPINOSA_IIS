@@ -29,7 +29,7 @@
 
             while($content = $select_statement->fetch()) {
                 if($content[7] == "cashier") {
-                    $cashier_employees .= "<tr id = 'employee_".$content[0]."' ondblclick = 'show_action_options(".$content[0].")'>
+                    $cashier_employees .= "<tr title = 'double click to show actions' id = 'employee_".$content[0]."' ondblclick = 'show_action_options(".$content[0].")'>
                                                 <td>".$content[1].", ".$content[2]."</td>
                                                 <td>".$content[3]."</td>
                                                 <td>".$content[4]."</td>
@@ -38,7 +38,7 @@
                                            </tr>";
                 }
                 if($content[7] == "packer") {
-                    $packer_employees .= "<tr id = 'employee_".$content[0]."' ondblclick = 'show_action_options(".$content[0].")'>
+                    $packer_employees .= "<tr title = 'double click to show actions' id = 'employee_".$content[0]."' ondblclick = 'show_action_options(".$content[0].")'>
                                                 <td>".$content[1].", ".$content[2]."</td>
                                                 <td>".$content[3]."</td>
                                                 <td>".$content[4]."</td>
@@ -48,7 +48,7 @@
                 }
 
                 if($content[7] == "porter") {
-                    $porter_employees .= "<tr id = 'employee_".$content[0]."' ondblclick = 'show_action_options(".$content[0].")'>
+                    $porter_employees .= "<tr title = 'double click to show actions' id = 'employee_".$content[0]."' ondblclick = 'show_action_options(".$content[0].")'>
                                                 <td>".$content[1].", ".$content[2]."</td>
                                                 <td>".$content[3]."</td>
                                                 <td>".$content[4]."</td>
@@ -134,6 +134,42 @@
                 $encoded_data = json_encode($data_array);
                 echo $encoded_data;
             }
+
+            $this->close_connection();
+        }
+
+        function update_employees_data($id, $lastname, $firstname, $gender, $birthdate, $address, $contact_number, $job_type, $username, $password) {
+            $this->open_connection();
+
+            $update_statement = $this->db_holder->prepare("UPDATE employees
+                                                              SET lastname = ?,
+                                                                  firstname = ?,
+                                                                  gender = ?,
+                                                                  birthdate = ?,
+                                                                  address = ?,
+                                                                  contact_number = ?,
+                                                                  job_type = ?
+                                                              WHERE employee_id = ?;");
+            $update_statement->execute(array($lastname, $firstname, $gender, $birthdate, $address, $contact_number, $job_type, $id));
+
+            echo "php = ".$lastname;
+
+            if($job_type == "cashier") {
+                echo "php cashier = ".$username.$password.$id;
+                $update_statement2 = $this->db_holder->prepare("UPDATE accounts
+                                                                   SET username = ?,
+                                                                       password = ?
+                                                                   WHERE employee_id = ?;");
+                $update_statement2->execute(array($username, $password, $id));
+            }
+            $this->close_connection();
+        }
+
+        function fire_employee($id, $date, $remarks) {
+            $this->open_connection();
+
+            $insert_statement = $this->dbh->prepare("INSERT INTO fired_employees VALUES (?, ?, ?);");
+            $insert_statement->execute(array($id, $date, $remarks));
 
             $this->close_connection();
         }
