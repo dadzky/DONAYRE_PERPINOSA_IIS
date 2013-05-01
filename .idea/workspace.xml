@@ -1,19 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="64a0a310-e0d0-4c4c-8ce0-1ad2cc8f2750" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CSS/admin_home_content.css" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/admins_page.css" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PAGES/admin_home_content.html" afterPath="$PROJECT_DIR$/PAGES/admin_home_content.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PAGES/adminhome.php" afterPath="$PROJECT_DIR$/PAGES/adminhome.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CSS/employees_page.css" afterPath="$PROJECT_DIR$/CSS/employees_page.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PAGES/employees_page.php" afterPath="$PROJECT_DIR$/PAGES/employees_page.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CSS/includes_all_css_files.css" afterPath="$PROJECT_DIR$/CSS/includes_all_css_files.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CSS/page_footer.css" afterPath="$PROJECT_DIR$/CSS/page_footer.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PAGES/page_header.html" afterPath="$PROJECT_DIR$/PAGES/page_header.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CSS/product_page.css" afterPath="$PROJECT_DIR$/CSS/product_page.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="64a0a310-e0d0-4c4c-8ce0-1ad2cc8f2750" name="Default" comment="" />
     <ignored path="IIS_PROJECT_HUB.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="64a0a310-e0d0-4c4c-8ce0-1ad2cc8f2750" time="1367363579027" ignored="false" />
