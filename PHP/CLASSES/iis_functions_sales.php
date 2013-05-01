@@ -4,7 +4,7 @@
     include "database_connection.php";
     
     class Iis_functions_sales extends Database_connection {
-
+        /*------------FOR TRANSACTIONS-----------*/
     	function searchProductWithCost($toSearch, $page, $pageLimit,$pageActive){	
 
     		$this->open_connection();
@@ -135,5 +135,114 @@
             $stmt -> execute(array($quantity,$transactionID));
 
         }
+
+        /*------------END OF TRANSACTIONS-----------*/
+
+        /*-----------FOR TRANSACTION RECORDS---------*/
+
+        function displayTransactionRecords($currentPage,$pageLimit){
+
+            $this->open_connection();
+
+                $sql1 = "SELECT DISTINCT transaction_date
+                        FROM transactions
+                        ORDER BY transaction_date DESC
+                        LIMIT $currentPage,$pageLimit"; 
+                $stmt1 = $this->db_holder->query($sql1);
+
+                while($date = $stmt1->fetch()){
+                    
+                    $records = "";
+                    $totalIncome = 0;
+
+                    $sql2 = "SELECT DISTINCT t.transaction_time, CONCAT(e.firstname ,' ', e.lastname), p.product_name, CONCAT(ti.number_of_items, ' ' , p.stock_unit),ti.number_of_items*p.product_price
+                            FROM employees AS e, products AS p, transactions AS t, transactions_info AS ti
+                            WHERE p.product_id = t.product_id
+                            AND e.employee_id = t.employee_id
+                            AND t.transaction_id = ti.transaction_id
+                            AND t.transaction_date = ?";                            
+
+                    $stmt2 = $this->db_holder->prepare($sql2);
+                    $stmt2 -> execute(array($date[0]));
+
+                    $recLength = 1;
+                    while($rec = $stmt2->fetch()){
+                        $records .= "<tr >";
+                        $records .= "<td>".$rec[0]."</td>";
+                        $records .= "<td>".ucwords($rec[1])."</td>";
+                        $records .= "<td>".$rec[2]."</td>";
+                        $records .= "<td>".$rec[3]."</td>";
+                        $records .= "<td>&#8369; ".$rec[4]."</td>";
+                        $records .= "</tr>";
+                        $recLength++;   
+                        $totalIncome = $totalIncome+$rec[4];
+                    }
+                    echo "<tr><th rowspan=".$recLength.">".$date[0]."</th></tr>".$records;
+                    echo "<tr class='info totalIncome_tr'><td colspan='5'>Daily Total Income </td><td>&#8369; ".$totalIncome."</td></tr>";
+                    
+                }
+
+            $this->close_connection();           
+        }
+        
+        function displayPager($pageLimit, $toSearch){
+
+            $pagerLI = "";
+            $pagerContent = "";
+            $this->open_connection();
+
+                $sql = "SELECT COUNT(DISTINCT transaction_date) AS pages
+                         FROM transactions";
+                $stmt = $this->db_holder->query($sql);
+                $pages = $stmt->fetch(PDO::FETCH_ASSOC);
+
+                $pages['pages'] = $pages['pages'] / intval($pageLimit);
+
+                if(is_float($pages['pages'])){
+                    $pages['pages'] = $pages['pages']+1;
+                }
+
+                for($ctr=1;$ctr<=intval($pages['pages']);$ctr++){
+                    if($ctr == 1){
+                         $pagerLI .= "<li class='active'><a href='#'>".$ctr."</a></li>";
+                    }else{
+                         $pagerLI .= "<li><a href='#'>".$ctr."</a></li>";
+                    }                
+                }
+
+                $pagerContent .="<button class='btn-primary' id='pager_prev'>prev</button>";
+                $pagerContent .="<ul>";
+                $pagerContent .=    $pagerLI;                 
+                $pagerContent .= "</ul>";
+                $pagerContent .= "<button class='btn-primary' id='pager_next'>next</button>";
+                $n_pages = $pages['pages'];
+
+                $obj = array("pager" => $pagerContent, "n_pages" => intval($n_pages));
+                $encoded = json_encode($obj);
+                echo $encoded;
+
+
+            $this->close_connection();
+        }
+
+        function displayMonthlySales(){
+
+            $this->open_connection();
+
+                $sql = "SELECT month( t.transaction_date ) , SUM( p.product_price * ti.number_of_items ) AS total
+                        FROM products AS p, transactions AS t, transactions_info AS ti
+                        WHERE p.product_id = t.product_id
+                        AND t.transaction_id = ti.transaction_id
+                        GROUP BY month( t.transaction_date )";
+                $stmt = $this->db_holder->query($sql);
+
+                $monthlySales = $stmt->fetchAll();
+
+            $this->close_connection();
+
+            $encoded = json_encode($monthlySales);
+            echo $encoded;
+        }
+        /*-----------END OF TRANSACTION RECORDS---------*/
 
     }

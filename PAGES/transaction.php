@@ -11,12 +11,13 @@
  
         <div id = "transaction_wrapper_div">
 
-            <table class='table table-striped table-hover table-bordered'>
+            <table class='products_tbl table table-striped table-hover table-bordered'>
                 <thead>
                     <tr >
-                        <th colspan='3'>
-                            <input type='text' id='search_item' class='input-large search-query' placeholder='Search for an item'/>
+                        <th colspan='2'>
+                            <input type='text' id='search_item' class='input-large search-query' placeholder='Search for an item' />
                         </th>
+                       
                      </tr>
                      <tr>                    
                         <th>Product Name</th>

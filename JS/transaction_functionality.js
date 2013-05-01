@@ -6,7 +6,6 @@ $(function(){
 	 $('.pagination').on('click','li a', function(){
 	 	var page = parseInt($(this).html());
 		$('#currentPage').val(page-1);
-		//alert(page);
 		searchProductForTransaction()
 	 })
 	 $('.pagination').on('click','button', function(){
@@ -121,7 +120,6 @@ $(function(){
 	 })
 	 $(document).keypress(function(e){
 	 	var rows = $('#shopping_list_tbody tr').length;
-
 	 	if(e.charCode == 66 && rows > 1){
             confirmationDialogForTransaction();
 	 	}
@@ -132,7 +130,10 @@ $(function(){
 
  /*-----------FUNCTION FOR SEARCHING PRODUCTS----------*/
  function searchProductForTransaction(){
-
+ 	$('#search_item').css({'background':'url(../CSS/img_tbls/loading.gif)',
+ 					 'background-repeat':'no-repeat',
+ 					 'background-size':'100% 100%;',
+ 					 'background-position':'right'})
  	var pageLimit = 5;
  	var toSearch = $('#search_item').val();
  	var pageActive = parseInt($('#currentPage').val());
@@ -158,6 +159,9 @@ $(function(){
 		},
 		error:function(data){
 			alert("Error on Searching products => "+ data);
+		},
+		complete:function(){
+			$('#search_item').css({'background':'none'});
 		}
 
 	})
@@ -195,8 +199,9 @@ function saveToShoppingList(prodId,prodName,prodCost,prodUnit,tblRow){
 				title: "Quantity",
 			    buttons: {
 			    	"Proceed": function(){
-			    		if(regexInt.test($('#product_quantity').val())){
-			    			displayToShoppingList(prodId,prodName,prodCost,prodUnit,$('#product_quantity').val());
+			    		var quantity = $('#product_quantity').val();
+			    		if(regexInt.test(quantity) && quantity > 0){
+			    			displayToShoppingList(prodId,prodName,prodCost,prodUnit,quantity);
 			    			$('#quantity_div').removeClass('control-group error');
 			    			$(tblRow).css({'text-decoration':'line-through'});
 			    			$(this).dialog('close');
@@ -219,7 +224,6 @@ function displayToShoppingList(prodId,prodName,prodCost,prodUnit,productQuantity
 	var id = prodId.substring(19);
 	var subTotal = parseFloat(prodCost)*parseInt(productQuantity);
 	totalPayment += subTotal; /*-global ini na totalPayment variable-*/
-
 	var newId = "tr_to_transact_"+id;
 	
 	var tbody = "<tr  id='"+newId+"'>"+
@@ -258,8 +262,7 @@ function saveTransaction(){
         type:"POST",
         url: "../PHP/OBJECTS/transaction/saveTransaction.php",
         data: obj,
-        success:function(data){
-        	alert(data);
+        success:function(data){	
         	$('#shopping_list_table').hide('blind',500);
             $('#shopping_list_tbody tr').each(function( index ){
             	if(index != 0)
@@ -267,6 +270,7 @@ function saveTransaction(){
             });
 
             $('#products_to_transact_tbody tr').css({'text-decoration':'none'});
+            totalPayment = 0;
         },
         error:function(data){
             alert("Error on saving transaction => "+ data);
