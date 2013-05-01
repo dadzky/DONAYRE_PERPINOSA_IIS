@@ -31,9 +31,9 @@
                         <dd id = 'number_of_stocks_dd'><input type = "text" name = "number_of_stocks" id = "number_of_stocks" /></dd>
                     <dt>Stock Unit:</dt>
                         <dd id = "stock_unit_dd"><select name = "stock_unit" id = "stock_unit">
-                                <option>pieces</option>
-                                <option>packs</option>
-                                <option>klg</option>
+                                <option>piece</option>
+                                <option>pack</option>
+                                <option>kg</option>
                                 <option>g</option>
                                 <option>lbs</option>
                                 <option>others</option>
@@ -47,7 +47,7 @@
             </div><!-- ======= add products div ends ======== -->
         </div>
 
-        <!-- ================ FOR DIALOGS ================== -->
+        <!-- ================ HIDDEN FOR DIALOGS ================== -->
         <div id = "delete_product_confirmation_div">
             Sure to delete the selected product(s)?
         </div><!-- ================= delete product confirmation div ends ==================-->

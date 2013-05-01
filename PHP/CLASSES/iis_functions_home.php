@@ -1,6 +1,6 @@
 <?php
 
-    include_once "database_connection.php";
+    include "database_connection.php";
 
 
     class Iis_functions_home extends Database_connection {
@@ -57,17 +57,14 @@
         function get_cashiers_data($username_entered) {
             $this->open_connection();
 
-            $select_statement = $this->db_holder->prepare("SELECT CONCAT(e.lastname, ', ',
-                                                                         e.firstname), employee_id
+            $select_statement = $this->db_holder->prepare("SELECT e.employee_id
                                                             FROM employees AS e,
                                                                  accounts AS a
                                                            WHERE e.employee_id = a.employee_id AND
                                                                  a.username = ?;");
             $select_statement->execute(array($username_entered));
             $content = $select_statement->fetch();
-            $data_array = array("cashier_fullname"=>$content[0], "cashier_id"=>$content[1]);
-            return $data_array;
-
+            return $content[1];
             $this->close_connection();
         }
 

@@ -10,7 +10,7 @@
             <h2>Employees</h2>
             <div id = "employees_actions_div">
                 <ul id = "employees_actions_ul">
-                    <li><span><img src = "../CSS/images/search_icon1.png" /></span><input type = "text" id = "search_employee_input_field" class = "search-query" placeholder = "Search employee here"/></li>
+                    <li></li>
                     <li><accr title = "add new employee"><img src = "../CSS/images/add_employee_icon.png" id = "add_employees_image"/></accr></li>
                     <li><accr title = "show fired employees"><img src = "../CSS/images/show_icon.png" /></accr></li>
                 </ul>
@@ -25,6 +25,12 @@
                 <table id = "cashiers_table" class = "table table-striped table-bordered table-condensed">
                     <caption>CASHIERS</caption>
                     <tr>
+                        <th colspan="5">
+                            <img src = "../CSS/images/search_icon1.png" />
+                            <input type = "text" id = "search_cashier_input_field" class = "search-query" placeholder = "Search employee here"/>
+                        </th>
+                    </tr>
+                    <tr>
                         <th>NAME</th>
                         <th>GENDER</th>
                         <th>BIRTHDAY</th>
@@ -35,6 +41,12 @@
                 </table>
                 <table id = "packers_table" class = "table table-striped table-bordered table-condensed">
                     <caption>PACKERS</caption>
+                    <tr>
+                        <th colspan="5">
+                            <img src = "../CSS/images/search_icon1.png" />
+                            <input type = "text" id = "search_packer_input_field" class = "search-query" placeholder = "Search employee here"/>
+                        </th>
+                    </tr>
                     <tr>
                         <th>NAME</th>
                         <th>GENDER</th>
@@ -47,6 +59,12 @@
                 <table id = "porters_table" class = "table table-striped table-bordered table-condensed">
                     <caption>PORTERS</caption>
                     <tr>
+                        <th colspan="5">
+                            <img src = "../CSS/images/search_icon1.png" />
+                            <input type = "text" id = "search_porter_input_field" class = "search-query" placeholder = "Search employee here"/>
+                        </th>
+                    </tr>
+                    <tr>
                         <th>NAME</th>
                         <th>GENDER</th>
                         <th>BIRTHDAY</th>
@@ -56,7 +74,7 @@
                     <tbody id = "display_porter_employees_table"></tbody>
                 </table>
             </div><!-- ================ display employees div container ends ==================== -->
-            <div id = "overlay_div_container"></div>
+
             <div id = "add_employees_div">
                 <span id = "add_employees_close_span"><img src = "../CSS/images/close_icon.png"></span>
                 <form id = "add_employees_form">
@@ -80,15 +98,15 @@
                             <dd id = "contact_number_dd"><input type = "text" name = "contact_number" id = "contact_number" /></dd>
                         <dt>Job type:</dt>
                             <dd><select name = "job_type" id = "job_type">
-                                    <option>manager</option>
+                                    <option id = "job_type_jobs_option">-- JOBS --</option>
                                     <option>cashier</option>
                                     <option>packer</option>
                                     <option>porter</option>
                             </select></dd>
 
                         <div id = "add_account_for_cashier_div">
-                            <h4>Create Cashier's Account:</h4>
-                            <dl id = "add_account_for_cashier_dl">
+                            <h5>Create Cashier's Account:</h5>
+                            <dl id = "add_account_for_cashier_d l">
                                 <dt>Username:</dt>
                                     <dd id = "username_dd"><input type = "text" name = "username" id = "username" /></dd>
                                 <dt>Password:</dt>
@@ -100,13 +118,50 @@
                     </dl><!-- ============= add employees dl ends -->
                     <p class = "warning" id = "add_employee_warning">Please fill-up all fields and check the inputted employee's data!</p>
                     <input type = "reset" value = "reset" class = "btn btn-danger" />
-                </form>
+                </form><!-- ============= Add employees form ends ================ -->
                 <p id = "employee_added_successfully_p">New employee was added successfully!</p>
                 <button id = "add_employee_button" class = "btn btn-primary">&nbsp;add&nbsp;</button>
+                <button id = "save_employee_button" class = "btn btn-primary">&nbsp;save&nbsp;</button>
             </div><!-- ==================== add employees div ends ========================= -->
+            <div id = "fired_employees_div">
+                <table id = "fired_employees_table"></table>
+            </div><!-- ========== fired enployees div ends =========== -->
         </div><!-- ================== employees main div container ends ==================== -->
 
-        <!-- ======================== IMPORTS ========================= -->
+        <!-- ======================== HIDDEN FOR POP-UPS / OVERLAYS AND OTHERS =========================-->
+        <div id = "overlay_div_container"></div>
+        <div id = "action_options_div">
+            <span id = "close_action_options_span"><img src="../CSS/images/close_icon.png"></span>
+            ACTIONS:
+            <div>
+                <button class = "btn btn-primary" id = "edit_employees_info_button"><li class = "icon-edit"></li>update info</button>
+                <button class = "btn btn-danger" id = "fire_employee_button"><li class = "icon-remove"></li>fire employee</button>
+            </div>
+        </div><!--============ action_options_div ends ============== -->
+        <div id = "fire_employee_confirmation_div">
+            Sure to fire the selected employee?
+        </div><!-- =========== fire_employee_confirmation div ends ==============-->
+        <div id = "fire_employee_remarks_div">
+            <span id = "close_remarks_div_span"><img src="../CSS/images/close_icon.png"></span>
+            <h3>FIRING EMPLOYEE</h3>
+            <form id = "fire_employee_remarks_form">
+                <dl>
+                    <dt>
+                        Employee Name:
+                    </dt>
+                        <dd id = "fire_employee_name"></dd>
+                    <dt>Date fired:</dt>
+                        <dd id = "date_fired"></dd>
+                    <dt>FIRING REMARKS:</dt>
+                        <dd><textarea id = "firing_remarks_textarea" name = "firing_remarks_textarea" placeholder = "Please leave a firing remarks here"></textarea></dd>
+                </dl>
+                <input type = "reset" class = "btn btn-danger" id = "cancel_firing_button" value = " cancel firing " />
+            </form>
+            <button class = "btn btn-primary" id = "submit_firing_remarks_button">submit remarks</button>
+        </div>
+        <input type = "hidden" id = "id" name = "id" />
+
+        <!-- ======================== IMPORTS [ IMPORTSTANTS :D ]========================= -->
         <script src = "../JS/jquery-1.9.1.min.js"></script>
         <script src = "../JS/jquery-ui-1.10.2.min.js"></script>
         <script src = "../JS/employees.js"></script>

@@ -1,7 +1,44 @@
+<?php
+    session_start();
+    //include "../PHP/OBJECTS/log_in_validation.php";
+    include "../PHP/CLASSES/iis_functions_home.php";
+
+    $execute_check = new Iis_functions_home();
+
+    if(isset($_POST["log_in_as_input"]) && isset($_POST["username_entered"]) && isset($_POST["password_entered"])) {
+        $username_entered = $_POST["username_entered"];
+        $password_entered = $_POST["password_entered"];
+        $log_in_as = $_POST["log_in_as_input"];
+
+        $username_exist = $execute_check->check_username($username_entered, $log_in_as);
+        if($username_exist) {
+            $same_password = $execute_check->check_password($username_entered, $password_entered, $log_in_as);
+            if($same_password) {
+                if($log_in_as == "cashier") {
+                    $_SESSION['username_entered'] = $username_entered;
+                    $_SESSION['password_entered'] = $password_entered;
+                    // =========== STORING CASHIERS I.D. INTO SESSION VARIABLE ========
+                    $_SESSION['employee_id'] = $execute_check->get_cashiers_data($_SESSION['username_entered']);
+                    header("Location: ../../PAGES/transaction.php");
+                } else {
+                    $_SESSION['username_entered'] = $username_entered;
+                    header("Location: ../../PAGES/admins.php");
+                }
+
+            } else {
+                $error_message = "Incorrect password!";
+
+            }
+        } else {
+            $error_message = "Unknown username!";
+        }
+    }
+?>
 <!Doctype html>
 <html>
     <head>
         <title>Log-in</title>
+        <meta content = text/html charset="utf-8">
         <link rel = "shortcut icon" href = "../CSS/images/IIS%20logos/iis0.jpg" />
         <link rel = "stylesheet" href = "../CSS/includes_all_css_files.css" />
     </head>
@@ -24,14 +61,18 @@
                 LOG-IN PAGE RELATED CONTENTS HERE!!!
             </div> <!-- ======= iis related content div ends ======= -->
             <div id = "log_in_div">
-                <form id = "log_in_form" action = "../PHP/OBJECTS/log_in_validation.php" method = "POST">
+                <form id = "log_in_form" action = "login.php" method = "POST" onsubmit="false">
                     <input type = "hidden" name = "log_in_as_input" id = "log_in_as_input" />
                     <span id = "log_in_as_span"></span>
                     <input type = "text" name = "username_entered" placeholder = "username" />
                     <input type = "password" name = "password_entered" placeholder = "password" />
-                    <?php if(isset($error_message)) echo $error_message;  ?>
-                    <input type = "submit" value = "log-in"/>
+                    <?php
+                          if(isset($error_message)) echo $error_message;
+                    ?>
+                    <br />
+                    <button class = "btn btn-info"><li class=  "icon-check"></li>log-in</button>
                 </form>
+
             </div> <!-- ====== log in div ends ======= -->
             <div id = "overlay_div_container"></div>
         </div><!-- ======= main container div ends ====== -->

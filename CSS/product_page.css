@@ -34,7 +34,7 @@
     border: 1px double dodgerblue;
 }
 
-.product_delete_action:hover ul, .product_delete_action ul:hover ul, #display_products_table tr td input:hover{
+.product_delete_action:hover ul, .product_delete_action ul:hover ul {
     visibility: visible;
     background-color: ghostwhite;
     border-top-right-radius: 15px;
