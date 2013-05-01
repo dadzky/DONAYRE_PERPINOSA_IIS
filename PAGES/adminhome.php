@@ -4,12 +4,10 @@
         <link rel = "stylesheet" href = "../CSS/includes_all_css_files.css" />
     </head>
     <body>
-        <div id = "admins_main_container">
+        <div id = "admins_main_container" class = "container-fluid">
             <?php include_once "page_header.html"; ?>
 
-            <div id = "admins_content_div" class = "container">
-
-            </div>
+            <div id = "admins_content_div"></div>
 
             <?php include_once "page_footer.html"; ?>
         </div><!-- ====== admins main container div ends ===== -->

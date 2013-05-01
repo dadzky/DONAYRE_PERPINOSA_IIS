@@ -2,6 +2,10 @@
 <html>
     <head>
         <title>Employees</title>
+        <!-- ======================== IMPORTS [ IMPORTSTANTS :D ]========================= -->
+        <script src = "../JS/jquery-1.9.1.min.js"></script>
+        <script src = "../JS/jquery-ui-1.10.2.min.js"></script>
+        <script src = "../JS/employees.js"></script>
         <link rel = "shortcut icon" href = "../CSS/images/IIS%20logos/iis0.jpg" />
         <link rel = "stylesheet" href = "../CSS/includes_all_css_files.css" />
     </head>
@@ -161,9 +165,5 @@
         </div>
         <input type = "hidden" id = "id" name = "id" />
 
-        <!-- ======================== IMPORTS [ IMPORTSTANTS :D ]========================= -->
-        <script src = "../JS/jquery-1.9.1.min.js"></script>
-        <script src = "../JS/jquery-ui-1.10.2.min.js"></script>
-        <script src = "../JS/employees.js"></script>
     </body>
 </html>

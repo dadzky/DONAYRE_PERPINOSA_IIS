@@ -1,6 +1,8 @@
 
 #employees_main_div_container {
-    border: 2px solid #000000;
+    /*border-left: 2px solid #808080;
+    border-right: 2px solid #808080;*/
+    background: #f5f5f5;
     padding: 20px;
 }
 
