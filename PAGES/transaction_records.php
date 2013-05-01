@@ -1,4 +1,4 @@
-<!Doctype html>
+<!DOCTYPE HTML>
 <html>
     <head>
         <title>Transaction Records</title>
@@ -19,10 +19,9 @@
                     <input type='text' id='pageLimit' class='input-small' value='5' />
                 </form>                          
                 Page <span class='page_number'>1</span> out of <span class='max_page'></span>      
- 
-               
+                <img id = 'loading_img' src='../CSS/img_tbls/loading.gif' alt='loading'/>             
             </div><!--page_info_div-->
-                                         
+               
             <table class='transaction_record_tbl table table-hover'>
                 <thead>                          
                      <tr>
@@ -40,10 +39,12 @@
             <div id='pagination_content'>
                 <div class='pagination'></div><!-- ========= pagination ============= -->            
                 <input type='hidden' id='currentPage' value='0' />
+                <div id='graph-toggle-div' title='click to toggle bargraph'>&#8369;</div>
             </div><!--pagination_content-->
-                
             </table> 
-            <div id='div-graph-sales'></div>         
+            <div id='graph-sales-container-div'>
+                <div id='graph-sales-div'></div> 
+            </div> <!--graph-sales-container-div-->     
         </div> <!-- ======= transaction_wrapper_div ======= -->
 
         <!-- ========= IMPORTS =======-->

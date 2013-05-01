@@ -120,7 +120,6 @@ $(function(){
 	 })
 	 $(document).keypress(function(e){
 	 	var rows = $('#shopping_list_tbody tr').length;
-
 	 	if(e.charCode == 66 && rows > 1){
             confirmationDialogForTransaction();
 	 	}
@@ -200,8 +199,9 @@ function saveToShoppingList(prodId,prodName,prodCost,prodUnit,tblRow){
 				title: "Quantity",
 			    buttons: {
 			    	"Proceed": function(){
-			    		if(regexInt.test($('#product_quantity').val())){
-			    			displayToShoppingList(prodId,prodName,prodCost,prodUnit,$('#product_quantity').val());
+			    		var quantity = $('#product_quantity').val();
+			    		if(regexInt.test(quantity) && quantity > 0){
+			    			displayToShoppingList(prodId,prodName,prodCost,prodUnit,quantity);
 			    			$('#quantity_div').removeClass('control-group error');
 			    			$(tblRow).css({'text-decoration':'line-through'});
 			    			$(this).dialog('close');
@@ -224,7 +224,6 @@ function displayToShoppingList(prodId,prodName,prodCost,prodUnit,productQuantity
 	var id = prodId.substring(19);
 	var subTotal = parseFloat(prodCost)*parseInt(productQuantity);
 	totalPayment += subTotal; /*-global ini na totalPayment variable-*/
-
 	var newId = "tr_to_transact_"+id;
 	
 	var tbody = "<tr  id='"+newId+"'>"+

@@ -224,6 +224,25 @@
 
             $this->close_connection();
         }
+
+        function displayMonthlySales(){
+
+            $this->open_connection();
+
+                $sql = "SELECT month( t.transaction_date ) , SUM( p.product_price * ti.number_of_items ) AS total
+                        FROM products AS p, transactions AS t, transactions_info AS ti
+                        WHERE p.product_id = t.product_id
+                        AND t.transaction_id = ti.transaction_id
+                        GROUP BY month( t.transaction_date )";
+                $stmt = $this->db_holder->query($sql);
+
+                $monthlySales = $stmt->fetchAll();
+
+            $this->close_connection();
+
+            $encoded = json_encode($monthlySales);
+            echo $encoded;
+        }
         /*-----------END OF TRANSACTION RECORDS---------*/
 
     }

@@ -51,3 +51,46 @@
 	-o-border-bottom-right-radius: 5px;
 	border-bottom-right-radius: 5px;
 }
+
+#graph-sales-container-div{
+	width: 700px;
+	height: 300px;
+	margin:0 auto;
+}
+#graph-sales-div{
+	border:1px solid #0088cc;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-o-border-radius: 5px;
+	border-radius: 5px;
+	margin:0 auto 100px auto;
+	background-color: #eee;
+}
+#graph-toggle-div{
+	width:15px;
+	height:15px;
+	border:1px solid;
+	float:right;
+	margin-top: -40px;
+	margin-right: 20px;
+	background: -moz-linear-gradient(top left,#0088cc,#0044cc);
+	background: -webkit-linear-gradient(top left,#0088cc,#0044cc);
+	background: -o-linear-gradient(top left,#0088cc,#0044cc);
+	-moz-transform:rotate(45deg);
+	-webkit-transform:rotate(45deg);
+	-o-transform:rotate(45deg);
+	transform:rotate(45deg);
+	text-align: center;
+
+}
+#graph-toggle-div:hover{
+	cursor:pointer;
+	-moz-transform:rotate(0deg);
+	-webkit-transform:rotate(0deg);
+	-o-transform:rotate(0deg);
+	transform:rotate(0deg);
+}
+#loading_img{
+	margin-left: 80px;
+	display: none;
+}

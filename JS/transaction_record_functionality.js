@@ -2,12 +2,13 @@ $(function(){
 
 	displayTransactionRecords();
 	displayPager();
+	displayBarGraph();
 
 	$('#pageLimit_form').submit(function(){
 		var regextInt = /^[0-9]+$/;
 		var pageLimit = parseInt($('#pageLimit').val());
 
-		if(regextInt.test(pageLimit)){
+		if(regextInt.test(pageLimit) && pageLimit > 0){
 			$('#currentPage').val(0)
 			displayTransactionRecords();
 			displayPager();
@@ -54,11 +55,15 @@ $(function(){
 
 		displayTransactionRecords();
 	});
-displayBarGraph()
+	$('#graph-toggle-div').click(function(){		
+		$('#graph-sales-container-div').slideToggle(1000)		
+	});
+
 });
 
 function displayTransactionRecords(){
-
+	$('#loading_img').show();
+	console.log('pasok')
 	var pageLimit = parseInt($('#pageLimit').val());
 	var currentPage = parseInt($('#currentPage').val());
 	currentPage = currentPage*pageLimit;
@@ -72,6 +77,9 @@ function displayTransactionRecords(){
 			},
 			error:function(data){
 				alert("Error on displaying transaction records => "+ data['status']+ " "+ data['statusText']);
+			},
+			complete:function(){
+				$('#loading_img').hide();
 			}
 		})	
 }
@@ -100,23 +108,44 @@ function displayPager(){
 }
 
 function displayBarGraph(){
-	var sampleGraph = new Array([100,'jan','#88cc00'],[100,'feb','#88cc00'],[100,'mar','#88cc00']);
-   	$('#div-graph-sales').jqBarGraph({
+	var monthNames = new Array("January","February","March","April","May","June","July","August","September","October","November","December");
+	var monthlySales = new Array();
 
-                       data: sampleGraph,
-                        //colors:["red", "yellow", "green"],
-                        width: 200,
-                        height: 200,
-                        barSpace:2,
-                        title: "<h3>Sales</h3>",
-                        prefix: "&#8369;",
-
-    });
-    /*------------------QUERY FOR MONTHLY SALES------------
-			SELECT month( t.transaction_date ) , SUM( p.product_price * ti.number_of_items ) AS total
-		FROM products AS p, transactions AS t, transactions_info AS ti
-		WHERE p.product_id = t.product_id
-		AND t.transaction_id = ti.transaction_id
-		GROUP BY month( t.transaction_date )
-		----------------------------------------------------*/
+    $.ajax({
+    	type:'POST',
+    	url:'../PHP/OBJECTS/TRANSACTION_RECORD/getMonthlySales.php',
+    	success:function(data){
+    		var obj = JSON.parse(data);
+    		var month = "";
+    		for(var ctr=0; ctr<obj.length; ctr++){
+    			var monthlySalesContent = new Array();
+    			month = monthNames[obj[ctr][0]-1];
+    			monthlySalesContent.push(obj[ctr][1]);
+    			monthlySalesContent.push(month);
+    			if(obj[ctr][1] > 100000){
+    				monthlySalesContent.push("#0044cc");
+    			}else if(obj[ctr][1] > 50000){
+    				monthlySalesContent.push("#0088cc");
+    			}else{
+    				monthlySalesContent.push("#c4e3f3");
+    			}
+    			monthlySales.push(monthlySalesContent);
+    		}
+    		$('#graph-sales-div').jqBarGraph({
+		        data: monthlySales,
+		        width: 	700,
+		        height: 200,
+		        colors: ["#0044cc","#0088cc","#c4e3f3"],
+		        barSpace:2,
+		        title: "<h3>Monthly Income</h3>",
+		        prefix: "&#8369; ",
+		        legend:true,
+		        legends:["high","average","low"]
+		    });
+    		
+    	},
+    	error:function(data){
+    		alert('Error on displaying bargraph => '+ data['status'] + " " + data['statusText']);
+    	}
+    })
 }
