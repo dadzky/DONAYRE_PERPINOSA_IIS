@@ -20,7 +20,7 @@
                     header("Location: ../../PAGES/transaction.php");
                 } else {
                     $_SESSION['username_entered'] = $username_entered;
-                    header("Location: ../../PAGES/admins.php");
+                    header("Location: ../../PAGES/adminhome.php");
                 }
 
             } else {

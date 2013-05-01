@@ -1,0 +1,201 @@
+<div>
+    admins page content
+    Stack Exchange
+    sign up log in careers 2.0
+
+    Stack Overflow
+
+    Questions
+    Tags
+    Tour
+    Users
+
+    Ask Question
+
+    Tell me more ×
+    Stack Overflow is a question and answer site for professional and enthusiast programmers. It's 100% free, no registration required.
+    Check/Uncheck checkbox with javascript?
+    up vote 9 down vote favorite
+
+
+    How can I a checkbox be checked/unchecked using javascript or jquery?
+    javascript
+    share|improve this question
+
+    asked Nov 21 '11 at 2:12
+    Liso22
+    2,22363090
+
+    5
+
+    Have you tried searching SO for how to do this? There's no mystery involved, it's a common problem. – Jared Farrish Nov 21 '11 at 2:13
+
+    google.co.uk/search?q=javascript+html+element+checkbox – cgoddard Nov 21 '11 at 2:15
+
+    possible duplicate of modify checkbox using javascript – mauris Nov 21 '11 at 2:17
+    2 Answers
+    active oldest votes
+    up vote 28 down vote accepted
+
+
+    Javascript:
+
+    // Check
+    document.getElementById("checkbox").checked = true;
+
+    //  Uncheck
+    document.getElementById("checkbox").checked = false;
+
+    jQuery (1.6+):
+
+    // Check
+    $("#checkbox").prop("checked", true);
+
+    //  Uncheck
+    $("#checkbox").prop("checked", false);
+
+    share|improve this answer
+
+    answered Nov 21 '11 at 2:14
+    Alex Peattie
+    5,72521223
+
+    2
+
+    @Jared .checked = false ? – AlexW Nov 21 '11 at 2:15
+    1
+
+    Thought it was fairly self-explanatory, but updated question accordingly – Alex Peattie Nov 21 '11 at 2:16
+    up vote 3 down vote
+
+
+    to check:
+
+    document.getElementById("id of checkbox").checked = true;
+
+    to uncheck:
+
+    document.getElementById("id of checkbox").checked = false;
+
+    share|improve this answer
+
+    answered Nov 21 '11 at 2:14
+    cgoddard
+    1,2751416
+
+    Your Answer
+
+
+    Sign up or log in
+
+    Sign up using Google
+
+    Sign up using Facebook
+
+    Sign up using Stack Exchange
+    Post as a guest
+    Name
+    Email
+
+    By posting your answer, you agree to the privacy policy and terms of service.
+    Not the answer you're looking for? Browse other questions tagged javascript or ask your own question.
+
+    tagged
+    javascript × 368807
+
+    asked
+
+
+    1 year ago
+
+    viewed
+
+
+    25675 times
+
+    active
+
+
+    1 year ago
+
+    Get the weekly newsletter!
+
+    Top questions and answers
+    Important announcements
+    Unanswered questions
+
+    see an example newsletter
+    Related
+    1424
+    How do JavaScript closures work?
+    820
+    How do I check a checkbox with jQuery or JavaScript?
+    17
+    Javascript to check whether a checkbox is being checked or unchecked
+    1274
+    How can I make a redirect page in jQuery/JavaScript?
+    868
+    Check checkbox checked property using jQuery
+    1107
+    Method like String.contains() in JavaScript
+    2
+    How to automatically uncheck a checkbox if another checkbox is checked through javascript?
+    -1
+    How to check/uncheck a checkbox with javascript in lotus notes
+    0
+    How to check if a checkbox is checked or unchecked with javascript?
+    0
+    Javascript: Check Uncheck Grouped Checkboxes
+    question feed
+    about faq badges blog chat data legal privacy policy jobs advertising info mobile contact us feedback
+    Technology 	Life / Arts 	Culture / Recreation 	Science 	Other
+
+    Stack Overflow
+    Server Fault
+    Super User
+    Web Applications
+    Ask Ubuntu
+    Webmasters
+    Game Development
+    TeX - LaTeX
+
+
+
+    Programmers
+    Unix & Linux
+    Ask Different (Apple)
+    WordPress Answers
+    Geographic Information Systems
+    Electrical Engineering
+    Android Enthusiasts
+    IT Security
+
+
+
+    Database Administrators
+    Drupal Answers
+    SharePoint
+    User Experience
+    Mathematica
+    more (14)
+
+
+
+    Photography
+    Science Fiction & Fantasy
+    Seasoned Advice (cooking)
+    Home Improvement
+    more (13)
+
+
+
+    English Language & Usage
+    Skeptics
+    Mi Yodeya (Judaism)
+    Travel
+    Arqade (gaming)
+    Bicycles
+    Role-playing Games
+    more (22)
+
+</div>

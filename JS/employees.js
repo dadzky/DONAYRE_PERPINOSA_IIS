@@ -79,21 +79,11 @@ $(function() {
         $("#fire_employee_remarks_div").slideUp(200);
     });
 
-    $("#submit_firing_remarks_button").click(function() {
-        if($("#firing_remarks_textarea").val() != "") {
-            $.ajax({
-                type: "POST",
-                url: "../PHP/OBJECTS/EMPLOYEES/fire_employee.php",
-                data: {"id": $("#id").val(), "date": $("#date_fired").html(), "remarks": $("#firing_remarks_textarea").val()},
-                success: function() {
-                    alert("succeed");
-                },
-                error: function(data) {
-                    console.log("Error in firing employee = " + data['statusText']);
-                }
-            });
-        }
+    $("#cancel_firing_button").click(function() {
+        $("#overlay_div_container").slideUp(200);
+        $("#fire_employee_remarks_div").slideUp(200);
     });
+
 
     // ====================== EMPLOYEES' DATA CONTROLLERS (functions) ===========
 
@@ -303,6 +293,26 @@ $(function() {
         }
 
     });
+
+    // ================ FIRING EMPLOYEES =============
+
+    $("#submit_firing_remarks_button").click(function() {
+        if($("#firing_remarks_textarea").val() != "") {
+            $.ajax({
+                type: "POST",
+                url: "../PHP/OBJECTS/EMPLOYEES/fire_employee.php",
+                data: {"id": $("#id").val(), "date": $("#date_fired").html(), "remarks": $("#firing_remarks_textarea").val()},
+                success: function() {
+                    alert("succeed");
+                },
+                error: function(data) {
+                    console.log("Error in firing employee = " + data['statusText']);
+                    alert(JSON.stringify(data));
+                }
+            });
+        }
+    });
+
 });
 
 function display_employees() {

@@ -452,9 +452,13 @@ function delete_products() {
 }
 
  function mark_all_check_boxes() {
-         $("#display_products_table").find("tr").find('input').attr("checked", true);
+     $("#display_products_table").find("tr").find('.mark_this').attr("checked", true);
+     //$("#display_products_table").find("tr").find('.mark_this').ckecked = true;
+     //document.getElementById("display_products_table").getElementsByTagName("tr").getElementsByClassName("mark_this").checked = true;
  }
 
 function unmark_all_check_boxes() {
-    $("#display_products_table").find("tr").find('input').attr("checked", false);
+    $("#display_products_table").find("tr").find('.mark_this').attr("checked", false);
+    //$("#display_products_table").find("tr").find('.mark_this').checked = false;
+    //document.getElementById("display_products_table").getElementsByTagName("tr").getElementsByClassName("mark_this").checked = false;
 }
