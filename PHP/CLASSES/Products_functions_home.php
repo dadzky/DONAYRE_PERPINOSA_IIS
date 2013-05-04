@@ -44,7 +44,7 @@
             $counter = 0;
             while($content = $select_statement->fetch()) {
                 while($counter < 1) {
-                    echo "<tr><th>NAME</th><th>PRICE</th><th>STOCKS</th><th>UNIT</th><th class = 'product_delete_action'><img src = '../CSS/images/trash_can.gif' id = 'delete_trash_icon' onclick = 'delete_products()' /><ul><li id = 'mark_all_delete_action' onclick = 'mark_all_check_boxes()' >Mark All</li><li id = 'unmark_all_delete_action' onclick = 'unmark_all_check_boxes()' >UnMark All</li></ul></th></tr>";
+                    echo "<tr><th>NAME</th><th>PRICE</th><th>STOCKS</th><th>UNIT</th><th class = 'product_delete_action'><img src = '../CSS/images/trash_can.gif' id = 'delete_trash_icon' /><ul><li id = 'mark_all_delete_action' >Mark All</li><li id = 'unmark_all_delete_action'>UnMark All</li></ul></th></tr>";
                     $counter++;
                 }
                 $position = strpos($content[2], ".");
@@ -80,7 +80,7 @@
             $counter = 0;
             while($content = $select_statement->fetch()) {
                 while($counter < 1) {
-                    echo "<tr><th>NAME</th><th>PRICE</th><th>STOCKS</th><th>UNIT</th><th class = 'product_delete_action'><img src = '../CSS/images/trash_can.gif' id = 'delete_trash_icon' onclick = 'delete_products(".$content[0].")' /><ul><li id = 'mark_all_delete_action' onclick = 'mark_all_check_boxes()' >Mark All</li><li id = 'unmark_all_delete_action' onclick = 'unmark_all_check_boxes()' >UnMark All</li></ul></th></tr>";
+                    echo "<tr><th>NAME</th><th>PRICE</th><th>STOCKS</th><th>UNIT</th><th class = 'product_delete_action'><img src = '../CSS/images/trash_can.gif' id = 'delete_trash_icon' onclick = 'delete_products(".$content[0].")' /><ul><li id = 'mark_all_delete_action' >Mark All</li><li id = 'unmark_all_delete_action'  >UnMark All</li></ul></th></tr>";
                     $counter++;
                 }
                 echo "<tr id = '".$content[0]."'>";
@@ -156,7 +156,7 @@
             $counter = 0;
             while($content = $select_statement->fetch()) {
                 while($counter < 1) {
-                    echo "<tr><th>NAME</th><th>PRICE</th><th>STOCKS</th><th>UNIT</th><th class = 'product_delete_action'><img src = '../CSS/images/trash_can.gif' id = 'delete_trash_icon' onclick = 'delete_products(".$content[0].")' /><ul><li id = 'mark_all_delete_action' onclick = 'mark_all_check_boxes()' >Mark All</li><li id = 'unmark_all_delete_action' onclick = 'unmark_all_check_boxes()'>UnMark All</li></ul></th></tr>";
+                    echo "<tr><th>NAME</th><th>PRICE</th><th>STOCKS</th><th>UNIT</th><th class = 'product_delete_action'><img src = '../CSS/images/trash_can.gif' id = 'delete_trash_icon' onclick = 'delete_products(".$content[0].")' /><ul><li id = 'mark_all_delete_action' >Mark All</li><li id = 'unmark_all_delete_action' >UnMark All</li></ul></th></tr>";
                     $counter++;
                 }
                 echo "<tr id = '".$content[0]."'>";

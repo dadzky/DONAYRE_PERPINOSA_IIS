@@ -21,7 +21,8 @@
         function display_employees() {
             $this->open_connection();
 
-            $select_statement = $this->db_holder->query("SELECT * FROM employees;");
+            $select_statement = $this->db_holder->query("SELECT e.* FROM employees AS e
+                                                         WHERE e.employee_id NOT IN(SELECT employee_id FROM fired_employees);");
 
             $cashier_employees = "";
             $packer_employees = "";
@@ -168,9 +169,35 @@
         function fire_employee($id, $date, $remarks) {
             $this->open_connection();
 
-            $insert_statement = $this->dbh->prepare("INSERT INTO fired_employees VALUES (?, ?, ?);");
+            $insert_statement = $this->db_holder->prepare("INSERT INTO fired_employees VALUES (?, ?, ?);");
             $insert_statement->execute(array($id, $date, $remarks));
 
+            $this->close_connection();
+        }
+
+        function display_fired_employees() {
+            $this->open_connection();
+
+            $select_statement = $this->db_holder->query("SELECT e.*, f.date_fired, f.reason
+                                                           FROM employees AS e, fired_employees AS f
+                                                           WHERE e.employee_id = f.employee_id;");
+
+            while($content = $select_statement->fetch()) {
+                echo "<tr id = 'fired_employee_".$content[0]."'>
+                        <td>".$content[1].", ".$content[2]."</td>
+                        <td>
+                            <table>
+                                <tr><td>Gender: </td><td>".$content[3]."</td></tr>
+                                <tr><td>Birthday: </td><td>".$content[4]."</td></tr>
+                                <tr><td>Address: </td><td>".$content[5]."</td></tr>
+                                <tr><td>Contact Number: </td><td>".$content[6]."</td></tr>
+                                <tr><td>Job Type: </td><td>".$content[7]."</td></tr>
+                            </table>
+                        </td>
+                        <td>".$content[8]."</td>
+                        <td>".$content[9]."</td>
+                      </tr>";
+            }
             $this->close_connection();
         }
     }

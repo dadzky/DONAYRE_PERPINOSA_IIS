@@ -2,18 +2,23 @@
 <html>
     <head>
         <title>Transaction Records</title>
-        <link rel = "stylesheet" href = "../CSS/jquery-ui.min.css" />
-        <link rel = "stylesheet" href = "../CSS/bootstrap.min.css" />
-        <link rel = "stylesheet" href = "../CSS/transaction_record_page.css" />
-
+        <link rel = "stylesheet" href = "../CSS/includes_all_css_files.css" />
     </head>
     <body>
  
         <div id = "transaction_record_wrapper_div">
 
             <div id='pager_info_div'>
-                <input type='text' id='search_record' class='input-large search-query' placeholder='Search record' /> 
-               
+                <input type='text' id='search_record' class='input-large search-query' placeholder='Search record' />
+                <select id='searchBy_select' class='span2'>
+                    <option value='p.product_name'>Product Name</option>
+                    <option value='employee'>Employee Name</option>
+                    <option value='t.transaction_date'>Date</option>
+                </select>
+                <select  id='searchByName_select' class='span2'>
+                    <option value='e.firstname'>First Name</option>
+                    <option value='e.lastname'>Last Name</option>
+                 </select>
                 <form id='pageLimit_form'>               
                     PageLimit:                
                     <input type='text' id='pageLimit' class='input-small' value='5' />

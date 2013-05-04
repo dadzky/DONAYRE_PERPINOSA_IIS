@@ -14,6 +14,21 @@ $(function() {
         $("#display_product_selected_letter").append("<option>" + alphabet_array[counter] + "</option>");
         counter++;
     }
+    // ============ MARKING AND UNMARKING checkboxes ============== //
+    $('#display_products_table').on('click','tbody li:first',function(){
+        var id = $('#display_products_table tr').find('input')
+        for(var ctr=0;ctr<id.length;ctr++){
+            var td=$(id[ctr]).context.parentNode;
+            $(td).html("<input id='"+$(id[ctr]).attr('id')+"' type='checkbox' checked='checked'>");
+        }
+    })
+    $('#display_products_table').on('click','tbody li:last',function(){
+        var id = $('#display_products_table tr').find('input')
+        for(var ctr=0;ctr<id.length;ctr++){
+            var td=$(id[ctr]).context.parentNode;
+            $(td).html("<input id='"+$(id[ctr]).attr('id')+"' type='checkbox' />");
+        }
+    });
 
     // ================= PRODUCT DATA CONTROLLERS > FUNCTIONS ====================
 
@@ -449,16 +464,4 @@ function delete_products() {
             }
         });
     }
-}
-
- function mark_all_check_boxes() {
-     $("#display_products_table").find("tr").find('.mark_this').attr("checked", true);
-     //$("#display_products_table").find("tr").find('.mark_this').ckecked = true;
-     //document.getElementById("display_products_table").getElementsByTagName("tr").getElementsByClassName("mark_this").checked = true;
- }
-
-function unmark_all_check_boxes() {
-    $("#display_products_table").find("tr").find('.mark_this').attr("checked", false);
-    //$("#display_products_table").find("tr").find('.mark_this').checked = false;
-    //document.getElementById("display_products_table").getElementsByTagName("tr").getElementsByClassName("mark_this").checked = false;
 }

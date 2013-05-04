@@ -16,16 +16,18 @@
                 <ul id = "employees_actions_ul">
                     <li></li>
                     <li><accr title = "add new employee"><img src = "../CSS/images/add_employee_icon.png" id = "add_employees_image"/></accr></li>
-                    <li><accr title = "show fired employees"><img src = "../CSS/images/show_icon.png" /></accr></li>
+                    <li><accr title = "show fired employees"><img src = "../CSS/images/show_icon.png" id = "show_fired_employees_image" /></accr></li>
                 </ul>
-            </div><!-- =============== employees actions div ends =================== -->
-            <br />
-            <div id = "display_employees_div">
                 <div id = "employees_category_div">
-                        <button id = "cashiers_category_button">cashiers</button>
-                        <button id = "packers_category_button">packers</button>
-                        <button id = "porters_category_button">porters</button>
+                    <span></span>
+                    <span>categories:</span>
+                    <button id = "cashiers_category_button">cashiers</button>
+                    <button id = "packers_category_button">packers</button>
+                    <button id = "porters_category_button">porters</button>
                 </div>
+            </div><!-- =============== employees actions div ends =================== -->
+            <div id = "display_employees_div">
+
                 <table id = "cashiers_table" class = "table table-striped table-bordered table-condensed">
                     <caption>CASHIERS</caption>
                     <tr>
@@ -80,7 +82,7 @@
             </div><!-- ================ display employees div container ends ==================== -->
 
             <div id = "add_employees_div">
-                <span id = "add_employees_close_span"><img src = "../CSS/images/close_icon.png"></span>
+                <span id = "add_employees_close_span" title = "close"><img src = "../CSS/images/close_icon.png"></span>
                 <form id = "add_employees_form">
                     <h4>EMPLOYEE'S REGISTRATION FORM</h4>
                     <dl id = "add_employees_dl">
@@ -127,15 +129,27 @@
                 <button id = "add_employee_button" class = "btn btn-primary">&nbsp;add&nbsp;</button>
                 <button id = "save_employee_button" class = "btn btn-primary">&nbsp;save&nbsp;</button>
             </div><!-- ==================== add employees div ends ========================= -->
+
             <div id = "fired_employees_div">
-                <table id = "fired_employees_table"></table>
+                <span id = "close_fired_employees_div" title = "close"><img src="../CSS/images/close_icon.png"></span>
+                <h3>FIRED EMPLOYEES</h3>
+                <table id = "fired_employees_table" class = "products_tbl table table-striped table-hover table-bordered">
+                    <tr>
+                        <th>NAME</th>
+                        <th>INFORMATIONS</th>
+                        <th>DATE FIRED</th>
+                        <th>REASON</th>
+                    </tr>
+                    <tbody id = "display_fired_employees_table"></tbody>
+                </table>
             </div><!-- ========== fired enployees div ends =========== -->
+
         </div><!-- ================== employees main div container ends ==================== -->
 
         <!-- ======================== HIDDEN FOR POP-UPS / OVERLAYS AND OTHERS =========================-->
         <div id = "overlay_div_container"></div>
         <div id = "action_options_div">
-            <span id = "close_action_options_span"><img src="../CSS/images/close_icon.png"></span>
+            <span id = "close_action_options_span" title = "close" ><img src="../CSS/images/close_icon.png"></span>
             ACTIONS:
             <div>
                 <button class = "btn btn-primary" id = "edit_employees_info_button"><li class = "icon-edit"></li>update info</button>
@@ -146,7 +160,7 @@
             Sure to fire the selected employee?
         </div><!-- =========== fire_employee_confirmation div ends ==============-->
         <div id = "fire_employee_remarks_div">
-            <span id = "close_remarks_div_span"><img src="../CSS/images/close_icon.png"></span>
+            <span id = "close_remarks_div_span" title = "close"><img src="../CSS/images/close_icon.png"></span>
             <h3>FIRING EMPLOYEE</h3>
             <form id = "fire_employee_remarks_form">
                 <dl>

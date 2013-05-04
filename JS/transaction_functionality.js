@@ -64,7 +64,7 @@ $(function(){
 	 	var regexInt = /^[0-9]+$/;
 
 	 	var newQuantity = $(this).val();
-	 	if(regexInt.test(newQuantity)){
+	 	if(regexInt.test(newQuantity) && newQuantity > 0){
 	 		var row_id = $('#cell_id').val();
 		 	var cell_id = document.getElementById(row_id).getElementsByTagName('td')[2];
 		 	$(cell_id).html("<span>"+newQuantity +"</span>"+"<img src='../CSS/img_tbls/editShoppingList.png' class =edit_quantity_img alt = edit quanity title=edit quantity/>");
@@ -94,10 +94,11 @@ $(function(){
 			buttons:{
 				"Delete" : function(){
 				 	var subTotal =  $('#'+row_id).find('td:last span').html();
-				 	var newTotal = totalPayment - parseFloat(subTotal);
-				 	$('#shopping_list_total_tfoot').find('td:last span').html(newTotal);
+				 	totalPayment = totalPayment - parseFloat(subTotal);
+				 	$('#shopping_list_total_tfoot').find('td:last span').html(totalPayment);
 				 	$('#'+row_id).remove();
 				 	$('#'+row_id).removeClass('error');
+				 	$('#tr_transact_search_'+row_id.substring(15)).css('text-decoration','none');
 				 	$(this).dialog('close');
 				},
 				"Cancel" : function(){
@@ -256,13 +257,15 @@ function saveTransaction(){
         quantity = quantity[1].innerHTML;
         productIDs.push(row_id);
         productQuantities.push(quantity);
+        console.log(quantity+" => "+row_id);
     }
+
     var obj = {'productIDs': productIDs, 'quantities': productQuantities};
     $.ajax({
         type:"POST",
         url: "../PHP/OBJECTS/transaction/saveTransaction.php",
         data: obj,
-        success:function(data){	
+        success:function(data){
         	$('#shopping_list_table').hide('blind',500);
             $('#shopping_list_tbody tr').each(function( index ){
             	if(index != 0)

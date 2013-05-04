@@ -1,7 +1,7 @@
 #transaction_record_wrapper_div{
 	width: 900px;
 	margin: 0 auto;
-	border: 1px solid;
+    background: #f5f5f5;
 }
 .transaction_record_tbl{
 	width: 95%;
@@ -21,7 +21,10 @@
 #pagination_content{
 	background-color: #ddd;
 	height: 50px;
-	margin-top: -30px;
+}
+.pagination{
+    padding-top:10px;
+    margin-left:25px;
 }
 #pager_next, #pager_prev{
 	margin-top: -23px;
@@ -71,7 +74,7 @@
 	height:15px;
 	border:1px solid;
 	float:right;
-	margin-top: -40px;
+	margin-top: -48px;
 	margin-right: 20px;
 	background: -moz-linear-gradient(top left,#0088cc,#0044cc);
 	background: -webkit-linear-gradient(top left,#0088cc,#0044cc);
@@ -93,4 +96,11 @@
 #loading_img{
 	margin-left: 80px;
 	display: none;
+}
+#searchBy_select{
+    margin-top:10px;
+}
+#searchByName_select{
+    display:none;
+    margin-top:10px;
 }

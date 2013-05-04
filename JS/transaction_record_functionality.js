@@ -5,13 +5,22 @@ $(function(){
 	displayBarGraph();
 
 	$('#pageLimit_form').submit(function(){
+        var toSearch = $('#search_record').val();
+        var searchBy = $('#searchBy_select').val();
+        if(searchBy=="employee" && searchBy != ""){
+            searchBy = $('#searchByName_select').val();
+        }
 		var regextInt = /^[0-9]+$/;
 		var pageLimit = parseInt($('#pageLimit').val());
 
 		if(regextInt.test(pageLimit) && pageLimit > 0){
 			$('#currentPage').val(0)
-			displayTransactionRecords();
-			displayPager();
+            if(toSearch == ""){
+                displayTransactionRecords();
+            }else{
+                searchRecords(toSearch,searchBy)
+            }
+            displayPager();
 			$(this).css('color','#000');
 		}else{
 			$(this).css('color', '#f00');		
@@ -20,11 +29,51 @@ $(function(){
 		return false;
 	})
 
+    /*---search---*/
+    $('#search_record').keyup(function(){
+        var toSearch = $('#search_record').val();
+        var searchBy = $('#searchBy_select').val();
+        if(searchBy=="employee"){
+            searchBy = $('#searchByName_select').val();
+        }
+        searchRecords(toSearch,searchBy);
+        displayPager();
+    });
+
+    $('#searchBy_select').change(function(){
+        var toSearch = $('#search_record').val();
+        var searchBy = $('#searchBy_select').val();
+        if(searchBy=="employee" && searchBy != ""){
+            searchBy = $('#searchByName_select').val();
+        }
+        if($(this).val() == 'employee'){
+            $('#searchByName_select').show();
+        }else {
+            $('#searchByName_select').hide();
+        }
+        searchRecords(toSearch,searchBy);
+    });
+
+    $('#searchByName_select').change(function(){
+        var toSearch = $('#search_record').val();
+        var searchBy = $('#searchBy_select').val();
+        if(searchBy=="employee" && searchBy != ""){
+            searchBy = $('#searchByName_select').val();
+        }
+        searchRecords(toSearch,searchBy);
+        displayPager();
+    });
+
 	/*----paganation-----*/
 	$('.pagination').on('click','li a',function(){
+        var searchBy = $('#searchBy_select').val();
+        if(searchBy=="employee" && searchBy != ""){
+            searchBy = $('#searchByName_select').val();
+        }
 		$('.pagination li').removeClass('active');
 		var page = parseInt($(this).html());
 		var parentLI=$(this).context.parentNode;
+        var toSearch = $('#search_record').val();
 
 		if(page!=0){
 			$('#currentPage').val(page-1);
@@ -32,11 +81,19 @@ $(function(){
 			$(parentLI).addClass('active');
 
 		}
-
-		displayTransactionRecords();
+        if(toSearch == ""){
+		    displayTransactionRecords();
+        }else{
+            searchRecords(toSearch,searchBy);
+        }
 	})
 
 	$('.pagination').on('click','button',function(){
+        var searchBy = $('#searchBy_select').val();
+        if(searchBy=="employee" && searchBy != ""){
+            searchBy = $('#searchByName_select').val();
+        }
+        var toSearch = $('#search_record').val();
 		var pageBtn = $(this).text();
 		var currentPage = parseInt($('#currentPage').val());
 		var maxPage = parseInt($('.pagination li a:last').html())-1;
@@ -53,17 +110,43 @@ $(function(){
 			$('.page_number').html(currentPage);	
 		}
 
-		displayTransactionRecords();
+        if(toSearch == ""){
+            displayTransactionRecords();
+        }else{
+            searchRecords(toSearch,searchBy);
+        }
 	});
+
 	$('#graph-toggle-div').click(function(){		
 		$('#graph-sales-container-div').slideToggle(1000)		
 	});
 
 });
 
+function searchRecords(toSearch,searchBy){
+    $('#loading_img').show();
+    var pageLimit = parseInt($('#pageLimit').val());
+    var currentPage = parseInt($('#currentPage').val());
+    currentPage = currentPage*pageLimit;
+    var obj = {currentPage:currentPage,pageLimit:pageLimit, toSearch:toSearch, searchBy:searchBy};
+        $.ajax({
+            type:"POST",
+            url:"../PHP/OBJECTS/TRANSACTION_RECORD/searchTransactionRecords.php",
+            data:obj,
+            success:function(data){;
+                $('#transaction_record_tbody').html(data);
+            },
+            error:function(data){
+                alert("Error on searching transaction records => "+ data['status']+ " "+ data['statusText']);
+            },
+            complete:function(){
+                $('#loading_img').hide();
+            }
+        })
+}
+
 function displayTransactionRecords(){
 	$('#loading_img').show();
-	console.log('pasok')
 	var pageLimit = parseInt($('#pageLimit').val());
 	var currentPage = parseInt($('#currentPage').val());
 	currentPage = currentPage*pageLimit;
@@ -85,10 +168,14 @@ function displayTransactionRecords(){
 }
 
 function displayPager(){
+    var toSearch = $('#search_record').val();
+    var searchBy = $('#searchBy_select').val();
+    if(searchBy=="employee" && searchBy != ""){
+        searchBy = $('#searchByName_select').val();
+    }
 	var pageLimit = parseInt($('#pageLimit').val());
-	var toSearch = $('#search_record').val();
 	var currentPage = parseInt($('#currentPage').val())+1;
-	var obj = {pageLimit:pageLimit,toSearch:toSearch};
+	var obj = {pageLimit:pageLimit, toSearch:toSearch, searchBy:searchBy};
 
 	$.ajax({
 		type: 'POST',
@@ -122,22 +209,23 @@ function displayBarGraph(){
     			month = monthNames[obj[ctr][0]-1];
     			monthlySalesContent.push(obj[ctr][1]);
     			monthlySalesContent.push(month);
-    			if(obj[ctr][1] > 100000){
-    				monthlySalesContent.push("#0044cc");
-    			}else if(obj[ctr][1] > 50000){
-    				monthlySalesContent.push("#0088cc");
+    			if(obj[ctr][1] > 1500){
+    				monthlySalesContent.push("#f00");
+    			}else if(obj[ctr][1] > 500){
+    				monthlySalesContent.push("#ff0");
     			}else{
-    				monthlySalesContent.push("#c4e3f3");
+    				monthlySalesContent.push("#006400");
     			}
     			monthlySales.push(monthlySalesContent);
     		}
+
     		$('#graph-sales-div').jqBarGraph({
 		        data: monthlySales,
 		        width: 	700,
 		        height: 200,
-		        colors: ["#0044cc","#0088cc","#c4e3f3"],
+		        colors: ["#f00","#ff0","#006400"],
 		        barSpace:2,
-		        title: "<h3>Monthly Income</h3>",
+		        title: "<h2>Monthly Income</h2>",
 		        prefix: "&#8369; ",
 		        legend:true,
 		        legends:["high","average","low"]

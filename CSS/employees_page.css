@@ -1,7 +1,5 @@
 
 #employees_main_div_container {
-    /*border-left: 2px solid #808080;
-    border-right: 2px solid #808080;*/
     background: #f5f5f5;
     padding: 20px;
 }
@@ -28,6 +26,7 @@
     width: 700px;
     margin: 0 auto;
     text-align: center;
+    float: right;
 }
 
 #overlay_div_container {
@@ -41,6 +40,7 @@
     height: 100%;
     z-index: 5;
     text-align: center;
+    display:none;
 }
 
 #add_employees_div {
@@ -52,6 +52,7 @@
     background: ghostwhite;
     z-index: 20;
     text-align: center;
+    display:none;
 }
 
 #add_employees_div span {
@@ -94,10 +95,31 @@
     text-align: center;
 }
 
-#display_employees_div table tr th, #display_employees_div table tr td {
+#employees_category_div button, #employees_category_div span {
+    display: block;
+    width: 130px;
+    height: 50px;
+    background: #d3d3d3;
+    border: none;
     text-align: center;
 }
 
+#employees_category_div button:hover {
+    color: #0000ff;
+    font-weight: bolder;
+    background: -webkit-linear-gradient(top, darkgray 10%, #808080 50%, white 90%);
+    background: -moz-linear-gradient(top, darkgray 10%, #808080 50%, white 90%);
+    background: -o-linear-gradient(top, darkgray 10%, #808080 50%, white 90%);
+    background: linear-gradient(top, darkgray 10%, #808080 50%, white 90%);
+}
+
+#packers_table, #porters_table {
+    display: none;
+}
+
+#display_employees_div table tr th, #display_employees_div table tr td {
+    text-align: center;
+}
 
 #action_options_div {
     position: absolute;
@@ -109,6 +131,7 @@
     padding: 20px;
     top: 200px;
     left: 35%;
+    display:none;
 }
 
 #action_options_div div {
@@ -130,6 +153,7 @@
     background: ghostwhite;
     z-index: 20;
     text-align: center;
+    display:none;
 }
 
 #fire_employee_remarks_div textarea {
@@ -137,10 +161,28 @@
     width: 400px;
     height: 150px;
     margin: 0 auto;
+
 }
 
-#fire_employee_remarks_div #close_remarks_div_span {
+#fire_employee_remarks_div #close_remarks_div_span, #close_fired_employees_div {
     float: right;
     margin-right: -45px;
     margin-top: -45px;
+    cursor: pointer;
+}
+
+#fire_employee_confirmation_div {
+    display: none;
+}
+
+#fired_employees_div {
+    top: 40px;
+    position: absolute;
+    padding: 30px;
+    width: 890px;
+    height: 100%;
+    background: ghostwhite;
+    z-index: 20;
+    text-align: center;
+    display:none;
 }
