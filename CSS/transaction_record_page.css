@@ -57,7 +57,7 @@
 
 #graph-sales-container-div{
 	width: 700px;
-	height: 300px;
+	height: 450px;
 	margin:0 auto;
 }
 #graph-sales-div{
@@ -93,6 +93,14 @@
 	-o-transform:rotate(0deg);
 	transform:rotate(0deg);
 }
+#bargraph_title_p{
+    text-align: center;
+}
+#bargraph_Yr_option{
+    font-weight: bold;
+    width: 100px;
+}
+
 #loading_img{
 	margin-left: 80px;
 	display: none;

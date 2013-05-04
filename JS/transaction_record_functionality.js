@@ -2,7 +2,7 @@ $(function(){
 
 	displayTransactionRecords();
 	displayPager();
-	displayBarGraph();
+    displayBarGraph();
 
 	$('#pageLimit_form').submit(function(){
         var toSearch = $('#search_record').val();
@@ -117,9 +117,13 @@ $(function(){
         }
 	});
 
-	$('#graph-toggle-div').click(function(){		
-		$('#graph-sales-container-div').slideToggle(1000)		
+	$('#graph-toggle-div').click(function(){
+		$('#graph-sales-container-div').slideToggle(1000)
 	});
+
+    $('#bargraph_Yr_option').on('change',function(){
+        displayBarGraph();
+    })
 
 });
 
@@ -195,41 +199,60 @@ function displayPager(){
 }
 
 function displayBarGraph(){
+    var currentDate = new Date();
+    var yearSelected = $('#bargraph_Yr_option').val();
+    var selectOptions = "";
+
+    for(var ctr=currentDate.getFullYear();ctr>=2000;ctr--){
+        selectOptions += "<option value="+ ctr +">"+ ctr +"</option>";
+    }
+    if(yearSelected==null){
+        yearSelected = currentDate.getFullYear();
+        $('#bargraph_title_p').html("<h2>MONTHLY INCOME</h2><br/><h4>YEAR: <select id='bargraph_Yr_option'>"+ selectOptions +"</select></h4>");
+    }
+    $('#bargraph_Yr_option').val(yearSelected);
+
 	var monthNames = new Array("January","February","March","April","May","June","July","August","September","October","November","December");
 	var monthlySales = new Array();
-
     $.ajax({
     	type:'POST',
+        data: {yearSelected:yearSelected},
     	url:'../PHP/OBJECTS/TRANSACTION_RECORD/getMonthlySales.php',
     	success:function(data){
-    		var obj = JSON.parse(data);
-    		var month = "";
-    		for(var ctr=0; ctr<obj.length; ctr++){
-    			var monthlySalesContent = new Array();
-    			month = monthNames[obj[ctr][0]-1];
-    			monthlySalesContent.push(obj[ctr][1]);
-    			monthlySalesContent.push(month);
-    			if(obj[ctr][1] > 1500){
-    				monthlySalesContent.push("#f00");
-    			}else if(obj[ctr][1] > 500){
-    				monthlySalesContent.push("#ff0");
-    			}else{
-    				monthlySalesContent.push("#006400");
-    			}
-    			monthlySales.push(monthlySalesContent);
-    		}
 
-    		$('#graph-sales-div').jqBarGraph({
-		        data: monthlySales,
-		        width: 	700,
-		        height: 200,
-		        colors: ["#f00","#ff0","#006400"],
-		        barSpace:2,
-		        title: "<h2>Monthly Income</h2>",
-		        prefix: "&#8369; ",
-		        legend:true,
-		        legends:["high","average","low"]
-		    });
+            if(data){ //if it returns an array of values
+                var obj = JSON.parse(data);
+                var month = "";
+                for(var ctr=0; ctr<obj.length; ctr++){
+                    var monthlySalesContent = new Array();
+                    month = monthNames[obj[ctr][0]-1];
+                    monthlySalesContent.push(obj[ctr][1]);
+                    monthlySalesContent.push(month);
+                    if(obj[ctr][1] > 1000){
+                        monthlySalesContent.push("#f00");
+                    }else if(obj[ctr][1] > 500){
+                        monthlySalesContent.push("#ff0");
+                    }else{
+                        monthlySalesContent.push("#006400");
+                    }
+                    monthlySales.push(monthlySalesContent);
+                };
+
+                $('#graph-sales-div').html("");
+                $('#graph-sales-div').jqBarGraph({
+                    data: monthlySales,
+                    width: 	700,
+                    height: 200,
+                    colors: ["#f00","#ff0","#006400"],
+                    barSpace:2,
+                    prefix: "&#8369; ",
+                    legend:true,
+                    legends:["high","average","low"]
+               });
+
+            }else{
+                $('#graph-sales-div').html("<h2>NO RECORDS</h2>");
+            }
     		
     	},
     	error:function(data){

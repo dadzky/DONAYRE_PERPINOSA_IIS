@@ -48,7 +48,8 @@
             </div><!--pagination_content-->
             </table> 
             <div id='graph-sales-container-div'>
-                <div id='graph-sales-div'></div> 
+                <p id='bargraph_title_p'></p>
+                <div id='graph-sales-div'></div>
             </div> <!--graph-sales-container-div-->     
         </div> <!-- ======= transaction_wrapper_div ======= -->
 

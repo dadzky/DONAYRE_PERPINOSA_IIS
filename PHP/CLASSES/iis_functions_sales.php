@@ -229,7 +229,7 @@
             $this->close_connection();
         }
 
-        function displayMonthlySales(){
+        function displayMonthlySales($yearSelected){
 
             $this->open_connection();
 
@@ -237,20 +237,29 @@
                         FROM products AS p, transactions AS t, transactions_info AS ti
                         WHERE p.product_id = t.product_id
                         AND t.transaction_id = ti.transaction_id
+                        AND year( t.transaction_date ) = ?
                         GROUP BY month( t.transaction_date )";
-                $stmt = $this->db_holder->query($sql);
+                $stmt = $this->db_holder->prepare($sql);
+                $stmt -> execute(array($yearSelected));
 
                 $monthlySales = $stmt->fetchAll();
 
             $this->close_connection();
 
-            $encoded = json_encode($monthlySales);
-            echo $encoded;
+            $this->close_connection();
+
+            if($monthlySales == null){
+                echo "";
+            }else{
+                $encoded = json_encode($monthlySales);
+                echo $encoded;
+            }
+
+
         }
 
         function searchTransactionRecords($currentPage, $pageLimit, $searchBy, $toSearch){
 
-            $transactiondate = 0;
             $this->open_connection();
 
                 $sql1 = "SELECT DISTINCT t.transaction_date AS tdate
