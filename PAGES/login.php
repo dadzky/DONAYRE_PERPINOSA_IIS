@@ -1,6 +1,5 @@
 <?php
     session_start();
-    //include "../PHP/OBJECTS/log_in_validation.php";
     include "../PHP/CLASSES/iis_functions_home.php";
 
     $execute_check = new Iis_functions_home();
@@ -14,7 +13,10 @@
             $username_entered = $_POST["username_entered"];
             $password_entered = $_POST["password_entered"];
             $log_in_as = $_POST["log_in_as_input"];
+<<<<<<< HEAD
 
+=======
+>>>>>>> d80209ee098c8e5bf1254f8e71a5eb9616812aac
             $username_exist = $execute_check->check_username($username_entered, $log_in_as);
             if($username_exist) {
                 $same_password = $execute_check->check_password($username_entered, $password_entered, $log_in_as);
@@ -34,7 +36,13 @@
 
                 } else {
                     $error_message = "Incorrect password!";
+<<<<<<< HEAD
 
+=======
+
+
+
+>>>>>>> d80209ee098c8e5bf1254f8e71a5eb9616812aac
                 }
             } else {
                 $error_message = "Unknown username!";

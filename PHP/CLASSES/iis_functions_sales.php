@@ -156,7 +156,7 @@
                     $records = "";
                     $totalIncome = 0;
 
-                    $sql2 = "SELECT DISTINCT t.transaction_time, CONCAT(e.firstname ,' ', e.lastname), p.product_name, CONCAT(ti.number_of_items, ' ' , p.stock_unit),ti.number_of_items*p.product_price
+                    $sql2 = "SELECT t.transaction_time, CONCAT(e.firstname ,' ', e.lastname), p.product_name, CONCAT(ti.number_of_items, ' ' , p.stock_unit),ti.number_of_items*p.product_price
                             FROM employees AS e, products AS p, transactions AS t, transactions_info AS ti
                             WHERE p.product_id = t.product_id
                             AND e.employee_id = t.employee_id
@@ -186,15 +186,19 @@
             $this->close_connection();           
         }
         
-        function displayPager($pageLimit, $toSearch){
+        function displayPager($pageLimit, $searchBy, $toSearch){
 
             $pagerLI = "";
             $pagerContent = "";
             $this->open_connection();
 
-                $sql = "SELECT COUNT(DISTINCT transaction_date) AS pages
-                         FROM transactions";
-                $stmt = $this->db_holder->query($sql);
+                $sql = "SELECT COUNT(DISTINCT t.transaction_date) AS pages
+                         FROM transactions AS t, products AS p, employees AS e
+                         WHERE p.product_id = t.product_id
+                         AND e.employee_id = t.employee_id
+                         AND $searchBy LIKE ?";
+                $stmt = $this->db_holder->prepare($sql);
+                $stmt -> execute(array($toSearch));
                 $pages = $stmt->fetch(PDO::FETCH_ASSOC);
 
                 $pages['pages'] = $pages['pages'] / intval($pageLimit);
@@ -222,11 +226,10 @@
                 $encoded = json_encode($obj);
                 echo $encoded;
 
-
             $this->close_connection();
         }
 
-        function displayMonthlySales(){
+        function displayMonthlySales($yearSelected){
 
             $this->open_connection();
 
@@ -234,15 +237,77 @@
                         FROM products AS p, transactions AS t, transactions_info AS ti
                         WHERE p.product_id = t.product_id
                         AND t.transaction_id = ti.transaction_id
+                        AND year( t.transaction_date ) = ?
                         GROUP BY month( t.transaction_date )";
-                $stmt = $this->db_holder->query($sql);
+                $stmt = $this->db_holder->prepare($sql);
+                $stmt -> execute(array($yearSelected));
 
                 $monthlySales = $stmt->fetchAll();
 
             $this->close_connection();
 
-            $encoded = json_encode($monthlySales);
-            echo $encoded;
+            $this->close_connection();
+
+            if($monthlySales == null){
+                echo "";
+            }else{
+                $encoded = json_encode($monthlySales);
+                echo $encoded;
+            }
+
+
+        }
+
+        function searchTransactionRecords($currentPage, $pageLimit, $searchBy, $toSearch){
+
+            $this->open_connection();
+
+                $sql1 = "SELECT DISTINCT t.transaction_date AS tdate
+                            FROM transactions AS t, products AS p, employees AS e
+                            WHERE p.product_id = t.product_id
+                            AND e.employee_id = t.employee_id
+                            AND $searchBy LIKE ?
+                            ORDER BY t.transaction_date DESC
+                            LIMIT $currentPage,$pageLimit";
+                $stmt1 = $this->db_holder->prepare($sql1);
+                $stmt1 -> execute(array($toSearch));
+                while($transaction = $stmt1->fetch(PDO::FETCH_ASSOC)){
+
+                    $records = "";
+                    $totalIncome = 0;
+
+                    $sql2 = "SELECT t.transaction_time, CONCAT(e.firstname ,' ', e.lastname), p.product_name, CONCAT(ti.number_of_items, ' ' , p.stock_unit),ti.number_of_items*p.product_price
+                                FROM employees AS e, products AS p, transactions AS t, transactions_info AS ti
+                                WHERE p.product_id = t.product_id
+                                AND e.employee_id = t.employee_id
+                                AND t.transaction_id = ti.transaction_id
+                                AND $searchBy LIKE ?
+                                AND t.transaction_date = ?";
+
+                    $stmt2 = $this->db_holder->prepare($sql2);
+                    $stmt2 -> execute(array($toSearch, $transaction['tdate']));
+
+                    $recLength = 1;
+                    while($rec = $stmt2->fetch()){
+                        $records .= "<tr >";
+                        $records .= "<td>".$rec[0]."</td>";
+                        $records .= "<td>".ucwords($rec[1])."</td>";
+                        $records .= "<td>".$rec[2]."</td>";
+                        $records .= "<td>".$rec[3]."</td>";
+                        $records .= "<td>&#8369; ".$rec[4]."</td>";
+                        $records .= "</tr>";
+                        $recLength++;
+                        $totalIncome = $totalIncome+$rec[4];
+                    }
+                    echo "<tr><th rowspan=".$recLength.">".$transaction['tdate']."</th></tr>".$records;
+                    echo "<tr class='info totalIncome_tr'><td colspan='5'>Daily Total Income </td><td>&#8369; ".$totalIncome."</td></tr>";
+                }
+
+            echo "No Records Found!";
+
+
+            $this->close_connection();
+
         }
         /*-----------END OF TRANSACTION RECORDS---------*/
 

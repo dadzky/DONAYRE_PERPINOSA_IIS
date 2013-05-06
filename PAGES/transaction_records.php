@@ -9,8 +9,16 @@
         <div id = "transaction_record_wrapper_div">
 
             <div id='pager_info_div'>
-                <input type='text' id='search_record' class='input-large search-query' placeholder='Search record' /> 
-               
+                <input type='text' id='search_record' class='input-large search-query' placeholder='Search record' />
+                <select id='searchBy_select' class='span2'>
+                    <option value='p.product_name'>Product Name</option>
+                    <option value='employee'>Employee Name</option>
+                    <option value='t.transaction_date'>Date</option>
+                </select>
+                <select  id='searchByName_select' class='span2'>
+                    <option value='e.firstname'>First Name</option>
+                    <option value='e.lastname'>Last Name</option>
+                 </select>
                 <form id='pageLimit_form'>               
                     PageLimit:                
                     <input type='text' id='pageLimit' class='input-small' value='5' />
@@ -40,7 +48,8 @@
             </div><!--pagination_content-->
             </table> 
             <div id='graph-sales-container-div'>
-                <div id='graph-sales-div'></div> 
+                <p id='bargraph_title_p'></p>
+                <div id='graph-sales-div'></div>
             </div> <!--graph-sales-container-div-->     
         </div> <!-- ======= transaction_wrapper_div ======= -->
 
