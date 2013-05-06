@@ -1,3 +1,11 @@
+<?php
+    session_start();
+
+    if(!isset($_SESSION["log_in_as"])) {
+        header("Location: login.php");
+    }
+?>
+
 <!Doctype html>
 <html>
     <head>
@@ -6,10 +14,8 @@
     <body>
         <div id = "admins_main_container" class = "container-fluid">
             <?php include_once "page_header.html"; ?>
-
             <div id = "admins_content_div"></div>
 
-            <?php include_once "page_footer.html"; ?>
         </div><!-- ====== admins main container div ends ===== -->
 
         <!-- ============ IMPORTS ========= -->

@@ -14,8 +14,9 @@ $(function() {
     $("#save_employee_button").hide();
     $("#fire_employee_confirmation_div").hide();
     $("#fire_employee_remarks_div").hide();
+    $("#fired_employees_div").hide();
 
-    $("#employees_category_div").buttonset();
+    //$("#employees_category_div").buttonset();
     get_current_date_and_time();
 
     // ============ ADDING OPTIONS TO SELECT TAGS ================
@@ -84,10 +85,21 @@ $(function() {
         $("#fire_employee_remarks_div").slideUp(200);
     });
 
+    $("#show_fired_employees_image").click(function() {
+        $("#overlay_div_container").show();
+        $("#fired_employees_div").slideDown(200);
+    });
+
+    $("#close_fired_employees_div").click(function() {
+        $("#overlay_div_container").slideUp(200);
+        $("#fired_employees_div").slideUp(200);
+    });
+
 
     // ====================== EMPLOYEES' DATA CONTROLLERS (functions) ===========
 
     display_employees();
+    display_fired_employees();
 
     // ============= ADDING EMPLOYEES ======================
 
@@ -303,11 +315,13 @@ $(function() {
                 url: "../PHP/OBJECTS/EMPLOYEES/fire_employee.php",
                 data: {"id": $("#id").val(), "date": $("#date_fired").html(), "remarks": $("#firing_remarks_textarea").val()},
                 success: function() {
-                    alert("succeed");
+                    display_employees();
+                    display_fired_employees();
+                    $("#fire_employee_remarks_div").slideUp(200);
+                    $("#overlay_div_container").slideUp(200);
                 },
                 error: function(data) {
                     console.log("Error in firing employee = " + data['statusText']);
-                    alert(JSON.stringify(data));
                 }
             });
         }
@@ -326,6 +340,18 @@ function display_employees() {
         },
         error: function(data) {
             console.log("Error in displaying employees = " + JSON.stringify(data));
+        }
+    });
+}
+
+function display_fired_employees() {
+    $.ajax({
+        url: "../PHP/OBJECTS/EMPLOYEES/display_fired_employees.php",
+        success: function(data) {
+            $("#display_fired_employees_table").html(data);
+        },
+        error: function(data) {
+            console.log("Error in displaying fired employees = " + JSON.stringify(data));
         }
     });
 }

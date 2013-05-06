@@ -117,27 +117,30 @@ function displayBarGraph(){
     	success:function(data){
     		var obj = JSON.parse(data);
     		var month = "";
+            console.log(data)
     		for(var ctr=0; ctr<obj.length; ctr++){
     			var monthlySalesContent = new Array();
     			month = monthNames[obj[ctr][0]-1];
     			monthlySalesContent.push(obj[ctr][1]);
     			monthlySalesContent.push(month);
-    			if(obj[ctr][1] > 100000){
-    				monthlySalesContent.push("#0044cc");
-    			}else if(obj[ctr][1] > 50000){
-    				monthlySalesContent.push("#0088cc");
+                console.log(obj[ctr][1]);
+    			if(obj[ctr][1] > 500){
+    				monthlySalesContent.push("#f00");
+    			}else if(obj[ctr][1] > 2500){
+    				monthlySalesContent.push("#ff0");
     			}else{
-    				monthlySalesContent.push("#c4e3f3");
+    				monthlySalesContent.push("#006400");
     			}
     			monthlySales.push(monthlySalesContent);
     		}
+
     		$('#graph-sales-div').jqBarGraph({
 		        data: monthlySales,
 		        width: 	700,
 		        height: 200,
-		        colors: ["#0044cc","#0088cc","#c4e3f3"],
+		        colors: ["#f00","#ff0","#006400"],
 		        barSpace:2,
-		        title: "<h3>Monthly Income</h3>",
+		        title: "<h2>Monthly Income</h2>",
 		        prefix: "&#8369; ",
 		        legend:true,
 		        legends:["high","average","low"]

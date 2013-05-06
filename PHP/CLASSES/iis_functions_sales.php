@@ -1,5 +1,4 @@
 <?php
-    session_start();
 
     include "database_connection.php";
     
@@ -109,12 +108,12 @@
             $this->close_connection();
         }
 
-        function addToTransactionsRecord($prodID, $employeeID, $date,$time,$quantity){
+        function addToTransactionsRecord($prodID, $employeeID, $datee,$timee,$quantity){
 
             $sql1 = "INSERT INTO transactions
                     VALUES(null,?,?,?,?)";
             $stmt1  = $this->db_holder->prepare($sql1);
-            $stmt1 -> execute(array($prodID, $employeeID, $date,$time));
+            $stmt1 -> execute(array($prodID, $employeeID, $datee,$timee));
 
             $transactionID = $this->db_holder->lastInsertId();
 
@@ -122,7 +121,9 @@
                     VALUES(?,?)";
             $stmt2  = $this->db_holder->prepare($sql2);
             $stmt2 -> execute(array($transactionID,$quantity));
+
             return $transactionID;
+
 
         }
 

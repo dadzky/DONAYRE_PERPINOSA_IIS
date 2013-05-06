@@ -2,10 +2,7 @@
 <html>
     <head>
         <title>Transaction Records</title>
-        <link rel = "stylesheet" href = "../CSS/jquery-ui.min.css" />
-        <link rel = "stylesheet" href = "../CSS/bootstrap.min.css" />
-        <link rel = "stylesheet" href = "../CSS/transaction_record_page.css" />
-
+        <link rel = "stylesheet" href = "../CSS/includes_all_css_files.css" />
     </head>
     <body>
  

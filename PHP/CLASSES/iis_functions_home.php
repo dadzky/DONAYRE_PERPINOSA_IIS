@@ -13,6 +13,7 @@
                                                                  FROM employees AS e,
                                                                       accounts AS a
                                                                  WHERE e.employee_id = a.employee_id AND
+                                                                       e.employee_id NOT IN(SELECT employee_id FROM fired_employees) AND
                                                                        a.username = ?;");
                 $select_statement->execute(array($username_entered));
                 if($select_statement->fetch()) {
@@ -64,7 +65,7 @@
                                                                  a.username = ?;");
             $select_statement->execute(array($username_entered));
             $content = $select_statement->fetch();
-            return $content[1];
+            return $content[0];
             $this->close_connection();
         }
 
