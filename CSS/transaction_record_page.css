@@ -99,6 +99,11 @@
 #bargraph_Yr_option{
     font-weight: bold;
     width: 100px;
+    border:none;
+    height: 25px;
+    width: 75px;
+    margin-top: 7px;
+    background-color: inherit;
 }
 
 #loading_img{

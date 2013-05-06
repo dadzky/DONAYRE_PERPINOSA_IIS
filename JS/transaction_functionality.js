@@ -98,6 +98,7 @@ $(function(){
 				 	$('#shopping_list_total_tfoot').find('td:last span').html(totalPayment);
 				 	$('#'+row_id).remove();
 				 	$('#'+row_id).removeClass('error');
+                    selectedProductIDs.remove(row_id); // removing id from array of product IDs
 				 	$('#tr_transact_search_'+row_id.substring(15)).css('text-decoration','none');
 				 	$(this).dialog('close');
 				},
@@ -125,11 +126,11 @@ $(function(){
             confirmationDialogForTransaction();
 	 	}
 	 })
-
 })
  var totalPayment = 0; //Global variable for the total payment of the products bought...
+ var selectedProductIDs = new Array(); //Global array variable used to store all product id that has been already selected...
 
- /*-----------FUNCTION FOR SEARCHING PRODUCTS----------*/
+ /*-----------FUNCTION FOR SEARCHING PRODUCTS [note: i also use this function for displaying the list of products]----------*/
  function searchProductForTransaction(){
  	$('#search_item').css({'background':'url(../CSS/img_tbls/loading.gif)',
  					 'background-repeat':'no-repeat',
@@ -147,7 +148,6 @@ $(function(){
 		data: obj,
 		url: "../PHP/OBJECTS/transaction/searchProductWithCost.php",
 		success:function(data){
-            //console.log(data);
 			var obj2 = JSON.parse(data);
 			$('#products_to_transact_tbody').html(obj2.tbody);
 			$('.pagination').html(obj2.pager);
@@ -156,13 +156,15 @@ $(function(){
 				$('#pager_prev').attr('disabled','disabled');
 			}if((pageActive+1) >= obj2.pagesToDisplay){
 				$('#pager_next').attr('disabled','disabled');						
-			}			
+			}
+            markSelectedProducts();
 		},
 		error:function(data){
 			alert("Error on Searching products => "+ data);
 		},
 		complete:function(){
 			$('#search_item').css({'background':'none'});
+
 		}
 
 	})
@@ -186,6 +188,7 @@ function checkIfExistAtShoppingList(prodName){
 }
 
 /*------------------Function for saving products to shopping List--------------*/
+
 function saveToShoppingList(prodId,prodName,prodCost,prodUnit,tblRow){
 	$('#product_name_to_transact').val(prodName);
 	$('#product_cost_to_transact').val(prodCost+"/"+prodUnit);
@@ -205,6 +208,7 @@ function saveToShoppingList(prodId,prodName,prodCost,prodUnit,tblRow){
 			    			displayToShoppingList(prodId,prodName,prodCost,prodUnit,quantity);
 			    			$('#quantity_div').removeClass('control-group error');
 			    			$(tblRow).css({'text-decoration':'line-through'});
+                            selectedProductIDs.push(prodId);
 			    			$(this).dialog('close');
 			    		}else{
 			    			$('#quantity_div').addClass('control-group error');
@@ -220,13 +224,24 @@ function saveToShoppingList(prodId,prodName,prodCost,prodUnit,tblRow){
 			})
 	}
 }
+function changeToMoneyFormat(obj){
+
+    var subTotalLength = (obj.subTotal).length;
+    for(var ctr=1;ctr<subTotalLength;ctr++){
+        var index = ctr*3;
+    }
+
+}
 
 function displayToShoppingList(prodId,prodName,prodCost,prodUnit,productQuantity){
+    var obj = new Object();
 	var id = prodId.substring(19);
 	var subTotal = parseFloat(prodCost)*parseInt(productQuantity);
-	totalPayment += subTotal; /*-global ini na totalPayment variable-*/
+	totalPayment += subTotal; /*-global totalPayment variable to compute for the total payment-*/
+    obj.subTotal = "s"+subTotal;
+    changeToMoneyFormat(obj);
+    console.log(obj.subTotal);
 	var newId = "tr_to_transact_"+id;
-	
 	var tbody = "<tr  id='"+newId+"'>"+
 				"<th><a href='#'><img src='../CSS/img_tbls/deleteShoppingList.png' class ='delete_list_img' alt = 'delete quanity' title='delete' /></a></th>"+
 				"<td>"+prodName+"</td>"+
@@ -240,8 +255,8 @@ function displayToShoppingList(prodId,prodName,prodCost,prodUnit,productQuantity
 				"<td>&#8369; <span>"+totalPayment+"</span></td>"+
 				"</tr>";
 	
-	var tbody = $('#shopping_list_tbody').append(tbody);
-	var tfoot = $('#shopping_list_total_tfoot').html(tfoot);
+	$('#shopping_list_tbody').append(tbody);
+	$('#shopping_list_total_tfoot').html(tfoot);
 	$('#shopping_list_table').show('blind',1000);
 }
 
@@ -281,7 +296,7 @@ function saveTransaction(){
     })
 }
 
- function confirmationDialogForTransaction(){
+function confirmationDialogForTransaction(){
 	$('#dialog2_div').html("Everything will be recorded <br/>Do you want to continue?");
  	$('#dialog2_div').dialog({
 		title:'Confirmation',
@@ -296,8 +311,16 @@ function saveTransaction(){
 			"Cancel" : function(){
 				$(this).dialog('close');
 			}
-		},
+		}
 	});
- }
+}
+
+function markSelectedProducts(){
+
+    for(var ctr=0;ctr<selectedProductIDs.length;ctr++){
+        $('#'+selectedProductIDs[ctr]).css('text-decoration','line-through');
+    }
+}
+
 
 

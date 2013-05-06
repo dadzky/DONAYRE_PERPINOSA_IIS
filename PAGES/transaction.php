@@ -9,7 +9,6 @@
 
     </head>
     <body>
- 
         <div id = "transaction_wrapper_div">
 
             <table class='products_tbl table table-striped table-hover table-bordered'>

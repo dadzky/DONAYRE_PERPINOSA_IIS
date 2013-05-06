@@ -1,6 +1,5 @@
 <?php
     session_start();
-    //include "../PHP/OBJECTS/log_in_validation.php";
     include "../PHP/CLASSES/iis_functions_home.php";
 
     $execute_check = new Iis_functions_home();
@@ -39,8 +38,6 @@
                 }
             } else {
                 $error_message = "Unknown username!";
-                echo $error_message;
-
             }
         }
     }
