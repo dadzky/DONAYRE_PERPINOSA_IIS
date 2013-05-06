@@ -62,18 +62,25 @@ $(function(){
 
 	 $('#shopping_list_tbody').on('blur','input',function(){
 	 	var regexInt = /^[0-9]+$/;
-
+        var obj = new Object();
 	 	var newQuantity = $(this).val();
 	 	if(regexInt.test(newQuantity) && newQuantity > 0){
 	 		var row_id = $('#cell_id').val();
 		 	var cell_id = document.getElementById(row_id).getElementsByTagName('td')[2];
 		 	$(cell_id).html("<span>"+newQuantity +"</span>"+"<img src='../CSS/img_tbls/editShoppingList.png' class =edit_quantity_img alt = edit quanity title=edit quantity/>");
 		 	var cost = parseFloat($(cell_id).prev('td').find('span').html());
-		 	var subTotal = parseFloat($(cell_id).next().find('span').html());
-		 	var newSubtotal = cost * parseInt(newQuantity);
-		 	$(cell_id).next().find('span').html(newSubtotal);
-			totalPayment = (totalPayment - subTotal)+newSubtotal;
-			$('#shopping_list_total_tfoot td:last span').html(totalPayment)
+		 	var subTotal = ($(cell_id).next().find('span').html());
+            subTotal = parseFloat(subTotal.replace(",",""));
+		 	var newsubTotal = cost * parseInt(newQuantity);
+            totalPayment = (totalPayment - subTotal)+newsubTotal;
+            obj.converted = newsubTotal.toString();
+            changeToMoneyFormat(obj); //pass by references pass by value
+            newsubTotal = obj.converted;
+            obj.converted = totalPayment.toString();
+            changeToMoneyFormat(obj);
+            var totalPayment2 = obj.converted;
+		 	$(cell_id).next().find('span').html(newsubTotal);
+			$('#shopping_list_total_tfoot td:last span').html(totalPayment2)
 			$('#edited_quantity').removeClass('error');
 	 	}else{
 	 		$('#edited_quantity').css({"border-color":"red", "box-shadow":"0 0 1px 2px pink", "color":"#f00"});
@@ -84,6 +91,8 @@ $(function(){
 	 /*----------------------Deleting Item on the shopping-------------*/
 	 $('#shopping_list_tbody').on('click','th img',function(){
 	 	var row_id = $(this).context.parentNode.parentNode.parentNode.id;
+        var selectedProductId = row_id.split("_");
+        var productIDindex = $.inArray("tr_transact_search_"+selectedProductId[3], selectedProductIDs);
 	 	$('#'+row_id).addClass('error');
 	 	$('#dialog2_div').html('Delete From Shopping List');
 	 	$('#dialog2_div').dialog({
@@ -94,11 +103,12 @@ $(function(){
 			buttons:{
 				"Delete" : function(){
 				 	var subTotal =  $('#'+row_id).find('td:last span').html();
+                    subTotal = subTotal.replace(",","");
 				 	totalPayment = totalPayment - parseFloat(subTotal);
 				 	$('#shopping_list_total_tfoot').find('td:last span').html(totalPayment);
 				 	$('#'+row_id).remove();
 				 	$('#'+row_id).removeClass('error');
-                    selectedProductIDs.remove(row_id); // removing id from array of product IDs
+                    selectedProductIDs.splice(productIDindex,1); // removing id from array of product IDs
 				 	$('#tr_transact_search_'+row_id.substring(15)).css('text-decoration','none');
 				 	$(this).dialog('close');
 				},
@@ -224,24 +234,22 @@ function saveToShoppingList(prodId,prodName,prodCost,prodUnit,tblRow){
 			})
 	}
 }
-function changeToMoneyFormat(obj){
-
-    var subTotalLength = (obj.subTotal).length;
-    for(var ctr=1;ctr<subTotalLength;ctr++){
-        var index = ctr*3;
-    }
-
-}
-
+/*===========================UNFINISHED ROUNDING UP NUMBERS TO NEAREST TENTHS=================*/
 function displayToShoppingList(prodId,prodName,prodCost,prodUnit,productQuantity){
     var obj = new Object();
 	var id = prodId.substring(19);
 	var subTotal = parseFloat(prodCost)*parseInt(productQuantity);
 	totalPayment += subTotal; /*-global totalPayment variable to compute for the total payment-*/
-    obj.subTotal = "s"+subTotal;
+
+    obj.converted = subTotal.toString();
+
+    changeToMoneyFormat(obj); //Pass by reference pass by value
+    subTotal = (obj.converted);
+    obj.converted = totalPayment.toString();
     changeToMoneyFormat(obj);
-    console.log(obj.subTotal);
-	var newId = "tr_to_transact_"+id;
+    var totalPayment2 = obj.converted;
+
+    var newId = "tr_to_transact_"+id;
 	var tbody = "<tr  id='"+newId+"'>"+
 				"<th><a href='#'><img src='../CSS/img_tbls/deleteShoppingList.png' class ='delete_list_img' alt = 'delete quanity' title='delete' /></a></th>"+
 				"<td>"+prodName+"</td>"+
@@ -252,7 +260,7 @@ function displayToShoppingList(prodId,prodName,prodCost,prodUnit,productQuantity
 	var tfoot = "<tr  class='totalpayment_tr'>"+
 				"<td>Total</td>"+
 				"<td colspan='4'><button id='payment_btn' class='btn btn-block btn-primary' title='Shift+b for a shortcut'>PAY</button></td>"+
-				"<td>&#8369; <span>"+totalPayment+"</span></td>"+
+				"<td>&#8369; <span>"+totalPayment2+"</span></td>"+
 				"</tr>";
 	
 	$('#shopping_list_tbody').append(tbody);
@@ -272,7 +280,6 @@ function saveTransaction(){
         quantity = quantity[1].innerHTML;
         productIDs.push(row_id);
         productQuantities.push(quantity);
-        console.log(quantity+" => "+row_id);
     }
 
     var obj = {'productIDs': productIDs, 'quantities': productQuantities};
@@ -286,9 +293,9 @@ function saveTransaction(){
             	if(index != 0)
             	$(this).remove();
             });
-
             $('#products_to_transact_tbody tr').css({'text-decoration':'none'});
             totalPayment = 0;
+            selectedProductIDs.splice(0,selectedProductIDs.length);
         },
         error:function(data){
             alert("Error on saving transaction => "+ data);
@@ -321,6 +328,53 @@ function markSelectedProducts(){
         $('#'+selectedProductIDs[ctr]).css('text-decoration','line-through');
     }
 }
+
+function changeToMoneyFormat(obj){
+    var toConvert = (obj.converted);
+    var toConvertLength = toConvert.indexOf('.');
+    var floatingPoint = true;
+    if(toConvertLength < 0){
+        toConvertLength = toConvert.length;
+        floatingPoint = false;
+    }
+    var floatingValue = toConvert.substring(toConvertLength+1);
+    var substrBase = toConvertLength;
+    var arrayNumbers = new Array();
+    toConvertLength = toConvertLength/3;
+    var newtoConvert = "";
+    var lastNumber = "";
+    if(substrBase % 1 != 0){
+        substrBase = substrBase+1;
+    }if(toConvertLength % 1 != 0){
+        toConvertLength = toConvertLength+1;
+    }
+    toConvertLength = parseInt(toConvertLength);
+    substrBase = parseInt(substrBase);
+
+    for(var ctr=1;ctr<toConvertLength+1;ctr++){
+        if(substrBase-(ctr*3) > 0){
+            newtoConvert = toConvert.substr(substrBase-(ctr*3),3);
+            lastNumber = toConvert.substr(0,substrBase-(ctr*3));
+            arrayNumbers[toConvertLength-(ctr)] = newtoConvert;
+        }else{
+            if(lastNumber == ""){
+                arrayNumbers[toConvertLength-(ctr)] = parseInt(toConvert);
+            }else{
+                arrayNumbers[toConvertLength-(ctr)] = lastNumber;
+            }
+        }
+    }
+    console.log(toConvert);
+    if(floatingPoint){
+        obj.converted = arrayNumbers.join(',')+"."+floatingValue;
+    }else{
+        if(arrayNumbers != null){
+            obj.converted = arrayNumbers.join(',');
+        }
+    }
+
+}
+
 
 
 

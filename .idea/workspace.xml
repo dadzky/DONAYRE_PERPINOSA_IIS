@@ -3,16 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="64a0a310-e0d0-4c4c-8ce0-1ad2cc8f2750" name="Default" comment="">
       <change type="DELETED" beforePath="$PROJECT_DIR$/JS/saveTransaction.php" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PAGES/login.php" afterPath="$PROJECT_DIR$/PAGES/login.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PAGES/transaction.php" afterPath="$PROJECT_DIR$/PAGES/transaction.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JS/transaction_functionality.js" afterPath="$PROJECT_DIR$/JS/transaction_functionality.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CSS/transaction_record_page.css" afterPath="$PROJECT_DIR$/CSS/transaction_record_page.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="IIS_PROJECT_HUB.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="64a0a310-e0d0-4c4c-8ce0-1ad2cc8f2750" time="1367804636753" ignored="false" />
+    <file path="/Dummy.txt" changelist="64a0a310-e0d0-4c4c-8ce0-1ad2cc8f2750" time="1367829328407" ignored="false" />
     <file path="/products.js" changelist="64a0a310-e0d0-4c4c-8ce0-1ad2cc8f2750" time="1367383931847" ignored="false" />
     <file path="/retrieve_product_data.php" changelist="64a0a310-e0d0-4c4c-8ce0-1ad2cc8f2750" time="1367213914661" ignored="false" />
     <file path="/Products_functions_home.php" changelist="64a0a310-e0d0-4c4c-8ce0-1ad2cc8f2750" time="1367223946476" ignored="false" />
@@ -45,7 +41,7 @@
     <file path="/transaction_records.php" changelist="64a0a310-e0d0-4c4c-8ce0-1ad2cc8f2750" time="1367635614973" ignored="false" />
     <file path="/transaction_record_functionality.js" changelist="64a0a310-e0d0-4c4c-8ce0-1ad2cc8f2750" time="1367637525696" ignored="false" />
     <file path="/display_fired_employees.php" changelist="64a0a310-e0d0-4c4c-8ce0-1ad2cc8f2750" time="1367462982553" ignored="false" />
-    <file path="/transaction_functionality.js" changelist="64a0a310-e0d0-4c4c-8ce0-1ad2cc8f2750" time="1367806636077" ignored="false" />
+    <file path="/transaction_functionality.js" changelist="64a0a310-e0d0-4c4c-8ce0-1ad2cc8f2750" time="1367830299594" ignored="false" />
     <file path="/saveTransaction.php" changelist="64a0a310-e0d0-4c4c-8ce0-1ad2cc8f2750" time="1367550676833" ignored="false" />
     <file path="/iis_functions_sales.php" changelist="64a0a310-e0d0-4c4c-8ce0-1ad2cc8f2750" time="1367634170201" ignored="false" />
     <file path="/page_footer.html" changelist="64a0a310-e0d0-4c4c-8ce0-1ad2cc8f2750" time="1367478987593" ignored="false" />
@@ -78,7 +74,7 @@
       <file leaf-file-name="transaction_functionality.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/JS/transaction_functionality.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="230" column="25" selection-start="7964" selection-end="7964" vertical-scroll-proportion="0.33933935">
+            <state line="236" column="94" selection-start="8522" selection-end="8522" vertical-scroll-proportion="0.36238533">
               <folding />
             </state>
           </provider>
@@ -330,9 +326,13 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="recentsLimit" value="5" />
+    <property name="options.lastSelected" value="appearance" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../hotel_information_system" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RunManager" selected="PHP Script.admins.php">
     <configuration default="false" name="admins.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/PAGES/admins.php">
@@ -362,6 +362,23 @@
     </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false" SSL_PROTOCOLS="sslv3">
+    <option name="USER" value="" />
+    <option name="PASSWORD" value="" />
+    <option name="mySSHConnectionTimeout" value="30000" />
+    <option name="mySSHReadTimeout" value="30000" />
+    <option name="LAST_MERGED_REVISION" />
+    <option name="MERGE_DRY_RUN" value="false" />
+    <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
+    <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
+    <option name="IGNORE_SPACES_IN_MERGE" value="false" />
+    <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
+    <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
+    <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
+    <option name="FORCE_UPDATE" value="false" />
+    <option name="IGNORE_EXTERNALS" value="false" />
+    <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="64a0a310-e0d0-4c4c-8ce0-1ad2cc8f2750" name="Default" comment="" />
@@ -372,13 +389,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="24" width="1440" height="852" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15876436" sideWeight="0.6713881" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18804035" sideWeight="0.9971631" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -486,9 +503,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/PHP/CLASSES/iis_functions_sales.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="251" column="22" selection-start="10303" selection-end="10303" vertical-scroll-proportion="0.023364486">
-          <folding />
-        </state>
+        <state line="251" column="22" selection-start="10303" selection-end="10303" vertical-scroll-proportion="0.023364486" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/CSS/transaction_record_page.css">
@@ -518,9 +533,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/JS/transaction_record_functionality.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="233" column="57" selection-start="7731" selection-end="7731" vertical-scroll-proportion="0.29179332">
-          <folding />
-        </state>
+        <state line="233" column="57" selection-start="7731" selection-end="7731" vertical-scroll-proportion="0.29179332" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/PAGES/transaction_records.php">
@@ -537,7 +550,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/JS/transaction_functionality.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="230" column="25" selection-start="7964" selection-end="7964" vertical-scroll-proportion="0.33933935">
+        <state line="236" column="94" selection-start="8522" selection-end="8522" vertical-scroll-proportion="0.36238533">
           <folding />
         </state>
       </provider>
