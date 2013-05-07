@@ -1,13 +1,20 @@
 -- phpMyAdmin SQL Dump
--- version 3.3.9
+-- version 3.4.11.1deb1
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
+<<<<<<< HEAD
+-- Generation Time: May 01, 2013 at 04:56 PM
+-- Server version: 5.5.29
+-- PHP Version: 5.4.6-1ubuntu1.2
+=======
 -- Generation Time: May 03, 2013 at 09:07 AM
 -- Server version: 5.5.8
 -- PHP Version: 5.3.5
+>>>>>>> d80209ee098c8e5bf1254f8e71a5eb9616812aac
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -32,6 +39,8 @@ CREATE TABLE IF NOT EXISTS `accounts` (
   KEY `employee_id` (`employee_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+<<<<<<< HEAD
+=======
 --
 -- Dumping data for table `accounts`
 --
@@ -40,6 +49,7 @@ INSERT INTO `accounts` (`employee_id`, `username`, `password`) VALUES
 (16, 'marejean', 'marejean'),
 (17, 'test', 'test');
 
+>>>>>>> d80209ee098c8e5bf1254f8e71a5eb9616812aac
 -- --------------------------------------------------------
 
 --
@@ -57,6 +67,9 @@ CREATE TABLE IF NOT EXISTS `administrator` (
   `username` varchar(20) DEFAULT NULL,
   `password` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`admin_id`)
+<<<<<<< HEAD
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+=======
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
@@ -67,6 +80,7 @@ INSERT INTO `administrator` (`admin_id`, `lastname`, `firstname`, `gender`, `bir
 (2, 'Wew', 'Wew', 'female', '1996-02-15', 'Palo', 2147483647, 'granaderos', 'marjiecasosa'),
 (3, 'f', 'f', 'female', '1996-02-15', 'Palo', 2147483647, 'granaderos', 'marjiecasosa'),
 (4, 'Perpinosa', 'Marejean', 'female', '1996-02-15', 'Palo', 910798543, 'granaderos', 'marjiecasosa');
+>>>>>>> d80209ee098c8e5bf1254f8e71a5eb9616812aac
 
 -- --------------------------------------------------------
 
@@ -85,11 +99,6 @@ CREATE TABLE IF NOT EXISTS `admins_transaction` (
   KEY `product_id_admins_transaction_to_products` (`product_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
---
--- Dumping data for table `admins_transaction`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -106,6 +115,9 @@ CREATE TABLE IF NOT EXISTS `employees` (
   `contact_number` varchar(11) DEFAULT NULL,
   `job_type` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`employee_id`)
+<<<<<<< HEAD
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=16 ;
+=======
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=22 ;
 
 --
@@ -119,6 +131,7 @@ INSERT INTO `employees` (`employee_id`, `lastname`, `firstname`, `gender`, `birt
 (19, 'Per', 'Marejean', 'female', '1995-02-15', 'lkjskd', '09107985432', 'porter'),
 (20, 'Wew', 'Marejean', 'female', '1995-01-15', 'lkjskd', '09107985432', 'packer'),
 (21, 'fdghgf', 'hgf', 'female', '1995-01-01', 'ghfh', '09107985432', 'porter');
+>>>>>>> d80209ee098c8e5bf1254f8e71a5eb9616812aac
 
 -- --------------------------------------------------------
 
@@ -134,11 +147,6 @@ CREATE TABLE IF NOT EXISTS `employees_attendance` (
   PRIMARY KEY (`attendance_id`),
   KEY `employee_id_employees_attendance_to_employees` (`employee_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
-
---
--- Dumping data for table `employees_attendance`
---
-
 
 -- --------------------------------------------------------
 
@@ -158,11 +166,6 @@ CREATE TABLE IF NOT EXISTS `employees_payroll` (
   KEY `salary_id_employees_payroll_to_employees_salaries` (`salary_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
---
--- Dumping data for table `employees_payroll`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -176,10 +179,18 @@ CREATE TABLE IF NOT EXISTS `employees_salaries` (
   PRIMARY KEY (`salary_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
+-- --------------------------------------------------------
+
 --
--- Dumping data for table `employees_salaries`
+-- Table structure for table `fired_employees`
 --
 
+CREATE TABLE IF NOT EXISTS `fired_employees` (
+  `employee_id` int(11) NOT NULL AUTO_INCREMENT,
+  `date_fired` date DEFAULT NULL,
+  `reason` varchar(500) DEFAULT NULL,
+  PRIMARY KEY (`employee_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -216,6 +227,9 @@ CREATE TABLE IF NOT EXISTS `products` (
   `number_of_stocks` double DEFAULT NULL,
   `stock_unit` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`product_id`)
+<<<<<<< HEAD
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=38 ;
+=======
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=48 ;
 
 --
@@ -233,6 +247,7 @@ INSERT INTO `products` (`product_id`, `product_name`, `product_price`, `number_o
 (45, 'sample8', 17, -24, 'pieces'),
 (46, 'sample9', 17, 8, 'pieces'),
 (47, 'sample10', 17, -4, 'pieces');
+>>>>>>> d80209ee098c8e5bf1254f8e71a5eb9616812aac
 
 -- --------------------------------------------------------
 
@@ -249,6 +264,9 @@ CREATE TABLE IF NOT EXISTS `transactions` (
   PRIMARY KEY (`transaction_id`),
   KEY `product_id_transactions_to_products` (`product_id`),
   KEY `employee_id_transactions_to_employees` (`employee_id`)
+<<<<<<< HEAD
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=31 ;
+=======
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=64 ;
 
 --
@@ -269,6 +287,7 @@ INSERT INTO `transactions` (`transaction_id`, `product_id`, `employee_id`, `tran
 (61, 45, 17, '2013-05-04', '14:03:44'),
 (62, 44, 17, '2013-03-03', '14:05:38'),
 (63, 40, 17, '2013-05-03', '14:27:26');
+>>>>>>> d80209ee098c8e5bf1254f8e71a5eb9616812aac
 
 -- --------------------------------------------------------
 
@@ -283,9 +302,11 @@ CREATE TABLE IF NOT EXISTS `transactions_info` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `transactions_info`
+-- Constraints for dumped tables
 --
 
+<<<<<<< HEAD
+=======
 INSERT INTO `transactions_info` (`transaction_id`, `number_of_items`) VALUES
 (51, 32),
 (52, 32),
@@ -301,9 +322,12 @@ INSERT INTO `transactions_info` (`transaction_id`, `number_of_items`) VALUES
 (62, 32),
 (63, 12);
 
+>>>>>>> d80209ee098c8e5bf1254f8e71a5eb9616812aac
 --
--- Constraints for dumped tables
+-- Constraints for table `accounts`
 --
+ALTER TABLE `accounts`
+  ADD CONSTRAINT `accounts_ibfk_1` FOREIGN KEY (`employee_id`) REFERENCES `employees` (`employee_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `accounts`
@@ -348,3 +372,7 @@ ALTER TABLE `transactions`
 --
 ALTER TABLE `transactions_info`
   ADD CONSTRAINT `transaction_id_transactions_info_to_transactions` FOREIGN KEY (`transaction_id`) REFERENCES `transactions` (`transaction_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

@@ -86,7 +86,6 @@ $(function(){
 	 		$('#edited_quantity').css({"border-color":"red", "box-shadow":"0 0 1px 2px pink", "color":"#f00"});
 	 	}
 
-		
 	 })
 	 /*----------------------Deleting Item on the shopping-------------*/
 	 $('#shopping_list_tbody').on('click','th img',function(){
@@ -121,8 +120,6 @@ $(function(){
                 $('#'+row_id).removeClass('error');
             }
 		});
-
-
 
 	 });
 

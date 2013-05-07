@@ -32,9 +32,6 @@
 
                 } else {
                     $error_message = "Incorrect password!";
-
-
-
                 }
             } else {
                 $error_message = "Unknown username!";

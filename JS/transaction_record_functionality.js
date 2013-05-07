@@ -219,7 +219,6 @@ function displayBarGraph(){
         data: {yearSelected:yearSelected},
     	url:'../PHP/OBJECTS/TRANSACTION_RECORD/getMonthlySales.php',
     	success:function(data){
-
             if(data){ //if it returns an array of values
                 var obj = JSON.parse(data);
                 var month = "";
@@ -253,7 +252,6 @@ function displayBarGraph(){
             }else{
                 $('#graph-sales-div').html("<h2>NO RECORDS</h2>");
             }
-    		
     	},
     	error:function(data){
     		alert('Error on displaying bargraph => '+ data['status'] + " " + data['statusText']);
