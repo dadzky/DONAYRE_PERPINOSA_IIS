@@ -107,18 +107,7 @@ $(function(){
 				 	$('#shopping_list_total_tfoot').find('td:last span').html(changeToMoneyFormat(totalPayment));
 				 	$('#'+row_id).remove();
 				 	$('#'+row_id).removeClass('error');
-<<<<<<< HEAD
-<<<<<<< HEAD
                     selectedProductIDs.splice(productIDindex,1); // removing id from array of product IDs
-=======
-<<<<<<< HEAD
-=======
-                    selectedProductIDs.remove(row_id); // removing id from array of product IDs
->>>>>>> d80209ee098c8e5bf1254f8e71a5eb9616812aac
->>>>>>> 6a176d65a51e8deada7be80ae7477b3cbd9fa440
-=======
-                    selectedProductIDs.splice(productIDindex,1); // removing id from array of product IDs
->>>>>>> 0b7c69ccd9bcb8074ca49935530ca22a7a7ea1e3
 				 	$('#tr_transact_search_'+row_id.substring(15)).css('text-decoration','none');
                     totalPayment = parseFloat(totalPayment); //to make totalPayment a floating point number
                     console.log("deleted => "+ totalPayment)

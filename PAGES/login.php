@@ -1,52 +1,13 @@
 <?php
     session_start();
 
-<<<<<<< HEAD
     if(isset($_SESSION['log_in_as'])) {
         if($_SESSION['log_in_as'] == "cashier") {
             header("Location: transaction.php");
         } else {
             header("Location: adminhome.php");
-=======
-    $execute_check = new Iis_functions_home();
-
-    if(isset($_SESSION["log_in_as"]) && $_SESSION["log_in_as"] == "cashier") {
-        header("Location: transaction.php");
-    } else if(isset($_SESSION["log_in_as"]) && $_SESSION["log_in_as"] == "administrator") {
-        header("Location: adminhome.php");
-    } else {
-        if(isset($_POST["log_in_as_input"]) && isset($_POST["username_entered"]) && isset($_POST["password_entered"])) {
-            $username_entered = $_POST["username_entered"];
-            $password_entered = $_POST["password_entered"];
-            $log_in_as = $_POST["log_in_as_input"];
-            $username_exist = $execute_check->check_username($username_entered, $log_in_as);
-            if($username_exist) {
-                $same_password = $execute_check->check_password($username_entered, $password_entered, $log_in_as);
-                if($same_password) {
-                    if($log_in_as == "cashier") {
-                        $_SESSION['log_in_as'] = "cashier";
-                        $_SESSION['username_entered'] = $username_entered;
-                        $_SESSION['password_entered'] = $password_entered;
-                        // =========== STORING CASHIERS I.D. INTO SESSION VARIABLE ========
-                        $_SESSION['employee_id'] = $execute_check->get_cashiers_data($_SESSION['username_entered']);
-                        header("Location: transaction.php");
-                    } else {
-                        $_SESSION["log_in_as"] = "administrator";
-                        $_SESSION['username_entered'] = $username_entered;
-                        header("Location: adminhome.php");
-                    }
-
-                } else {
-                    $error_message = "Incorrect password!";
-                }
-            } else {
-                $error_message = "Unknown username!";
-            }
->>>>>>> 0b7c69ccd9bcb8074ca49935530ca22a7a7ea1e3
         }
     }
-
-
 ?>
 
 <!Doctype html>
@@ -82,42 +43,6 @@
 
 
             <div id = "iis_related_content_div" class = "container">
-                Content. Content.Content.Content.Content.Content.Content.Content.Content.Content.Content.Content.Content.Content.Content.<br />
-                Programming! Programming! Programming! Programming! Programming! Programming! Programming! Programming! Programming!
-                Programming! Programming! Programming! Programming! Programming! Programming! Programming! Programming! Programming!
-                Programming! Programming! Programming! Programming! Programming! Programming! Programming! Programming! Programming!
-                Programming! Programming! Programming! Programming! Programming! Programming! Programming! Programming! Programming!
-                Programming! Programming! Programming! Programming! Programming! Programming! Programming! Programming! Programming!
-                Programming! Programming! Programming! Programming! Programming! Programming! Programming! Programming! Programming!
-                Programming! Programming! Programming! Programming! Programming! Programming! Programming! Programming! Programming!
-                Programming! Programming! Programming! Programming! Programming! Programming! Programming! Programming! Programming!
-                Programming! Programming! Programming! Programming! Programming! Programming! Programming! Programming! Programming!
-                Programming! Programming! Programming! Programming! Programming! Programming! Programming! Programming! Programming!
-                Programming! Programming! Programming! Programming! Programming! Programming! Programming! Programming! Programming!
-                Programming! Programming! Programming! Programming! Programming! Programming! Programming! Programming! Programming!
-                Programming! Programming! Programming! Programming! Programming! Programming! Programming! Programming! Programming!
-                Programming! Programming! Programming! Programming! Programming! Programming! Programming! Programming! Programming!
-                Programming! Programming! Programming! Programming! Programming! Programming! Programming! Programming! Programming!
-                Programming! Programming! Programming! Programming! Programming! Programming! Programming! Programming! Programming!
-                Programming! Programming! Programming! Programming! Programming! Programming! Programming! Programming! Programming!
-                Programming! Programming! Programming! Programming! Programming! Programming! Programming! Programming! Programming!
-                Programming! Programming! Programming! Programming! Programming! Programming! Programming! Programming! Programming!
-                Programming! Programming! Programming! Programming! Programming! Programming! Programming! Programming! Programming!
-                Programming! Programming! Programming! Programming! Programming! Programming! Programming! Programming! Programming!
-                Programming! Programming! Programming! Programming! Programming! Programming! Programming! Programming! Programming!
-                Programming! Programming! Programming! Programming! Programming! Programming! Programming! Programming! Programming!
-                Programming! Programming! Programming! Programming! Programming! Programming! Programming! Programming! Programming!
-                Programming! Programming! Programming! Programming! Programming! Programming! Programming! Programming! Programming!
-                Programming! Programming! Programming! Programming! Programming! Programming! Programming! Programming! Programming!
-                Programming! Programming! Programming! Programming! Programming! Programming! Programming! Programming! Programming!
-                Programming! Programming! Programming! Programming! Programming! Programming! Programming! Programming! Programming!
-                Programming! Programming! Programming! Programming! Programming! Programming! Programming! Programming! Programming!
-                Programming! Programming! Programming! Programming! Programming! Programming! Programming! Programming! Programming!
-                Programming! Programming! Programming! Programming! Programming! Programming! Programming! Programming! Programming!
-                Programming! Programming! Programming! Programming! Programming! Programming! Programming! Programming! Programming!
-                Programming! Programming! Programming! Programming! Programming! Programming! Programming! Programming! Programming!
-                Programming! Programming! Programming! Programming! Programming! Programming! Programming! Programming! Programming!
-                Programming! Programming! Programming! Programming! Programming! Programming! Programming! Programming! Programming!
 
             </div> <!-- ======= iis related content div ends ======= -->
             <div id = "log_in_div">
@@ -133,11 +58,9 @@
 
             </div> <!-- ====== log in div ends ======= -->
             <div id = "overlay_div_container"></div>
-
         </div><!-- ======= main container div ends ====== -->
-
+        <?php include "page_footer.html"; ?>
         <!-- ========= IMPORTS =======-->
-
         <script src = "../JS/jquery-1.9.1.min.js"></script>
         <script src = "../JS/jquery-ui-1.10.2.min.js"></script>
         <script src = "../JS/log_in_page_functionality.js"></script>

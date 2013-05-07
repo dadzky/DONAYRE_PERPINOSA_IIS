@@ -5,12 +5,15 @@ $(document).ready(function() {
     $("#log_in_div").hide();
     $("#overlay_div_container").hide();
 
-    var width = $("#main_log_in_button").css("width");
-    var margin = $("#main_log_in_button").css("margin");
-
-    $("#log_in_option_ul").css({
-        "width": width,
-        "margin": margin
+    $("#main_log_in_button").hover(function() {
+        var width = $("#main_log_in_button").css("width");
+        var margin = $("#main_log_in_button").css("margin");
+        $("#log_in_option_ul").css({
+            "width": width,
+            "margin": margin,
+            "background": "white",
+            "height": "300px"
+        });
     });
 
     $("#close_log_in_options_span").click(function() {

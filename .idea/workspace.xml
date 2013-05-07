@@ -2,25 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/DB/IIS_DB.sql" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JS/saveTransaction.php" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PHP/CLASSES/iis_functions_sales.php" afterPath="$PROJECT_DIR$/PHP/CLASSES/iis_functions_sales.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PHP/CLASSES/Products_functions_home.php" afterPath="$PROJECT_DIR$/PHP/CLASSES/Products_functions_home.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JS/log_in_page_functionality.js" afterPath="$PROJECT_DIR$/JS/log_in_page_functionality.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PAGES/login.php" afterPath="$PROJECT_DIR$/PAGES/login.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CSS/page_footer.css" afterPath="$PROJECT_DIR$/CSS/page_footer.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PAGES/page_footer.html" afterPath="$PROJECT_DIR$/PAGES/page_footer.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JS/products.js" afterPath="$PROJECT_DIR$/JS/products.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PAGES/products_page.php" afterPath="$PROJECT_DIR$/PAGES/products_page.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PAGES/transaction.php" afterPath="$PROJECT_DIR$/PAGES/transaction.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JS/transaction_functionality.js" afterPath="$PROJECT_DIR$/JS/transaction_functionality.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JS/transaction_record_functionality.js" afterPath="$PROJECT_DIR$/JS/transaction_record_functionality.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="IIS_PROJECT_HUB.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1367897070442" ignored="false" />
-    <file path="/login.php" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1367898402271" ignored="false" />
-    <file path="/log_in_page_functionality.js" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1367897408172" ignored="false" />
+    <file path="/login.php" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1367913188185" ignored="false" />
+    <file path="/log_in_page_functionality.js" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1367903692370" ignored="false" />
     <file path="/log_in_validation.php" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1367897465642" ignored="false" />
     <file path="/iis_functions_home.php" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1367892686822" ignored="false" />
     <file path="/log_in_page.css" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1367897351870" ignored="false" />
-    <file path="/products.js" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1367899743281" ignored="false" />
+    <file path="/products.js" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1367912465616" ignored="false" />
+    <file path="$PROJECT_DIR$/../hotel_information_system/PHP/FUNCTIONS_HOME/database_connection.php" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1367901832408" ignored="false" />
+    <file path="/products_page.php" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1367910399549" ignored="false" />
+    <file path="/Products_functions_home.php" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1367914060866" ignored="false" />
+    <file path="/page_footer.css" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1367913302776" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,82 +44,64 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="login.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/PAGES/login.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="44" column="39" selection-start="2157" selection-end="2157" vertical-scroll-proportion="0.7717042">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="employees.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/JS/employees.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="1.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Employees_functions_home.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PHP/CLASSES/Employees_functions_home.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="46" selection-start="1454" selection-end="1456" vertical-scroll-proportion="-7.9591837">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Products_functions_home.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PHP/CLASSES/Products_functions_home.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="158" column="215" selection-start="8535" selection-end="8552" vertical-scroll-proportion="-5.755102">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="products.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/JS/products.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="419" column="26" selection-start="20308" selection-end="20325" vertical-scroll-proportion="-15.24">
+            <state line="415" column="28" selection-start="20024" selection-end="20024" vertical-scroll-proportion="-8.56">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="log_in_page_functionality.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/JS/log_in_page_functionality.js">
+      <file leaf-file-name="products_page.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PAGES/products_page.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="52" column="28" selection-start="1735" selection-end="1735" vertical-scroll-proportion="0.0">
+            <state line="17" column="78" selection-start="1002" selection-end="1002" vertical-scroll-proportion="-5.2040815">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="database_connection.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PHP/CLASSES/database_connection.php">
+      <file leaf-file-name="Products_functions_home.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/PHP/CLASSES/Products_functions_home.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="36" selection-start="187" selection-end="187" vertical-scroll-proportion="-3.75">
+            <state line="187" column="75" selection-start="10901" selection-end="10901" vertical-scroll-proportion="0.27184466">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="log_in_validation.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PHP/OBJECTS/log_in_validation.php">
+      <file leaf-file-name="login.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PAGES/login.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="106" selection-start="533" selection-end="533" vertical-scroll-proportion="-9.375">
+            <state line="59" column="52" selection-start="2595" selection-end="2595" vertical-scroll-proportion="-20.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="iis_functions_home.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PHP/CLASSES/iis_functions_home.php">
+      <file leaf-file-name="includes_all_css_files.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CSS/includes_all_css_files.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="66" selection-start="391" selection-end="391" vertical-scroll-proportion="-6.875">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="page_footer.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PAGES/page_footer.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="1" column="22" selection-start="23" selection-end="23" vertical-scroll-proportion="-0.625">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="page_footer.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CSS/page_footer.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="5" column="16" selection-start="229" selection-end="229" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -141,9 +127,14 @@
       <list>
         <option value="$PROJECT_DIR$/PHP/CLASSES/iis_functions_home.php" />
         <option value="$PROJECT_DIR$/PHP/CLASSES/database_connection.php" />
+        <option value="$PROJECT_DIR$/PHP/OBJECTS/log_in_validation.php" />
+        <option value="$PROJECT_DIR$/JS/transaction_functionality.js" />
         <option value="$PROJECT_DIR$/CSS/log_in_page.css" />
         <option value="$PROJECT_DIR$/JS/log_in_page_functionality.js" />
-        <option value="$PROJECT_DIR$/PHP/OBJECTS/log_in_validation.php" />
+        <option value="$PROJECT_DIR$/PAGES/transaction.php" />
+        <option value="$PROJECT_DIR$/PAGES/products_page.php" />
+        <option value="$PROJECT_DIR$/CSS/page_footer.css" />
+        <option value="$PROJECT_DIR$/PAGES/page_footer.html" />
         <option value="$PROJECT_DIR$/PAGES/login.php" />
         <option value="$PROJECT_DIR$/PHP/CLASSES/Products_functions_home.php" />
         <option value="$PROJECT_DIR$/JS/products.js" />
@@ -285,6 +276,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../hotel_information_system" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
@@ -385,74 +377,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/PHP/CLASSES/iis_functions_home.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="22" selection-start="130" selection-end="130" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PAGES/login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="63" column="50" selection-start="2755" selection-end="2771" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JS/log_in_page_functionality.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="8" selection-start="271" selection-end="287" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PHP/OBJECTS/log_in_validation.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="20" selection-start="26" selection-end="26" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JS/admins_page_functionality.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="7" selection-start="567" selection-end="567" vertical-scroll-proportion="-9.8" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PAGES/employees_page.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="25" selection-start="2074" selection-end="2074" vertical-scroll-proportion="0.86314154">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CSS/log_in_page.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="0" selection-start="632" selection-end="632" vertical-scroll-proportion="0.48854962">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JS/log_in_page_functionality.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="28" selection-start="1735" selection-end="1735" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PHP/CLASSES/database_connection.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="36" selection-start="187" selection-end="187" vertical-scroll-proportion="-3.75">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PHP/CLASSES/iis_functions_home.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="66" selection-start="391" selection-end="391" vertical-scroll-proportion="-6.875">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/PHP/OBJECTS/log_in_validation.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="15" column="106" selection-start="533" selection-end="533" vertical-scroll-proportion="-9.375">
@@ -460,9 +384,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JS/employees.js">
+    <entry file="file://$PROJECT_DIR$/JS/transaction_record_functionality.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="1.0">
+        <state line="243" column="32" selection-start="8148" selection-end="8148" vertical-scroll-proportion="-12.16">
           <folding />
         </state>
       </provider>
@@ -474,23 +398,93 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JS/products.js">
+    <entry file="file://$PROJECT_DIR$/CSS/log_in_page.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="419" column="26" selection-start="20308" selection-end="20325" vertical-scroll-proportion="-15.24">
+        <state line="26" column="4" selection-start="349" selection-end="349" vertical-scroll-proportion="-9.2">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PHP/CLASSES/Products_functions_home.php">
+    <entry file="file://$PROJECT_DIR$/PHP/CLASSES/database_connection.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="158" column="215" selection-start="8535" selection-end="8552" vertical-scroll-proportion="-5.755102">
+        <state line="6" column="36" selection-start="187" selection-end="187" vertical-scroll-proportion="-3.75">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JS/employees.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="1.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PAGES/transaction.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="46" column="16" selection-start="1887" selection-end="1887" vertical-scroll-proportion="1.0866141">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JS/transaction_functionality.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="14" selection-start="723" selection-end="724" vertical-scroll-proportion="-8.28">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JS/log_in_page_functionality.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="60" selection-start="317" selection-end="317" vertical-scroll-proportion="0.20485584">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CSS/includes_all_css_files.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CSS/page_footer.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="16" selection-start="229" selection-end="229" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PAGES/page_footer.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="22" selection-start="23" selection-end="23" vertical-scroll-proportion="-0.625">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/PAGES/login.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="39" selection-start="2157" selection-end="2157" vertical-scroll-proportion="0.7717042">
+        <state line="59" column="52" selection-start="2595" selection-end="2595" vertical-scroll-proportion="-20.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JS/products.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="415" column="28" selection-start="20024" selection-end="20024" vertical-scroll-proportion="-8.56">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PAGES/products_page.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="78" selection-start="1002" selection-end="1002" vertical-scroll-proportion="-5.2040815">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PHP/CLASSES/Products_functions_home.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="187" column="75" selection-start="10901" selection-end="10901" vertical-scroll-proportion="0.27184466">
           <folding />
         </state>
       </provider>

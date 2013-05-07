@@ -24,7 +24,7 @@
                 <form id = "add_product_form">
                     <dl>
                     <dt>Product Name:</dt>
-                        <dd id = 'product_name_dd'><input type = "text" name = "product_name" id = "product_id" /></dd>
+                        <dd id = 'product_name_dd'><input type = "text" name = "product_name" id = "product_name" /></dd>
                     <dt>Product Price:</dt>
                         <dd id = 'product_price_dd'>&#8369;<input type = "text" name = "product_price" id = "product_price" /></dd>
                     <dt>Number of Stock(s):</dt>

@@ -2,4 +2,6 @@
 #footer_div {
     height: 120px;
     background: -webkit-linear-gradient(top, deepskyblue 10%, skyblue 40%, lightblue 90%);
+    background: -moz-linear-gradient(top, deepskyblue 10%, skyblue 40%, lightblue 90%);
+    background: linear-gradient(top, deepskyblue 10%, skyblue 40%, lightblue 90%);
 }
