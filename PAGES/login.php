@@ -1,49 +1,17 @@
 <?php
     session_start();
-    include "../PHP/CLASSES/iis_functions_home.php";
 
-    $execute_check = new Iis_functions_home();
-
-    if(isset($_SESSION["log_in_as"]) && $_SESSION["log_in_as"] == "cashier") {
-        header("Location: transaction.php");
-    } else if(isset($_SESSION["log_in_as"]) && $_SESSION["log_in_as"] == "administrator") {
-        header("Location: adminhome.php");
-    } else {
-        if(isset($_POST["log_in_as_input"]) && isset($_POST["username_entered"]) && isset($_POST["password_entered"])) {
-            $username_entered = $_POST["username_entered"];
-            $password_entered = $_POST["password_entered"];
-            $log_in_as = $_POST["log_in_as_input"];
-            $username_exist = $execute_check->check_username($username_entered, $log_in_as);
-            if($username_exist) {
-                $same_password = $execute_check->check_password($username_entered, $password_entered, $log_in_as);
-                if($same_password) {
-                    if($log_in_as == "cashier") {
-                        $_SESSION['log_in_as'] = "cashier";
-                        $_SESSION['username_entered'] = $username_entered;
-                        $_SESSION['password_entered'] = $password_entered;
-                        // =========== STORING CASHIERS I.D. INTO SESSION VARIABLE ========
-                        $_SESSION['employee_id'] = $execute_check->get_cashiers_data($_SESSION['username_entered']);
-                        header("Location: transaction.php");
-                    } else {
-                        $_SESSION["log_in_as"] = "administrator";
-                        $_SESSION['username_entered'] = $username_entered;
-                        header("Location: adminhome.php");
-                    }
-
-                } else {
-                    $error_message = "Incorrect password!";
-
-
-
-                }
-            } else {
-                $error_message = "Unknown username!";
-            }
+    if(isset($_SESSION['log_in_as'])) {
+        if($_SESSION['log_in_as'] == "cashier") {
+            header("Location: transaction.php");
+        } else {
+            header("Location: adminhome.php");
         }
     }
 
 
 ?>
+
 <!Doctype html>
 <html>
     <head>
@@ -118,17 +86,15 @@
             <div id = "log_in_div">
                 <span id = "close_log_in_options_span"><img src = "../CSS/images/close_icon1.png"></span>
                 <form id = "log_in_form" action = "login.php" method = "POST">
-                    <input type = "hidden" name = "log_in_as_input" id = "log_in_as_input" />
+                    <input type = "hidden" name = "log_in_as" id = "log_in_as" />
                     <span id = "log_in_as_span"></span>
                     <input type = "text" name = "username_entered" placeholder = "username" />
                     <input type = "password" name = "password_entered" placeholder = "password" />
-                    <?php
-                    if(isset($error_message)) echo $error_message;
-                    ?><br />
-                    <input type = "submit" class = "btn btn-info" value = "log-in" />
+                    <span id = "error_span"></span><br />
+                    <button class = "btn btn-info" id = "log_in_submit">log-in</button>
                 </form>
+
             </div> <!-- ====== log in div ends ======= -->
-            <?php include "page_footer.html";?>
             <div id = "overlay_div_container"></div>
 
         </div><!-- ======= main container div ends ====== -->
