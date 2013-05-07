@@ -5,9 +5,8 @@
         <link rel = "stylesheet" href = "../CSS/includes_all_css_files.css" />
     </head>
     <body>
- 
         <div id = "transaction_record_wrapper_div">
-
+            <h2>Transaction Records</h2>
             <div id='pager_info_div'>
                 <input type='text' id='search_record' class='input-large search-query' placeholder='Search record' />
                 <select id='searchBy_select' class='span2'>
@@ -21,7 +20,7 @@
                  </select>
                 <form id='pageLimit_form'>               
                     PageLimit:                
-                    <input type='text' id='pageLimit' class='input-small' value='5' />
+                    <input type='text' id='pageLimit' class='input-small' value='2' />
                 </form>                          
                 Page <span class='page_number'>1</span> out of <span class='max_page'></span>      
                 <img id = 'loading_img' src='../CSS/img_tbls/loading.gif' alt='loading'/>             

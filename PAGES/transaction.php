@@ -1,4 +1,9 @@
-
+<?php
+    session_start();
+    if(!isset($_SESSION['log_in_as']) && $_SESSION['log_in_as'] != "cashier"):
+        header('Location: login.php');
+    endif;
+?>
 <!Doctype html>
 <html>
     <head>
@@ -9,6 +14,17 @@
 
     </head>
     <body>
+
+        <div id='header_div'>
+            <div id = "system_name_div">
+                <h2>
+                    <span>I</span>-
+                    <span>I</span>NVENTORY
+                    <span>S</span>YSTEM
+                </h2>
+            </div>
+            <p class='text-right text-error'>[<a href = 'logout.php'>LOG OUT</a>]</p>
+        </div>
         <div id = "transaction_wrapper_div">
 
             <table class='products_tbl table table-striped table-hover table-bordered'>
@@ -17,7 +33,6 @@
                         <th colspan='2'>
                             <input type='text' id='search_item' class='input-large search-query' placeholder='Search for an item' />
                         </th>
-                       
                      </tr>
                      <tr>                    
                         <th>Product Name</th>
@@ -28,7 +43,7 @@
                 <tbody id='products_to_transact_tbody'>
                 </tbody>                
             </table>
-            <div class='pagination'></div><!-- ========= pagination ============= -->            
+            <div class='pagination pagination-centered'></div><!-- ========= pagination ============= -->
             <input type='hidden' id='currentPage' value='0'/> 
 
             <table id='shopping_list_table' class='table table-striped table-hover table-bordered'>

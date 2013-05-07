@@ -31,22 +31,23 @@ $(function(){
 
 	 	if($(this).attr('class') == "" || $(this).attr('class') == null){
 			var prodId = this.id;
-		 	var cell = document.getElementById(prodId).getElementsByTagName('td');
-		 	var prodName = cell[0].innerHTML;
-		 	var prodCost = cell[1].innerHTML;
-		 	var prodUnit = cell[2].innerHTML;
+            if(prodId != ""){
+                var cell = document.getElementById(prodId).getElementsByTagName('td');
+                var prodName = cell[0].innerHTML;
+                var prodCost = cell[1].innerHTML;
+                var prodUnit = cell[2].innerHTML;
 
-			if(!checkIfExistAtShoppingList(prodName)){
-				saveToShoppingList(prodId,prodName,prodCost,prodUnit,$(this));
-			}else{
-				$('#dialog2_div').html("It is already on your shopping list\nYou can change its quantity by clicking edit icon");
-				$('#dialog2_div').dialog({
-					title:'Exist',
-					modal:true,
-					buttons: false
-				});
-			}		 	
-		 	
+                if(!checkIfExistAtShoppingList(prodName)){
+                    saveToShoppingList(prodId,prodName,prodCost,prodUnit,$(this));
+                }else{
+                    $('#dialog2_div').html("It is already on your shopping list\nYou can change its quantity by clicking edit icon");
+                    $('#dialog2_div').dialog({
+                        title:'Exist',
+                        modal:true,
+                        buttons: false
+                    });
+                }
+            }
 	 	}	 	
 	 })
 
@@ -127,7 +128,10 @@ $(function(){
 
 	 /*---------------------TRANSACTION OF ITEMS [saving to database]-------------------*/
 	 $('#shopping_list_total_tfoot').on('click','button',function(){
-		confirmationDialogForTransaction()
+         var tbody = $('#shopping_list_tbody tr').length;
+         if(tbody>1){
+		    confirmationDialogForTransaction();
+         }
 	 })
 	 $(document).keypress(function(e){
 	 	var rows = $('#shopping_list_tbody tr').length;
@@ -145,7 +149,7 @@ $(function(){
  					 'background-repeat':'no-repeat',
  					 'background-size':'100% 100%;',
  					 'background-position':'right'})
- 	var pageLimit = 5;
+ 	var pageLimit = 10;
  	var toSearch = $('#search_item').val();
  	var pageActive = parseInt($('#currentPage').val());
  	var page = pageActive * pageLimit;
@@ -163,8 +167,10 @@ $(function(){
 			
 			if(pageActive == 0){
 				$('#pager_prev').attr('disabled','disabled');
+                $('#pager_prev').removeClass('btn-primary').addClass('btn-warning');
 			}if((pageActive+1) >= obj2.pagesToDisplay){
-				$('#pager_next').attr('disabled','disabled');						
+				$('#pager_next').attr('disabled','disabled');
+                $('#pager_next').removeClass('btn-primary').addClass('btn-warning');
 			}
             markSelectedProducts();
 		},
@@ -262,6 +268,7 @@ function displayToShoppingList(prodId,prodName,prodCost,prodUnit,productQuantity
 	$('#shopping_list_tbody').append(tbody);
 	$('#shopping_list_total_tfoot').html(tfoot);
 	$('#shopping_list_table').show('blind',1000);
+    $('#product_quantity').val("");
 }
 
 function saveTransaction(){

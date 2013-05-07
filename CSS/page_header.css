@@ -1,7 +1,10 @@
 
 #iis_header_div {
     height: 50px;
-    background: deepskyblue;
+    background: -moz-linear-gradient(bottom,deepskyblue,dodgerblue);
+    background: -webkit-linear-gradient(bottom,deepskyblue,dodgerblue);
+    background: -o-linear-gradient(bottom,deepskyblue,dodgerblue);
+    background: linear-gradient(bottom,deepskyblue,dodgerblue);
     padding: 5px;
 }
 
