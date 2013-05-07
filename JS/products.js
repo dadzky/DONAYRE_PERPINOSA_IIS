@@ -418,6 +418,8 @@ function edit_products_stock_unit_using_input(id) {
 }
 
 function delete_products() {
+    alert("wewew");
+    /*
     var product_ids_to_delete = new Array();
     var product_table = document.getElementById("display_products_table");
     var table_rows = product_table.getElementsByTagName("tr");
@@ -463,5 +465,5 @@ function delete_products() {
                 }
             }
         });
-    }
+    }*/
 }
