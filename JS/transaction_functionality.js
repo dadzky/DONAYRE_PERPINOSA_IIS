@@ -62,7 +62,6 @@ $(function(){
 
 	 $('#shopping_list_tbody').on('blur','input',function(){
 	 	var regexInt = /^[0-9]+$/;
-        var obj = new Object();
 	 	var newQuantity = $(this).val();
 	 	if(regexInt.test(newQuantity) && newQuantity > 0){
 	 		var row_id = $('#cell_id').val();
@@ -70,18 +69,16 @@ $(function(){
 		 	$(cell_id).html("<span>"+newQuantity +"</span>"+"<img src='../CSS/img_tbls/editShoppingList.png' class =edit_quantity_img alt = edit quanity title=edit quantity/>");
 		 	var cost = parseFloat($(cell_id).prev('td').find('span').html());
 		 	var subTotal = ($(cell_id).next().find('span').html());
-            subTotal = parseFloat(subTotal.replace(",",""));
-		 	var newsubTotal = cost * parseInt(newQuantity);
-            totalPayment = (totalPayment - subTotal)+newsubTotal;
-            obj.converted = newsubTotal.toString();
-            changeToMoneyFormat(obj); //pass by references pass by value
-            newsubTotal = obj.converted;
-            obj.converted = totalPayment.toString();
-            changeToMoneyFormat(obj);
-            var totalPayment2 = obj.converted;
+            subTotal = parseFloat(subTotal.replace(/\,/g,""));
+		 	var newsubTotal = (cost * parseInt(newQuantity)).toFixed(2);
+            totalPayment = parseFloat(newsubTotal)+(totalPayment - subTotal);
+            totalPayment = totalPayment.toFixed(2);
+            newsubTotal = changeToMoneyFormat(newsubTotal.toString());
+            var totalPayment2 = changeToMoneyFormat(totalPayment.toString());
 		 	$(cell_id).next().find('span').html(newsubTotal);
 			$('#shopping_list_total_tfoot td:last span').html(totalPayment2)
 			$('#edited_quantity').removeClass('error');
+            totalPayment = parseFloat(totalPayment);
 	 	}else{
 	 		$('#edited_quantity').css({"border-color":"red", "box-shadow":"0 0 1px 2px pink", "color":"#f00"});
 	 	}
@@ -93,22 +90,27 @@ $(function(){
         var selectedProductId = row_id.split("_");
         var productIDindex = $.inArray("tr_transact_search_"+selectedProductId[3], selectedProductIDs);
 	 	$('#'+row_id).addClass('error');
-	 	$('#dialog2_div').html('Delete From Shopping List');
+	 	$('#dialog2_div').html('Remove From Product List');
 	 	$('#dialog2_div').dialog({
-			title:'Delete',
+			title:'Remove',
 			modal:true,
 			show:'blind',
 			hide:'blind',
 			buttons:{
-				"Delete" : function(){
+				"Remove" : function(){
 				 	var subTotal =  $('#'+row_id).find('td:last span').html();
-                    subTotal = subTotal.replace(",","");
-				 	totalPayment = totalPayment - parseFloat(subTotal);
-				 	$('#shopping_list_total_tfoot').find('td:last span').html(totalPayment);
+                    subTotal = subTotal.replace(/\,/g,"");
+                    subTotal =  parseFloat(subTotal);
+                    subTotal = subTotal.toFixed(2);
+				 	totalPayment = totalPayment - subTotal
+                    totalPayment = totalPayment.toFixed(2);
+				 	$('#shopping_list_total_tfoot').find('td:last span').html(changeToMoneyFormat(totalPayment));
 				 	$('#'+row_id).remove();
 				 	$('#'+row_id).removeClass('error');
                     selectedProductIDs.splice(productIDindex,1); // removing id from array of product IDs
 				 	$('#tr_transact_search_'+row_id.substring(15)).css('text-decoration','none');
+                    totalPayment = parseFloat(totalPayment); //to make totalPayment a floating point number
+                    console.log("deleted => "+ totalPayment)
 				 	$(this).dialog('close');
 				},
 				"Cancel" : function(){
@@ -231,24 +233,21 @@ function saveToShoppingList(prodId,prodName,prodCost,prodUnit,tblRow){
 			})
 	}
 }
-/*===========================UNFINISHED ROUNDING UP NUMBERS TO NEAREST TENTHS=================*/
+
 function displayToShoppingList(prodId,prodName,prodCost,prodUnit,productQuantity){
-    var obj = new Object();
+
 	var id = prodId.substring(19);
-	var subTotal = parseFloat(prodCost)*parseInt(productQuantity);
-	totalPayment += subTotal; /*-global totalPayment variable to compute for the total payment-*/
+	var subTotal = (parseFloat(prodCost)*parseInt(productQuantity)).toFixed(2);
+	totalPayment = totalPayment + parseFloat(subTotal); /*-global totalPayment variable to compute for the total payment-*/
 
-    obj.converted = subTotal.toString();
-
-    changeToMoneyFormat(obj); //Pass by reference pass by value
-    subTotal = (obj.converted);
-    obj.converted = totalPayment.toString();
-    changeToMoneyFormat(obj);
-    var totalPayment2 = obj.converted;
+    console.log(totalPayment);
+    totalPayment = parseFloat(totalPayment);
+    subTotal = changeToMoneyFormat(subTotal.toString());
+    var totalPayment2 = changeToMoneyFormat((totalPayment.toFixed(2)).toString());
 
     var newId = "tr_to_transact_"+id;
 	var tbody = "<tr  id='"+newId+"'>"+
-				"<th><a href='#'><img src='../CSS/img_tbls/deleteShoppingList.png' class ='delete_list_img' alt = 'delete quanity' title='delete' /></a></th>"+
+				"<th><a href='Javascript:void(0)'><img src='../CSS/img_tbls/deleteShoppingList.png' class ='delete_list_img' alt = 'delete quanity' title='delete' /></a></th>"+
 				"<td>"+prodName+"</td>"+
 				"<td>&#8369; <span>"+prodCost+"</span> / "+prodUnit+"</td>"+
 				"<td><span>"+productQuantity+"</span><img src='../CSS/img_tbls/editShoppingList.png' class =edit_quantity_img alt = edit quanity title=edit quantity/></td>"+
@@ -326,8 +325,7 @@ function markSelectedProducts(){
     }
 }
 
-function changeToMoneyFormat(obj){
-    var toConvert = (obj.converted);
+function changeToMoneyFormat(toConvert){
     var toConvertLength = toConvert.indexOf('.');
     var floatingPoint = true;
     if(toConvertLength < 0){
@@ -361,14 +359,15 @@ function changeToMoneyFormat(obj){
             }
         }
     }
-    console.log(toConvert);
     if(floatingPoint){
-        obj.converted = arrayNumbers.join(',')+"."+floatingValue;
+        toConvert = arrayNumbers.join(',')+"."+floatingValue;
     }else{
         if(arrayNumbers != null){
-            obj.converted = arrayNumbers.join(',');
+            toConvert = arrayNumbers.join(',');
         }
     }
+
+    return toConvert;
 
 }
 

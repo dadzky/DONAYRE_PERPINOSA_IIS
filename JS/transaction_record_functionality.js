@@ -225,7 +225,7 @@ function displayBarGraph(){
                 for(var ctr=0; ctr<obj.length; ctr++){
                     var monthlySalesContent = new Array();
                     month = monthNames[obj[ctr][0]-1];
-                    monthlySalesContent.push(obj[ctr][1]);
+                    monthlySalesContent.push(parseFloat(obj[ctr][1]).toFixed(2));
                     monthlySalesContent.push(month);
                     if(obj[ctr][1] > 1000){
                         monthlySalesContent.push("#f00");
