@@ -42,7 +42,7 @@
                         <th>Subtotal</th>
                     </tr>
                 </thead>
-                <tbody id='shopping_list_tbody'><tr><th rowspan='1000'>Shopping List</th></tr></tbody>                         
+                <tbody id='shopping_list_tbody'><tr><th rowspan='1000'>Product List</th></tr></tbody>
                 <tfoot id='shopping_list_total_tfoot'></tfoot>
                 
 

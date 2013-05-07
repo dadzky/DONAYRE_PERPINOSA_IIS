@@ -219,46 +219,13 @@ function displayBarGraph(){
         data: {yearSelected:yearSelected},
     	url:'../PHP/OBJECTS/TRANSACTION_RECORD/getMonthlySales.php',
     	success:function(data){
-<<<<<<< HEAD
-    		var obj = JSON.parse(data);
-    		var month = "";
-            console.log(data)
-    		for(var ctr=0; ctr<obj.length; ctr++){
-    			var monthlySalesContent = new Array();
-    			month = monthNames[obj[ctr][0]-1];
-    			monthlySalesContent.push(obj[ctr][1]);
-    			monthlySalesContent.push(month);
-                console.log(obj[ctr][1]);
-    			if(obj[ctr][1] > 500){
-    				monthlySalesContent.push("#f00");
-    			}else if(obj[ctr][1] > 2500){
-    				monthlySalesContent.push("#ff0");
-    			}else{
-    				monthlySalesContent.push("#006400");
-    			}
-    			monthlySales.push(monthlySalesContent);
-    		}
-
-    		$('#graph-sales-div').jqBarGraph({
-		        data: monthlySales,
-		        width: 	700,
-		        height: 200,
-		        colors: ["#f00","#ff0","#006400"],
-		        barSpace:2,
-		        title: "<h2>Monthly Income</h2>",
-		        prefix: "&#8369; ",
-		        legend:true,
-		        legends:["high","average","low"]
-		    });
-=======
-
             if(data){ //if it returns an array of values
                 var obj = JSON.parse(data);
                 var month = "";
                 for(var ctr=0; ctr<obj.length; ctr++){
                     var monthlySalesContent = new Array();
                     month = monthNames[obj[ctr][0]-1];
-                    monthlySalesContent.push(obj[ctr][1]);
+                    monthlySalesContent.push(parseFloat(obj[ctr][1]).toFixed(2));
                     monthlySalesContent.push(month);
                     if(obj[ctr][1] > 1000){
                         monthlySalesContent.push("#f00");
@@ -285,8 +252,6 @@ function displayBarGraph(){
             }else{
                 $('#graph-sales-div').html("<h2>NO RECORDS</h2>");
             }
->>>>>>> d80209ee098c8e5bf1254f8e71a5eb9616812aac
-    		
     	},
     	error:function(data){
     		alert('Error on displaying bargraph => '+ data['status'] + " " + data['statusText']);

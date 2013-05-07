@@ -4,6 +4,13 @@
     <list default="true" id="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" name="Default" comment="">
       <change type="DELETED" beforePath="$PROJECT_DIR$/DB/IIS_DB.sql" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/JS/saveTransaction.php" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PHP/CLASSES/iis_functions_sales.php" afterPath="$PROJECT_DIR$/PHP/CLASSES/iis_functions_sales.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PAGES/login.php" afterPath="$PROJECT_DIR$/PAGES/login.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PAGES/transaction.php" afterPath="$PROJECT_DIR$/PAGES/transaction.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JS/transaction_functionality.js" afterPath="$PROJECT_DIR$/JS/transaction_functionality.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JS/transaction_record_functionality.js" afterPath="$PROJECT_DIR$/JS/transaction_record_functionality.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="IIS_PROJECT_HUB.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,26 +40,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="login.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="login.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/PAGES/login.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="39" selection-start="223" selection-end="223" vertical-scroll-proportion="-4.375">
-              <folding>
-                <marker date="1367898497957" expanded="true" signature="274:7716" placeholder="..." />
-                <marker date="1367898497957" expanded="true" signature="285:540" placeholder="..." />
-                <marker date="1367898497957" expanded="true" signature="551:7708" placeholder="..." />
-                <marker date="1367898497957" expanded="true" signature="613:1526" placeholder="..." />
-                <marker date="1367898497957" expanded="true" signature="654:835" placeholder="..." />
-                <marker date="1367898497957" expanded="true" signature="675:816" placeholder="..." />
-                <marker date="1367898497957" expanded="true" signature="869:1511" placeholder="..." />
-                <marker date="1367898497957" expanded="true" signature="890:1492" placeholder="..." />
-                <marker date="1367898497957" expanded="true" signature="915:1470" placeholder="..." />
-                <marker date="1367898497957" expanded="true" signature="1053:1444" placeholder="..." />
-                <marker date="1367898497957" expanded="true" signature="1615:7411" placeholder="..." />
-                <marker date="1367898497957" expanded="true" signature="1686:6505" placeholder="..." />
-                <marker date="1367898497957" expanded="true" signature="6595:7302" placeholder="..." />
-                <marker date="1367898497957" expanded="true" signature="6780:7282" placeholder="..." />
-              </folding>
+            <state line="44" column="39" selection-start="2157" selection-end="2157" vertical-scroll-proportion="0.7717042">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -75,10 +67,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Products_functions_home.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Products_functions_home.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PHP/CLASSES/Products_functions_home.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="158" column="215" selection-start="8535" selection-end="8552" vertical-scroll-proportion="0.4723618">
+            <state line="158" column="215" selection-start="8535" selection-end="8552" vertical-scroll-proportion="-5.755102">
               <folding />
             </state>
           </provider>
@@ -403,22 +395,7 @@
     <entry file="file://$PROJECT_DIR$/PAGES/login.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="63" column="50" selection-start="2755" selection-end="2771" vertical-scroll-proportion="0.0">
-          <folding>
-            <marker date="1367898497957" expanded="true" signature="274:7716" placeholder="..." />
-            <marker date="1367898497957" expanded="true" signature="285:540" placeholder="..." />
-            <marker date="1367898497957" expanded="true" signature="551:7708" placeholder="..." />
-            <marker date="1367898497957" expanded="true" signature="613:1526" placeholder="..." />
-            <marker date="1367898497957" expanded="true" signature="654:835" placeholder="..." />
-            <marker date="1367898497957" expanded="true" signature="675:816" placeholder="..." />
-            <marker date="1367898497957" expanded="true" signature="869:1511" placeholder="..." />
-            <marker date="1367898497957" expanded="true" signature="890:1492" placeholder="..." />
-            <marker date="1367898497957" expanded="true" signature="915:1470" placeholder="..." />
-            <marker date="1367898497957" expanded="true" signature="1053:1444" placeholder="..." />
-            <marker date="1367898497957" expanded="true" signature="1615:7411" placeholder="..." />
-            <marker date="1367898497957" expanded="true" signature="1686:6505" placeholder="..." />
-            <marker date="1367898497957" expanded="true" signature="6595:7302" placeholder="..." />
-            <marker date="1367898497957" expanded="true" signature="6780:7282" placeholder="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -483,28 +460,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PAGES/login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="39" selection-start="223" selection-end="223" vertical-scroll-proportion="-4.375">
-          <folding>
-            <marker date="1367898497957" expanded="true" signature="274:7716" placeholder="..." />
-            <marker date="1367898497957" expanded="true" signature="285:540" placeholder="..." />
-            <marker date="1367898497957" expanded="true" signature="551:7708" placeholder="..." />
-            <marker date="1367898497957" expanded="true" signature="613:1526" placeholder="..." />
-            <marker date="1367898497957" expanded="true" signature="654:835" placeholder="..." />
-            <marker date="1367898497957" expanded="true" signature="675:816" placeholder="..." />
-            <marker date="1367898497957" expanded="true" signature="869:1511" placeholder="..." />
-            <marker date="1367898497957" expanded="true" signature="890:1492" placeholder="..." />
-            <marker date="1367898497957" expanded="true" signature="915:1470" placeholder="..." />
-            <marker date="1367898497957" expanded="true" signature="1053:1444" placeholder="..." />
-            <marker date="1367898497957" expanded="true" signature="1615:7411" placeholder="..." />
-            <marker date="1367898497957" expanded="true" signature="1686:6505" placeholder="..." />
-            <marker date="1367898497957" expanded="true" signature="6595:7302" placeholder="..." />
-            <marker date="1367898497957" expanded="true" signature="6780:7282" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/JS/employees.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="1.0">
@@ -528,7 +483,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/PHP/CLASSES/Products_functions_home.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="158" column="215" selection-start="8535" selection-end="8552" vertical-scroll-proportion="0.4723618">
+        <state line="158" column="215" selection-start="8535" selection-end="8552" vertical-scroll-proportion="-5.755102">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PAGES/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="44" column="39" selection-start="2157" selection-end="2157" vertical-scroll-proportion="0.7717042">
           <folding />
         </state>
       </provider>

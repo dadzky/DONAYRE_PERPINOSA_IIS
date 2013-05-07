@@ -11,6 +11,7 @@
     			$sql= "SELECT product_id,product_name,product_price,stock_unit
                         FROM products
                         WHERE product_name LIKE ?
+                        AND number_of_stocks > 0
                         LIMIT $page,$pageLimit";
                     
                 $stmt = $this->db_holder->prepare($sql);
@@ -50,13 +51,13 @@
             if(intval($pagesToDisplay) > 0 ){
                 for($ctr=1;$ctr < intval($pagesToDisplay)+1;$ctr++){
                     if($ctr == $pageActive){
-                        $pagerLI .= "<li class='active'><a href='#' class='page_number'>".$ctr."</a></li>";
+                        $pagerLI .= "<li class='active'><a href='Javascript:void(0)' class='page_number'>".$ctr."</a></li>";
                     }else{
-                         $pagerLI .= "<li><a href='#' class='page_number'>".$ctr."</a></li>";
+                         $pagerLI .= "<li><a href='Javascript:void(0)' class='page_number'>".$ctr."</a></li>";
                     }
                 }
             }else{
-                $pagerLI = "<li class='active'><a href='#' class='page_number'>1</a></li>";
+                $pagerLI = "<li class='active'><a href='Javascript:void(0)' class='page_number'>1</a></li>";
             }
 
             $pager =    "<button class='btn-primary' id='pager_prev' >prev</button>
@@ -173,13 +174,14 @@
                         $records .= "<td>".ucwords($rec[1])."</td>";
                         $records .= "<td>".$rec[2]."</td>";
                         $records .= "<td>".$rec[3]."</td>";
-                        $records .= "<td>&#8369; ".$rec[4]."</td>";
+                        $records .= "<td>&#8369; ".money_format('%!.2n',$rec[4])."</td>";
                         $records .= "</tr>";
                         $recLength++;   
                         $totalIncome = $totalIncome+$rec[4];
                     }
+
                     echo "<tr><th rowspan=".$recLength.">".$date[0]."</th></tr>".$records;
-                    echo "<tr class='info totalIncome_tr'><td colspan='5'>Daily Total Income </td><td>&#8369; ".$totalIncome."</td></tr>";
+                    echo "<tr class='info totalIncome_tr'><td colspan='5'>Daily Total Income </td><td>&#8369; ".money_format('%!.2n',$totalIncome)."</td></tr>";
                     
                 }
 
@@ -209,9 +211,9 @@
 
                 for($ctr=1;$ctr<=intval($pages['pages']);$ctr++){
                     if($ctr == 1){
-                         $pagerLI .= "<li class='active'><a href='#'>".$ctr."</a></li>";
+                         $pagerLI .= "<li class='active'><a href='Javascript:void(0)'>".$ctr."</a></li>";
                     }else{
-                         $pagerLI .= "<li><a href='#'>".$ctr."</a></li>";
+                         $pagerLI .= "<li><a href='Javascript:void(0)'>".$ctr."</a></li>";
                     }                
                 }
 
