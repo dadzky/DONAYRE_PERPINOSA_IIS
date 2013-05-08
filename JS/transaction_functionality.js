@@ -36,7 +36,7 @@ $(function(){
                 var prodName = cell[0].innerHTML;
                 var prodCost = cell[1].innerHTML;
                 var prodUnit = cell[2].innerHTML;
-
+                prodCost = prodCost.replace(/\,/g,"");
                 if(!checkIfExistAtShoppingList(prodName)){
                     saveToShoppingList(prodId,prodName,prodCost,prodUnit,$(this));
                 }else{

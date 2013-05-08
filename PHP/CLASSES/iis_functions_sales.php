@@ -37,7 +37,7 @@
             while($row = $stmt->fetch()){
                 $tbody .= "<tr id='tr_transact_search_".$row[0]."'>";
                 $tbody .= "<td>".$row[1]."</td>";
-                $tbody .= "<td>".$row[2]."</td>";
+                $tbody .= "<td>".money_format('%!.2n',$row[2])."</td>";
                 $tbody .= "<td>".$row[3]."</td>";
                 $tbody .= "</tr>";
             }
