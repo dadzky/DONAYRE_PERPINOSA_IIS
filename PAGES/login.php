@@ -22,10 +22,9 @@
         <div id = "iis_header_div" class = "container-fluid">
             <div id = "system_name_div">
                 <h2>
-                    <span>I</span>-
-                    <span>ALINAYRE</span>
-                    (<span>I</span>NVENTORY
-                    <span>S</span>YSTEM)
+                    <span>I</span><i class='icon-circle-arrow-right'></i>
+                    <span>I</span>NVENTORY
+                    <span>S</span>YSTEM
                 </h2>
             </div>
             <button id = "main_log_in_button" class = "btn btn-primary btn-large">LOG-IN</button>

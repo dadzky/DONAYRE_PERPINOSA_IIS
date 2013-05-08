@@ -2,20 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="64a0a310-e0d0-4c4c-8ce0-1ad2cc8f2750" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CSS/log_in_page.css" afterPath="$PROJECT_DIR$/CSS/log_in_page.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PAGES/login.php" afterPath="$PROJECT_DIR$/PAGES/login.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PAGES/page_footer.html" afterPath="$PROJECT_DIR$/PAGES/page_footer.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="IIS_PROJECT_HUB.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="64a0a310-e0d0-4c4c-8ce0-1ad2cc8f2750" time="1367987551338" ignored="false" />
+    <file path="/Dummy.txt" changelist="64a0a310-e0d0-4c4c-8ce0-1ad2cc8f2750" time="1367991416614" ignored="false" />
     <file path="/products.js" changelist="64a0a310-e0d0-4c4c-8ce0-1ad2cc8f2750" time="1367383931847" ignored="false" />
     <file path="/retrieve_product_data.php" changelist="64a0a310-e0d0-4c4c-8ce0-1ad2cc8f2750" time="1367213914661" ignored="false" />
     <file path="/Products_functions_home.php" changelist="64a0a310-e0d0-4c4c-8ce0-1ad2cc8f2750" time="1367223946476" ignored="false" />
     <file path="/products_page.php" changelist="64a0a310-e0d0-4c4c-8ce0-1ad2cc8f2750" time="1367215614012" ignored="false" />
     <file path="$PROJECT_DIR$/../chat/login.php" changelist="64a0a310-e0d0-4c4c-8ce0-1ad2cc8f2750" time="1367285300532" ignored="false" />
-    <file path="/login.php" changelist="64a0a310-e0d0-4c4c-8ce0-1ad2cc8f2750" time="1367988518545" ignored="false" />
+    <file path="/login.php" changelist="64a0a310-e0d0-4c4c-8ce0-1ad2cc8f2750" time="1367991462533" ignored="false" />
     <file path="/Employees_functions_home.php" changelist="64a0a310-e0d0-4c4c-8ce0-1ad2cc8f2750" time="1367462840074" ignored="false" />
     <file path="/employees.js" changelist="64a0a310-e0d0-4c4c-8ce0-1ad2cc8f2750" time="1367469519312" ignored="false" />
     <file path="/log_in_validation.php" changelist="64a0a310-e0d0-4c4c-8ce0-1ad2cc8f2750" time="1367295724472" ignored="false" />
@@ -74,10 +72,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="log_in_page.css" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="log_in_page.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CSS/log_in_page.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="50" column="21" selection-start="765" selection-end="765" vertical-scroll-proportion="0.67466265">
+            <state line="50" column="21" selection-start="765" selection-end="765" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -86,7 +84,7 @@
       <file leaf-file-name="page_footer.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PAGES/page_footer.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="56" selection-start="455" selection-end="455" vertical-scroll-proportion="-5.625">
+            <state line="9" column="56" selection-start="455" selection-end="455" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -101,10 +99,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="login.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/PAGES/login.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="40" selection-start="837" selection-end="837" vertical-scroll-proportion="-16.875">
+            <state line="24" column="67" selection-start="742" selection-end="742" vertical-scroll-proportion="0.31384614">
               <folding />
             </state>
           </provider>
@@ -122,7 +120,7 @@
       <file leaf-file-name="page_header.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PAGES/page_header.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="27" selection-start="119" selection-end="119" vertical-scroll-proportion="-2.5">
+            <state line="4" column="27" selection-start="119" selection-end="119" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -160,8 +158,8 @@
         <option value="$PROJECT_DIR$/CSS/page_footer.css" />
         <option value="$PROJECT_DIR$/PAGES/page_footer.html" />
         <option value="$PROJECT_DIR$/PAGES/page_header.html" />
-        <option value="$PROJECT_DIR$/PAGES/login.php" />
         <option value="$PROJECT_DIR$/CSS/log_in_page.css" />
+        <option value="$PROJECT_DIR$/PAGES/login.php" />
       </list>
     </option>
   </component>
@@ -197,6 +195,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -345,17 +344,16 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="options.lastSelected" value="appearance" />
     <property name="recentsLimit" value="5" />
+    <property name="options.lastSelected" value="appearance" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../hotel_information_system" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -423,7 +421,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22910663" sideWeight="0.9971631" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23275863" sideWeight="0.9971631" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -566,7 +564,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/PAGES/page_footer.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="56" selection-start="455" selection-end="455" vertical-scroll-proportion="-5.625">
+        <state line="9" column="56" selection-start="455" selection-end="455" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -580,21 +578,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/PAGES/page_header.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="27" selection-start="119" selection-end="119" vertical-scroll-proportion="-2.5">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PAGES/login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="40" selection-start="837" selection-end="837" vertical-scroll-proportion="-16.875">
+        <state line="4" column="27" selection-start="119" selection-end="119" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/CSS/log_in_page.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="21" selection-start="765" selection-end="765" vertical-scroll-proportion="0.67466265">
+        <state line="50" column="21" selection-start="765" selection-end="765" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PAGES/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="67" selection-start="742" selection-end="742" vertical-scroll-proportion="0.31384614">
           <folding />
         </state>
       </provider>
