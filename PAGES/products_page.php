@@ -22,6 +22,7 @@
             <div id = "add_product_div">
                 <h4>Add Product here:</h4>
                 <form id = "add_product_form">
+                    <input type = "hidden" id = "id" name = "id">
                     <dl>
                     <dt>Product Name:</dt>
                         <dd id = 'product_name_dd'><input type = "text" name = "product_name" id = "product_name" /></dd>

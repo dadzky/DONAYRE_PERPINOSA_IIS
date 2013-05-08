@@ -105,12 +105,12 @@
 }
 
 #employees_category_div button:hover {
-    color: #0000ff;
     font-weight: bolder;
-    background: -webkit-linear-gradient(top, darkgray 10%, #808080 50%, white 90%);
-    background: -moz-linear-gradient(top, darkgray 10%, #808080 50%, white 90%);
-    background: -o-linear-gradient(top, darkgray 10%, #808080 50%, white 90%);
-    background: linear-gradient(top, darkgray 10%, #808080 50%, white 90%);
+    color: #000000;
+    background: -moz-linear-gradient(bottom,skyblue,deepskyblue,dodgerblue);
+    background: -webkit-linear-gradient(bottom,deepskyblue,dodgerblue);
+    background: -o-linear-gradient(bottom,deepskyblue,dodgerblue);
+    background: linear-gradient(bottom,deepskyblue,dodgerblue);
 }
 
 #packers_table, #porters_table {
@@ -190,16 +190,17 @@
 
 #fired_employees_table thead {
     text-align:center;
-    position:fixed;
-    top: 150px;
+    position: fixed;
+    top: 165px;
     display: block;
+    background: skyblue;
 }
 #fired_employees_table thead th {
     width: 200px;
 }
 #fired_employees_table #display_fired_employees_table {
     height: 400px;
-    overflow-y: scroll;
+    overflow-y: auto;
     display: block;
     top: 200px;
     position: fixed;
@@ -207,9 +208,8 @@
 #fired_employees_table #display_fired_employees_table td {
     width: 200px;
 }
-/*
-#display_fired_employees_table {
-    height: 500px;
-    overflow-y: scroll;
-    display: block;
-}*/
+
+#search_fired_employee_div {
+    float: right;
+    margin-bottom: 10px;
+}

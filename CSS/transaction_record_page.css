@@ -59,10 +59,12 @@
 #graph-sales-container-div{
 	width: 700px;
 	height: 450px;
-	margin:0 auto;
+	margin:35px auto 0 auto;
+	border:1px solid #0088cc;
+	padding: 0 30px;
+	display: none;
 }
 #graph-sales-div{
-	border:1px solid #0088cc;
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
 	-o-border-radius: 5px;

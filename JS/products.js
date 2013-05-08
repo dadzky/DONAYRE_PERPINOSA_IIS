@@ -61,7 +61,7 @@ $(function() {
                     $.ajax({
                         type: "POST",
                         url: "../PHP/OBJECTS/PRODUCTS/check_if_product_to_add_already_exist.php",
-                        data: {"products_data": JSON.stringify($("#add_product_form").serializeArray())},
+                        data: {"products_name": product_name, "product_id": $("#product_id").val()},
                         success: function(data) {
                             if(data == "true") {
                                 $("#add_product_confirmation_div").dialog({
@@ -102,6 +102,9 @@ $(function() {
                                     success: function() {
                                         display_products();
                                         $("#stock_unit_dd").html("<select name = 'stock_unit' id = 'stock_unit'><option>pieces</option><option>packs</option><option>klg</option><option>g</option> <option>lbs</option><option>others</option></select>");
+                                        $("#number_of_stocks_dd").removeClass("control-group error");
+                                        $("#product_price_dd").removeClass("control-group error");
+                                        $("#product_name_dd").removeClass("control-group error");
                                     },
                                     error: function(data) {
                                         console.log("There's an error in adding a product. It says " + JSON.stringify(data));
@@ -213,21 +216,57 @@ function edit_products_name(id) {
     });
 
     $("#new_product_name").blur(function() {
-        var new_product_name = $("#new_product_name").val();
-        if(new_product_name != "") {
-            request_for_editing_product_name(id, new_product_name);
-        } else {
-            $("#new_product_name_form").addClass("control-group error");
-        }
+        // ============= CHECK IF EDITED PRODUCT NAME WAS ALREADY IN THE LIST ============
+        $.ajax({
+            type: "POST",
+            url: "../PHP/OBJECTS/PRODUCTS/check_if_product_to_add_already_exist.php",
+            data: {"product_name": $("#new_product_name").val(), "product_id": id},
+            success: function(data) {
+
+                if(data == "true") {
+                    alert("same! not saved!");
+                    $("#new_product_name_form").addClass("control-group error");
+                } else {
+                    alert("not the same save!");
+                    // =========== DOESN'T EXIST IN THE LIST, SO PROCEED UPDATING ===========
+                    var new_product_name = $("#new_product_name").val();
+                    if(new_product_name != "") {
+                        request_for_editing_product_name(id, new_product_name);
+                    } else {
+                        $("#new_product_name_form").addClass("control-group error");
+                    }
+                }
+            },
+            error: function(data) {
+
+            }
+        });
     });
 
     $("#new_product_name_form").submit(function() {
-        var new_product_name = $("#new_product_name").val();
-        if(new_product_name != "") {
-            request_for_editing_product_name(id, new_product_name);
-        } else {
-            $("#new_product_name_form").addClass("control-group error");
-        }
+
+        // ============= CHECK IF EDITED PRODUCT NAME WAS ALREADY IN THE LIST ============
+        $.ajax({
+            type: "POST",
+            url: "../PHP/OBJECTS/PRODUCTS/check_if_product_to_add_already_exist.php",
+            data: {"product_name": $("#new_product_name").val(), "product_id": id},
+            success: function(data) {
+                if(data == "true") {
+                    $("#new_product_name_form").addClass("control-group error");
+                } else {
+                    // =========== DOESN'T EXIST IN THE LIST, SO PROCEED UPDATING ===========
+                    var new_product_name = $("#new_product_name").val();
+                    if(new_product_name != "") {
+                        request_for_editing_product_name(id, new_product_name);
+                    } else {
+                        $("#new_product_name_form").addClass("control-group error");
+                    }
+                }
+            },
+            error: function(data) {
+
+            }
+        });
         return false;
     });
 }

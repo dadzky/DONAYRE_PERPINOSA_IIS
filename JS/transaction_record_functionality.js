@@ -118,12 +118,12 @@ $(function(){
 
 	$('#graph-toggle-div').click(function(){
 		$('#graph-sales-container-div').slideToggle(1000)
+        displayBarGraph();;
 	});
 
     $('#bargraph_Yr_option').on('change',function(){
         displayBarGraph();
     })
-
 });
 
 function searchRecords(toSearch,searchBy){
@@ -207,11 +207,11 @@ function displayBarGraph(){
     }
     if(yearSelected==null){
         yearSelected = currentDate.getFullYear();
-        $('#bargraph_title_p').html("<h2>MONTHLY INCOME</h2><br/><h4>YEAR: <select id='bargraph_Yr_option'>"+ selectOptions +"</select></h4>");
+        $('#bargraph_title_p').html("<h2>MONTHLY INCOME</h2><h4>YEAR: <select id='bargraph_Yr_option'>"+ selectOptions +"</select></h4>");
     }
     $('#bargraph_Yr_option').val(yearSelected);
 
-	var monthNames = new Array("January","February","March","April","May","June","July","August","September","October","November","December");
+	var monthNames = new Array("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec");
 	var monthlySales = new Array();
     $.ajax({
     	type:'POST',

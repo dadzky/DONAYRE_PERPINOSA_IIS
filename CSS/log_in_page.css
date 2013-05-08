@@ -2,6 +2,11 @@
 #main_container_div {
     height: 700px;
     padding: 10px;
+    background:-moz-linear-gradient(top,#ccc,#fff);
+    background:-webkit-linear-gradient(top,#ccc,#fff);
+    background:-o-linear-gradient(top,#ccc,#fff);
+    background:linear-gradient(top,#ccc,#fff);
+    
 }
 
 /*--center content---*/
@@ -80,6 +85,16 @@
 
 /*---abouts---*/
 
+#right_sidebar_div{
+    background-image: url("images/bgtest2.jpg");
+    background-position: right;
+    background-repeat: no-repeat;
+    
+}
+.branch_info{
+    font-family: Arial,sans-serif;
+    font-size:13px;
+}
 
 
 

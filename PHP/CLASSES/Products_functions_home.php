@@ -3,18 +3,24 @@
     include_once "database_connection.php";
     class Products_functions_home extends Database_connection {
 
-        function check_if_product_to_add_already_exist($product_name) {
+        function check_if_product_to_add_already_exist($product_name, $product_id) {
             $this->open_connection();
 
-            $select_statement = $this->db_holder->query("SELECT * FROM products;");
+            if($product_id == "") {
+                $select_statement = $this->db_holder->prepare("SELECT * FROM products WHERE product_name = ?;");
+                $select_statement->execute(array($product_name));
 
-            while($products = $select_statement->fetch()) {
-                if($products[1] == $product_name) {
+                if($select_statement->fetch()) {
                     echo "true";
-                    break;
+                }
+            } else {
+                $select_statement = $this->db_holder->prepare("SELECT * FROM products WHERE product_name = ? AND product_id != ?;");
+                $select_statement->execute(array($product_name, $product_id));
+
+                if($select_statement->fetch()) {
+                    echo "true";
                 }
             }
-
             $this->close_connection();
         }
 

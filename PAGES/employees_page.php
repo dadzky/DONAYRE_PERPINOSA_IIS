@@ -103,10 +103,9 @@
                             <dd id = "contact_number_dd"><input type = "text" name = "contact_number" id = "contact_number" /></dd>
                         <dt>Job type:</dt>
                             <dd><select name = "job_type" id = "job_type">
-                                    <option id = "job_type_jobs_option">-- JOBS --</option>
+                                    <option>porter</option>
                                     <option>cashier</option>
                                     <option>packer</option>
-                                    <option>porter</option>
                             </select></dd>
 
                         <div id = "add_account_for_cashier_div">
@@ -121,7 +120,10 @@
                             </dl><!-- ========== add_account_for_cashier_dl ends ==============-->
                         </div><!-- ============ add account for cashier div ends ================= -->
                     </dl><!-- ============= add employees dl ends -->
-                    <p class = "warning" id = "add_employee_warning">Please fill-up all fields and check the inputted employee's data!</p>
+                    <p class = "alert alert-error" id = "add_employee_warning">
+                        Please fill-up all fields and check the inputted employee's data!
+                    </p>
+                    <p class = "alert alert-block" id = "employee_exist_warning"></p>
                     <input type = "reset" value = "reset" class = "btn btn-danger" />
                 </form><!-- ============= Add employees form ends ================ -->
                 <p id = "employee_added_successfully_p">New employee was added successfully!</p>
@@ -132,7 +134,11 @@
             <div id = "fired_employees_div">
                 <span id = "close_fired_employees_div" title = "close"><img src="../CSS/images/close_icon.png"></span>
                 <h3>FIRED EMPLOYEES</h3>
-                <table id = "fired_employees_table" class = "table table-striped table-hover table-bordered">
+                <div id = "search_fired_employee_div">
+                    <img src = "../CSS/images/search_icon1.png" />
+                    <input type = "text" id = "search_fired_employee_input" class = "search-query" placeholder = "Search fired employee here" />
+                </div>
+                <table id = "fired_employees_table" class = "table table-striped table-hover">
                     <thead>
                         <tr>
                             <th>NAME</th>

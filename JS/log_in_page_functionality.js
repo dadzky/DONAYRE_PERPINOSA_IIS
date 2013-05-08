@@ -31,6 +31,46 @@ $(document).ready(function() {
         $("#log_in_div").show();
     });
 
+    /*==========showing sample info=========*/
+    $('#right_sidebar_div').load('../PAGES/page_info.html #sample1');
+
+    $('.sample1').click(function(){
+        $('#right_sidebar_div').load('../PAGES/page_info.html #sample1');
+        $('#left_sidebar_div  ul li a > i').removeClass('icon-chevron-right');
+        var arrow =  $('#left_sidebar_div  ul li a.sample1 > i');
+        arrow.addClass("icon-chevron-right");
+    });
+    $('.sample2').click(function(){
+        $('#right_sidebar_div').load('../PAGES/page_info.html #sample2');
+        $('#left_sidebar_div  ul li a > i').removeClass('icon-chevron-right');
+        var arrow =  $('#left_sidebar_div  ul li a.sample2 > i');
+        arrow.addClass("icon-chevron-right");
+    });
+    $('.sample3').click(function(){
+        $('#right_sidebar_div').load('../PAGES/page_info.html #sample3');
+        $('#left_sidebar_div  ul li a > i').removeClass('icon-chevron-right');
+        var arrow =  $('#left_sidebar_div  ul li a.sample3 > i');
+        arrow.addClass("icon-chevron-right");
+    });
+    $('.sample4').click(function(){
+        $('#right_sidebar_div').load('../PAGES/page_info.html #sample4');
+        $('#left_sidebar_div  ul li a > i').removeClass('icon-chevron-right');
+        var arrow =  $('#left_sidebar_div  ul li a.sample4 > i');
+        arrow.addClass("icon-chevron-right");
+    });
+    $('.sample5').click(function(){
+        $('#right_sidebar_div').load('../PAGES/page_info.html #sample5');
+        $('#left_sidebar_div  ul li a > i').removeClass('icon-chevron-right');
+        var arrow =  $('#left_sidebar_div  ul li a.sample5 > i');
+        arrow.addClass("icon-chevron-right");
+    });
+    $('.sample6').click(function(){
+        $('#right_sidebar_div').load('../PAGES/page_info.html #sample6');
+        $('#left_sidebar_div  ul li a > i').removeClass('icon-chevron-right');
+        var arrow =  $('#left_sidebar_div  ul li a.sample6 > i');
+        arrow.addClass("icon-chevron-right");
+    });
+
     // ========== LOG-IN PROCESS ==========
 
     $("#log_in_form").submit(function() {

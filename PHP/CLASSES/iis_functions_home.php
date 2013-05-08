@@ -57,14 +57,18 @@
         function get_cashiers_data($username_entered) {
             $this->open_connection();
 
-            $select_statement = $this->db_holder->prepare("SELECT e.employee_id
+            $select_statement = $this->db_holder->prepare("SELECT e.employee_id,
+                                                                  CONCAT(e.lastname, ' ',
+                                                                          e.firstname)
                                                             FROM employees AS e,
                                                                  accounts AS a
                                                            WHERE e.employee_id = a.employee_id AND
                                                                  a.username = ?;");
             $select_statement->execute(array($username_entered));
             $content = $select_statement->fetch();
-            return $content[0];
+
+            $data_array = array("employee_id"=>$content[0], "employee_name"=>$content[1]);
+            return $data_array;
             $this->close_connection();
         }
 
