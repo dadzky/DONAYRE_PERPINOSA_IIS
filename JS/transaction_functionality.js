@@ -1,6 +1,7 @@
 $(function(){
 	
 	 searchProductForTransaction(); //To display the default products
+     displayDateAndTime();
 
 	 /*---------PAGINATION---------*/
 	 $('.pagination').on('click','li a', function(){
@@ -145,11 +146,8 @@ $(function(){
 
  /*-----------FUNCTION FOR SEARCHING PRODUCTS [note: i also use this function for displaying the list of products]----------*/
  function searchProductForTransaction(){
- 	$('#search_item').css({'background':'url(../CSS/img_tbls/loading.gif)',
- 					 'background-repeat':'no-repeat',
- 					 'background-size':'100% 100%;',
- 					 'background-position':'right'})
- 	var pageLimit = 10;
+
+ 	var pageLimit = 7;
  	var toSearch = $('#search_item').val();
  	var pageActive = parseInt($('#currentPage').val());
  	var page = pageActive * pageLimit;
@@ -167,19 +165,13 @@ $(function(){
 			
 			if(pageActive == 0){
 				$('#pager_prev').attr('disabled','disabled');
-                $('#pager_prev').removeClass('btn-primary').addClass('btn-warning');
 			}if((pageActive+1) >= obj2.pagesToDisplay){
 				$('#pager_next').attr('disabled','disabled');
-                $('#pager_next').removeClass('btn-primary').addClass('btn-warning');
 			}
             markSelectedProducts();
 		},
 		error:function(data){
 			alert("Error on Searching products => "+ data);
-		},
-		complete:function(){
-			$('#search_item').css({'background':'none'});
-
 		}
 
 	})
@@ -376,6 +368,20 @@ function changeToMoneyFormat(toConvert){
 
     return toConvert;
 
+}
+
+function displayDateAndTime(){
+    setInterval(function(){
+        var curDateTime = new Date();
+        var yr = curDateTime.getFullYear();
+        var mnth = curDateTime.getMonth()+1;
+        var dt = curDateTime.getDate();
+        var hr = curDateTime.getHours();
+        var mn = curDateTime.getMinutes();
+        var sc = curDateTime.getSeconds();
+        var dateTime = yr+"-"+mnth+"-"+dt+" | "+hr+"-"+mn+"-"+sc;
+        $('#date_span > span').html(dateTime);
+    },1000)
 }
 
 

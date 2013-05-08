@@ -1,4 +1,3 @@
-
 <html>
     <head>
         <title>Employees</title>
@@ -133,15 +132,18 @@
             <div id = "fired_employees_div">
                 <span id = "close_fired_employees_div" title = "close"><img src="../CSS/images/close_icon.png"></span>
                 <h3>FIRED EMPLOYEES</h3>
-                <table id = "fired_employees_table" class = "products_tbl table table-striped table-hover table-bordered">
-                    <tr>
-                        <th>NAME</th>
-                        <th>INFORMATIONS</th>
-                        <th>DATE FIRED</th>
-                        <th>REASON</th>
-                    </tr>
+                <table id = "fired_employees_table" class = "table table-striped table-hover table-bordered">
+                    <thead>
+                        <tr>
+                            <th>NAME</th>
+                            <th>INFORMATIONS</th>
+                            <th>DATE FIRED</th>
+                            <th>REASON</th>
+                            </tr>
+                    </thead>
                     <tbody id = "display_fired_employees_table"></tbody>
                 </table>
+
             </div><!-- ========== fired enployees div ends =========== -->
 
         </div><!-- ================== employees main div container ends ==================== -->

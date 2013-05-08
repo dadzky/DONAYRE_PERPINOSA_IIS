@@ -1,36 +1,26 @@
 <?php
+    session_start();
     include "../CLASSES/iis_functions_home.php";
 
     $execute_check = new Iis_functions_home();
 
-    if(isset($_POST["log_in_as_input"]) && isset($_POST["username_entered"]) && isset($_POST["password_entered"])) {
-        $username_entered = $_POST["username_entered"];
-        $password_entered = $_POST["password_entered"];
-        $log_in_as = $_POST["log_in_as_input"];
+    $log_in_data = $_POST["log_in_data"];
+    $decoded_data = json_decode($log_in_data, true);
 
-        $username_exist = $execute_check->check_username($username_entered, $log_in_as);
-        if($username_exist) {
-            $same_password = $execute_check->check_password($username_entered, $password_entered, $log_in_as);
-            if($same_password) {
-                if($log_in_as == "cashier") {
-                    $_SESSION['username_entered'] = $username_entered;
-                    $_SESSION['password_entered'] = $password_entered;
-                    // =========== STORING CASHIERS I.D. INTO SESSION VARIABLE ========
-                    $_SESSION['employee_id'] = $execute_check->get_cashiers_data($_SESSION['username_entered']);
-                    header("Location: ../../PAGES/transaction.php");
-                } else {
-                    $_SESSION['username_entered'] = $username_entered;
-                    header("Location: ../../PAGES/adminhome.php");
-                }
+    foreach($decoded_data as $content) {
+        $$content['name'] = $content['value'];
+    }
+    $username_exist = $execute_check->check_username($username_entered, $log_in_as);
 
-            } else {
-                $error_message = "Incorrect password!";
-
-            }
+    if($username_exist) {
+        $password_valid = $execute_check->check_password($username_entered, $password_entered, $log_in_as);
+        if($password_valid) {
+            $_SESSION['log_in_as'] = $log_in_as;
+            $_SESSION['username'] = $username_entered;
+            $_SESSION['employee_id'] = $execute_check->get_cashiers_data($username_entered);
         } else {
-            $error_message = "Unknown username!";
+            echo "Invalid password!";
         }
-    }else{
-
-        header("Location: ../../PAGES/login.php");
+    } else {
+        echo "Unknown user's name!";
     }

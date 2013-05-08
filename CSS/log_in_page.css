@@ -4,31 +4,25 @@
     padding: 10px;
 }
 
-#log_in_a {
-    text-decoration: none;
-    top: 0;
-    right: 1%;
-    position: absolute;
-    background: deepskyblue;
+/*--center content---*/
+#slide_imgs{
+    border:1px solid;
 }
-
-#log_in_a ul li {
-    list-style: none;
+.slideimg{
+    height: 300px;
+    width: 1000px;
 }
-
-#log_in_a ul {
-    height: 50px;
-    text-align: center;
-    z-index: 10;
+#main_log_in_button{
+    float:right;
+    margin-top:-60px;
 }
-
-#log_in_a ul li ul{
-    display: none;
-    position:absolute;
+#login_as_div{
+    width: 200px;
+    float:right;
+    display:none;
 }
-
-#log_in_a ul:hover li ul{
-    display:block;
+.log_in_option{
+    margin-left: 2px;
 }
 
 #log_in_div {
@@ -83,4 +77,9 @@
     margin: 0 auto;
     text-align: justify;
 }
+
+/*---abouts---*/
+
+
+
 

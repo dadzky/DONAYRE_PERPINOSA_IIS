@@ -1,5 +1,18 @@
 
 #footer_div {
-    height: 120px;
+    height: 220px;
     background: -webkit-linear-gradient(top, deepskyblue 10%, skyblue 40%, lightblue 90%);
+    background: -moz-linear-gradient(top, deepskyblue 10%, skyblue 40%, lightblue 90%);
+    background: linear-gradient(top, deepskyblue 10%, skyblue 40%, lightblue 90%);
+}
+#sub_footer{
+    border-radius: 13px;
+    width: 900px;
+    padding: 10px;
+    margin:0 auto;
+
+ }
+#sub_footer ul{
+    float:left;
+    padding-left: 100px;
 }

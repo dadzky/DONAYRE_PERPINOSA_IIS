@@ -7,7 +7,6 @@
 
         function check_username($username_entered, $log_in_as) {
             $this->open_connection();
-
             if($log_in_as == "cashier") {
                 $select_statement = $this->db_holder->prepare("SELECT *
                                                                  FROM employees AS e,

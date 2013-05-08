@@ -52,11 +52,10 @@ $(function() {
         var string_pattern = /^[a-z, A-Z]*$/;
         var numeric_pattern = /^[0-9, .]*$/;
 
-        var product_name_valid = string_pattern.test(product_name);
         var product_price_valid = numeric_pattern.test(product_price);
         var number_of_stocks_valid = numeric_pattern.test(number_of_stocks);
 
-        if(product_name != "" && product_name_valid) {
+        if(product_name != "") {
             if(product_price != "" && product_price_valid) {
                 if(number_of_stocks != "" && number_of_stocks_valid) {
                     $.ajax({
@@ -81,7 +80,6 @@ $(function() {
                                                 data: {"products_data": JSON.stringify($("#add_product_form").serializeArray()), "update": "yes"},
                                                 success: function() {
                                                     display_products();
-                                                    $("#add_product_form").addClass("control-group success");
                                                     $("#add_product_confirmation_div").dialog("close");
                                                     $("#stock_unit_dd").html("<select name = 'stock_unit' id = 'stock_unit'><option>pieces</option><option>packs</option><option>klg</option><option>g</option> <option>lbs</option><option>others</option></select>");
                                                 },
@@ -101,9 +99,8 @@ $(function() {
                                     type: "POST",
                                     url: "../PHP/OBJECTS/PRODUCTS/add_product.php",
                                     data: {"products_data": JSON.stringify($("#add_product_form").serializeArray()), "update": "no"},
-                                    success: function(data) {
+                                    success: function() {
                                         display_products();
-                                        $("#add_product_form").addClass("control-group success");
                                         $("#stock_unit_dd").html("<select name = 'stock_unit' id = 'stock_unit'><option>pieces</option><option>packs</option><option>klg</option><option>g</option> <option>lbs</option><option>others</option></select>");
                                     },
                                     error: function(data) {
@@ -176,7 +173,6 @@ $(function() {
             display_products();
         }
     });
-
 });
 
 // =================== DISPLAYS PRODUCTS ============== //
