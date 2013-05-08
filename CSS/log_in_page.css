@@ -27,19 +27,19 @@
 
 #log_in_div {
     background-image: url("images/note1.jpg");
-    height: 200px;
-    width: 350px;
+    height: 260px;
+    width: 400px;
     margin: 0 auto;
     z-index: 20;
     position: absolute;
     top: 150px;
-    left: 500px;
+    left: 580px;
     padding: 20px;
 }
 
 #log_in_form {
     width: 225px;
-    height: 400px;
+    height: 500px;
     margin: auto auto;
     margin-top: 65px;
     text-align: center;
@@ -48,7 +48,7 @@
 
 #log_in_as_span {
     font-weight: bold;
-    letter-spacing: 3px;
+    letter-spacing: 5px;
     font-size: 19px;
     font-family: Arial;
 }

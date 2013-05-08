@@ -23,8 +23,9 @@
             <div id = "system_name_div">
                 <h2>
                     <span>I</span>-
-                    <span>I</span>NVENTORY
-                    <span>S</span>YSTEM
+                    <span>ALINAYRE</span>
+                    (<span>I</span>NVENTORY
+                    <span>S</span>YSTEM)
                 </h2>
             </div>
             <button id = "main_log_in_button" class = "btn btn-primary btn-large">LOG-IN</button>
