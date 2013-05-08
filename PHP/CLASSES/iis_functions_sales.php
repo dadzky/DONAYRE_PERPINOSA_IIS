@@ -20,7 +20,8 @@
 
                 $sql2 = "SELECT COUNT(product_id)
                          FROM products
-                         WHERE product_name LIKE ?";
+                         WHERE product_name LIKE ?
+                         AND number_of_stocks > 0";
                 $stmt2 = $this->db_holder->prepare($sql2);
                 $stmt2->bindParam(1, $toSearch);
                 $stmt2->execute();
@@ -31,7 +32,6 @@
     		$this->close_connection();    
 
             $pagerLI = "";
-            $pager = "";
             $tbody = "";
 
             while($row = $stmt->fetch()){
@@ -305,7 +305,7 @@
                     echo "<tr class='info totalIncome_tr'><td colspan='5'>Daily Total Income </td><td>&#8369; ".$totalIncome."</td></tr>";
                 }
 
-            echo "No Records Found!";
+            echo "<span class='text-error'><b>No Records Found!</b></span>";
 
 
             $this->close_connection();

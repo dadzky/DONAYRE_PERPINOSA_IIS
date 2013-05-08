@@ -185,4 +185,31 @@
     z-index: 20;
     text-align: center;
     display:none;
+    height: 600px;
 }
+
+#fired_employees_table thead {
+    text-align:center;
+    position:fixed;
+    top: 150px;
+    display: block;
+}
+#fired_employees_table thead th {
+    width: 200px;
+}
+#fired_employees_table #display_fired_employees_table {
+    height: 400px;
+    overflow-y: scroll;
+    display: block;
+    top: 200px;
+    position: fixed;
+}
+#fired_employees_table #display_fired_employees_table td {
+    width: 200px;
+}
+/*
+#display_fired_employees_table {
+    height: 500px;
+    overflow-y: scroll;
+    display: block;
+}*/

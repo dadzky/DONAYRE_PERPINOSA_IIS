@@ -79,7 +79,6 @@ $(function(){
 			$('#currentPage').val(page-1);
 			$('.page_number').html(page);
 			$(parentLI).addClass('active');
-
 		}
         if(toSearch == ""){
 		    displayTransactionRecords();
@@ -246,7 +245,7 @@ function displayBarGraph(){
                     barSpace:2,
                     prefix: "&#8369; ",
                     legend:true,
-                    legends:["high","average","low"]
+                    legends:["[1000+]","[500+]","[499 below]"]
                });
 
             }else{

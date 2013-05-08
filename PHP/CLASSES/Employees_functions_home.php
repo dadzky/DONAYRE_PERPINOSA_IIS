@@ -68,7 +68,12 @@
 
         function search_employee($name_to_search, $job_type) {
             $this->open_connection();
-            $select_statement = $this->db_holder->prepare("SELECT * FROM employees WHERE (lastname LIKE ? OR firstname LIKE ?) AND job_type = '".$job_type."';");
+            $select_statement = $this->db_holder->prepare("SELECT * FROM employees
+                                                            WHERE (lastname LIKE ? OR
+                                                                   firstname LIKE ?) AND
+                                                                   job_type = '".$job_type."' AND
+                                                                   employee_id NOT IN(SELECT employee_id FROM fired_employees);");
+
             $select_statement->execute(array($name_to_search, $name_to_search));
             while($content = $select_statement->fetch()) {
                 echo "<tr id = 'employee_'".$content[0].">
