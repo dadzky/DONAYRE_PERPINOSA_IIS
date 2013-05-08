@@ -2,6 +2,31 @@
     include "database_connection.php";
 
     class Employees_functions_home extends Database_connection {
+
+        function check_if_employee_or_username_exist($lastname, $firstname, $username) {
+            $this->open_connection();
+
+            $select_statement = $this->db_holder->prepare("SELECT * FROM employees WHERE lastname = ? AND firstname = ?;");
+            $select_statement->execute(array($lastname, $firstname));
+
+            if($select_statement->fetch()) {
+                echo "Employee was already hired!";
+            } else {
+                $select_statement1 = $this->db_holder->prepare("SELECT a.* FROM accounts AS a,
+                                                                                employees AS e
+                                                                           WHERE e.employee_id = a.employee_id AND
+                                                                                 e.employee_id NOT IN(SELECT employee_id FROM fired_employees) AND
+                                                                                 a.username = ?;");
+                $select_statement1->execute(array($username));
+
+                if($select_statement1->fetch()) {
+                    echo "User name was already taken!";
+                }
+            }
+
+            $this->close_connection();
+        }
+
         function add_employee($lastname, $firstname, $gender, $birthday, $address, $contact_number, $job_type, $username, $password) {
             $this->open_connection();
 
@@ -205,4 +230,38 @@
             }
             $this->close_connection();
         }
-    }
+
+        function search_fired_employees($name_to_search) {
+            $this->open_connection();
+
+            $select_statement = $this->db_holder->prepare("SELECT e.*,
+                                                            f.date_fired,
+                                                            f.reason
+                                                     FROM employees AS e,
+                                                          fired_employees AS f
+                                                     WHERE e.employee_id = f.employee_id AND
+                                                           (e.firstname LIKE ? OR
+                                                            e.lastname LIKE ?);");
+            $select_statement->execute(array($name_to_search, $name_to_search));
+
+            while($content = $select_statement->fetch()) {
+                echo "<tr id = 'fired_employee_".$content[0]."'>
+                        <td>".$content[1].", ".$content[2]."</td>
+                        <td>
+                            <table>
+                                <tr><td>Gender: </td><td>".$content[3]."</td></tr>
+                                <tr><td>Birthday: </td><td>".$content[4]."</td></tr>
+                                <tr><td>Address: </td><td>".$content[5]."</td></tr>
+                                <tr><td>Contact Number: </td><td>".$content[6]."</td></tr>
+                                <tr><td>Job Type: </td><td>".$content[7]."</td></tr>
+                            </table>
+                        </td>
+                        <td>".$content[8]."</td>
+                        <td>".$content[9]."</td>
+                      </tr>";
+            }
+
+            $this->close_connection();
+        }
+
+    } // ============= Class ends ===============

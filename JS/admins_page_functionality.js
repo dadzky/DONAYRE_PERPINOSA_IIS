@@ -22,6 +22,8 @@ $(function() {
         window.location.assign("logout.php");
     });
 
+    $("#log_out_button").tooltip();
+
     $("#buttons_div").buttonset();
     $('#for_home_button').button({
         icons: {

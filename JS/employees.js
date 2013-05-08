@@ -15,6 +15,8 @@ $(function() {
     $("#fire_employee_confirmation_div").hide();
     $("#fire_employee_remarks_div").hide();
     $("#fired_employees_div").hide();
+    $("#add_employee_warning").hide();
+    $("#employee_exist_warning").hide();
 
     //$("#employees_category_div").buttonset();
     get_current_date_and_time();
@@ -128,19 +130,37 @@ $(function() {
             if(job_type == "cashier") {
                 if(username != "" && password != "") {
                     if(password == password_confirmation) {
+                        // ========== CHECK FIRST IF EMPLOYEE TO ADD WAS ALREADY HIRED / IF USERNAME IS UNIQUE ================= //
                         $.ajax({
                             type: "POST",
-                            url: "../PHP/OBJECTS/EMPLOYEES/add_employee.php",
-                            data: {"employees_data": JSON.stringify($("#add_employees_form").serializeArray())},
-                            success: function() {
-                                $("#employee_added_successfully_p").show();
-                                $("#employee_added_successfully_p").fadeOut(5000);
-                                $("#add_employees_div").fadeOut(1000);
-                                $("#overlay_div_container").fadeOut(1000);
-                                display_employees();
+                            url: "../PHP/OBJECTS/EMPLOYEES/check_if_employee_or_username_exist.php",
+                            data: {"lastname": lastname, "firstname": firstname, "username": username},
+                            success: function(data) {
+                                if(data != "") {
+                                    $("#employee_exist_warning").html(data);
+                                    $("#employee_exist_warning").show();
+                                    $("#employee_exist_warning").fadeOut(8000);
+                                } else {
+                                    // =========== DOESN'T EXIST, SO PROCEED ADDING =============
+                                    $.ajax({
+                                        type: "POST",
+                                        url: "../PHP/OBJECTS/EMPLOYEES/add_employee.php",
+                                        data: {"employees_data": JSON.stringify($("#add_employees_form").serializeArray())},
+                                        success: function() {
+                                            $("#employee_added_successfully_p").show();
+                                            $("#employee_added_successfully_p").fadeOut(5000);
+                                            $("#add_employees_div").fadeOut(1000);
+                                            $("#overlay_div_container").fadeOut(1000);
+                                            display_employees();
+                                        },
+                                        error: function(data) {
+                                            console.log("Error in adding employee = " + JSON.stringify(data));
+                                        }
+                                    });
+                                }
                             },
                             error: function(data) {
-                                console.log("Error in adding employee = " + JSON.stringify(data));
+                                console.log("ERROR IN CHECKING IF EMPLOYEE ALREADY EXIST! = " + JSON.stringify(data));
                             }
                         });
                     } else {
@@ -154,19 +174,37 @@ $(function() {
                 }
             } else {
                 // not a cashier, so proceed
+                // ========== CHECK FIRST IF EMPLOYEE TO ADD WAS ALREADY HIRED TSK, HASSLE MUCH!!! PAULIT-ULIT ANG CODES >.< ================= //
                 $.ajax({
                     type: "POST",
-                    url: "../PHP/OBJECTS/EMPLOYEES/add_employee.php",
-                    data: {"employees_data": JSON.stringify($("#add_employees_form").serializeArray())},
-                    success: function() {
-                        $("#employee_added_successfully_p").show();
-                        $("#employee_added_successfully_p").fadeOut(5000);
-                        $("#add_employees_div").fadeOut(1000);
-                        $("#overlay_div_container").fadeOut(1000);
-                        display_employees();
+                    url: "../PHP/OBJECTS/EMPLOYEES/check_if_employee_or_username_exist.php",
+                    data: {"lastname": lastname, "firstname": firstname, "username": username},
+                    success: function(data) {
+                        if(data != "") {
+                            $("#employee_exist_warning").html(data);
+                            $("#employee_exist_warning").show();
+                            $("#employee_exist_warning").fadeOut(8000);
+                        } else {
+                            // =========== DOESN'T EXIST, SO PROCEED ADDING =============
+                            $.ajax({
+                                type: "POST",
+                                url: "../PHP/OBJECTS/EMPLOYEES/add_employee.php",
+                                data: {"employees_data": JSON.stringify($("#add_employees_form").serializeArray())},
+                                success: function() {
+                                    $("#employee_added_succeSEARCssfully_p").show();
+                                    $("#employee_added_successfully_p").fadeOut(5000);
+                                    $("#add_employees_div").fadeOut(1000);
+                                    $("#overlay_div_container").fadeOut(1000);
+                                    display_employees();
+                                },
+                                error: function(data) {
+                                    console.log("Error in adding employee = " + JSON.stringify(data));
+                                }
+                            });
+                        }
                     },
                     error: function(data) {
-                        console.log("Error in adding employee = " + JSON.stringify(data));
+                        console.log("ERROR IN CHECKING IF EMPLOYEE ALREADY EXIST! = " + JSON.stringify(data));
                     }
                 });
             }
@@ -241,6 +279,30 @@ $(function() {
         });
         if($("#search_porter_input_field").val() == "") {
             display_employees();
+        }
+    });
+
+    // ================= SEARCHING FIRED EMPLOYEE =============== //
+
+    $("#search_fired_employee_input").keyup(function() {
+        $.ajax({
+            type: "POST",
+            url: "../PHP/OBJECTS/EMPLOYEES/search_fired_employees.php",
+            data: {"name_to_search": $("#search_fired_employee_input").val()},
+            success: function(data) {
+                if(data != "") {
+                    $("#display_fired_employees_table").html(data);
+                } else {
+                    $("#display_fired_employees_table").html("<tr><td colspan = '4'>No result for <b>" + $("#search_fired_employee_input").val() + "</b>.</td></tr>");
+                }
+            },
+            error: function(data) {
+                console.log("ERROR IN SEARCHING FIRED EMPLOYEES. = " + JSON.stringify(data));
+            }
+        });
+
+        if($("#search_fired_employee_input").val() == "") {
+            display_fired_employees();
         }
     });
 
@@ -337,6 +399,9 @@ function display_employees() {
             $("#display_cashier_employees_table").html(parsed_data.cashier_employees);
             $("#display_packer_employees_table").html(parsed_data.packer_employees);
             $("#display_porter_employees_table").html(parsed_data.porter_employees);
+            $("#display_cashier_employees_table tr").tooltip();
+            $("#display_packer_employees_table tr").tooltip();
+            $("#display_porter_employees_table tr").tooltip();
         },
         error: function(data) {
             console.log("Error in displaying employees = " + JSON.stringify(data));
