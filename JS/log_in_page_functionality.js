@@ -21,14 +21,14 @@ $(document).ready(function() {
         $("#log_in_as").val("cashier");
         $("#log_in_as_span").html("CASHIER LOG-IN")
         $("#overlay_div_container").show();
-        $("#log_in_div").show();
+        $("#log_in_div").slideDown(300);
     });
 
     $("#log_in_as_administrator_btn").click(function() {
         $("#log_in_as").val("administrator");
         $("#log_in_as_span").html("ADMINISTRATOR LOG-IN");
         $("#overlay_div_container").show();
-        $("#log_in_div").show();
+        $("#log_in_div").slideDown(300);
     });
 
     // ========== LOG-IN PROCESS ==========
@@ -56,7 +56,7 @@ $(document).ready(function() {
                     }
                 },
                 error: function(data) {
-                    console.log("ERROR in processing log in = " + JSON.stringify(wew));
+                    console.log("ERROR in processing log in = " + JSON.stringify(data));
                 }
             });
         } else {

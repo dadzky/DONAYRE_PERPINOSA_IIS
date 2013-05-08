@@ -116,14 +116,16 @@
             </div> <!-- ======= iis related content div ends ======= -->
 
             <div id = "log_in_div">
-                <span id = "close_log_in_options_span"><img src = "../CSS/images/close_icon1.png"></span>
+                <p id = "logo_p"><img src = "../CSS/images/IIS%20logos/iis0.jpg"> <span> WEW Alinayre's Grocery :D</span></p>
+                <span id = "close_log_in_options_span" title = "close"><img src = "../CSS/images/close_icon.png"></span>
                 <form id = "log_in_form" action = "login.php" method = "POST">
                     <input type = "hidden" name = "log_in_as" id = "log_in_as" />
-                    <span id = "log_in_as_span"></span>
-                    <input type = "text" name = "username_entered" placeholder = "username" />
-                    <input type = "password" name = "password_entered" placeholder = "password" />
-                    <span id = "error_span"></span><br />
-                    <button class = "btn btn-info" id = "log_in_submit">log-in</button>
+                    <span id = "log_in_as_span"></span><br /><br />
+                    <input type = "text" name = "username_entered" placeholder = "username" /><br/>
+                    <input type = "password" name = "password_entered" placeholder = "password" /><br/>
+                    <span class = "alert-error" id = "error_span"></span><br />
+                    <button class = "btn btn-primary" id = "log_in_submit"><i class = "icon-check"></i>&nbsp;&nbsp;log-in</button>
+                    <button class = "btn btn-danger" type = "reset" id = "log_in_reset_button"><i class = "icon-remove"></i>&nbsp;&nbsp;reset</button>
                 </form>
 
             </div> <!-- ====== log in div ends ======= -->

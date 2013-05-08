@@ -16,8 +16,23 @@
                     <select id = "display_product_selected_letter" class = "span1"><option>all</option></select>
                 </div><!-- ========  Product actions div ends ======== -->
                 <table id = "display_products_table" class = "table table-hover">
+                    <thead>
+                        <tr>
+                            <th>NAME</th>
+                            <th>PRICE</th>
+                            <th>STOCKS</th>
+                            <th>UNIT</th>
+                            <th class = 'product_delete_action'>
+                                <img src = '../CSS/images/trash_can.gif' id = 'delete_trash_icon' onclick = 'delete_products()' />
+                                <ul>
+                                    <li id = 'mark_all_delete_action'>Mark All</li>
+                                    <li id = 'unmark_all_delete_action'>UnMark All</li>
+                                </ul>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody id = "display_products_table_tbody" ></tbody>
                 </table>
-                <div class = "pagination"></div>
             </div><!-- ======= display products div ends ======= -->
             <div id = "add_product_div">
                 <h4>Add Product here:</h4>
