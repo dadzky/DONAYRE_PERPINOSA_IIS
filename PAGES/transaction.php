@@ -23,10 +23,13 @@
                     <span>S</span>YSTEM
                 </h2>
             </div>
-            <p class='text-right text-error'>[<a href = 'logout.php'>LOG OUT</a>]</p>
+            <span class = 'logout_span label label-important' >[<a id ='logout_a' href = 'logout.php'>LOG OUT</a>]</span>
         </div>
         <div id = "transaction_wrapper_div">
-
+            <p id='cashier_p' class='label label-info'>Cashier:</p> <span id='cashier_info_span' class='text text-info'> Sample Sample</span>
+            <span id='date_span'>
+                <p class='label label-info'>Date And Time:</p> <span class='text text-info text-right'></span>
+            </span>
             <table class='products_tbl table table-striped table-hover table-bordered'>
                 <thead>
                     <tr >

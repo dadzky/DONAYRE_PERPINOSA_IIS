@@ -5,31 +5,26 @@ $(document).ready(function() {
     $("#log_in_div").hide();
     $("#overlay_div_container").hide();
 
-    $("#main_log_in_button").hover(function() {
-        var width = $("#main_log_in_button").css("width");
-        var margin = $("#main_log_in_button").css("margin");
-        $("#log_in_option_ul").css({
-            "width": width,
-            "margin": margin,
-            "background": "white",
-            "height": "300px"
-        });
-    });
-
     $("#close_log_in_options_span").click(function() {
         $("#log_in_option_ul").slideUp(300);
         $("#overlay_div_container").slideUp(300);
         $("#log_in_div").slideUp(300);
     });
+    $('#main_log_in_button').click(function(){
+        $('#login_as_div').fadeIn();
+    });
+    $('#login_as_close_btn').click(function(){
+        $('#login_as_div').fadeOut();
+    })
 
-    $("#log_in_as_cashier_li").click(function() {
+    $("#log_in_as_cashier_btn").click(function() {
         $("#log_in_as").val("cashier");
         $("#log_in_as_span").html("CASHIER LOG-IN")
         $("#overlay_div_container").show();
         $("#log_in_div").show();
     });
 
-    $("#log_in_as_administrator_button").click(function() {
+    $("#log_in_as_administrator_btn").click(function() {
         $("#log_in_as").val("administrator");
         $("#log_in_as_span").html("ADMINISTRATOR LOG-IN");
         $("#overlay_div_container").show();
@@ -68,4 +63,7 @@ $(document).ready(function() {
             // username or password blank warning
         }
     });
+
+    /*---slide Show*/
+    $('.carousel').carousel();
 });

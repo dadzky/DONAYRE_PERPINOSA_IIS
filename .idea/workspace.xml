@@ -2,19 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHP/OBJECTS/EMPLOYEES/check_if_employee_or_username_exist.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHP/OBJECTS/EMPLOYEES/search_fired_employees.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PHP/CLASSES/Employees_functions_home.php" afterPath="$PROJECT_DIR$/PHP/CLASSES/Employees_functions_home.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PHP/CLASSES/Products_functions_home.php" afterPath="$PROJECT_DIR$/PHP/CLASSES/Products_functions_home.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JS/admins_page_functionality.js" afterPath="$PROJECT_DIR$/JS/admins_page_functionality.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PHP/OBJECTS/PRODUCTS/check_if_product_to_add_already_exist.php" afterPath="$PROJECT_DIR$/PHP/OBJECTS/PRODUCTS/check_if_product_to_add_already_exist.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JS/employees.js" afterPath="$PROJECT_DIR$/JS/employees.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CSS/employees_page.css" afterPath="$PROJECT_DIR$/CSS/employees_page.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PAGES/employees_page.php" afterPath="$PROJECT_DIR$/PAGES/employees_page.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PHP/CLASSES/iis_functions_home.php" afterPath="$PROJECT_DIR$/PHP/CLASSES/iis_functions_home.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PHP/OBJECTS/log_in_validation.php" afterPath="$PROJECT_DIR$/PHP/OBJECTS/log_in_validation.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JS/products.js" afterPath="$PROJECT_DIR$/JS/products.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PAGES/products_page.php" afterPath="$PROJECT_DIR$/PAGES/products_page.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CSS/images/arrowdown.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CSS/img_tbls/searchicon.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CSS/bootstrap.min.css" afterPath="$PROJECT_DIR$/CSS/bootstrap.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PHP/CLASSES/database_connection.php" afterPath="$PROJECT_DIR$/PHP/CLASSES/database_connection.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CSS/log_in_page.css" afterPath="$PROJECT_DIR$/CSS/log_in_page.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JS/log_in_page_functionality.js" afterPath="$PROJECT_DIR$/JS/log_in_page_functionality.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PAGES/login.php" afterPath="$PROJECT_DIR$/PAGES/login.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CSS/page_footer.css" afterPath="$PROJECT_DIR$/CSS/page_footer.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PAGES/page_footer.html" afterPath="$PROJECT_DIR$/PAGES/page_footer.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PAGES/transaction.php" afterPath="$PROJECT_DIR$/PAGES/transaction.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JS/transaction_functionality.js" afterPath="$PROJECT_DIR$/JS/transaction_functionality.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CSS/transaction_page.css" afterPath="$PROJECT_DIR$/CSS/transaction_page.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="IIS_PROJECT_HUB.iws" />
@@ -58,15 +57,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Employees_functions_home.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PHP/CLASSES/Employees_functions_home.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="241" column="72" selection-start="13275" selection-end="13275" vertical-scroll-proportion="-6.5102043">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="search_fired_employees.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PHP/OBJECTS/EMPLOYEES/search_fired_employees.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -80,15 +70,6 @@
         <entry file="file://$PROJECT_DIR$/CSS/employees_page.css">
           <provider selected="true" editor-type-id="text-editor">
             <state line="202" column="20" selection-start="3785" selection-end="3785" vertical-scroll-proportion="-14.56">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Products_functions_home.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PHP/CLASSES/Products_functions_home.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="70" selection-start="647" selection-end="647" vertical-scroll-proportion="-10.0">
               <folding />
             </state>
           </provider>
@@ -112,10 +93,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="admins_page_functionality.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="admins_page_functionality.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/JS/admins_page_functionality.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="35" selection-start="703" selection-end="703" vertical-scroll-proportion="0.56782335">
+            <state line="24" column="35" selection-start="703" selection-end="703" vertical-scroll-proportion="-14.4">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="transaction_functionality.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/JS/transaction_functionality.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2" column="52" selection-start="63" selection-end="65" vertical-scroll-proportion="-0.6">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="log_in_page.css" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/CSS/log_in_page.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.039432175">
               <folding />
             </state>
           </provider>
@@ -447,20 +446,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/CSS/page_header.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="63" selection-start="308" selection-end="308" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PHP/OBJECTS/EMPLOYEES/check_if_employee_or_username_exist.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="90" selection-start="318" selection-end="318" vertical-scroll-proportion="-4.375">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/PHP/CLASSES/database_connection.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="4" column="43" selection-start="123" selection-end="123" vertical-scroll-proportion="-2.5">
@@ -554,7 +539,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/JS/admins_page_functionality.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="35" selection-start="703" selection-end="703" vertical-scroll-proportion="0.56782335">
+        <state line="24" column="35" selection-start="703" selection-end="703" vertical-scroll-proportion="-14.4">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JS/transaction_functionality.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="52" selection-start="63" selection-end="65" vertical-scroll-proportion="-0.6">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CSS/log_in_page.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.039432175">
           <folding />
         </state>
       </provider>
