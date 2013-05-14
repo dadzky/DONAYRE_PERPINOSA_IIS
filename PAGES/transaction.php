@@ -4,7 +4,7 @@
         header('Location: login.php');
     endif;
 ?>
-<!Doctype html>
+<!Doctype HTML>
 <html>
     <head>
         <title>Transaction</title>
@@ -46,7 +46,7 @@
                 <tbody id='products_to_transact_tbody'>
                 </tbody>                
             </table>
-            <div class='pagination pagination-centered'></div><!-- ========= pagination ============= -->
+            <div id='paganation_div' class='pagination pagination-centered'></div><!-- ========= pagination ============= -->
             <input type='hidden' id='currentPage' value='0'/> 
 
             <table id='shopping_list_table' class='table table-striped table-hover table-bordered'>

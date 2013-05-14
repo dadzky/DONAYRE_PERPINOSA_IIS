@@ -28,11 +28,11 @@
                 </h2>
             </div>
             <button id = "main_log_in_button" class = "btn btn-primary btn-large">LOG-IN</button>
-            <div id='login_as_div' class="alert alert-block alert-info">
+            <div id='login_as_div' class="alert alert-info">
                 <button id='login_as_close_btn' type='button' class="close" title="close">&times;</button>
                 <h4>Sign in as: <img src='../CSS/images/arrowdown.png' alt='dint'/></h4><br/>
                 <button id='log_in_as_cashier_btn' class='btn log_in_option'>Cashier</button>
-                <button id='log_in_as_administrator_btn' class='btn log_in_option'>Administrator</button>
+                <button id='log_in_as_administrator_btn' class='btn btn-success log_in_option'>Admin</button>
             </div> <!--login_as_div-->
         </div><!-- ======= iis header div ends ============ -->
         <div id = "main_container_div">
