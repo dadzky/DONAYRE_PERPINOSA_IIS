@@ -1,12 +1,10 @@
-
 #main_container_div {
     height: 700px;
+    width:1000px;
     padding: 10px;
-    background:-moz-linear-gradient(top,#ccc,#fff);
-    background:-webkit-linear-gradient(top,#ccc,#fff);
-    background:-o-linear-gradient(top,#ccc,#fff);
-    background:linear-gradient(top,#ccc,#fff);
-    
+    margin:0 auto;
+    background: #ddf1f9;
+    border-radius:10px;    
 }
 
 /*--center content---*/
@@ -89,8 +87,14 @@
     background-image: url("images/bgtest2.jpg");
     background-position: right;
     background-repeat: no-repeat;
-    
+    height: 300px;
 }
+#right_sidebar_div:hover{
+    background-image: url("images/bgtest3.jpg");
+    background-position: right;
+    background-repeat: no-repeat;
+}
+
 .branch_info{
     font-family: Arial,sans-serif;
     font-size:13px;

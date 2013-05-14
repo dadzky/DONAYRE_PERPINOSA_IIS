@@ -42,13 +42,11 @@
                     <ol class="carousel-indicators">
                         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
                         <li data-target="#myCarousel" data-slide-to="1"></li>
-                        <li data-target="#myCarousel" data-slide-to="2"></li>
                     </ol>
                     <!-- Carousel items -->
                     <div id='slide_imgs' class="carousel-inner">
                         <div class="active item"><img src='../CSS/img/IIS%20logos/iis1.jpg' class ='slideimg' alt='first'/></div>
                         <div class="item"><img src='../CSS/img/IIS%20logos/iis7.jpg' class ='slideimg' alt='second'/></div>
-                        <div class="item"><img src='../CSS/img/IIS%20logos/iis_logo.png' class ='slideimg' alt='last'/></div>
                     </div>
                     <!-- Carousel nav -->
                     <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
@@ -81,7 +79,7 @@
                     <span id = "log_in_as_span"></span>
                     <input type = "text" name = "username_entered" placeholder = "username" />
                     <input type = "password" name = "password_entered" placeholder = "password" />
-                    <span id = "error_span"></span><br />
+                    <span id = "error_span" class='text-error'></span><br />
                     <button class = "btn btn-info" id = "log_in_submit">log-in</button>
                 </form>
 

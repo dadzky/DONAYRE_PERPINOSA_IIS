@@ -146,12 +146,8 @@ $(function(){
  /*-----------FUNCTION FOR SEARCHING PRODUCTS [note: i also use this function for displaying the list of products]----------*/
  function searchProductForTransaction(){
 
- 	var pageLimit = 7;
  	var toSearch = $('#search_item').val();
- 	var pageActive = parseInt($('#currentPage').val());
- 	var page = pageActive * pageLimit;
-		
-	var obj = {page:page,pageActive:pageActive, pageLimit:pageLimit, toSearch:toSearch};
+	var obj = {toSearch:toSearch};
 
 	if(toSearch != ""){
 		$.ajax({
@@ -159,15 +155,7 @@ $(function(){
 			data: obj,
 			url: "../PHP/OBJECTS/transaction/searchProductWithCost.php",
 			success:function(data){
-				var obj2 = JSON.parse(data);
-				$('#products_to_transact_tbody').html(obj2.tbody);
-				$('.pagination').html(obj2.pager);
-				
-				if(pageActive == 0){
-					$('#pager_prev').attr('disabled','disabled');
-				}if((pageActive+1) >= obj2.pagesToDisplay){
-					$('#pager_next').attr('disabled','disabled');
-				}
+				$('#products_to_transact_tbody').html(data);
 	            markSelectedProducts();
 			},
 			error:function(data){
