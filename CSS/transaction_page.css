@@ -1,3 +1,6 @@
+body{
+	background: #ddf1f9;
+}
 #header_div{
     height: 60px;
     background: -moz-linear-gradient(bottom,deepskyblue,dodgerblue);
@@ -28,14 +31,13 @@
 
 }
 
-
 /*=========tables and paganation=========*/
-
 #transaction_wrapper_div{
 	width: 900px;
 	margin: 0 auto;
     padding: 30px 20px 80px 20px;
     border: 1px #000 outset;
+    background:#fff;
 }
 
 #pager_next, #pager_prev{
@@ -66,9 +68,10 @@
 	-o-border-bottom-right-radius: 5px;
 	border-bottom-right-radius: 5px;
 }
-.pagination{;
+#paganation_div{;
     margin-top: -5px;
     background-color: #cccccc;
+    height: 30px;
 
 }
 #products_to_transact_tbody{

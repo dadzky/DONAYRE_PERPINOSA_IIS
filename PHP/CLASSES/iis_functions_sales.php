@@ -32,6 +32,7 @@
     		$this->close_connection();    
 
             $pagerLI = "";
+            $pager = "";
             $tbody = "";
 
             while($row = $stmt->fetch()){
@@ -48,7 +49,7 @@
                $pagesToDisplay = $pagesToDisplay+1; 
             }
 
-            if(intval($pagesToDisplay) > 0 ){
+            if(intval($pagesToDisplay) > 1 ){
                 for($ctr=1;$ctr < intval($pagesToDisplay)+1;$ctr++){
                     if($ctr == $pageActive){
                         $pagerLI .= "<li class='active'><a href='Javascript:void(0)' class='page_number'>".$ctr."</a></li>";
@@ -56,13 +57,12 @@
                          $pagerLI .= "<li><a href='Javascript:void(0)' class='page_number'>".$ctr."</a></li>";
                     }
                 }
-            }else{
-                $pagerLI = "<li class='active'><a href='Javascript:void(0)' class='page_number'>1</a></li>";
+            }  
+            if($pagerLI != ""){
+                $pager =    "<button class='btn-primary' id='pager_prev' >prev</button>
+                            <ul>".$pagerLI."</ul>
+                            <button class='btn-primary' id='pager_next'>next</button>";
             }
-
-            $pager =    "<button class='btn-primary' id='pager_prev' >prev</button>
-                        <ul>".$pagerLI."</ul>
-                        <button class='btn-primary' id='pager_next'>next</button>";
 
             $json_array = array('tbody'=>$tbody,'pager'=>$pager, 'pagesToDisplay'=> intval($pagesToDisplay));
             $encoded = json_encode($json_array);
@@ -209,20 +209,23 @@
                     $pages['pages'] = $pages['pages']+1;
                 }
 
-                for($ctr=1;$ctr<=intval($pages['pages']);$ctr++){
-                    if($ctr == 1){
-                         $pagerLI .= "<li class='active'><a href='Javascript:void(0)'>".$ctr."</a></li>";
-                    }else{
-                         $pagerLI .= "<li><a href='Javascript:void(0)'>".$ctr."</a></li>";
-                    }                
+                if(intval($pages['pages']) > 1){
+                    for($ctr=1;$ctr<=intval($pages['pages']);$ctr++){
+                        if($ctr == 1){
+                             $pagerLI .= "<li class='active'><a href='Javascript:void(0)'>".$ctr."</a></li>";
+                        }else{
+                             $pagerLI .= "<li><a href='Javascript:void(0)'>".$ctr."</a></li>";
+                        }                
+                    }
+                    $pagerContent .="<button class='btn-primary' id='pager_prev'>prev</button>";
+                    $pagerContent .="<ul>";
+                    $pagerContent .=    $pagerLI;                 
+                    $pagerContent .= "</ul>";
+                    $pagerContent .= "<button class='btn-primary' id='pager_next'>next</button>";
                 }
 
-                $pagerContent .="<button class='btn-primary' id='pager_prev'>prev</button>";
-                $pagerContent .="<ul>";
-                $pagerContent .=    $pagerLI;                 
-                $pagerContent .= "</ul>";
-                $pagerContent .= "<button class='btn-primary' id='pager_next'>next</button>";
                 $n_pages = $pages['pages'];
+               
 
                 $obj = array("pager" => $pagerContent, "n_pages" => intval($n_pages));
                 $encoded = json_encode($obj);
@@ -296,13 +299,13 @@
                         $records .= "<td>".ucwords($rec[1])."</td>";
                         $records .= "<td>".$rec[2]."</td>";
                         $records .= "<td>".$rec[3]."</td>";
-                        $records .= "<td>&#8369; ".$rec[4]."</td>";
+                        $records .= "<td>&#8369; ".money_format('%!.2n', $rec[4])."</td>";
                         $records .= "</tr>";
                         $recLength++;
                         $totalIncome = $totalIncome+$rec[4];
                     }
                     echo "<tr><th rowspan=".$recLength.">".$transaction['tdate']."</th></tr>".$records;
-                    echo "<tr class='info totalIncome_tr'><td colspan='5'>Daily Total Income </td><td>&#8369; ".$totalIncome."</td></tr>";
+                    echo "<tr class='info totalIncome_tr'><td colspan='5'>Daily Total Income </td><td>&#8369; ".money_format('%!.2n',$totalIncome)."</td></tr>";
                 }
 
             echo "<span class='text-error'><b>No Records Found!</b></span>";

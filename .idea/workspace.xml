@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/admin_home_content.css" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/bootstrap.min.css" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/employees_page.css" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/images/IIS logos/IIS-blog.png" afterPath="" />
@@ -16,6 +15,7 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/images/add_employee_icon.png" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/images/animated-overlay.gif" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/images/arrowdown.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/images/bgtest2.jpg" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/images/close_icon.png" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/images/close_icon1.png" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/images/computer_background.jpg" afterPath="" />
@@ -62,11 +62,9 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/img_tbls/shopping-cart.png" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/includes_all_css_files.css" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/jquery-ui.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/log_in_page.css" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/page_footer.css" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/page_header.css" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/product_page.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/transaction_page.css" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/transaction_record_page.css" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/DB/IIS_DB(1).sql" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/DB/dbdesign.png" afterPath="" />
@@ -79,23 +77,19 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/JS/jquery-ui-1.10.2.min.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/JS/log_in_page_functionality.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/JS/products.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JS/transaction_functionality.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JS/transaction_record_functionality.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/PAGES/admin_home_content.html" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/PAGES/adminhome.php" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/PAGES/employees_page.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/PAGES/login.php" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/PAGES/logout.php" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/PAGES/page_footer.html" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/PAGES/page_header.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PAGES/page_info.html" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/PAGES/products_page.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/PAGES/transaction.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PAGES/suppliers_page.php" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/PAGES/transaction_records.php" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/PHP/CLASSES/Employees_functions_home.php" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/PHP/CLASSES/Products_functions_home.php" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/PHP/CLASSES/database_connection.php" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/PHP/CLASSES/iis_functions_home.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/PHP/CLASSES/iis_functions_sales.php" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/PHP/OBJECTS/EMPLOYEES/add_employee.php" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/PHP/OBJECTS/EMPLOYEES/check_if_employee_or_username_exist.php" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/PHP/OBJECTS/EMPLOYEES/display_employees.php" afterPath="" />
@@ -106,6 +100,7 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/PHP/OBJECTS/EMPLOYEES/search_fired_employees.php" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/PHP/OBJECTS/EMPLOYEES/update_employees_data.php" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/PHP/OBJECTS/PRODUCTS/add_product.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PHP/OBJECTS/PRODUCTS/check_bar_code.php" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/PHP/OBJECTS/PRODUCTS/check_if_product_to_add_already_exist.php" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/PHP/OBJECTS/PRODUCTS/delete_product.php" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/PHP/OBJECTS/PRODUCTS/display_products.php" afterPath="" />
@@ -121,6 +116,13 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/PHP/OBJECTS/transaction/saveTransaction.php" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/PHP/OBJECTS/transaction/searchProductWithCost.php" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/index.php" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PHP/CLASSES/iis_functions_sales.php" afterPath="$PROJECT_DIR$/PHP/CLASSES/iis_functions_sales.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CSS/log_in_page.css" afterPath="$PROJECT_DIR$/CSS/log_in_page.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PAGES/login.php" afterPath="$PROJECT_DIR$/PAGES/login.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PAGES/transaction.php" afterPath="$PROJECT_DIR$/PAGES/transaction.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JS/transaction_functionality.js" afterPath="$PROJECT_DIR$/JS/transaction_functionality.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CSS/transaction_page.css" afterPath="$PROJECT_DIR$/CSS/transaction_page.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JS/transaction_record_functionality.js" afterPath="$PROJECT_DIR$/JS/transaction_record_functionality.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="IIS_PROJECT_HUB.iws" />
@@ -181,10 +183,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="database_connection.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="database_connection.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/PHP/CLASSES/database_connection.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="36" selection-start="187" selection-end="187" vertical-scroll-proportion="0.13719513">
+            <state line="6" column="36" selection-start="187" selection-end="187" vertical-scroll-proportion="-3.75">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="login.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/PAGES/login.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="18.125">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="log_in_page.css" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/CSS/log_in_page.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="100" column="23" selection-start="1749" selection-end="1749" vertical-scroll-proportion="0.3720588">
               <folding />
             </state>
           </provider>
@@ -349,6 +369,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="IIS_PROJECT_HUB" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="IIS_PROJECT_HUB" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CSS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -471,7 +509,21 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app/PHP/CLASSES/database_connection.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="36" selection-start="187" selection-end="187" vertical-scroll-proportion="0.13719513">
+        <state line="6" column="36" selection-start="187" selection-end="187" vertical-scroll-proportion="-3.75">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/PAGES/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="18.125">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/CSS/log_in_page.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="100" column="23" selection-start="1749" selection-end="1749" vertical-scroll-proportion="0.3720588">
           <folding />
         </state>
       </provider>
