@@ -2,22 +2,6 @@ $(function(){
 		
      displayDateAndTime();
 
-	 /*---------PAGINATION---------*/
-	 $('.pagination').on('click','li a', function(){
-	 	var page = parseInt($(this).html());
-		$('#currentPage').val(page-1);
-		searchProductForTransaction()
-	 })
-	 $('.pagination').on('click','button', function(){
-	 	var pager = $(this).html();
-	 	var pageActive = parseInt($('#currentPage').val());
-	 	if(pager === 'next'){
-	 		$('#currentPage').val(pageActive + 1);
-	 	}else{
-	 		$('#currentPage').val(pageActive - 1);
-	 	}
-	 	searchProductForTransaction();
-	 })
 
 	 /*------------TRIGGER FOR SEARCHING PRODUCTS----------------*/
 	 $('#search_item').keyup(function(){

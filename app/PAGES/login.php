@@ -73,7 +73,7 @@
             </div> <!-- ======= iis related content div ends ======= -->
 
             <div id = "log_in_div">
-                <p id = "logo_p"><img src = "../CSS/images/IIS%20logos/iis0.jpg"> <span> WEW Alinayre's Grocery :D</span></p>
+                <p id = "logo_p"><img src = "../CSS/images/IIS%20logos/iis0.jpg"> <span>Unknown Store</span></p>
                 <span id = "close_log_in_options_span" title = "close"><img src = "../CSS/images/close_icon.png"></span>
                 <form id = "log_in_form" action = "login.php" method = "POST">
                     <input type = "hidden" name = "log_in_as" id = "log_in_as" />
