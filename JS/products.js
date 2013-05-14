@@ -15,14 +15,14 @@ $(function() {
         counter++;
     }
     // ============ MARKING AND UNMARKING checkboxes ============== //
-    $('#display_products_table').on('click','tbody li:first',function(){
+    $('#display_products_table').on('click','thead li:first',function(){
         var id = $('#display_products_table tr').find('input')
         for(var ctr=0;ctr<id.length;ctr++){
             var td=$(id[ctr]).context.parentNode;
             $(td).html("<input id='"+$(id[ctr]).attr('id')+"' type='checkbox' checked='checked'>");
         }
     })
-    $('#display_products_table').on('click','tbody li:last',function(){
+    $('#display_products_table').on('click','thead li:last',function(){
         var id = $('#display_products_table tr').find('input')
         for(var ctr=0;ctr<id.length;ctr++){
             var td=$(id[ctr]).context.parentNode;
@@ -61,7 +61,7 @@ $(function() {
                     $.ajax({
                         type: "POST",
                         url: "../PHP/OBJECTS/PRODUCTS/check_if_product_to_add_already_exist.php",
-                        data: {"products_name": product_name, "product_id": $("#product_id").val()},
+                        data: {"product_data": JSON.stringify($("#add_product_form").serializeArray()), "product_id": $("#product_id").val()},
                         success: function(data) {
                             if(data == "true") {
                                 $("#add_product_confirmation_div").dialog({
@@ -139,9 +139,9 @@ $(function() {
             data: {"selected_letter": $("#display_product_selected_letter").val()},
             success: function(data) {
                 if(data != "") {
-                    $("#display_products_table").html(data);
+                    $("#display_products_table_tbody").html(data);
                 } else {
-                    $("#display_products_table").html("<tr><td>No results for '<b>" + $("#display_product_selected_letter").val() + "</b>'.</td></tr>");
+                    $("#display_products_table_tbody").html("<tr><td>No results for '<b>" + $("#display_product_selected_letter").val() + "</b>'.</td></tr>");
                 }
                 if($("#display_product_selected_letter").val() == "all") {
                     display_products();
@@ -162,9 +162,9 @@ $(function() {
             data: {"product_name_to_search": $("#search_product_input_field").val()},
             success: function(data) {
                 if(data != "") {
-                    $("#display_products_table").html(data);
+                    $("#display_products_table_tbody").html(data);
                 } else {
-                    $("#display_products_table").html("<tr><td>No results for '<b>" + $("#search_product_input_field").val() + "</b>'.</td></tr>");
+                    $("#display_products_table_tbody").html("<tr><td>No results for '<b>" + $("#search_product_input_field").val() + "</b>'.</td></tr>");
                 }
             },
             error: function(data) {
@@ -184,7 +184,7 @@ function display_products() {
     $.ajax({
         url: "../PHP/OBJECTS/PRODUCTS/display_products.php",
         success: function(data) {
-            $("#display_products_table").html(data);
+            $("#display_products_table_tbody").html(data);
         },
         error: function(data) {
             console.log("There's an error in displaying products. It says " + JSON.stringify(data));
@@ -224,10 +224,8 @@ function edit_products_name(id) {
             success: function(data) {
 
                 if(data == "true") {
-                    alert("same! not saved!");
                     $("#new_product_name_form").addClass("control-group error");
                 } else {
-                    alert("not the same save!");
                     // =========== DOESN'T EXIST IN THE LIST, SO PROCEED UPDATING ===========
                     var new_product_name = $("#new_product_name").val();
                     if(new_product_name != "") {
@@ -244,7 +242,6 @@ function edit_products_name(id) {
     });
 
     $("#new_product_name_form").submit(function() {
-
         // ============= CHECK IF EDITED PRODUCT NAME WAS ALREADY IN THE LIST ============
         $.ajax({
             type: "POST",

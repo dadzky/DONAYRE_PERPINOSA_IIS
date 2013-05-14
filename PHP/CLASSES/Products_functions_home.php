@@ -5,14 +5,13 @@
 
         function check_if_product_to_add_already_exist($product_name, $product_id) {
             $this->open_connection();
-
             if($product_id == "") {
                 $select_statement = $this->db_holder->prepare("SELECT * FROM products WHERE product_name = ?;");
-                $select_statement->execute(array($product_name));
-
+                $select_statement->execute(array(trim($product_name)));
                 if($select_statement->fetch()) {
                     echo "true";
                 }
+
             } else {
                 $select_statement = $this->db_holder->prepare("SELECT * FROM products WHERE product_name = ? AND product_id != ?;");
                 $select_statement->execute(array($product_name, $product_id));
@@ -51,7 +50,7 @@
             $counter = 0;
             while($content = $select_statement->fetch()) {
                while($counter < 1) {
-                    echo "<tr><th>NAME</th><th>PRICE</th><th>STOCKS</th><th>UNIT</th><th class = 'product_delete_action'><img src = '../CSS/images/trash_can.gif' id = 'delete_trash_icon' onclick = 'delete_products()' /><ul><li id = 'mark_all_delete_action' >Mark All</li><li id = 'unmark_all_delete_action'>UnMark All</li></ul></th></tr>";
+                    echo "";
                     $counter++;
                 }
                 $position = strpos($content[2], ".");
@@ -87,12 +86,7 @@
 
             $select_statement = $this->db_holder->prepare("SELECT product_id, LEFT(product_name, 30), product_price, number_of_stocks, stock_unit FROM products WHERE product_name LIKE ? ORDER BY product_name;");
             $select_statement->execute(array($selected_letter));
-            $counter = 0;
             while($content = $select_statement->fetch()) {
-                while($counter < 1) {
-                    echo "<tr><th>NAME</th><th>PRICE</th><th>STOCKS</th><th>UNIT</th><th class = 'product_delete_action'><img src = '../CSS/images/trash_can.gif' id = 'delete_trash_icon' onclick = 'delete_products()' /><ul><li id = 'mark_all_delete_action' >Mark All</li><li id = 'unmark_all_delete_action'>UnMark All</li></ul></th></tr>";
-                    $counter++;
-                }
                 $position = strpos($content[2], ".");
                 if($position != "") {
                     // ========= With decimal prices greater than 0 ============
@@ -181,12 +175,7 @@
             $select_statement = $this->db_holder->prepare("SELECT product_id, LEFT(product_name, 30), product_price, number_of_stocks, stock_unit FROM products WHERE product_name LIKE ? ORDER BY product_name;");
             $select_statement->execute(array($product_name_to_search));
 
-            $counter = 0;
             while($content = $select_statement->fetch()) {
-                while($counter < 1) {
-                    echo "<tr><th>NAME</th><th>PRICE</th><th>STOCKS</th><th>UNIT</th><th class = 'product_delete_action'><img src = '../CSS/images/trash_can.gif' id = 'delete_trash_icon' onclick = 'delete_products()' /><ul><li id = 'mark_all_delete_action' >Mark All</li><li id = 'unmark_all_delete_action'>UnMark All</li></ul></th></tr>";
-                    $counter++;
-                }
                 $position = strpos($content[2], ".");
                 if($position != "") {
                     // ========= With decimal prices greater than 0 ============ //

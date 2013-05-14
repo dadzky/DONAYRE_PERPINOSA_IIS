@@ -29,7 +29,8 @@
 }
 
 #log_in_div {
-    background-image: url("images/note1.jpg");
+    /*background-image: url("images/note1.jpg");*/
+    background: #f5f5f5;
     height: 260px;
     width: 400px;
     margin: 0 auto;
@@ -37,16 +38,48 @@
     position: absolute;
     top: 150px;
     left: 580px;
-    padding: 20px;
+    padding: 20px 0px 20px 0px;
 }
 
 #log_in_form {
-    width: 225px;
     height: 500px;
+    width: 300px;
     margin: auto auto;
-    margin-top: 65px;
     text-align: center;
     bottom: 0%;
+}
+
+#log_in_form #log_in_submit {
+    float: left;
+}
+
+#log_in_form #log_in_reset_button {
+    float: right;
+}
+
+#log_in_form input {
+    text-align: center;
+    color: #000000;
+    font-family: purisa;
+}
+
+#logo_p {
+    background: darkgray;
+    padding: 0px 15px 0px 10px;
+}
+
+#logo_p span {
+    color: #ffffff;
+    font-family: Verdana;
+    font-weight: bold;
+    font-size: 21px;
+    text-align: center;
+    margin-left: 3px;
+}
+
+#logo_p img {
+    width: 50px;
+    height: 50px;
 }
 
 #log_in_as_span {
@@ -59,8 +92,8 @@
 #close_log_in_options_span {
     float: right;
     position: absolute;
-    top: -25px;
-    right: -25px;
+    top: -15px;
+    right: -15px;
 }
 
 #overlay_div_container {
