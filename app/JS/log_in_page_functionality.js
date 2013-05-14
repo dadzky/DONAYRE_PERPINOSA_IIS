@@ -1,7 +1,14 @@
 $(document).ready(function() {
 
     // ================= HIDDEN ==============
-
+    $(this).keypress(function(e){
+        if(e.keyCode == 27){
+            $("#log_in_option_ul").slideUp(300);
+            $("#overlay_div_container").slideUp(300);
+            $("#log_in_div").slideUp(300); 
+        }
+        console.log(e)
+    })
     $("#log_in_div").hide();
     $("#overlay_div_container").hide();
 
@@ -9,6 +16,7 @@ $(document).ready(function() {
         $("#log_in_option_ul").slideUp(300);
         $("#overlay_div_container").slideUp(300);
         $("#log_in_div").slideUp(300);
+        $('#error_span').html("");
     });
     $('#main_log_in_button').click(function(){
         $('#login_as_div').fadeIn();

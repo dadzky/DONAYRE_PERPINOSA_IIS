@@ -23,7 +23,7 @@
 }
 
 #display_products_table thead th, #display_products_table_tbody td {
-    width: 140px;
+    width: 250px;
 }
 
 #display_products_table tbody td + td,
@@ -36,7 +36,7 @@
 
 #display_products_table tbody td + td + td + td + td,
 #display_products_table thead th + th + th + th + th{
-    width: 20px;
+    width: 10px;
 }
 
 #add_product_div {

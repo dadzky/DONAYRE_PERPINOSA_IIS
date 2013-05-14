@@ -52,6 +52,7 @@ $(function(){
             $('#searchByName_select').hide();
         }
         searchRecords(toSearch,searchBy);
+        displayPager();
     });
 
     $('#searchByName_select').change(function(){
@@ -189,6 +190,7 @@ function displayPager(){
 			$('.pagination').html(pagerContent.pager);
 			$('.max_page').html(pagerContent.n_pages);
 			$('.page_number').html(currentPage);
+            console.log(pagerContent.n_pages)
 			
 		},
 		error:function(data){

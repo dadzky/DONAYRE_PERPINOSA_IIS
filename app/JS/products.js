@@ -44,101 +44,78 @@ $(function() {
     })
 
     $("#add_product_button").click(function() {
-        var product_name = $.trim($("#product_name").val());
-        var product_price = $.trim($("#product_price").val());
-        var number_of_stocks = $.trim($("#number_of_stocks").val());
+        var product_name = $("#product_name").val();
+        var product_price = $("#product_price").val();
+        var number_of_stocks = $("#number_of_stocks").val();
         var stock_unit = $("#stock_unit").val();
 
+        var string_pattern = /^[a-z, A-Z]*$/;
         var numeric_pattern = /^[0-9, .]*$/;
 
         var product_price_valid = numeric_pattern.test(product_price);
         var number_of_stocks_valid = numeric_pattern.test(number_of_stocks);
 
-        if(product_name != "" ) {
+        if(product_name != "") {
             if(product_price != "" && product_price_valid) {
                 if(number_of_stocks != "" && number_of_stocks_valid) {
-                    if($.trim($("#bar_code").val()) != "") {
-                        $.ajax({
-                            type: "POST",
-                            url: "../PHP/OBJECTS/PRODUCTS/check_if_product_to_add_already_exist.php",
-                            data: {"execute": "check_product_name_to_add", "product_data": JSON.stringify($("#add_product_form").serializeArray())},
-                            success: function(data) {
-                                if(data == "true") {
-                                    $("#add_product_confirmation_div").dialog({
-                                        title: "PRODUCT EXIST",
-                                        show: {effect: "slide", direction: "up"},
-                                        hide: {effect: "slide", direction: "up"},
-                                        modal: true,
-                                        draggable: false,
-                                        resizable: false,
-                                        buttons: {
-                                            "YES": function() {
-                                                // ================= UPDATES THE NUMBER OF STOCKS OF A PRODUCT =================
-                                                $.ajax({
-                                                    type: "POST",
-                                                    url: "../PHP/OBJECTS/PRODUCTS/add_product.php",
-                                                    data: {"products_data": JSON.stringify($("#add_product_form").serializeArray()), "update": "yes"},
-                                                    success: function() {
-                                                        display_products();
-                                                        $("#add_product_confirmation_div").dialog("close");
-                                                        $("#stock_unit_dd").html("<select name = 'stock_unit' id = 'stock_unit'><option>pieces</option><option>packs</option><option>klg</option><option>g</option> <option>lbs</option><option>others</option></select>");
-                                                    },
-                                                    error: function(data) {
-                                                        console.log("There's an error in adding a product. It says " + JSON.stringify(data));
-                                                    }
-                                                });
-                                            },
-                                            "NO THANKS": function() {
-                                                $("#add_product_confirmation_div").dialog("close");
-                                            }
-                                        }
-                                    })
-                                } else {
-                                    // ============== Okay, product name is unique. Procced naman in checking the bar code if it is also unique ========
-                                    $.ajax({
-                                        type: "POST",
-                                        url: "../PHP/OBJECTS/PRODUCTS/check_bar_code.php",
-                                        data: {"bar_code": $("#bar_code").val()},
-                                        success: function(data) {
-                                            if(data == "true") {
-                                                // ======= means bar code already exist!!!! ======
-                                                alert("Please check PRODUCT'S BAR CODE. \n It should be unique!");
-
-                                            } else {
-                                                // bar code doesn't exist yet, so proceed in adding the new product =========
-                                                $.ajax({
-                                                    type: "POST",
-                                                    url: "../PHP/OBJECTS/PRODUCTS/add_product.php",
-                                                    data: {"products_data": JSON.stringify($("#add_product_form").serializeArray()), "update": "no"},
-                                                    success: function(data) {
-                                                        display_products();
-                                                        $("#stock_unit_dd").html("<select name = 'stock_unit' id = 'stock_unit'><option>piece</option><option>packs</option><option>klg</option><option>g</option> <option>lbs</option><option>others</option></select>");
-                                                        $("#number_of_stocks_dd").removeClass("control-group error");
-                                                        $("#product_price_dd").removeClass("control-group error");
-                                                        $("#bar_code_dd").removeClass("control-group error");
-                                                        $("#product_name_dd").removeClass("control-group error");
-                                                    },
-                                                    error: function(data) {
-                                                        console.log("There's an error in adding a product. It says " + JSON.stringify(data));
-                                                    }
-                                                });
-                                            }
+                    $.ajax({
+                        type: "POST",
+                        url: "../PHP/OBJECTS/PRODUCTS/check_if_product_to_add_already_exist.php",
+                        data: {"product_data": JSON.stringify($("#add_product_form").serializeArray()), "product_id": $("#product_id").val()},
+                        success: function(data) {
+                            if(data == "true") {
+                                $("#add_product_confirmation_div").dialog({
+                                    title: "PRODUCT EXIST",
+                                    show: {effect: "slide", direction: "up"},
+                                    hide: {effect: "slide", direction: "up"},
+                                    modal: true,
+                                    draggable: false,
+                                    resizable: false,
+                                    buttons: {
+                                        "YES": function() {
+                                            // ================= UPDATES THE NUMBER OF STOCKS OF A PRODUCT =================
+                                            $.ajax({
+                                                type: "POST",
+                                                url: "../PHP/OBJECTS/PRODUCTS/add_product.php",
+                                                data: {"products_data": JSON.stringify($("#add_product_form").serializeArray()), "update": "yes"},
+                                                success: function() {
+                                                    display_products();
+                                                    $("#add_product_confirmation_div").dialog("close");
+                                                    $("#stock_unit_dd").html("<select name = 'stock_unit' id = 'stock_unit'><option>pieces</option><option>packs</option><option>klg</option><option>g</option> <option>lbs</option><option>others</option></select>");
+                                                },
+                                                error: function(data) {
+                                                    console.log("There's an error in adding a product. It says " + JSON.stringify(data));
+                                                }
+                                            });
                                         },
-                                        error: function(data) {
-                                            console.log("Error in checking bar code = " + JSON.stringify(data));
+                                          "NO THANKS": function() {
+                                            $("#add_product_confirmation_div").dialog("close");
                                         }
-                                    });
-                                }
-                            },
-                            error: function(data) {
-                                console.log("There's an error in checking products. It says " + JSON.stringify(data));
+                                    }
+                                })
+                            } else {
+                                // -=================== ADDING PRODUCT ==============
+                                $.ajax({
+                                    type: "POST",
+                                    url: "../PHP/OBJECTS/PRODUCTS/add_product.php",
+                                    data: {"products_data": JSON.stringify($("#add_product_form").serializeArray()), "update": "no"},
+                                    success: function() {
+                                        display_products();
+                                        $("#stock_unit_dd").html("<select name = 'stock_unit' id = 'stock_unit'><option>pieces</option><option>packs</option><option>klg</option><option>g</option> <option>lbs</option><option>others</option></select>");
+                                        $("#number_of_stocks_dd").removeClass("control-group error");
+                                        $("#product_price_dd").removeClass("control-group error");
+                                        $("#product_name_dd").removeClass("control-group error");
+                                    },
+                                    error: function(data) {
+                                        console.log("There's an error in adding a product. It says " + JSON.stringify(data));
+                                    }
+                                });
                             }
-                        }); // ============ END of AJAX Request in cheking if product exist ========
-                    } else {
-                        // ========= bar code empty warning ===========
-                        $("#bar_code_dd").addClass("control-group error");
-                    }
-
+                        },
+                        error: function(data) {
+                            console.log("There's an error in checking products. It says " + JSON.stringify(data));
+                        }
+                    }); // ============ END of AJAX Request in cheking if product exist ========
                 } else {
                     //number of stocks warning
                     $("#number_of_stocks_dd").addClass("control-group error");
@@ -243,7 +220,7 @@ function edit_products_name(id) {
         $.ajax({
             type: "POST",
             url: "../PHP/OBJECTS/PRODUCTS/check_if_product_to_add_already_exist.php",
-            data: {"execute": "check_edited_product_name", "product_name": $("#new_product_name").val(), "product_id": id},
+            data: {"product_name": $("#new_product_name").val(), "product_id": id},
             success: function(data) {
 
                 if(data == "true") {
@@ -269,7 +246,7 @@ function edit_products_name(id) {
         $.ajax({
             type: "POST",
             url: "../PHP/OBJECTS/PRODUCTS/check_if_product_to_add_already_exist.php",
-            data: {"execute": "check_edited_product_name", "product_name": $("#new_product_name").val(), "product_id": id},
+            data: {"product_name": $("#new_product_name").val(), "product_id": id},
             success: function(data) {
                 if(data == "true") {
                     $("#new_product_name_form").addClass("control-group error");

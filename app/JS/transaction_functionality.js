@@ -1,6 +1,5 @@
 $(function(){
-	
-	 searchProductForTransaction(); //To display the default products
+		
      displayDateAndTime();
 
 	 /*---------PAGINATION---------*/
@@ -147,34 +146,27 @@ $(function(){
  /*-----------FUNCTION FOR SEARCHING PRODUCTS [note: i also use this function for displaying the list of products]----------*/
  function searchProductForTransaction(){
 
- 	var pageLimit = 7;
  	var toSearch = $('#search_item').val();
- 	var pageActive = parseInt($('#currentPage').val());
- 	var page = pageActive * pageLimit;
-		
-	var obj = {page:page,pageActive:pageActive, pageLimit:pageLimit, toSearch:toSearch};
+	var obj = {toSearch:toSearch};
 
-	$.ajax({
-		type:"POST",
-		data: obj,
-		url: "../PHP/OBJECTS/transaction/searchProductWithCost.php",
-		success:function(data){
-			var obj2 = JSON.parse(data);
-			$('#products_to_transact_tbody').html(obj2.tbody);
-			$('.pagination').html(obj2.pager);
-			
-			if(pageActive == 0){
-				$('#pager_prev').attr('disabled','disabled');
-			}if((pageActive+1) >= obj2.pagesToDisplay){
-				$('#pager_next').attr('disabled','disabled');
+	if(toSearch != ""){
+		$.ajax({
+			type:"POST",
+			data: obj,
+			url: "../PHP/OBJECTS/transaction/searchProductWithCost.php",
+			success:function(data){
+				$('#products_to_transact_tbody').html(data);
+	            markSelectedProducts();
+			},
+			error:function(data){
+				alert("Error on Searching products => "+ data);
 			}
-            markSelectedProducts();
-		},
-		error:function(data){
-			alert("Error on Searching products => "+ data);
-		}
 
-	})
+		})
+	}else{
+		$('#products_to_transact_tbody').html("");
+		$('.pagination').html("");
+	}
 	
 }
 
@@ -245,7 +237,7 @@ function displayToShoppingList(prodId,prodName,prodCost,prodUnit,productQuantity
 
     var newId = "tr_to_transact_"+id;
 	var tbody = "<tr  id='"+newId+"'>"+
-				"<th><a href='Javascript:void(0)'><img src='../CSS/img_tbls/deleteShoppingList.png' class ='delete_list_img' alt = 'delete quanity' title='delete' /></a></th>"+
+				"<th><a href='Javascript:void(0)'><img src='../CSS/img_tbls/deleteShoppingList.png' class ='delete_list_img' alt = 'remove row' title='remove' /></a></th>"+
 				"<td>"+prodName+"</td>"+
 				"<td>&#8369; <span>"+prodCost+"</span> / "+prodUnit+"</td>"+
 				"<td><span>"+productQuantity+"</span><img src='../CSS/img_tbls/editShoppingList.png' class =edit_quantity_img alt = edit quanity title=edit quantity/></td>"+
@@ -318,7 +310,7 @@ function confirmationDialogForTransaction(){
 }
 
 function markSelectedProducts(){
-
+	//selectedProductIDs -> global array variable that stores the id of products that has already been selected
     for(var ctr=0;ctr<selectedProductIDs.length;ctr++){
         $('#'+selectedProductIDs[ctr]).css('text-decoration','line-through');
     }

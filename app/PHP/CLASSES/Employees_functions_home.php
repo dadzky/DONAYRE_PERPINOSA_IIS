@@ -161,7 +161,7 @@
                                     "birth_year"=>$content[6],
                                     "address"=>$content[7],
                                     "contact_number"=>$content[8],
-                                    "type_of_job"=>$content[9]);
+                                    "type_of_job"=>$content[9],);
                 $encoded_data = json_encode($data_array);
                 echo $encoded_data;
             }

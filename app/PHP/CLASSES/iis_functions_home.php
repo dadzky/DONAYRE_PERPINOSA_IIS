@@ -58,7 +58,7 @@
             $this->open_connection();
 
             $select_statement = $this->db_holder->prepare("SELECT e.employee_id,
-                                                                  CONCAT(e.lastname, ', ',
+                                                                  CONCAT(e.lastname, ' ',
                                                                           e.firstname)
                                                             FROM employees AS e,
                                                                  accounts AS a
