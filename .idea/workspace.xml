@@ -2,42 +2,166 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PHP/CLASSES/Products_functions_home.php" afterPath="$PROJECT_DIR$/PHP/CLASSES/Products_functions_home.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PHP/OBJECTS/PRODUCTS/check_if_product_to_add_already_exist.php" afterPath="$PROJECT_DIR$/PHP/OBJECTS/PRODUCTS/check_if_product_to_add_already_exist.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PHP/CLASSES/database_connection.php" afterPath="$PROJECT_DIR$/PHP/CLASSES/database_connection.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CSS/log_in_page.css" afterPath="$PROJECT_DIR$/CSS/log_in_page.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JS/log_in_page_functionality.js" afterPath="$PROJECT_DIR$/JS/log_in_page_functionality.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PAGES/login.php" afterPath="$PROJECT_DIR$/PAGES/login.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CSS/product_page.css" afterPath="$PROJECT_DIR$/CSS/product_page.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JS/products.js" afterPath="$PROJECT_DIR$/JS/products.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PAGES/products_page.php" afterPath="$PROJECT_DIR$/PAGES/products_page.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/admin_home_content.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/bootstrap.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/employees_page.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/images/IIS logos/IIS-blog.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/images/IIS logos/dcd55b4b401dec8ecf00ba9536d92293.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/images/IIS logos/iis0.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/images/IIS logos/iis1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/images/IIS logos/iis7.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/images/IIS logos/iis_icon.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/images/IIS logos/iis_icon1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/images/IIS logos/iis_logo.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/images/add_employee_icon.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/images/animated-overlay.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/images/arrowdown.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/images/close_icon.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/images/close_icon1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/images/computer_background.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/images/note.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/images/note1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/images/red_trash.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/images/search_icon.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/images/search_icon1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/images/show_icon.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/images/trash.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/images/trash1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/images/trash_can.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/images/ui-bg_flat_0_aaaaaa_40x100.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/images/ui-bg_flat_75_ffffff_40x100.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/images/ui-bg_glass_55_fbf9ee_1x400.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/images/ui-bg_glass_65_ffffff_1x400.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/images/ui-bg_glass_75_dadada_1x400.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/images/ui-bg_glass_75_e6e6e6_1x400.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/images/ui-bg_glass_95_fef1ec_1x400.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/images/ui-bg_highlight-soft_75_cccccc_1x100.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/images/ui-icons_222222_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/images/ui-icons_2e83ff_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/images/ui-icons_454545_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/images/ui-icons_888888_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/images/ui-icons_cd0a0a_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/images/warning.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/images/warning2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/img/IIS logos/IIS-blog.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/img/IIS logos/dcd55b4b401dec8ecf00ba9536d92293.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/img/IIS logos/iis1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/img/IIS logos/iis7.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/img/IIS logos/iis_icon.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/img/IIS logos/iis_icon1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/img/IIS logos/iis_logo.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/img/glyphicons-halflings-white.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/img/glyphicons-halflings.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/img_tbls/Edited.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/img_tbls/deleteShoppingList.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/img_tbls/editShoppingList.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/img_tbls/loading.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/img_tbls/next.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/img_tbls/previous.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/img_tbls/searchicon.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/img_tbls/shopping-cart.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/includes_all_css_files.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/jquery-ui.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/log_in_page.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/page_footer.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/page_header.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/product_page.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/transaction_page.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/transaction_record_page.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/DB/IIS_DB(1).sql" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/DB/dbdesign.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/InventorySystemMajorFeatures.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/JS/admins_page_functionality.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/JS/bootstrap.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/JS/employees.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/JS/jqBarGraph.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/JS/jquery-1.9.1.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/JS/jquery-ui-1.10.2.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/JS/log_in_page_functionality.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/JS/products.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/JS/transaction_functionality.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/JS/transaction_record_functionality.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PAGES/admin_home_content.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PAGES/adminhome.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PAGES/employees_page.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PAGES/login.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PAGES/logout.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PAGES/page_footer.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PAGES/page_header.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PAGES/products_page.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PAGES/transaction.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PAGES/transaction_records.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PHP/CLASSES/Employees_functions_home.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PHP/CLASSES/Products_functions_home.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PHP/CLASSES/database_connection.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PHP/CLASSES/iis_functions_home.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PHP/CLASSES/iis_functions_sales.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PHP/OBJECTS/EMPLOYEES/add_employee.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PHP/OBJECTS/EMPLOYEES/check_if_employee_or_username_exist.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PHP/OBJECTS/EMPLOYEES/display_employees.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PHP/OBJECTS/EMPLOYEES/display_fired_employees.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PHP/OBJECTS/EMPLOYEES/fire_employee.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PHP/OBJECTS/EMPLOYEES/retrieve_employees_data_to_update.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PHP/OBJECTS/EMPLOYEES/search_employee.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PHP/OBJECTS/EMPLOYEES/search_fired_employees.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PHP/OBJECTS/EMPLOYEES/update_employees_data.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PHP/OBJECTS/PRODUCTS/add_product.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PHP/OBJECTS/PRODUCTS/check_if_product_to_add_already_exist.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PHP/OBJECTS/PRODUCTS/delete_product.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PHP/OBJECTS/PRODUCTS/display_products.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PHP/OBJECTS/PRODUCTS/display_products_by_select_letter.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PHP/OBJECTS/PRODUCTS/retrieve_product_data.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PHP/OBJECTS/PRODUCTS/search_product.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PHP/OBJECTS/PRODUCTS/update_products_info.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PHP/OBJECTS/TRANSACTION_RECORD/displayPager.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PHP/OBJECTS/TRANSACTION_RECORD/displayTransactionRecords.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PHP/OBJECTS/TRANSACTION_RECORD/getMonthlySales.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PHP/OBJECTS/TRANSACTION_RECORD/searchTransactionRecords.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PHP/OBJECTS/log_in_validation.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PHP/OBJECTS/transaction/saveTransaction.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PHP/OBJECTS/transaction/searchProductWithCost.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/index.php" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="IIS_PROJECT_HUB.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1367967800736" ignored="false" />
-    <file path="/login.php" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1368000514271" ignored="false" />
-    <file path="/log_in_page_functionality.js" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1368000066940" ignored="false" />
+    <file path="/Dummy.txt" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1368518106369" ignored="false" />
+    <file path="/login.php" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1368156208524" ignored="false" />
+    <file path="/log_in_page_functionality.js" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1368154703555" ignored="false" />
     <file path="/log_in_validation.php" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1367975625930" ignored="false" />
     <file path="/iis_functions_home.php" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1367975565194" ignored="false" />
-    <file path="/log_in_page.css" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1368000637611" ignored="false" />
-    <file path="/products.js" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1367996799389" ignored="false" />
+    <file path="/log_in_page.css" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1368156096817" ignored="false" />
+    <file path="/products.js" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1368174347819" ignored="false" />
     <file path="$PROJECT_DIR$/../hotel_information_system/PHP/FUNCTIONS_HOME/database_connection.php" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1367901832408" ignored="false" />
-    <file path="/products_page.php" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1367995593665" ignored="false" />
-    <file path="/Products_functions_home.php" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1368001792109" ignored="false" />
+    <file path="/products_page.php" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1368163409101" ignored="false" />
+    <file path="/Products_functions_home.php" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1368164400760" ignored="false" />
     <file path="/page_footer.css" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1367913302776" ignored="false" />
     <file path="/a.dummy" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1367917235833" ignored="false" />
     <file path="/employees_page.css" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1367982412257" ignored="false" />
     <file path="/employees_page.php" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1367986632691" ignored="false" />
     <file path="/Employees_functions_home.php" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1367982352602" ignored="false" />
     <file path="/search_fired_employees.php" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1367982370134" ignored="false" />
-    <file path="/employees.js" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1367986680202" ignored="false" />
+    <file path="/employees.js" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1368173863573" ignored="false" />
     <file path="/check_if_employee_or_username_exist.php" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1367977706760" ignored="false" />
-    <file path="/check_if_product_to_add_already_exist.php" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1367994522453" ignored="false" />
-    <file path="/admins_page_functionality.js" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1367986851293" ignored="false" />
+    <file path="/check_if_product_to_add_already_exist.php" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1368162450039" ignored="false" />
+    <file path="/admins_page_functionality.js" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1368158934931" ignored="false" />
     <file path="/iis_functions_sales.php" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1367990221684" ignored="false" />
     <file path="/transaction_record_functionality.js" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1367992693011" ignored="false" />
-    <file path="/product_page.css" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1367998268318" ignored="false" />
+    <file path="/product_page.css" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1368164089561" ignored="false" />
+    <file path="/page_footer.html" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1368113463997" ignored="false" />
+    <file path="/page_header.html" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1368158916038" ignored="false" />
+    <file path="/page_header.css" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1368157270097" ignored="false" />
+    <file path="/suppliers_page.html" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1368158863433" ignored="false" />
+    <file path="/suppliers_page.php" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1368159087166" ignored="false" />
+    <file path="/check_bar_code.php" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1368160756315" ignored="false" />
+    <file path="/add_product.php" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1368160782057" ignored="false" />
+    <file path="$PROJECT_DIR$/../hotel_information_system/PHP/HOTEL_DATA/get_total_days_of_stay_base_on_entered_date_of_check_out.php" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1368169004398" ignored="false" />
+    <file path="$PROJECT_DIR$/../hotel_information_system/hotel_page.php" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1368169004398" ignored="false" />
+    <file path="$PROJECT_DIR$/../hotel_information_system/JS/hotel_data.js" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1368169004398" ignored="false" />
+    <file path="$PROJECT_DIR$/../hotel_information_system/JS/hotel_page_functionality.js" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1368169004398" ignored="false" />
+    <file path="$PROJECT_DIR$/../hotel_information_system/PHP/FUNCTIONS_HOME/hotel_data_functions.php" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1368169005309" ignored="false" />
+    <file path="$PROJECT_DIR$/../hotel_information_system/index.php" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1368169355248" ignored="false" />
+    <file path="/index.php" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1368169302087" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,55 +181,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="products_page.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PAGES/products_page.php">
+      <file leaf-file-name="database_connection.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/PHP/CLASSES/database_connection.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="51" selection-start="953" selection-end="975" vertical-scroll-proportion="-0.625">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Products_functions_home.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/PHP/CLASSES/Products_functions_home.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="88" column="58" selection-start="5082" selection-end="5082" vertical-scroll-proportion="0.42880258">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PAGES/login.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="125" column="46" selection-start="7466" selection-end="7466" vertical-scroll-proportion="-14.708333">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="log_in_validation.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PHP/OBJECTS/log_in_validation.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="25" selection-start="426" selection-end="426" vertical-scroll-proportion="-8.75">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="iis_functions_home.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PHP/CLASSES/iis_functions_home.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="products.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/JS/products.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="0" selection-start="15" selection-end="15" vertical-scroll-proportion="0.0">
+            <state line="6" column="36" selection-start="187" selection-end="187" vertical-scroll-proportion="0.13719513">
               <folding />
             </state>
           </provider>
@@ -129,22 +208,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/PHP/OBJECTS/EMPLOYEES/search_fired_employees.php" />
-        <option value="$PROJECT_DIR$/CSS/employees_page.css" />
-        <option value="$PROJECT_DIR$/PAGES/employees_page.php" />
-        <option value="$PROJECT_DIR$/JS/employees.js" />
+        <option value="$PROJECT_DIR$/PAGES/suppliers_page.html" />
+        <option value="$PROJECT_DIR$/PAGES/page_header.html" />
         <option value="$PROJECT_DIR$/JS/admins_page_functionality.js" />
-        <option value="$PROJECT_DIR$/PHP/CLASSES/database_connection.php" />
-        <option value="$PROJECT_DIR$/PHP/CLASSES/iis_functions_sales.php" />
-        <option value="$PROJECT_DIR$/JS/transaction_record_functionality.js" />
+        <option value="$PROJECT_DIR$/PAGES/suppliers_page.php" />
+        <option value="$PROJECT_DIR$/PHP/CLASSES/iis_functions_home.php" />
+        <option value="$PROJECT_DIR$/PHP/OBJECTS/PRODUCTS/add_product.php" />
+        <option value="$PROJECT_DIR$/PHP/OBJECTS/PRODUCTS/check_bar_code.php" />
         <option value="$PROJECT_DIR$/PHP/OBJECTS/PRODUCTS/check_if_product_to_add_already_exist.php" />
         <option value="$PROJECT_DIR$/PAGES/products_page.php" />
-        <option value="$PROJECT_DIR$/JS/products.js" />
         <option value="$PROJECT_DIR$/CSS/product_page.css" />
-        <option value="$PROJECT_DIR$/JS/log_in_page_functionality.js" />
-        <option value="$PROJECT_DIR$/PAGES/login.php" />
-        <option value="$PROJECT_DIR$/CSS/log_in_page.css" />
         <option value="$PROJECT_DIR$/PHP/CLASSES/Products_functions_home.php" />
+        <option value="$PROJECT_DIR$/PHP/CLASSES/Employees_functions_home.php" />
+        <option value="$PROJECT_DIR$/JS/employees.js" />
+        <option value="$PROJECT_DIR$/JS/products.js" />
+        <option value="$PROJECT_DIR$/PHP/CLASSES/iis_functions_sales.php" />
+        <option value="$PROJECT_DIR$/app/PHP/CLASSES/database_connection.php" />
       </list>
     </option>
   </component>
@@ -208,11 +287,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="PHP" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="OBJECTS" />
+              <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -226,15 +301,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="PHP" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="OBJECTS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PRODUCTS" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -245,6 +316,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="IIS_PROJECT_HUB" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -266,35 +341,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="PAGES" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="IIS_PROJECT_HUB" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="IIS_PROJECT_HUB" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="JS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="IIS_PROJECT_HUB" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="IIS_PROJECT_HUB" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CSS" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -306,6 +357,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../hotel_information_system" />
+    <property name="DefaultHtmlFileTemplate" value="Html5" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -313,6 +365,13 @@
       <method />
     </configuration>
     <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugSession" factoryName="Local" singleton="true">
+      <JSDebuggerConfigurationSettings>
+        <option name="engineId" value="embedded" />
+        <option name="fileUrl" />
+      </JSDebuggerConfigurationSettings>
       <method />
     </configuration>
     <list size="0" />
@@ -334,7 +393,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21982759" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15876436" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -410,114 +469,9 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/PHP/CLASSES/database_connection.php">
+    <entry file="file://$PROJECT_DIR$/app/PHP/CLASSES/database_connection.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="36" selection-start="187" selection-end="187" vertical-scroll-proportion="-3.75">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PHP/CLASSES/iis_functions_sales.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="183" column="130" selection-start="7722" selection-end="7722" vertical-scroll-proportion="1.6030151">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JS/employees.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="52" selection-start="873" selection-end="873" vertical-scroll-proportion="0.44117647">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PHP/OBJECTS/PRODUCTS/check_if_product_to_add_already_exist.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="82" selection-start="862" selection-end="862" vertical-scroll-proportion="-10.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JS/transaction_record_functionality.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="240" column="38" selection-start="8080" selection-end="8080" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PAGES/employees_page.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="44" selection-start="632" selection-end="653" vertical-scroll-proportion="0.31553397">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CSS/product_page.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="13" selection-start="1142" selection-end="1142" vertical-scroll-proportion="0.470229">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CSS/employees_page.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="205" column="20" selection-start="3843" selection-end="3843" vertical-scroll-proportion="0.65648854">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JS/log_in_page_functionality.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="39" selection-start="1014" selection-end="1014" vertical-scroll-proportion="0.6397059">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CSS/log_in_page.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="23" selection-start="918" selection-end="918" vertical-scroll-proportion="0.7221374">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PAGES/products_page.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="51" selection-start="953" selection-end="975" vertical-scroll-proportion="-0.625">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JS/products.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="15" selection-end="15" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PAGES/login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="125" column="46" selection-start="7466" selection-end="7466" vertical-scroll-proportion="-14.708333">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PHP/CLASSES/iis_functions_home.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PHP/OBJECTS/log_in_validation.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="25" selection-start="426" selection-end="426" vertical-scroll-proportion="-8.75">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PHP/CLASSES/Products_functions_home.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="88" column="58" selection-start="5082" selection-end="5082" vertical-scroll-proportion="0.42880258">
+        <state line="6" column="36" selection-start="187" selection-end="187" vertical-scroll-proportion="0.13719513">
           <folding />
         </state>
       </provider>

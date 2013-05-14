@@ -1,0 +1,111 @@
+#header_div{
+    height: 60px;
+    background: -moz-linear-gradient(bottom,deepskyblue,dodgerblue);
+    background: -webkit-linear-gradient(bottom,deepskyblue,dodgerblue);
+    background: -o-linear-gradient(bottom,deepskyblue,dodgerblue);
+    background: linear-gradient(bottom,deepskyblue,dodgerblue);
+    padding: 5px;
+}
+
+#system_name_div {
+    font-weight: bolder;
+    color: #003399;
+    font-family: cursive;
+    width: 500px;
+}
+
+#system_name_div span {
+    color: #0000ff;
+    font-size: 45px;
+    font-family: Consolas;
+}
+
+#search_item{
+    background:url('img_tbls/searchicon.png');
+    background-repeat: no-repeat;
+    background-position: left;
+    padding-left:18px;
+
+}
+
+
+/*=========tables and paganation=========*/
+
+#transaction_wrapper_div{
+	width: 900px;
+	margin: 0 auto;
+    padding: 30px 20px 80px 20px;
+    border: 1px #000 outset;
+}
+
+#pager_next, #pager_prev{
+	margin-top: -23px;
+	height: 29px;
+	background-color:#fff;
+	border: none;
+}
+#pager_prev{
+	margin-right: -5px;
+	-moz-border-top0-left-radius: 5px;
+	-webkit-border-top-left-radius: 5px;
+	-o-border-top-left-radius: 5px;
+	border-top-left-radius: 5px;
+	-moz-border-bottom-left-radius: 5px;
+	-webkit-border-bottom-left-radius: 5px;
+	-o-border-bottom-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+#pager_next{
+	margin-left: -5px;
+	-moz-border-top-right-radius: 5px;
+	-webkit-border-top-right-radius: 5px;
+	-o-border-top-right-radius: 5px;
+	border-top-right-radius: 5px;
+	-moz-border-bottom-right-radius: 5px;
+	-webkit-border-bottom-right-radius: 5px;
+	-o-border-bottom-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+.pagination{;
+    margin-top: -5px;
+    background-color: #cccccc;
+
+}
+#products_to_transact_tbody{
+	cursor:url(../CSS/img_tbls/shopping-cart.png), -moz-zoom-in;
+}
+#shopping_list_table{
+	display:none;
+}
+#shopping_list_total_tfoot{
+	background-color: #DDD;
+}
+#edited_quantity{
+	margin: -10px -90px -10px 0;
+}
+#dialog_div{
+	display:none;
+}
+.edit_quantity_img{
+	float:right;
+	cursor:pointer;
+}
+.shopping_list_del_option{
+	display:none;
+}
+.totalpayment_tr{
+	text-decoration: underline;
+	color:#0088cc;
+}
+
+#logout_a{
+    line-height: 20px;
+    color: #fff;
+}
+.logout_span{
+    margin-top:-60px;
+    float:right;
+}
+#date_span{
+    float:right;
+}

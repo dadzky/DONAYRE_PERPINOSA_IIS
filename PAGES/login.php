@@ -22,10 +22,9 @@
         <div id = "iis_header_div" class = "container-fluid">
             <div id = "system_name_div">
                 <h2>
-                    <span>I</span>-
-                    <span>ALINAYRE</span>
-                    (<span>I</span>NVENTORY
-                    <span>S</span>YSTEM)
+                    <span>I</span><i class='icon-circle-arrow-right'></i>
+                    <span>I</span>NVENTORY
+                    <span>S</span>YSTEM
                 </h2>
             </div>
             <button id = "main_log_in_button" class = "btn btn-primary btn-large">LOG-IN</button>
@@ -55,57 +54,17 @@
                     <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
                     <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
                 </div><!--Carousel[slide show]-->
-
-               <!-- <div id='sub_footer'>
-                    <ul id='branch_Names' class="nav nav-list">
-                        <li class="nav-header">Branch Names</li>
-                        <li><a href="Javascript:void(0)">sample1</a></li>
-                        <li><a href="Javascript:void(0)">sample1</a></li>
-                        <li><a href="Javascript:void(0)">sample1</a></li>
-                        <li><a href="Javascript:void(0)">sample1</a></li>
-                        <li><a href="Javascript:void(0)">sample1</a></li>
-                        <li><a href="Javascript:void(0)">sample1</a></li>
-                    </ul>
-                    <ul id='branch_Locations' class="nav nav-list">
-                        <li class="nav-header">Branch Locations</li>
-                        <li><a href="Javascript:void(0)">sample1</a></li>
-                        <li><a href="Javascript:void(0)">sample1</a></li>
-                        <li><a href="Javascript:void(0)">sample1</a></li>
-                        <li><a href="Javascript:void(0)">sample1</a></li>
-                        <li><a href="Javascript:void(0)">sample1</a></li>
-                        <li><a href="Javascript:void(0)">sample1</a></li>
-                    </ul>
-                    <ul id='main_products' class="nav nav-list">
-                        <li class="nav-header">Main Products</li>
-                        <li><a href="Javascript:void(0)">sample1</a></li>
-                        <li><a href="Javascript:void(0)">sample1</a></li>
-                        <li><a href="Javascript:void(0)">sample1</a></li>
-                        <li><a href="Javascript:void(0)">sample1</a></li>
-                        <li><a href="Javascript:void(0)">sample1</a></li>
-                        <li><a href="Javascript:void(0)">sample1</a></li>
-                    </ul>
-                    <ul id='activities' class="nav nav-list">
-                        <li class="nav-header">Activities</li>
-                        <li><a href="Javascript:void(0)">sample1</a></li>
-                        <li><a href="Javascript:void(0)">sample1</a></li>
-                        <li><a href="Javascript:void(0)">sample1</a></li>
-                        <li><a href="Javascript:void(0)">sample1</a></li>
-                        <li><a href="Javascript:void(0)">sample1</a></li>
-                        <li><a href="Javascript:void(0)">sample1</a></li>
-                    </ul>
-
-                </div>-->
                 <div class="container-fluid">
                     <div class="row-fluid">
                         <div id='left_sidebar_div' class="span2">
                             <ul id='branch_Names' class="nav nav-tabs">
                                 <li class="nav-header">Branch Names</li>
-                                <li><a href="Javascript:void(0)">sample1 &nbsp;&nbsp;<i class='icon-chevron-right'></i></a></li>
-                                <li><a href="Javascript:void(0)">sample1 &nbsp;&nbsp;<i class='icon-chevron-right'></i></a></li>
-                                <li><a href="Javascript:void(0)">sample1 &nbsp;&nbsp;<i class='icon-chevron-right'></i></a></li>
-                                <li><a href="Javascript:void(0)">sample1 &nbsp;&nbsp;<i class='icon-chevron-right'></i></a></li>
-                                <li><a href="Javascript:void(0)">sample1 &nbsp;&nbsp;<i class='icon-chevron-right'></i></a></li>
-                                <li><a href="Javascript:void(0)">sample1 &nbsp;&nbsp;<i class='icon-chevron-right'></i></a></li>
+                                <li> <a href="Javascript:void(0)" class='sample1'>sample1 &nbsp;&nbsp;<i class='icon-chevron-right  '></i> </a> </li>
+                                <li> <a href="Javascript:void(0)" class='sample2'>sample2 &nbsp;&nbsp;<i></i> </a> </li>
+                                <li> <a href="Javascript:void(0)" class='sample3'>sample3 &nbsp;&nbsp;<i></i> </a> </li>
+                                <li> <a href="Javascript:void(0)" class='sample4'>sample4 &nbsp;&nbsp;<i></i> </a> </li>
+                                <li> <a href="Javascript:void(0)" class='sample5'>sample5 &nbsp;&nbsp;<i></i> </a> </li>
+                                <li> <a href="Javascript:void(0)" class='sample6'>sample6 &nbsp;&nbsp;<i></i> </a> </li>
                             </ul>
                         </div>
                         <div id='right_sidebar_div' class="span10">
