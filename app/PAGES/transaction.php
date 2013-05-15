@@ -28,15 +28,29 @@
         <div id = "transaction_wrapper_div">
             <p id='cashier_p' class='label label-info'>Cashier:</p> <span id='cashier_info_span' class='text text-info'> Sample Sample</span>
             <span id='date_span'>
-                <p class='label label-info'>Date And Time:</p> <span class='text text-info text-right'></span>
+                <p class='label label-info'>Date | Time:</p> <span class='text text-info text-right'></span>
             </span>
+            <hr/><hr/>
+
+            <div id='alert_productExist_div' class='alert alert-error alerts_div'>
+                <p id='alert_error_msg_p'></p>
+            </div>
+
+            <div id='default_alert_div' class='alert alert-info alerts_div'>
+                <h3 class='text-center'>welcome</h3>
+            </div>
+
+            <div id='success_alert_div' class='alert alert-success alerts_div'>
+                <h3 class='text-center'>Product Added</h3>
+            </div>
 
             <br/> <br/> <br/> 
-            <div id='product_to_transact_div' class="input-prepend">         
-                <span class="add-on">BarCode :</span>
-                <input type='text' id='product_code' class='input-large' />      
-                <span class="add-on">Quantity :</span>
-                <input type='text' id='product_quantity'  class='input-large'/>
+            <div id='product_to_transact_div'> 
+                <form id='product_to_transact_form' class='form-horizontal'>
+                    <input type='text' id='product_code' class='input-xxlarge' placeholder='Bar Code' require/><br/>
+                    <input type='text' id='product_quantity'  class='input-xxlarge' placeholder='Quantity' require/><br/>
+                    <input type='submit' id='product_displayer_btn' class='btn btn-primary btn-block btn-large' value='GO'>
+                </form>
             </div>
             <div id='payment_div'>
                 <table class='table'>
@@ -54,21 +68,9 @@
                             <th>&#8369; 00.00</th>
                         </tr>       
                     </tbody>
-                    <tfoot><tr><td colspan='3'><button id='payment_btn' type='button' class='btn btn-primary btn-block' disabled>bayad</button></td></tr></tfoot>
+                    <tfoot><tr><td colspan='3'><button id='payment_btn' type='button' class='btn btn-success btn-block' disabled>bayad</button></td></tr></tfoot>
                 </table>
             </div><!--payment_div-->
-            <br/>
-            <button id='product_displayer_btn' class='btn btn-large'>GO</button>
-
-            <div id='alert_productExist_div' class='alert alert-error'>
-                <button type="button" class="close" data-dismiss="alert">&times;</button>
-                <p id='alert_error_msg_p'></p>
-            </div>
-            <br/>
-            <br/>  
-            <br/>
-            <br/>
-            <br/>
             <hr/>
             <br/>
 

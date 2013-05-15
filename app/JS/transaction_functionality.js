@@ -3,8 +3,9 @@ $(function(){
      displayDateAndTime();
 
 	 /*------------TRIGGER FOR SEARCHING PRODUCTS----------------*/
-	 $('#product_displayer_btn').click(function(){
+	 $('#product_to_transact_form').submit(function(){
 	 	getProduct();
+	 	return false;
 	 })
 
 	 /*--------------------Editing Quantity at the Shopping List--------------------*/
@@ -97,7 +98,7 @@ $(function(){
 	 	var regexFloat = /^[0-9,.]+$/;
 	 	if(regexFloat.test($(this).val())){
 	 		var payment = parseFloat($(this).val());
-		 	if(payment > totalPayment){
+		 	if(payment >= totalPayment){
 		 		var change = payment-totalPayment;
 			 	change = change.toFixed(2);
 			 	$('#payment_tbody tr th:last').html("&#8369; "+changeToMoneyFormat(change));
@@ -105,7 +106,7 @@ $(function(){
 			 	$('#payment_btn').removeAttr('disabled');
 			 	$(this).css('color','#000');
 			 }else{
-			 	$('#payment_tbody tr th:last').css('color','#f00');
+			 	$('#payment_tbody tr th:last').css('color','#f00').html("&#8369; 00.00");
 			 	$('#payment_btn').attr('disabled','disabled');
 			 }
 		}else{
@@ -113,6 +114,7 @@ $(function(){
 			$('#payment_btn').attr('disabled','disabled');
 		}
 	 });
+
 })
  var totalPayment = 0; //Global variable for the total payment of the products bought...
 
@@ -122,29 +124,36 @@ $(function(){
  /*-----------FUNCTION FOR Getting PRODUCTS to transact----------*/
  function getProduct(){
  	var existMsg_error = "<h4>Oops..!</h4>That product has already been selected";
- 	var inputsMsg_error = "<h4>Oops..!</h4>Please Dont Leave Blanks<br/>Quantity Must Be a Number Greather than 0";
+ 	var inputsMsg_error = "<h4>Oops..!</h4>Please Dont Leave Blanks<br/>Quantity Must Be a Number Greater than Zero (0)";
  	var notfoundMsg_error = "<h4>Oh Crap..!</h4>Unidentified Barcode!";
  	var barCode = $('#product_code').val();
  	var quantity = $('#product_quantity').val();
 	var obj = {barCode:barCode};
 	if(barCode != "" && regexInt.test(quantity) && quantity > 0 ){
 		$.ajax({
-			type:"POST",
+			type:"GET",
 			data: obj,
 			url: "../PHP/OBJECTS/transaction/getProduct.php",
 			success:function(data){
+				console.log(data);
 				if(data != ""){
 					var prodObj = JSON.parse(data);
 					if(checkIfProductHasntSelected(prodObj.prodID)){
 						displayToShoppingList(prodObj.prodID, prodObj.prodName, prodObj.prodPrice ,prodObj.prodUnit, quantity);
 						selectedProduct_ID.push(prodObj.prodID);
+						$('#default_alert_div').hide();
 						$('#alert_productExist_div').fadeOut();
 						$('#alert_error_msg_p').html("");
+						$('#success_alert_div').fadeIn();
 					}else{
-						$('#alert_error_msg_p').html(existMsg_error);
+						$('#default_alert_div').hide();
+						$('#success_alert_div').hide();
+						$('#alert_error_msg_p').html(existMsg_error+" <br/>Product Name : <a href='#tr_to_transact_"+prodObj.prodID+"' onclick='markSelectedProduct("+prodObj.prodID+")'>[ "+prodObj.prodName+" ]</a> ");
 						$('#alert_productExist_div').fadeIn();
 					}
 				}else{
+					$('#default_alert_div').hide();
+					$('#success_alert_div').hide();
 					$('#alert_error_msg_p').html(notfoundMsg_error);
 					$('#alert_productExist_div').fadeIn();
 				}
@@ -156,6 +165,8 @@ $(function(){
 
 		})
 	}else{
+		$('#default_alert_div').hide();
+		$('#success_alert_div').hide();
 		$('#alert_error_msg_p').html(inputsMsg_error);
 		$('#alert_productExist_div').fadeIn();
 	}
@@ -234,6 +245,8 @@ function saveTransaction(){
             	if(index != 0)
             	$(this).remove();
             });
+			$('#cash_in_hand_input').attr('readonly','readonly').val("");
+			$('#product_to_transact_form input[type=text]').val("");
             $('#products_to_transact_tbody tr').css({'text-decoration':'none'});
             totalPayment = 0;
             selectedProduct_ID.splice(0,selectedProduct_ID.length);
@@ -242,6 +255,15 @@ function saveTransaction(){
             alert("Error on saving transaction => "+ data);
         }
     })
+}
+
+function markSelectedProduct(prodID){
+	var rowID = "tr_to_transact_"+prodID;
+	$('#'+rowID).addClass('info');
+	var markedProduct=setInterval(function(){
+		$('#'+rowID).removeClass('info');
+		clearInterval(markedProduct);
+	},3000);
 }
 
 function confirmationDialogForTransaction(){
