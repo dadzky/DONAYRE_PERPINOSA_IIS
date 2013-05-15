@@ -25,7 +25,7 @@ $(function(){
 		 	var cell_id = document.getElementById(row_id).getElementsByTagName('td')[2];
 		 	$(cell_id).html("<span>"+newQuantity +"</span>"+"<img src='../CSS/img_tbls/editShoppingList.png' class =edit_quantity_img alt = edit quanity title=edit quantity/>");
 		 	var cost = parseFloat($(cell_id).prev('td').find('span').html());
-		 	var subTotal = ($(cell_id).next().find('span').html());
+		 	var subTotal = $(cell_id).next().find('span').html();
             subTotal = parseFloat(subTotal.replace(/\,/g,""));
 		 	var newsubTotal = (cost * parseInt(newQuantity)).toFixed(2);
             totalPayment = parseFloat(newsubTotal)+(totalPayment - subTotal);

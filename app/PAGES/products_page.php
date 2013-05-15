@@ -1,5 +1,5 @@
 <!Doctype html>
-<html xmlns="http://www.w3.org/1999/html">
+<html>
     <head>
         <title>Products</title>
         <link rel = "shortcut icon" href = "../CSS/images/IIS logos/iis0.jpg" />
