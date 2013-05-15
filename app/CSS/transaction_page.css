@@ -1,3 +1,6 @@
+body{
+	background: #ddf1f9;
+}
 #header_div{
     height: 60px;
     background: -moz-linear-gradient(bottom,deepskyblue,dodgerblue);
@@ -28,48 +31,21 @@
 
 }
 
-
-/*=========tables and paganation=========*/
-
+/*=========tables=========*/
 #transaction_wrapper_div{
 	width: 900px;
 	margin: 0 auto;
     padding: 30px 20px 80px 20px;
+    background:#fff;
     border: 1px #000 outset;
-}
-
-#pager_next, #pager_prev{
-	margin-top: -23px;
-	height: 29px;
-	background-color:#fff;
-	border: none;
-}
-#pager_prev{
-	margin-right: -5px;
-	-moz-border-top0-left-radius: 5px;
-	-webkit-border-top-left-radius: 5px;
-	-o-border-top-left-radius: 5px;
-	border-top-left-radius: 5px;
-	-moz-border-bottom-left-radius: 5px;
-	-webkit-border-bottom-left-radius: 5px;
-	-o-border-bottom-left-radius: 5px;
-	border-bottom-left-radius: 5px;
-}
-#pager_next{
-	margin-left: -5px;
-	-moz-border-top-right-radius: 5px;
-	-webkit-border-top-right-radius: 5px;
-	-o-border-top-right-radius: 5px;
-	border-top-right-radius: 5px;
-	-moz-border-bottom-right-radius: 5px;
-	-webkit-border-bottom-right-radius: 5px;
-	-o-border-bottom-right-radius: 5px;
-	border-bottom-right-radius: 5px;
-}
-.pagination{;
-    margin-top: -5px;
-    background-color: #cccccc;
-
+    -moz-border-bottom-right-radius:10px; 
+    -webkit-border-bottom-right-radius:10px; 
+    -o-border-bottom-right-radius:10px; 
+    border-bottom-right-radius:10px; 
+    border-bottom-left-radius:10px;
+    -moz-border-bottom-left-radius:10px; 
+    -webkit-border-bottom-left-radius:10px; 
+    -o-border-bottom-left-radius:10px;  
 }
 #products_to_transact_tbody{
 	cursor:url(img_tbls/shopping-cart.png), -moz-zoom-in;

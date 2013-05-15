@@ -73,7 +73,7 @@ $(function() {
                                         resizable: false,
                                         buttons: {
                                             "YES": function() {
-                                                // ================= UPDATES THE NUMBER OF STOCKS OF A PRODUCT =================
+                                                // ================= UPDATES THE NUMBER OF STOCK OF A PRODUCT =================
                                                 $.ajax({
                                                     type: "POST",
                                                     url: "../PHP/OBJECTS/PRODUCTS/add_product.php",
@@ -94,7 +94,7 @@ $(function() {
                                         }
                                     })
                                 } else {
-                                    // ============== Okay, product name is unique. Procced naman in checking the bar code if it is also unique ========
+                                    // ============== Okay, product name is unique. Proceed naman in checking the bar code if it is also unique ========
                                     $.ajax({
                                         type: "POST",
                                         url: "../PHP/OBJECTS/PRODUCTS/check_bar_code.php",
@@ -105,7 +105,7 @@ $(function() {
                                                 alert("Please check PRODUCT'S BAR CODE. \n It should be unique!");
 
                                             } else {
-                                                // bar code doesn't exist yet, so proceed in adding the new product =========
+                                                // bar code doesn't exist, so proceed in adding the new product =========
                                                 $.ajax({
                                                     type: "POST",
                                                     url: "../PHP/OBJECTS/PRODUCTS/add_product.php",
@@ -117,6 +117,7 @@ $(function() {
                                                         $("#product_price_dd").removeClass("control-group error");
                                                         $("#bar_code_dd").removeClass("control-group error");
                                                         $("#product_name_dd").removeClass("control-group error");
+                                                        $("#add_product_form input").not(':input[type = reset]').val(' ');
                                                     },
                                                     error: function(data) {
                                                         console.log("There's an error in adding a product. It says " + JSON.stringify(data));
@@ -208,6 +209,9 @@ function display_products() {
         url: "../PHP/OBJECTS/PRODUCTS/display_products.php",
         success: function(data) {
             $("#display_products_table_tbody").html(data);
+        },
+        complete: function() {
+            $("#loading_image").hide();
         },
         error: function(data) {
             console.log("There's an error in displaying products. It says " + JSON.stringify(data));
@@ -410,9 +414,8 @@ function edit_products_number_of_stocks(id) {
 }
 
 function edit_products_stock_unit(id) {
-    alert("works");/*
     var stock_unit = document.getElementById(id).getElementsByTagName('td')[4].innerHTML;
-    $(document.getElementById(id).getElementsByTagName('td')[4]).html("<form id = 'new_stock_unit_form'><select id = 'new_stock_unit' class = 'span1'><option>piece</option><option>pack</option><option>klg</option><option>g</option><option>lbs</option><option id = 'new_stock_unit_others_option'>others</option></select></form>")
+    $(document.getElementById(id).getElementsByTagName('td')[4]).html("<form id = 'new_stock_unit_form'><select id = 'new_stock_unit' class = 'span1'><option>piece</option><option>pack</option><option>klg</option><option>g</option><option>lbs</option><option id = 'new_stock_unit_others_option'>others</option></select></form>");
     $("#new_stock_unit").val(stock_unit);
     $("#new_stock_unit").focus();
     $("#new_stock_unit_form").change(function() {
@@ -421,7 +424,7 @@ function edit_products_stock_unit(id) {
             $("#new_inputted_stock_unit").focus();
             $("#new_stock_unit_form").submit(function() {
                 if($("#new_inputted_stock_unit").val() != "") {
-                    edit_products_stock_unit(id, $("#new_inputted_stock_unit").val());
+                    edit_products_stock_unit_ajax(id, $("#new_inputted_stock_unit").val());
                 } else {
                     $("#new_stock_unit_form").addClass("control-group error");
                 }
@@ -430,23 +433,23 @@ function edit_products_stock_unit(id) {
             $("#new_inputted_stock_unit").blur(function() {
 
                 if($("#new_inputted_stock_unit").val() != "") {
-                    edit_products_stock_unit(id, $("#new_inputted_stock_unit").val());
+                    edit_products_stock_unit_ajax(id, $("#new_inputted_stock_unit").val());
                 } else {
                     $("#new_stock_unit_form").addClass("control-group error");
                 }
             });
         } else {
             // edit using select tag,
-            edit_products_stock_unit(id, $("#new_stock_unit").val());
+            edit_products_stock_unit_ajax(id, $("#new_stock_unit").val());
         }
     });
 
     $("#new_stock_unit").blur(function() {
-        edit_products_stock_unit(id, $("#new_stock_unit").val());
-    });*/
+        edit_products_stock_unit_ajax(id, $("#new_stock_unit").val());
+    });
 }
 
-function edit_products_stock_unit(id, new_product_stock_unit) {
+function edit_products_stock_unit_ajax(id, new_product_stock_unit) {
     $.ajax({
         type: "POST",
         url: "../PHP/OBJECTS/PRODUCTS/update_products_info.php",

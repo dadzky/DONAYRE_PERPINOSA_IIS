@@ -22,6 +22,12 @@
     position: relative;
 }
 
+#display_products_table_tbody img {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+}
+
 #display_products_table thead th, #display_products_table_tbody td {
     width: 140px;
 }
@@ -93,4 +99,8 @@
 #product_actions {
     background: #d3d3d3;
     padding: 10px;
+}
+
+.product_warning {
+    display: none;
 }

@@ -32,7 +32,11 @@
                             </th>
                         </tr>
                     </thead>
-                    <tbody id = "display_products_table_tbody" ></tbody>
+                    <tbody id = "display_products_table_tbody">
+                        <tr>
+                            <td colspan = "5"><img id = "loading_image" src = "../CSS/images/loading_image.gif" /></td>
+                        </tr>
+                    </tbody>
                 </table>
             </div><!-- ======= display products div ends ======= -->
             <div id = "add_product_div">
@@ -67,10 +71,10 @@
         </div>
 
         <!-- ================ HIDDEN FOR DIALOGS ================== -->
-        <div id = "delete_product_confirmation_div">
+        <div id = "delete_product_confirmation_div" class = "product_warning">
             Sure to delete the selected product(s)?
         </div><!-- ================= delete product confirmation div ends ==================-->
-        <div id = "add_product_confirmation_div">
+        <div id = "add_product_confirmation_div" class = "product_warning">
             The product you've entered was already on the list.<br />
             Update it's number of stocks instead?
         </div><!-- ======== ADD confirmation div ends! ======= -->

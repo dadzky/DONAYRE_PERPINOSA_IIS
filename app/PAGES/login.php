@@ -34,7 +34,7 @@
                 <button id='login_as_close_btn' type='button' class="close" title="close">&times;</button>
                 <h4>Sign in as: <img src='../CSS/images/arrowdown.png' alt='dint'/></h4><br/>
                 <button id='log_in_as_cashier_btn' class='btn log_in_option'>Cashier</button>
-                <button id='log_in_as_administrator_btn' class='btn log_in_option'>Administrator</button>
+                <button id='log_in_as_administrator_btn' class='btn btn-success log_in_option'>Admin</button>
             </div> <!--login_as_div-->
         </div><!-- ======= iis header div ends ============ -->
         <div id = "main_container_div">
@@ -44,13 +44,11 @@
                     <ol class="carousel-indicators">
                         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
                         <li data-target="#myCarousel" data-slide-to="1"></li>
-                        <li data-target="#myCarousel" data-slide-to="2"></li>
                     </ol>
                     <!-- Carousel items -->
                     <div id='slide_imgs' class="carousel-inner">
                         <div class="active item"><img src='../CSS/img/IIS%20logos/iis1.jpg' class ='slideimg' alt='first'/></div>
                         <div class="item"><img src='../CSS/img/IIS%20logos/iis7.jpg' class ='slideimg' alt='second'/></div>
-                        <div class="item"><img src='../CSS/img/IIS%20logos/iis_logo.png' class ='slideimg' alt='last'/></div>
                     </div>
                     <!-- Carousel nav -->
                     <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
@@ -81,6 +79,7 @@
                 <span id = "close_log_in_options_span" title = "close"><img src = "../CSS/images/close_icon.png"></span>
                 <form id = "log_in_form" action = "login.php" method = "POST">
                     <input type = "hidden" name = "log_in_as" id = "log_in_as" />
+
                     <span id = "log_in_as_span"></span><br /><br />
                     <input type = "text" name = "username_entered" placeholder = "username" /><br/>
                     <input type = "password" name = "password_entered" placeholder = "password" /><br/>

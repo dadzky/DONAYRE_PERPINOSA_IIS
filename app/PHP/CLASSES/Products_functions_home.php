@@ -49,7 +49,7 @@
             } else {
                 $final_product_price = round($product_price, 2);
                 $insert_statement = $this->db_holder->prepare("INSERT INTO products VALUES (null, ?, ?, ?, ?, ?);");
-                $insert_statement->execute(array($product_name, $bar_code, $final_product_price, $number_of_stocks, $stock_unit));
+                $insert_statement->execute(array($product_name, trim($bar_code), $final_product_price, $number_of_stocks, $stock_unit));
             }
 
             $this->close_connection();

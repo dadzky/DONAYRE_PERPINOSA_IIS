@@ -70,7 +70,7 @@ $(function() {
         $("#save_employee_button").hide();
         $("#add_employees_form h4").html("EMPLOYEE'S REGISTRATION FORM");
         $("#add_employees_form h5").html("Create Cashier's Account:");
-        $("#add_employees_form select").prop('selectIndex', 0);
+        $("#add_employees_form select").prop('selectedIndex', 0);
         var inputs = document.getElementById('add_employees_form').getElementsByTagName('input');
         for(var counter = 0; counter < inputs.length; counter++) {
             if(inputs[counter].type == 'text' || inputs[counter].type == 'number') {
@@ -113,7 +113,7 @@ $(function() {
     // ============= ADDING EMPLOYEES ======================
 
     $("#job_type").change(function() {
-        $("#job_type").val() == "cashier" ? $("#add_account_for_cashier_div").slideDown() :  $("#add_account_for_cashier_div").slideUp(300);
+        $("#job_type").val() == "cashier" ? $("#add_account_for_cashier_div").slideDown() :  $("#add_account_for_cashier_div").slideUp(300); $("#add_account_for_cashier_div input").val("") ;
     });
 
     $("#add_employee_button").click(function() {
@@ -336,10 +336,22 @@ $(function() {
                             type: "POST",
                             url: "../PHP/OBJECTS/EMPLOYEES/update_employees_data.php",
                             data: {"employees_data": JSON.stringify($("#add_employees_form").serializeArray()), "id": $("#id").val()},
-                            success: function(data) {
+                            success: function() {
                                 display_employees();
-                                $("#overlay_div_container").slideUp(200);
-                                $("#add_employees_div").slideUp(200);
+                                $("#add_employees_div").slideUp(300);
+                                $("#overlay_div_container").slideUp(300);
+                                $("#add_account_for_cashier_div").hide();
+                                $("#add_employee_button").show();
+                                $("#save_employee_button").hide();
+                                $("#add_employees_form h4").html("EMPLOYEE'S REGISTRATION FORM");
+                                $("#add_employees_form h5").html("Create Cashier's Account:");
+                                $("#add_employees_form select").prop('selectedIndex', 0);
+                                var inputs = document.getElementById('add_employees_form').getElementsByTagName('input');
+                                for(var counter = 0; counter < inputs.length; counter++) {
+                                    if(inputs[counter].type == 'text' || inputs[counter].type == 'number') {
+                                        inputs[counter].value = ' ';
+                                    }
+                                }
                             },
                             error: function(data) {
                                 console.log("Error in saving employee's data = " + JSON.stringify(data));
@@ -362,8 +374,20 @@ $(function() {
                     data: {"employees_data": JSON.stringify($("#add_employees_form").serializeArray()), "id": $("#id").val()},
                     success: function(data) {
                         display_employees();
-                        $("#overlay_div_container").slideUp(200);
-                        $("#add_employees_div").slideUp(200);
+                        $("#add_employees_div").slideUp(300);
+                        $("#overlay_div_container").slideUp(300);
+                        $("#add_account_for_cashier_div").hide();
+                        $("#add_employee_button").show();
+                        $("#save_employee_button").hide();
+                        $("#add_employees_form h4").html("EMPLOYEE'S REGISTRATION FORM");
+                        $("#add_employees_form h5").html("Create Cashier's Account:");
+                        $("#add_employees_form select").prop('selectedIndex', 0);
+                        var inputs = document.getElementById('add_employees_form').getElementsByTagName('input');
+                        for(var counter = 0; counter < inputs.length; counter++) {
+                            if(inputs[counter].type == 'text' || inputs[counter].type == 'number') {
+                                inputs[counter].value = ' ';
+                            }
+                        }
                     },
                     error: function(data) {
                         console.log("Error in saving employee's data = " + JSON.stringify(data));

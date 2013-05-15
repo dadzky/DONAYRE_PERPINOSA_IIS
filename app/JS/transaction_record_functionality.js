@@ -1,5 +1,4 @@
 $(function(){
-
 	displayTransactionRecords();
 	displayPager();
     displayBarGraph();
@@ -52,6 +51,7 @@ $(function(){
             $('#searchByName_select').hide();
         }
         searchRecords(toSearch,searchBy);
+        displayPager();
     });
 
     $('#searchByName_select').change(function(){
@@ -162,7 +162,7 @@ function displayTransactionRecords(){
 				$('#transaction_record_tbody').html(data);
 			},
 			error:function(data){
-				alert("Error on displaying transaction records => "+ data['status']+ " "+ data['statusText']);
+				//alert("Error on displaying transaction records => "+ data['status']+ " "+ data['statusText']);
 			},
 			complete:function(){
 				$('#loading_img').hide();
@@ -189,6 +189,7 @@ function displayPager(){
 			$('.pagination').html(pagerContent.pager);
 			$('.max_page').html(pagerContent.n_pages);
 			$('.page_number').html(currentPage);
+            console.log(pagerContent.n_pages)
 			
 		},
 		error:function(data){
