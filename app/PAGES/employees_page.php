@@ -124,7 +124,7 @@
                         Please fill-up all fields and check the inputted employee's data!
                     </p>
                     <p class = "alert alert-block" id = "employee_exist_warning"></p>
-                    <button type = "reset" class = "btn btn-danger">reset</button>
+                    <input type = "reset" value = "reset" class = "btn btn-danger" />
                 </form><!-- ============= Add employees form ends ================ -->
                 <p id = "employee_added_successfully_p">New employee was added successfully!</p>
                 <button id = "add_employee_button" class = "btn btn-primary">&nbsp;add&nbsp;</button>

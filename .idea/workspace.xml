@@ -2,131 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/CSS/images/bgtest2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/PHP/OBJECTS/PRODUCTS/check_bar_code.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/PHP/CLASSES/iis_functions_sales.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/PAGES/page_footer.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/PAGES/page_info.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/PAGES/suppliers_page.php" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/admin_home_content.css" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/images/computer_background.jpg" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/images/note.jpg" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/DB/IIS_DB(1).sql" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/PAGES/admin_home_content.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/PAGES/page_footer.html" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/CSS/bootstrap.min.css" afterPath="$PROJECT_DIR$/app/CSS/bootstrap.min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/CSS/employees_page.css" afterPath="$PROJECT_DIR$/app/CSS/employees_page.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/CSS/images/IIS logos/IIS-blog.png" afterPath="$PROJECT_DIR$/app/CSS/images/IIS logos/IIS-blog.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/CSS/images/IIS logos/dcd55b4b401dec8ecf00ba9536d92293.jpg" afterPath="$PROJECT_DIR$/app/CSS/images/IIS logos/dcd55b4b401dec8ecf00ba9536d92293.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/CSS/images/IIS logos/iis0.jpg" afterPath="$PROJECT_DIR$/app/CSS/images/IIS logos/iis0.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/CSS/images/IIS logos/iis1.jpg" afterPath="$PROJECT_DIR$/app/CSS/images/IIS logos/iis1.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/CSS/images/IIS logos/iis7.jpg" afterPath="$PROJECT_DIR$/app/CSS/images/IIS logos/iis7.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/CSS/images/IIS logos/iis_icon.jpg" afterPath="$PROJECT_DIR$/app/CSS/images/IIS logos/iis_icon.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/CSS/images/IIS logos/iis_icon1.jpg" afterPath="$PROJECT_DIR$/app/CSS/images/IIS logos/iis_icon1.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/CSS/images/IIS logos/iis_logo.png" afterPath="$PROJECT_DIR$/app/CSS/images/IIS logos/iis_logo.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/CSS/images/add_employee_icon.png" afterPath="$PROJECT_DIR$/app/CSS/images/add_employee_icon.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/CSS/images/animated-overlay.gif" afterPath="$PROJECT_DIR$/app/CSS/images/animated-overlay.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/CSS/images/arrowdown.png" afterPath="$PROJECT_DIR$/app/CSS/images/arrowdown.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/CSS/images/close_icon.png" afterPath="$PROJECT_DIR$/app/CSS/images/close_icon.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/CSS/images/close_icon1.png" afterPath="$PROJECT_DIR$/app/CSS/images/close_icon1.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/CSS/images/note1.jpg" afterPath="$PROJECT_DIR$/app/CSS/images/note1.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/CSS/images/red_trash.png" afterPath="$PROJECT_DIR$/app/CSS/images/red_trash.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/CSS/images/search_icon.png" afterPath="$PROJECT_DIR$/app/CSS/images/search_icon.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/CSS/images/search_icon1.png" afterPath="$PROJECT_DIR$/app/CSS/images/search_icon1.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/CSS/images/show_icon.png" afterPath="$PROJECT_DIR$/app/CSS/images/show_icon.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/CSS/images/trash.png" afterPath="$PROJECT_DIR$/app/CSS/images/trash.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/CSS/images/trash1.png" afterPath="$PROJECT_DIR$/app/CSS/images/trash1.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/CSS/images/trash_can.gif" afterPath="$PROJECT_DIR$/app/CSS/images/trash_can.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/CSS/images/ui-bg_flat_0_aaaaaa_40x100.png" afterPath="$PROJECT_DIR$/app/CSS/images/ui-bg_flat_0_aaaaaa_40x100.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/CSS/images/ui-bg_flat_75_ffffff_40x100.png" afterPath="$PROJECT_DIR$/app/CSS/images/ui-bg_flat_75_ffffff_40x100.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/CSS/images/ui-bg_glass_55_fbf9ee_1x400.png" afterPath="$PROJECT_DIR$/app/CSS/images/ui-bg_glass_55_fbf9ee_1x400.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/CSS/images/ui-bg_glass_65_ffffff_1x400.png" afterPath="$PROJECT_DIR$/app/CSS/images/ui-bg_glass_65_ffffff_1x400.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/CSS/images/ui-bg_glass_75_dadada_1x400.png" afterPath="$PROJECT_DIR$/app/CSS/images/ui-bg_glass_75_dadada_1x400.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/CSS/images/ui-bg_glass_75_e6e6e6_1x400.png" afterPath="$PROJECT_DIR$/app/CSS/images/ui-bg_glass_75_e6e6e6_1x400.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/CSS/images/ui-bg_glass_95_fef1ec_1x400.png" afterPath="$PROJECT_DIR$/app/CSS/images/ui-bg_glass_95_fef1ec_1x400.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/CSS/images/ui-bg_highlight-soft_75_cccccc_1x100.png" afterPath="$PROJECT_DIR$/app/CSS/images/ui-bg_highlight-soft_75_cccccc_1x100.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/CSS/images/ui-icons_222222_256x240.png" afterPath="$PROJECT_DIR$/app/CSS/images/ui-icons_222222_256x240.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/CSS/images/ui-icons_2e83ff_256x240.png" afterPath="$PROJECT_DIR$/app/CSS/images/ui-icons_2e83ff_256x240.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/CSS/images/ui-icons_454545_256x240.png" afterPath="$PROJECT_DIR$/app/CSS/images/ui-icons_454545_256x240.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/CSS/images/ui-icons_888888_256x240.png" afterPath="$PROJECT_DIR$/app/CSS/images/ui-icons_888888_256x240.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/CSS/images/ui-icons_cd0a0a_256x240.png" afterPath="$PROJECT_DIR$/app/CSS/images/ui-icons_cd0a0a_256x240.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/CSS/images/warning.png" afterPath="$PROJECT_DIR$/app/CSS/images/warning.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/CSS/images/warning2.png" afterPath="$PROJECT_DIR$/app/CSS/images/warning2.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/CSS/img/IIS logos/IIS-blog.png" afterPath="$PROJECT_DIR$/app/CSS/img/IIS logos/IIS-blog.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/CSS/img/IIS logos/dcd55b4b401dec8ecf00ba9536d92293.jpg" afterPath="$PROJECT_DIR$/app/CSS/img/IIS logos/dcd55b4b401dec8ecf00ba9536d92293.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/CSS/img/IIS logos/iis1.jpg" afterPath="$PROJECT_DIR$/app/CSS/img/IIS logos/iis1.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/CSS/img/IIS logos/iis7.jpg" afterPath="$PROJECT_DIR$/app/CSS/img/IIS logos/iis7.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/CSS/img/IIS logos/iis_icon.jpg" afterPath="$PROJECT_DIR$/app/CSS/img/IIS logos/iis_icon.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/CSS/img/IIS logos/iis_icon1.jpg" afterPath="$PROJECT_DIR$/app/CSS/img/IIS logos/iis_icon1.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/CSS/img/IIS logos/iis_logo.png" afterPath="$PROJECT_DIR$/app/CSS/img/IIS logos/iis_logo.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/CSS/img/glyphicons-halflings-white.png" afterPath="$PROJECT_DIR$/app/CSS/img/glyphicons-halflings-white.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/CSS/img/glyphicons-halflings.png" afterPath="$PROJECT_DIR$/app/CSS/img/glyphicons-halflings.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/CSS/img_tbls/Edited.gif" afterPath="$PROJECT_DIR$/app/CSS/img_tbls/Edited.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/CSS/img_tbls/deleteShoppingList.png" afterPath="$PROJECT_DIR$/app/CSS/img_tbls/deleteShoppingList.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/CSS/img_tbls/editShoppingList.png" afterPath="$PROJECT_DIR$/app/CSS/img_tbls/editShoppingList.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/CSS/img_tbls/loading.gif" afterPath="$PROJECT_DIR$/app/CSS/img_tbls/loading.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/CSS/img_tbls/next.png" afterPath="$PROJECT_DIR$/app/CSS/img_tbls/next.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/CSS/img_tbls/previous.png" afterPath="$PROJECT_DIR$/app/CSS/img_tbls/previous.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/CSS/img_tbls/searchicon.png" afterPath="$PROJECT_DIR$/app/CSS/img_tbls/searchicon.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/CSS/img_tbls/shopping-cart.png" afterPath="$PROJECT_DIR$/app/CSS/img_tbls/shopping-cart.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/CSS/includes_all_css_files.css" afterPath="$PROJECT_DIR$/app/CSS/includes_all_css_files.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/CSS/jquery-ui.min.css" afterPath="$PROJECT_DIR$/app/CSS/jquery-ui.min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/CSS/log_in_page.css" afterPath="$PROJECT_DIR$/app/CSS/log_in_page.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/CSS/page_footer.css" afterPath="$PROJECT_DIR$/app/CSS/page_footer.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/CSS/page_header.css" afterPath="$PROJECT_DIR$/app/CSS/page_header.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/CSS/product_page.css" afterPath="$PROJECT_DIR$/app/CSS/product_page.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/CSS/transaction_page.css" afterPath="$PROJECT_DIR$/app/CSS/transaction_page.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/CSS/transaction_record_page.css" afterPath="$PROJECT_DIR$/app/CSS/transaction_record_page.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/DB/dbdesign.png" afterPath="$PROJECT_DIR$/docs/dbdesign.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/InventorySystemMajorFeatures.txt" afterPath="$PROJECT_DIR$/docs/InventorySystemMajorFeatures.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/JS/admins_page_functionality.js" afterPath="$PROJECT_DIR$/app/JS/admins_page_functionality.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/JS/bootstrap.min.js" afterPath="$PROJECT_DIR$/app/JS/bootstrap.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/JS/employees.js" afterPath="$PROJECT_DIR$/app/JS/employees.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/JS/jqBarGraph.js" afterPath="$PROJECT_DIR$/app/JS/jqBarGraph.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/JS/jquery-1.9.1.min.js" afterPath="$PROJECT_DIR$/app/JS/jquery-1.9.1.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/JS/jquery-ui-1.10.2.min.js" afterPath="$PROJECT_DIR$/app/JS/jquery-ui-1.10.2.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/JS/log_in_page_functionality.js" afterPath="$PROJECT_DIR$/app/JS/log_in_page_functionality.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/JS/products.js" afterPath="$PROJECT_DIR$/app/JS/products.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/JS/transaction_functionality.js" afterPath="$PROJECT_DIR$/app/JS/transaction_functionality.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/JS/transaction_record_functionality.js" afterPath="$PROJECT_DIR$/app/JS/transaction_record_functionality.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/PAGES/adminhome.php" afterPath="$PROJECT_DIR$/app/PAGES/adminhome.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/PAGES/employees_page.php" afterPath="$PROJECT_DIR$/app/PAGES/employees_page.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/PAGES/login.php" afterPath="$PROJECT_DIR$/app/PAGES/login.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/PAGES/logout.php" afterPath="$PROJECT_DIR$/app/PAGES/logout.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/PAGES/page_header.html" afterPath="$PROJECT_DIR$/app/PAGES/page_header.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/PAGES/products_page.php" afterPath="$PROJECT_DIR$/app/PAGES/products_page.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/PAGES/transaction.php" afterPath="$PROJECT_DIR$/app/PAGES/transaction.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/PAGES/transaction_records.php" afterPath="$PROJECT_DIR$/app/PAGES/transaction_records.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/PHP/CLASSES/Employees_functions_home.php" afterPath="$PROJECT_DIR$/app/PHP/CLASSES/Employees_functions_home.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/PHP/CLASSES/Products_functions_home.php" afterPath="$PROJECT_DIR$/app/PHP/CLASSES/Products_functions_home.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/PHP/CLASSES/database_connection.php" afterPath="$PROJECT_DIR$/app/PHP/CLASSES/database_connection.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/PHP/CLASSES/iis_functions_home.php" afterPath="$PROJECT_DIR$/app/PHP/CLASSES/iis_functions_home.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/PHP/OBJECTS/EMPLOYEES/add_employee.php" afterPath="$PROJECT_DIR$/app/PHP/OBJECTS/EMPLOYEES/add_employee.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/PHP/OBJECTS/EMPLOYEES/check_if_employee_or_username_exist.php" afterPath="$PROJECT_DIR$/app/PHP/OBJECTS/EMPLOYEES/check_if_employee_or_username_exist.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/PHP/OBJECTS/EMPLOYEES/display_employees.php" afterPath="$PROJECT_DIR$/app/PHP/OBJECTS/EMPLOYEES/display_employees.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/PHP/OBJECTS/EMPLOYEES/display_fired_employees.php" afterPath="$PROJECT_DIR$/app/PHP/OBJECTS/EMPLOYEES/display_fired_employees.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/PHP/OBJECTS/EMPLOYEES/fire_employee.php" afterPath="$PROJECT_DIR$/app/PHP/OBJECTS/EMPLOYEES/fire_employee.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/PHP/OBJECTS/EMPLOYEES/retrieve_employees_data_to_update.php" afterPath="$PROJECT_DIR$/app/PHP/OBJECTS/EMPLOYEES/retrieve_employees_data_to_update.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/PHP/OBJECTS/EMPLOYEES/search_employee.php" afterPath="$PROJECT_DIR$/app/PHP/OBJECTS/EMPLOYEES/search_employee.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/PHP/OBJECTS/EMPLOYEES/search_fired_employees.php" afterPath="$PROJECT_DIR$/app/PHP/OBJECTS/EMPLOYEES/search_fired_employees.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/PHP/OBJECTS/EMPLOYEES/update_employees_data.php" afterPath="$PROJECT_DIR$/app/PHP/OBJECTS/EMPLOYEES/update_employees_data.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/PHP/OBJECTS/PRODUCTS/add_product.php" afterPath="$PROJECT_DIR$/app/PHP/OBJECTS/PRODUCTS/add_product.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/PHP/OBJECTS/PRODUCTS/check_if_product_to_add_already_exist.php" afterPath="$PROJECT_DIR$/app/PHP/OBJECTS/PRODUCTS/check_if_product_to_add_already_exist.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/PHP/OBJECTS/PRODUCTS/delete_product.php" afterPath="$PROJECT_DIR$/app/PHP/OBJECTS/PRODUCTS/delete_product.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/PHP/OBJECTS/PRODUCTS/display_products.php" afterPath="$PROJECT_DIR$/app/PHP/OBJECTS/PRODUCTS/display_products.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/PHP/OBJECTS/PRODUCTS/display_products_by_select_letter.php" afterPath="$PROJECT_DIR$/app/PHP/OBJECTS/PRODUCTS/display_products_by_select_letter.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/PHP/OBJECTS/PRODUCTS/retrieve_product_data.php" afterPath="$PROJECT_DIR$/app/PHP/OBJECTS/PRODUCTS/retrieve_product_data.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/PHP/OBJECTS/PRODUCTS/search_product.php" afterPath="$PROJECT_DIR$/app/PHP/OBJECTS/PRODUCTS/search_product.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/PHP/OBJECTS/PRODUCTS/update_products_info.php" afterPath="$PROJECT_DIR$/app/PHP/OBJECTS/PRODUCTS/update_products_info.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/PHP/OBJECTS/TRANSACTION_RECORD/displayPager.php" afterPath="$PROJECT_DIR$/app/PHP/OBJECTS/TRANSACTION_RECORD/displayPager.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/PHP/OBJECTS/TRANSACTION_RECORD/displayTransactionRecords.php" afterPath="$PROJECT_DIR$/app/PHP/OBJECTS/TRANSACTION_RECORD/displayTransactionRecords.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/PHP/OBJECTS/TRANSACTION_RECORD/getMonthlySales.php" afterPath="$PROJECT_DIR$/app/PHP/OBJECTS/TRANSACTION_RECORD/getMonthlySales.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/PHP/OBJECTS/TRANSACTION_RECORD/searchTransactionRecords.php" afterPath="$PROJECT_DIR$/app/PHP/OBJECTS/TRANSACTION_RECORD/searchTransactionRecords.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/PHP/OBJECTS/log_in_validation.php" afterPath="$PROJECT_DIR$/app/PHP/OBJECTS/log_in_validation.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/PHP/OBJECTS/transaction/saveTransaction.php" afterPath="$PROJECT_DIR$/app/PHP/OBJECTS/transaction/saveTransaction.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/PHP/OBJECTS/transaction/searchProductWithCost.php" afterPath="$PROJECT_DIR$/app/PHP/OBJECTS/transaction/searchProductWithCost.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/app/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/JS/employees.js" afterPath="$PROJECT_DIR$/app/JS/employees.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PAGES/employees_page.php" afterPath="$PROJECT_DIR$/app/PAGES/employees_page.php" />
     </list>
     <ignored path="IIS_PROJECT_HUB.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -146,7 +26,7 @@
     <file path="/employees_page.php" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1368576880514" ignored="false" />
     <file path="/Employees_functions_home.php" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1367982352602" ignored="false" />
     <file path="/search_fired_employees.php" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1367982370134" ignored="false" />
-    <file path="/employees.js" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1368576774641" ignored="false" />
+    <file path="/employees.js" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1368577853352" ignored="false" />
     <file path="/check_if_employee_or_username_exist.php" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1367977706760" ignored="false" />
     <file path="/check_if_product_to_add_already_exist.php" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1368162450039" ignored="false" />
     <file path="/admins_page_functionality.js" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1368158934931" ignored="false" />
@@ -199,15 +79,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="transaction.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/PAGES/transaction.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="79" column="0" selection-start="3481" selection-end="3481" vertical-scroll-proportion="-19.208334">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="database_connection.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/PHP/CLASSES/database_connection.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -226,28 +97,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="employees.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="employees.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/JS/employees.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="73" column="60" selection-start="2575" selection-end="2575" vertical-scroll-proportion="-14.56">
+            <state line="72" column="61" selection-start="2527" selection-end="2527" vertical-scroll-proportion="0.54361373">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="employees_page.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="employees_page.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/PAGES/employees_page.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="126" column="72" selection-start="7620" selection-end="7620" vertical-scroll-proportion="0.60186625">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="searchProductWithCost.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/PHP/OBJECTS/transaction/searchProductWithCost.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="23" selection-start="184" selection-end="184" vertical-scroll-proportion="0.0">
+            <state line="126" column="26" selection-start="7569" selection-end="7574" vertical-scroll-proportion="-16.125">
               <folding />
             </state>
           </provider>
@@ -285,8 +147,8 @@
         <option value="$PROJECT_DIR$/PHP/CLASSES/iis_functions_sales.php" />
         <option value="$PROJECT_DIR$/app/PHP/CLASSES/database_connection.php" />
         <option value="$PROJECT_DIR$/app/JS/products.js" />
-        <option value="$PROJECT_DIR$/app/JS/employees.js" />
         <option value="$PROJECT_DIR$/app/PAGES/employees_page.php" />
+        <option value="$PROJECT_DIR$/app/JS/employees.js" />
       </list>
     </option>
   </component>
@@ -641,16 +503,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/JS/employees.js">
+    <entry file="file://$PROJECT_DIR$/app/PAGES/employees_page.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="73" column="60" selection-start="2575" selection-end="2575" vertical-scroll-proportion="-14.56">
+        <state line="126" column="26" selection-start="7569" selection-end="7574" vertical-scroll-proportion="-16.125">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/PAGES/employees_page.php">
+    <entry file="file://$PROJECT_DIR$/app/JS/employees.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="126" column="72" selection-start="7620" selection-end="7620" vertical-scroll-proportion="0.60186625">
+        <state line="72" column="61" selection-start="2527" selection-end="2527" vertical-scroll-proportion="0.54361373">
           <folding />
         </state>
       </provider>

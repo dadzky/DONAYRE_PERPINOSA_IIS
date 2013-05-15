@@ -70,8 +70,13 @@ $(function() {
         $("#save_employee_button").hide();
         $("#add_employees_form h4").html("EMPLOYEE'S REGISTRATION FORM");
         $("#add_employees_form h5").html("Create Cashier's Account:");
-        $("#add_employees_form input").val(' ');
-        $("#add_employees_form select").val(this.option[0]);
+        $("#add_employees_form select").prop('selectIndex', 0);
+        var inputs = document.getElementById('add_employees_form').getElementsByTagName('input');
+        for(var counter = 0; counter < inputs.length; counter++) {
+            if(inputs[counter].type == 'text' || inputs[counter].type == 'number') {
+                inputs[counter].value = ' ';
+            }
+        }
     });
 
     $("#close_action_options_span").click(function() {
