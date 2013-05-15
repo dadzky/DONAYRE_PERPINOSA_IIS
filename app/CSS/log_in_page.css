@@ -22,6 +22,7 @@
 #login_as_div{
     width: 180px;
     float:right;
+    -webkit-float: right;
     display:none;
 }
 .log_in_option{
@@ -37,7 +38,7 @@
     z-index: 20;
     position: absolute;
     top: 150px;
-    left: 580px;
+    left: 570px;
     padding: 20px 0px 20px 0px;
 }
 
@@ -64,12 +65,16 @@
 }
 
 #logo_p {
-    background: darkgray;
+    background-image: url("images/shop2.jpg");
+    background-repeat: no-repeat;
+    background-size: 94%;
+    width: inherit;
     padding: 0px 15px 0px 10px;
 }
 
 #logo_p span {
-    color: #ffffff;
+    color: #000000;
+    background: deepskyblue;
     font-family: Verdana;
     font-weight: bold;
     font-size: 21px;
@@ -102,8 +107,6 @@
     top: 0px;
     background-color: black;
     -moz-opacity: 0.7;
-    -webkit-opacity: 0.7;
-    -o-opacity: 0.7;
     opacity: .70;
     width: 100%;
     height: 100%;
@@ -150,7 +153,3 @@
     -o-transform: rotate(45deg);
     -moz-transform: rotate(45deg);
 }
-
-
-
-

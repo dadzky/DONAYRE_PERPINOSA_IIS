@@ -4,6 +4,7 @@
     
     class Iis_functions_sales extends Database_connection {
         /*------------FOR TRANSACTIONS-----------*/
+
     	function getProductForTransaction($barcode){	
 
     		$this->open_connection();
@@ -12,12 +13,12 @@
                         FROM products
                         WHERE bar_code = ?
                         AND number_of_stocks > 0";
-                                         
                 $stmt = $this->db_holder->prepare($sql);
                 $stmt->bindParam(1, $barcode);
                 $stmt->execute();
 
     		$this->close_connection();
+
 
             $row = $stmt->fetch();
             if($row[0] != null){
@@ -165,7 +166,6 @@
                 if(is_float($pages['pages'])){
                     $pages['pages'] = $pages['pages']+1;
                 }
-
                 if(intval($pages['pages']) > 1){
                     for($ctr=1;$ctr<=intval($pages['pages']);$ctr++){
                         if($ctr == 1){
@@ -182,7 +182,6 @@
                 }
 
                 $n_pages = $pages['pages'];
-               
 
                 $obj = array("pager" => $pagerContent, "n_pages" => intval($n_pages));
                 $encoded = json_encode($obj);

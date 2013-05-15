@@ -30,6 +30,7 @@
             <span id='date_span'>
                 <p class='label label-info'>Date And Time:</p> <span class='text text-info text-right'></span>
             </span>
+
             <br/> <br/> <br/> 
             <div id='product_to_transact_div' class="input-prepend">         
                 <span class="add-on">BarCode :</span>
@@ -70,7 +71,7 @@
             <br/>
             <hr/>
             <br/>
-                  
+
             <table id='shopping_list_table' class='table table-striped table-hover table-bordered'>
                 <thead>
                      <tr>
@@ -86,7 +87,18 @@
                 <tfoot id='shopping_list_total_tfoot'></tfoot>
 
             </table>
-                            
+            <div id='dialog_div'>
+                Product Name: <br/>
+                <input type='text' id='product_name_to_transact' readonly='readonly' /><br/>
+                Product Cost: <br/>
+                <input type='text' id='product_cost_to_transact' readonly='readonly' /> <br/>             
+                <div id='quantity_div' class="input-prepend">     
+                 <label class='control-label' for='product_quantity' > Product Quantity:</label> <br/>              
+                    <span class="add-on"></span>
+                    <input type='text' id='product_quantity' />
+                </div>
+            </div>
+            <div id='dialog2_div'></div>
         </div> <!-- ======= transaction_wrapper_div ======= -->
         <div id='dialog_div'></div>
 

@@ -1,5 +1,4 @@
 $(function(){
-
 	displayTransactionRecords();
 	displayPager();
     displayBarGraph();
@@ -163,7 +162,7 @@ function displayTransactionRecords(){
 				$('#transaction_record_tbody').html(data);
 			},
 			error:function(data){
-				alert("Error on displaying transaction records => "+ data['status']+ " "+ data['statusText']);
+				//alert("Error on displaying transaction records => "+ data['status']+ " "+ data['statusText']);
 			},
 			complete:function(){
 				$('#loading_img').hide();

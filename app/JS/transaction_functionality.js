@@ -115,6 +115,7 @@ $(function(){
 	 });
 })
  var totalPayment = 0; //Global variable for the total payment of the products bought...
+
  var selectedProduct_ID = new Array(); //Global array variable used to store all product id that has been already selected...
  var regexInt = /^[0-9]+$/;
 
@@ -128,7 +129,7 @@ $(function(){
 	var obj = {barCode:barCode};
 	if(barCode != "" && regexInt.test(quantity) && quantity > 0 ){
 		$.ajax({
-			type:"GET",
+			type:"POST",
 			data: obj,
 			url: "../PHP/OBJECTS/transaction/getProduct.php",
 			success:function(data){
@@ -147,7 +148,7 @@ $(function(){
 					$('#alert_error_msg_p').html(notfoundMsg_error);
 					$('#alert_productExist_div').fadeIn();
 				}
-				
+
 			},
 			error:function(data){
 				alert("Error on Getting product => [ "+ data['status'] + " ] " + data['statusText']);
@@ -172,7 +173,6 @@ function checkIfProductHasntSelected(productID){
 			break;
 		}
 	}
-
 	return not_selected;
 }
 
@@ -322,7 +322,3 @@ function displayDateAndTime(){
         $('#date_span > span').html(dateTime);
     },1000)
 }
-
-
-
-

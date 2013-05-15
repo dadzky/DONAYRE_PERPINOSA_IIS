@@ -11,4 +11,6 @@
         $$content['name'] = $content['value'];
     }
 
+
     $execute_add->add_product($product_name, $bar_code, $product_price, $number_of_stocks, $stock_unit, $update);
+

@@ -23,7 +23,20 @@
             $this->close_connection();
         }
 
-        function add_product($product_name, $product_price, $number_of_stocks, $stock_unit, $update) {
+        function check_bar_code($bar_code) {
+            $this->open_connection();
+
+            $select_statement = $this->db_holder->prepare("SELECT * FROM products WHERE bar_code = ?;");
+            $select_statement->execute(array($bar_code));
+
+            if($select_statement->fetch()) {
+                echo "true";
+            }
+
+            $this->close_connection();
+        }
+
+        function add_product($product_name, $bar_code, $product_price, $number_of_stocks, $stock_unit, $update) {
             $this->open_connection();
 
             if($update == "yes") {
@@ -35,8 +48,8 @@
                 $update_statement->execute(array($total_number_of_stocks, $product_name));
             } else {
                 $final_product_price = round($product_price, 2);
-                $insert_statement = $this->db_holder->prepare("INSERT INTO products VALUES (null, ?, ?, ?, ?);");
-                $insert_statement->execute(array($product_name, $final_product_price, $number_of_stocks, $stock_unit));
+                $insert_statement = $this->db_holder->prepare("INSERT INTO products VALUES (null, ?, ?, ?, ?, ?);");
+                $insert_statement->execute(array($product_name, trim($bar_code), $final_product_price, $number_of_stocks, $stock_unit));
             }
 
             $this->close_connection();
@@ -45,34 +58,35 @@
         function display_products() {
             $this->open_connection();
 
-            $select_statement = $this->db_holder->query("SELECT product_id, LEFT(product_name, 30), product_price, number_of_stocks, stock_unit FROM products ORDER BY product_name;");
-
-            $counter = 0;
+            $select_statement = $this->db_holder->query("SELECT product_id,
+                                                                LEFT(product_name, 15),
+                                                                bar_code,
+                                                                product_price,
+                                                                number_of_stocks,
+                                                                stock_unit FROM products ORDER BY product_name;");
             while($content = $select_statement->fetch()) {
-               while($counter < 1) {
-                    echo "";
-                    $counter++;
-                }
-                $position = strpos($content[2], ".");
+                $position = strpos($content[3], ".");
                 if($position != "") {
                     // ========= With decimal prices greater than 0 ============
-                    $whole_number = substr($content[2], 0, $position);
+                    $whole_number = substr($content[3], 0, $position);
                     $formatted_whole_number = number_format($whole_number);
-                    $decimal = substr($content[2], $position);
+                    $decimal = substr($content[3], $position);
                     $formatted_price = $formatted_whole_number.$decimal;
                     echo "<tr id = '".$content[0]."'>";
                     echo    "<td ondblclick = 'edit_products_name(".$content[0].")'>".$content[1]."</td>";
+                    echo    "<td>".$content[2]."</td>";
                     echo    "<td ondblclick = 'edit_products_price(".$content[0].")'>&#8369;<span id = 'product_price_span'>".$formatted_price."</span></td>";
-                    echo    "<td ondblclick = 'edit_products_number_of_stocks(".$content[0].")'>".$content[3]."</td>";
-                    echo    "<td ondblclick = 'edit_products_stock_unit(".$content[0].")'>".$content[4]."</td>";
+                    echo    "<td ondblclick = 'edit_products_number_of_stocks(".$content[0].")'>".$content[4]."</td>";
+                    echo    "<td ondblclick = 'edit_products_stock_unit(".$content[0].")'>".$content[5]."</td>";
                     echo    "<td class = 'product_delete_action'><input type = 'checkbox' class = 'mark_this' id = 'product_check_box_".$content[0]."' /></td>";
                     echo "</tr>";
                 } else {
                     echo "<tr id = '".$content[0]."'>";
                     echo    "<td ondblclick = 'edit_products_name(".$content[0].")'>".$content[1]."</td>";
-                    echo    "<td ondblclick = 'edit_products_price(".$content[0].")'>&#8369;<span id = 'product_price_span'>".number_format($content[2]).".00</span></td>";
-                    echo    "<td ondblclick = 'edit_products_number_of_stocks(".$content[0].")'>".$content[3]."</td>";
-                    echo    "<td ondblclick = 'edit_products_stock_unit(".$content[0].")'>".$content[4]."</td>";
+                    echo    "<td>".$content[2]."</td>";
+                    echo    "<td ondblclick = 'edit_products_price(".$content[0].")'>&#8369;<span id = 'product_price_span'>".number_format($content[3]).".00</span></td>";
+                    echo    "<td ondblclick = 'edit_products_number_of_stocks(".$content[0].")'>".$content[4]."</td>";
+                    echo    "<td ondblclick = 'edit_products_stock_unit(".$content[0].")'>".$content[5]."</td>";
                     echo    "<td class = 'product_delete_action'><input type = 'checkbox' class = 'mark_this' id = 'product_check_box_".$content[0]."' /></td>";
                     echo "</tr>";
                 }
@@ -84,29 +98,39 @@
         function display_products_by_select_letter($selected_letter) {
             $this->open_connection();
 
-            $select_statement = $this->db_holder->prepare("SELECT product_id, LEFT(product_name, 30), product_price, number_of_stocks, stock_unit FROM products WHERE product_name LIKE ? ORDER BY product_name;");
+            $select_statement = $this->db_holder->prepare("SELECT product_id,
+                                                                  LEFT(product_name, 15),
+                                                                  bar_code,
+                                                                  product_price,
+                                                                  number_of_stocks,
+                                                                  stock_unit
+                                                            FROM products
+                                                            WHERE product_name LIKE ?
+                                                            ORDER BY product_name;");
             $select_statement->execute(array($selected_letter));
             while($content = $select_statement->fetch()) {
-                $position = strpos($content[2], ".");
+                $position = strpos($content[3], ".");
                 if($position != "") {
                     // ========= With decimal prices greater than 0 ============
-                    $whole_number = substr($content[2], 0, $position);
+                    $whole_number = substr($content[3], 0, $position);
                     $formatted_whole_number = number_format($whole_number);
-                    $decimal = substr($content[2], $position);
+                    $decimal = substr($content[3], $position);
                     $formatted_price = $formatted_whole_number.$decimal;
                     echo "<tr id = '".$content[0]."'>";
                     echo    "<td ondblclick = 'edit_products_name(".$content[0].")'>".$content[1]."</td>";
+                    echo    "<td>".$content[2]."</td>";
                     echo    "<td ondblclick = 'edit_products_price(".$content[0].")'>&#8369;<span id = 'product_price_span'>".$formatted_price."</span></td>";
-                    echo    "<td ondblclick = 'edit_products_number_of_stocks(".$content[0].")'>".$content[3]."</td>";
-                    echo    "<td ondblclick = 'edit_products_stock_unit(".$content[0].")'>".$content[4]."</td>";
+                    echo    "<td ondblclick = 'edit_products_number_of_stocks(".$content[0].")'>".$content[4]."</td>";
+                    echo    "<td ondblclick = 'edit_products_stock_unit(".$content[0].")'>".$content[5]."</td>";
                     echo    "<td class = 'product_delete_action'><input type = 'checkbox' class = 'mark_this' id = 'product_check_box_".$content[0]."' /></td>";
                     echo "</tr>";
                 } else {
                     echo "<tr id = '".$content[0]."'>";
                     echo    "<td ondblclick = 'edit_products_name(".$content[0].")'>".$content[1]."</td>";
-                    echo    "<td ondblclick = 'edit_products_price(".$content[0].")'>&#8369;<span id = 'product_price_span'>".number_format($content[2]).".00</span></td>";
-                    echo    "<td ondblclick = 'edit_products_number_of_stocks(".$content[0].")'>".$content[3]."</td>";
-                    echo    "<td ondblclick = 'edit_products_stock_unit(".$content[0].")'>".$content[4]."</td>";
+                    echo    "<td>".$content[2]."</td>";
+                    echo    "<td ondblclick = 'edit_products_price(".$content[0].")'>&#8369;<span id = 'product_price_span'>".number_format($content[3]).".00</span></td>";
+                    echo    "<td ondblclick = 'edit_products_number_of_stocks(".$content[0].")'>".$content[4]."</td>";
+                    echo    "<td ondblclick = 'edit_products_stock_unit(".$content[0].")'>".$content[5]."</td>";
                     echo    "<td class = 'product_delete_action'><input type = 'checkbox' class = 'mark_this' id = 'product_check_box_".$content[0]."' /></td>";
                     echo "</tr>";
                 }
@@ -172,30 +196,39 @@
         function search_product($product_name_to_search) {
             $this->open_connection();
 
-            $select_statement = $this->db_holder->prepare("SELECT product_id, LEFT(product_name, 30), product_price, number_of_stocks, stock_unit FROM products WHERE product_name LIKE ? ORDER BY product_name;");
+            $select_statement = $this->db_holder->prepare("SELECT product_id,
+                                                                  LEFT(product_name, 18),
+                                                                  product_price,
+                                                                  number_of_stocks,
+                                                                  stock_unit
+                                                           FROM products
+                                                           WHERE product_name LIKE ?
+                                                           ORDER BY product_name;");
             $select_statement->execute(array($product_name_to_search));
 
             while($content = $select_statement->fetch()) {
-                $position = strpos($content[2], ".");
+                $position = strpos($content[3], ".");
                 if($position != "") {
-                    // ========= With decimal prices greater than 0 ============ //
-                    $whole_number = substr($content[2], 0, $position);
+                    // ========= With decimal prices greater than 0 ============
+                    $whole_number = substr($content[3], 0, $position);
                     $formatted_whole_number = number_format($whole_number);
-                    $decimal = substr($content[2], $position);
+                    $decimal = substr($content[3], $position);
                     $formatted_price = $formatted_whole_number.$decimal;
                     echo "<tr id = '".$content[0]."'>";
                     echo    "<td ondblclick = 'edit_products_name(".$content[0].")'>".$content[1]."</td>";
+                    echo    "<td>".$content[2]."</td>";
                     echo    "<td ondblclick = 'edit_products_price(".$content[0].")'>&#8369;<span id = 'product_price_span'>".$formatted_price."</span></td>";
-                    echo    "<td ondblclick = 'edit_products_number_of_stocks(".$content[0].")'>".$content[3]."</td>";
-                    echo    "<td ondblclick = 'edit_products_stock_unit(".$content[0].")'>".$content[4]."</td>";
+                    echo    "<td ondblclick = 'edit_products_number_of_stocks(".$content[0].")'>".$content[4]."</td>";
+                    echo    "<td ondblclick = 'edit_products_stock_unit(".$content[0].")'>".$content[5]."</td>";
                     echo    "<td class = 'product_delete_action'><input type = 'checkbox' class = 'mark_this' id = 'product_check_box_".$content[0]."' /></td>";
                     echo "</tr>";
                 } else {
                     echo "<tr id = '".$content[0]."'>";
                     echo    "<td ondblclick = 'edit_products_name(".$content[0].")'>".$content[1]."</td>";
-                    echo    "<td ondblclick = 'edit_products_price(".$content[0].")'>&#8369;<span id = 'product_price_span'>".number_format($content[2]).".00</span></td>";
-                    echo    "<td ondblclick = 'edit_products_number_of_stocks(".$content[0].")'>".$content[3]."</td>";
-                    echo    "<td ondblclick = 'edit_products_stock_unit(".$content[0].")'>".$content[4]."</td>";
+                    echo    "<td>".$content[2]."</td>";
+                    echo    "<td ondblclick = 'edit_products_price(".$content[0].")'>&#8369;<span id = 'product_price_span'>".number_format($content[3]).".00</span></td>";
+                    echo    "<td ondblclick = 'edit_products_number_of_stocks(".$content[0].")'>".$content[4]."</td>";
+                    echo    "<td ondblclick = 'edit_products_stock_unit(".$content[0].")'>".$content[5]."</td>";
                     echo    "<td class = 'product_delete_action'><input type = 'checkbox' class = 'mark_this' id = 'product_check_box_".$content[0]."' /></td>";
                     echo "</tr>";
                 }

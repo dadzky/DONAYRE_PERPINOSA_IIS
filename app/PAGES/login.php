@@ -28,6 +28,7 @@
                 </h2>
             </div>
             <button id = "main_log_in_button" class = "btn btn-primary btn-large">LOG-IN</button>
+
             <div id='login_as_div' class="alert alert-info">
                 <div id = "arrow_div"></div>
                 <button id='login_as_close_btn' type='button' class="close" title="close">&times;</button>
@@ -74,7 +75,7 @@
             </div> <!-- ======= iis related content div ends ======= -->
 
             <div id = "log_in_div">
-                <p id = "logo_p"><img src = "../CSS/images/IIS%20logos/iis0.jpg"> <span>Unknown Store</span></p>
+                <p id = "logo_p"><img src = "../CSS/images/IIS%20logos/iis0.jpg"> <span> WEW Alinayre's S - Market</span></p>
                 <span id = "close_log_in_options_span" title = "close"><img src = "../CSS/images/close_icon.png"></span>
                 <form id = "log_in_form" action = "login.php" method = "POST">
                     <input type = "hidden" name = "log_in_as" id = "log_in_as" />

@@ -29,11 +29,11 @@
 
 #buttons_div #log_out_button {
     width: 30px;
+    background-image: url("images/log_out.png") ;
 }
 
 
 #buttons_div button {
-    height: 30px;
-    width: 170px;
+    height: 33px;
 }
 
