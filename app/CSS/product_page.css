@@ -1,0 +1,96 @@
+
+#products_main_div_container {
+    background: #f5f5f5;
+}
+
+#display_products_div {
+    width: 600px;
+    float: left;
+    margin: 20px;
+    border-right: 1px solid #d3d3d3;
+}
+
+#display_products_table thead {
+    position: relative;
+    display: block;
+}
+
+#display_products_table_tbody {
+    display: block;
+    overflow-y: auto;
+    height: 450px;
+    position: relative;
+}
+
+#display_products_table thead th, #display_products_table_tbody td {
+    width: 140px;
+}
+
+#display_products_table tbody td + td,
+#display_products_table tbody td + td + td,
+#display_products_table thead th + th,
+#display_products_table thead th + th + th {
+    width: 80px;
+    text-align: center;
+}
+
+#display_products_table tbody td + td + td + td + td,
+#display_products_table thead th + th + th + th + th{
+    width: 20px;
+}
+
+#add_product_div {
+    margin-top: 50px;
+    padding: 15px;
+}
+
+#add_product_div dd {
+    text-indent: 20px;
+}
+
+#add_product_div input[type = "reset"] {
+    float: right;
+}
+
+.product_delete_action ul {
+    position: absolute;
+    z-index: 500;
+    visibility: hidden;
+    list-style: none;
+    border: 1px double dodgerblue;
+    width: 150px;
+}
+
+.product_delete_action:hover ul, .product_delete_action ul:hover ul {
+    visibility: visible;
+    background-color: ghostwhite;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    padding: 7px;
+    z-index: 500;
+    position: absolute;
+}
+
+.product_delete_action ul li:hover {
+    color: dodgerblue;
+    cursor: pointer;
+}
+
+#delete_trash_icon {
+    width: 25px;
+    height: 30px;
+}
+
+#display_product_selected_letter {
+    float: right;
+}
+
+#select_stock_unit_first_option {
+    font-weight: bolder;
+}
+
+#product_actions {
+    background: #d3d3d3;
+    padding: 10px;
+}
