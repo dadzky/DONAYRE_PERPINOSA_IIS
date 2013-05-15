@@ -1,53 +1,54 @@
--- phpMyAdmin SQL Dump
--- version 3.3.9
--- http://www.phpmyadmin.net
+-- MySQL dump 10.13  Distrib 5.5.8, for Linux (i686)
 --
--- Host: localhost
--- Generation Time: May 06, 2013 at 11:04 AM
--- Server version: 5.5.8
--- PHP Version: 5.3.5
-
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
-
+-- Host: localhost    Database: IIS_DB
+-- ------------------------------------------------------
+-- Server version	5.5.8
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8 */;
-
---
--- Database: `IIS_DB`
---
-
--- --------------------------------------------------------
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
 -- Table structure for table `accounts`
 --
 
-CREATE TABLE IF NOT EXISTS `accounts` (
+DROP TABLE IF EXISTS `accounts`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `accounts` (
   `employee_id` int(11) DEFAULT NULL,
   `username` varchar(50) DEFAULT NULL,
   `password` varchar(50) DEFAULT NULL,
-  KEY `employee_id` (`employee_id`)
+  KEY `employee_id` (`employee_id`),
+  CONSTRAINT `accounts_ibfk_1` FOREIGN KEY (`employee_id`) REFERENCES `employees` (`employee_id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `accounts`
 --
 
-INSERT INTO `accounts` (`employee_id`, `username`, `password`) VALUES
-(16, 'marejean', 'marejean'),
-(21, 'test', 'test'),
-(22, 't', 't');
-
--- --------------------------------------------------------
+LOCK TABLES `accounts` WRITE;
+/*!40000 ALTER TABLE `accounts` DISABLE KEYS */;
+INSERT INTO `accounts` VALUES (16,'marejean','marejean'),(21,'test','test'),(22,'t','t');
+/*!40000 ALTER TABLE `accounts` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `administrator`
 --
 
-CREATE TABLE IF NOT EXISTS `administrator` (
+DROP TABLE IF EXISTS `administrator`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `administrator` (
   `admin_id` int(11) NOT NULL AUTO_INCREMENT,
   `lastname` varchar(50) DEFAULT NULL,
   `firstname` varchar(50) DEFAULT NULL,
@@ -58,24 +59,27 @@ CREATE TABLE IF NOT EXISTS `administrator` (
   `username` varchar(20) DEFAULT NULL,
   `password` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`admin_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `administrator`
 --
 
-INSERT INTO `administrator` (`admin_id`, `lastname`, `firstname`, `gender`, `birthday`, `address`, `contact_number`, `username`, `password`) VALUES
-(2, 'Wew', 'Wew', 'female', '1996-02-15', 'Palo', 2147483647, 'granaderos', 'marjiecasosa'),
-(3, 'f', 'f', 'female', '1996-02-15', 'Palo', 2147483647, 'granaderos', 'marjiecasosa'),
-(4, 'Perpinosa', 'Marejean', 'female', '1996-02-15', 'Palo', 910798543, 'granaderos', 'marjiecasosa');
-
--- --------------------------------------------------------
+LOCK TABLES `administrator` WRITE;
+/*!40000 ALTER TABLE `administrator` DISABLE KEYS */;
+INSERT INTO `administrator` VALUES (2,'Wew','Wew','female','1996-02-15','Palo',2147483647,'granaderos','marjiecasosa'),(3,'f','f','female','1996-02-15','Palo',2147483647,'granaderos','marjiecasosa'),(4,'Perpinosa','Marejean','female','1996-02-15','Palo',910798543,'granaderos','marjiecasosa');
+/*!40000 ALTER TABLE `administrator` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `admins_transaction`
 --
 
-CREATE TABLE IF NOT EXISTS `admins_transaction` (
+DROP TABLE IF EXISTS `admins_transaction`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `admins_transaction` (
   `admins_transaction_id` int(11) NOT NULL AUTO_INCREMENT,
   `transaction_date` date DEFAULT NULL,
   `product_id` int(11) DEFAULT NULL,
@@ -83,21 +87,28 @@ CREATE TABLE IF NOT EXISTS `admins_transaction` (
   `supplier` varchar(100) DEFAULT NULL,
   `supplier_address` varchar(200) DEFAULT NULL,
   PRIMARY KEY (`admins_transaction_id`),
-  KEY `product_id_admins_transaction_to_products` (`product_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+  KEY `product_id_admins_transaction_to_products` (`product_id`),
+  CONSTRAINT `product_id_admins_transaction_to_products` FOREIGN KEY (`product_id`) REFERENCES `products` (`product_id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `admins_transaction`
 --
 
-
--- --------------------------------------------------------
+LOCK TABLES `admins_transaction` WRITE;
+/*!40000 ALTER TABLE `admins_transaction` DISABLE KEYS */;
+/*!40000 ALTER TABLE `admins_transaction` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `employees`
 --
 
-CREATE TABLE IF NOT EXISTS `employees` (
+DROP TABLE IF EXISTS `employees`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `employees` (
   `employee_id` int(11) NOT NULL AUTO_INCREMENT,
   `lastname` varchar(50) DEFAULT NULL,
   `firstname` varchar(50) DEFAULT NULL,
@@ -107,48 +118,54 @@ CREATE TABLE IF NOT EXISTS `employees` (
   `contact_number` varchar(11) DEFAULT NULL,
   `job_type` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`employee_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=23 ;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `employees`
 --
 
-INSERT INTO `employees` (`employee_id`, `lastname`, `firstname`, `gender`, `birthdate`, `address`, `contact_number`, `job_type`) VALUES
-(16, 'Perpinosa', 'Marejean', 'female', '1995-02-15', 'lkjskd', '09107985432', 'cashier'),
-(17, 'Per', 'Marejean', 'female', '1995-02-15', 'lkjskd', '09107985432', 'cashier'),
-(18, 'Per', 'Marejean', 'female', '1995-02-15', 'lkjskd', '09107985432', 'packer'),
-(19, 'Per', 'Marejean', 'female', '1995-02-15', 'lkjskd', '09107985432', 'porter'),
-(20, 'Wew', 'Marejean', 'female', '1995-01-15', 'lkjskd', '09107985432', 'packer'),
-(21, 'fdghgf', 'hgf', 'female', '1995-01-01', 'ghfh', '09107985432', 'cashier'),
-(22, 't', 't', 't', '2013-05-15', 't', 't', 'cashier');
-
--- --------------------------------------------------------
+LOCK TABLES `employees` WRITE;
+/*!40000 ALTER TABLE `employees` DISABLE KEYS */;
+INSERT INTO `employees` VALUES (16,'Perpinosa','Marejean','female','1995-02-15','lkjskd','09107985432','cashier'),(17,'Per','Marejean','female','1995-02-15','lkjskd','09107985432','cashier'),(18,'Per','Marejean','female','1995-02-15','lkjskd','09107985432','packer'),(19,'Per','Marejean','female','1995-02-15','lkjskd','09107985432','porter'),(20,'Wew','Marejean','female','1995-01-15','lkjskd','09107985432','packer'),(21,'fdghgf','hgf','female','1995-01-01','ghfh','09107985432','cashier'),(22,'t','t','t','2013-05-15','t','t','cashier');
+/*!40000 ALTER TABLE `employees` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `employees_attendance`
 --
 
-CREATE TABLE IF NOT EXISTS `employees_attendance` (
+DROP TABLE IF EXISTS `employees_attendance`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `employees_attendance` (
   `attendance_id` int(11) NOT NULL AUTO_INCREMENT,
   `employee_id` int(11) DEFAULT NULL,
   `date` date DEFAULT NULL,
   `status` int(11) DEFAULT NULL,
   PRIMARY KEY (`attendance_id`),
-  KEY `employee_id_employees_attendance_to_employees` (`employee_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+  KEY `employee_id_employees_attendance_to_employees` (`employee_id`),
+  CONSTRAINT `employee_id_employees_attendance_to_employees` FOREIGN KEY (`employee_id`) REFERENCES `employees` (`employee_id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `employees_attendance`
 --
 
-
--- --------------------------------------------------------
+LOCK TABLES `employees_attendance` WRITE;
+/*!40000 ALTER TABLE `employees_attendance` DISABLE KEYS */;
+/*!40000 ALTER TABLE `employees_attendance` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `employees_payroll`
 --
 
-CREATE TABLE IF NOT EXISTS `employees_payroll` (
+DROP TABLE IF EXISTS `employees_payroll`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `employees_payroll` (
   `payroll_id` int(11) NOT NULL AUTO_INCREMENT,
   `employee_id` int(11) DEFAULT NULL,
   `salary_period` varchar(20) DEFAULT NULL,
@@ -157,92 +174,107 @@ CREATE TABLE IF NOT EXISTS `employees_payroll` (
   `total_salary` double DEFAULT NULL,
   PRIMARY KEY (`payroll_id`),
   KEY `employee_id_employees_payroll_to_employees` (`employee_id`),
-  KEY `salary_id_employees_payroll_to_employees_salaries` (`salary_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+  KEY `salary_id_employees_payroll_to_employees_salaries` (`salary_id`),
+  CONSTRAINT `employee_id_employees_payroll_to_employees` FOREIGN KEY (`employee_id`) REFERENCES `employees` (`employee_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `salary_id_employees_payroll_to_employees_salaries` FOREIGN KEY (`salary_id`) REFERENCES `employees_salaries` (`salary_id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `employees_payroll`
 --
 
-
--- --------------------------------------------------------
+LOCK TABLES `employees_payroll` WRITE;
+/*!40000 ALTER TABLE `employees_payroll` DISABLE KEYS */;
+/*!40000 ALTER TABLE `employees_payroll` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `employees_salaries`
 --
 
-CREATE TABLE IF NOT EXISTS `employees_salaries` (
+DROP TABLE IF EXISTS `employees_salaries`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `employees_salaries` (
   `salary_id` int(11) NOT NULL AUTO_INCREMENT,
   `job_type` varchar(20) DEFAULT NULL,
   `basic_salary_monthly` double DEFAULT NULL,
   PRIMARY KEY (`salary_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `employees_salaries`
 --
 
-
--- --------------------------------------------------------
+LOCK TABLES `employees_salaries` WRITE;
+/*!40000 ALTER TABLE `employees_salaries` DISABLE KEYS */;
+/*!40000 ALTER TABLE `employees_salaries` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `fired_employees`
 --
 
-CREATE TABLE IF NOT EXISTS `fired_employees` (
+DROP TABLE IF EXISTS `fired_employees`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `fired_employees` (
   `employee_id` int(11) NOT NULL AUTO_INCREMENT,
   `date_fired` date DEFAULT NULL,
   `reason` varchar(500) DEFAULT NULL,
-  PRIMARY KEY (`employee_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=22 ;
+  PRIMARY KEY (`employee_id`),
+  CONSTRAINT `fired_employees_ibfk_1` FOREIGN KEY (`employee_id`) REFERENCES `employees` (`employee_id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `fired_employees`
 --
 
-INSERT INTO `fired_employees` (`employee_id`, `date_fired`, `reason`) VALUES
-(16, '2013-05-02', 'Always absent'),
-(20, '2013-05-02', 'Always Sleeping during work hours'),
-(21, '2013-05-02', 'Wala lang');
-
--- --------------------------------------------------------
+LOCK TABLES `fired_employees` WRITE;
+/*!40000 ALTER TABLE `fired_employees` DISABLE KEYS */;
+INSERT INTO `fired_employees` VALUES (16,'2013-05-02','Always absent'),(17,'2013-05-10','Doesn\'t have an account'),(20,'2013-05-02','Always Sleeping during work hours'),(21,'2013-05-02','Wala lang');
+/*!40000 ALTER TABLE `fired_employees` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `products`
 --
 
-CREATE TABLE IF NOT EXISTS `products` (
+DROP TABLE IF EXISTS `products`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `products` (
   `product_id` int(11) NOT NULL AUTO_INCREMENT,
   `product_name` varchar(100) DEFAULT NULL,
+  `bar_code` varchar(50) DEFAULT NULL,
   `product_price` double DEFAULT NULL,
   `number_of_stocks` double DEFAULT NULL,
   `stock_unit` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`product_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=48 ;
+) ENGINE=InnoDB AUTO_INCREMENT=62 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `products`
 --
 
-INSERT INTO `products` (`product_id`, `product_name`, `product_price`, `number_of_stocks`, `stock_unit`) VALUES
-(38, 'sample', 17, 58, 'piece'),
-(39, 'sample1', 17, -24, 'pieces'),
-(40, 'sample3', 17, 127, 'pieces'),
-(41, 'sample4', 17.5, 75, 'pieces'),
-(42, 'sample5', 17.35, -25, 'pieces'),
-(43, 'sample6', 17, 123, 'pieces'),
-(44, 'sample7', 17, 832, 'pieces'),
-(45, 'sample8', 17, 12321, 'pieces'),
-(46, 'sample9', 17, -24, 'pieces'),
-(47, 'sample10', 17.32, 12312, 'pieces');
-
--- --------------------------------------------------------
+LOCK TABLES `products` WRITE;
+/*!40000 ALTER TABLE `products` DISABLE KEYS */;
+INSERT INTO `products` VALUES (48,'test','657657657',7,-58,'piece'),(49,'test01','6578',6,-40,'piece'),(50,'test02','56546546',6,1,'piece'),(51,'test03','543546546',6,5,'piece'),(52,'test08','6546',9,9,'pieces'),(53,'test07','8798',9,9,'pieces'),(54,'test06','6546546',9,9,'pieces'),(55,'test04','567547',9,9,'pieces'),(56,'test05','78678',9,9,'pieces'),(57,'marejean kjdkfjd jiodjfmmmmmmmmmmmmmmmmmmmmdsf','567546',5,4,'pieces'),(58,'gfd','756765',4,4,'piece'),(59,'   ','675756',5,4,'piece'),(60,'fgfd','  5645654   ',56,4,'piece'),(61,'    fg   fd','56546',56,4,'pieces');
+/*!40000 ALTER TABLE `products` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `transactions`
 --
 
-CREATE TABLE IF NOT EXISTS `transactions` (
+DROP TABLE IF EXISTS `transactions`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `transactions` (
   `transaction_id` int(11) NOT NULL AUTO_INCREMENT,
   `product_id` int(11) DEFAULT NULL,
   `employee_id` int(11) DEFAULT NULL,
@@ -250,85 +282,54 @@ CREATE TABLE IF NOT EXISTS `transactions` (
   `transaction_time` time NOT NULL,
   PRIMARY KEY (`transaction_id`),
   KEY `product_id_transactions_to_products` (`product_id`),
-  KEY `employee_id_transactions_to_employees` (`employee_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=79 ;
+  KEY `employee_id_transactions_to_employees` (`employee_id`),
+  CONSTRAINT `employee_id_transactions_to_employees` FOREIGN KEY (`employee_id`) REFERENCES `employees` (`employee_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `product_id_transactions_to_products` FOREIGN KEY (`product_id`) REFERENCES `products` (`product_id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=83 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `transactions`
 --
 
-INSERT INTO `transactions` (`transaction_id`, `product_id`, `employee_id`, `transaction_date`, `transaction_time`) VALUES
-(75, 39, 22, '2013-05-06', '15:42:57'),
-(76, 42, 22, '2013-05-06', '15:42:57'),
-(77, 38, 22, '2013-05-06', '15:45:53'),
-(78, 40, 22, '2013-05-06', '15:45:53');
-
--- --------------------------------------------------------
+LOCK TABLES `transactions` WRITE;
+/*!40000 ALTER TABLE `transactions` DISABLE KEYS */;
+INSERT INTO `transactions` VALUES (79,48,NULL,'2013-05-10','14:15:03'),(80,49,22,'2013-05-11','17:13:50'),(81,50,22,'2013-05-11','17:13:50'),(82,48,22,'2013-05-11','17:13:50');
+/*!40000 ALTER TABLE `transactions` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `transactions_info`
 --
 
-CREATE TABLE IF NOT EXISTS `transactions_info` (
+DROP TABLE IF EXISTS `transactions_info`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `transactions_info` (
   `transaction_id` int(11) DEFAULT NULL,
   `number_of_items` int(11) DEFAULT NULL,
-  KEY `transaction_id_transactions_info_to_transactions` (`transaction_id`)
+  KEY `transaction_id_transactions_info_to_transactions` (`transaction_id`),
+  CONSTRAINT `transaction_id_transactions_info_to_transactions` FOREIGN KEY (`transaction_id`) REFERENCES `transactions` (`transaction_id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `transactions_info`
 --
 
-INSERT INTO `transactions_info` (`transaction_id`, `number_of_items`) VALUES
-(75, 199),
-(76, 123),
-(77, 140),
-(78, 48);
+LOCK TABLES `transactions_info` WRITE;
+/*!40000 ALTER TABLE `transactions_info` DISABLE KEYS */;
+INSERT INTO `transactions_info` VALUES (79,65),(80,45),(81,4),(82,65);
+/*!40000 ALTER TABLE `transactions_info` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
---
--- Constraints for dumped tables
---
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
---
--- Constraints for table `accounts`
---
-ALTER TABLE `accounts`
-  ADD CONSTRAINT `accounts_ibfk_1` FOREIGN KEY (`employee_id`) REFERENCES `employees` (`employee_id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Constraints for table `admins_transaction`
---
-ALTER TABLE `admins_transaction`
-  ADD CONSTRAINT `product_id_admins_transaction_to_products` FOREIGN KEY (`product_id`) REFERENCES `products` (`product_id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Constraints for table `employees_attendance`
---
-ALTER TABLE `employees_attendance`
-  ADD CONSTRAINT `employee_id_employees_attendance_to_employees` FOREIGN KEY (`employee_id`) REFERENCES `employees` (`employee_id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Constraints for table `employees_payroll`
---
-ALTER TABLE `employees_payroll`
-  ADD CONSTRAINT `employee_id_employees_payroll_to_employees` FOREIGN KEY (`employee_id`) REFERENCES `employees` (`employee_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `salary_id_employees_payroll_to_employees_salaries` FOREIGN KEY (`salary_id`) REFERENCES `employees_salaries` (`salary_id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Constraints for table `fired_employees`
---
-ALTER TABLE `fired_employees`
-  ADD CONSTRAINT `fired_employees_ibfk_1` FOREIGN KEY (`employee_id`) REFERENCES `employees` (`employee_id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Constraints for table `transactions`
---
-ALTER TABLE `transactions`
-  ADD CONSTRAINT `employee_id_transactions_to_employees` FOREIGN KEY (`employee_id`) REFERENCES `employees` (`employee_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `product_id_transactions_to_products` FOREIGN KEY (`product_id`) REFERENCES `products` (`product_id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Constraints for table `transactions_info`
---
-ALTER TABLE `transactions_info`
-  ADD CONSTRAINT `transaction_id_transactions_info_to_transactions` FOREIGN KEY (`transaction_id`) REFERENCES `transactions` (`transaction_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+-- Dump completed on 2013-05-14 17:10:05

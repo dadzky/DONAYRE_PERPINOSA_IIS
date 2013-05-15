@@ -4,37 +4,27 @@
     
     class Iis_functions_sales extends Database_connection {
         /*------------FOR TRANSACTIONS-----------*/
-    	function searchProductWithCost($toSearch,$quantity){	
+    	function getProductForTransaction($barcode){	
 
     		$this->open_connection();
 
     			$sql= "SELECT product_id,product_name,product_price,stock_unit
                         FROM products
-                        WHERE product_name LIKE ?
+                        WHERE bar_code = ?
                         AND number_of_stocks > 0";
                                          
                 $stmt = $this->db_holder->prepare($sql);
-                $stmt->bindParam(1, $toSearch);
+                $stmt->bindParam(1, $barcode);
                 $stmt->execute();
 
+    		$this->close_connection();
 
-    		$this->close_connection();    
-
-            $tbody = "";
-
-            while($row = $stmt->fetch()){
-                $tbody .= "<tr id='tr_transact_search_".$row[0]."'>";
-                $tbody .= "<td>".$row[1]."</td>";
-                $tbody .= "<td>".money_format('%!.2n',$row[2])."</td>";
-                $tbody .= "<td>".$row[3]."</td>";
-                $tbody .= "</tr>";
+            $row = $stmt->fetch();
+            if($row[0] != null){
+                $prodObj = array('prodID' => $row[0], 'prodName' => $row[1], 'prodPrice' => $row[2], 'prodUnit' => $row[3]);
+                $encoded = json_encode($prodObj);
+                echo $encoded;
             }
-            if($tbody == ""){
-                  $tbody = "<tr><td colspan='3'>No Product Found!</td></tr>";
-            }
-
-            echo $tbody;
-
     	}
 
         function saveTransaction($employeeID, $productIDs, $quantities){

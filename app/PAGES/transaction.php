@@ -37,9 +37,40 @@
                 <span class="add-on">Quantity :</span>
                 <input type='text' id='product_quantity'  class='input-large'/>
             </div>
+            <div id='payment_div'>
+                <table class='table'>
+                    <thead>
+                        <tr>
+                            <th>&#8369; Total Cost</th>
+                            <th>&#8369; Cash</th>
+                            <th>&#8369; Change</th>
+                        </tr>      
+                    </thead>
+                    <tbody id = 'payment_tbody'>
+                        <tr>
+                            <th>&#8369; 00.00</th>
+                            <th><input id = 'cash_in_hand_input' type='text' class='input-mini' readonly/></th>
+                            <th>&#8369; 00.00</th>
+                        </tr>       
+                    </tbody>
+                    <tfoot><tr><td colspan='3'><button id='payment_btn' type='button' class='btn btn-primary btn-block' disabled>bayad</button></td></tr></tfoot>
+                </table>
+            </div><!--payment_div-->
             <br/>
             <button id='product_displayer_btn' class='btn btn-large'>GO</button>
-                       
+
+            <div id='alert_productExist_div' class='alert alert-error'>
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                <p id='alert_error_msg_p'></p>
+            </div>
+            <br/>
+            <br/>  
+            <br/>
+            <br/>
+            <br/>
+            <hr/>
+            <br/>
+                  
             <table id='shopping_list_table' class='table table-striped table-hover table-bordered'>
                 <thead>
                      <tr>
@@ -57,6 +88,7 @@
             </table>
                             
         </div> <!-- ======= transaction_wrapper_div ======= -->
+        <div id='dialog_div'></div>
 
         <!-- ========= IMPORTS =======-->
         <script src = "../JS/jquery-1.9.1.min.js"></script>

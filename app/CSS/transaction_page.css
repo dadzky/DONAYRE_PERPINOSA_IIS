@@ -23,6 +23,35 @@ body{
     font-family: Consolas;
 }
 
+#product_displayer_btn{
+    float:left;
+}
+#alert_productExist_div{
+    width: 455px;
+    display:none;
+    float:left;
+    margin-left: 20px;
+}
+#payment_div{
+    width:280px;
+    height:135px;
+    border:1px outset #000;
+    float:right;
+}
+#cash_in_hand_input{
+    padding:0;
+    border:0;   
+    border-bottom: 0.5px solid;
+    font-size: 15px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    box-shadow: none;
+    line-height: 10px;
+    border-radius:0;
+    background: #fff;
+}
+
+
 
 /*=========tables=========*/
 #transaction_wrapper_div{

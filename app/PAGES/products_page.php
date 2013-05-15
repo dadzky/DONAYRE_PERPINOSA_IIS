@@ -19,6 +19,7 @@
                     <thead>
                         <tr>
                             <th>NAME</th>
+                            <th>BAR CODE</th>
                             <th>PRICE</th>
                             <th>STOCKS</th>
                             <th>UNIT</th>
@@ -41,6 +42,8 @@
                     <dl>
                     <dt>Product Name:</dt>
                         <dd id = 'product_name_dd'><input type = "text" name = "product_name" id = "product_name" /></dd>
+                    <dt>Product's Bar Code:</dt>
+                        <dd id = "bar_code_dd"><input type = "text" name = "bar_code" id = "bar_code" /></dd>
                     <dt>Product Price:</dt>
                         <dd id = 'product_price_dd'>&#8369;<input type = "text" name = "product_price" id = "product_price" /></dd>
                     <dt>Number of Stock(s):</dt>

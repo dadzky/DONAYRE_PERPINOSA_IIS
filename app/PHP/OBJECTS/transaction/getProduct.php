@@ -2,7 +2,7 @@
 		
 	include_once "../../CLASSES/iis_functions_sales.php";
 
-	$toSearch = $_POST['toSearch']."%";
+	$barCode = $_GET['barCode'];
 
 	$action = new Iis_functions_sales();
-	$action -> searchProductWithCost($toSearch);
+	$action -> getProductForTransaction($barCode);

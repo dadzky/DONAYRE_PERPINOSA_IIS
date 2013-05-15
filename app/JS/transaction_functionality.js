@@ -2,9 +2,9 @@ $(function(){
 		
      displayDateAndTime();
 
-
 	 /*------------TRIGGER FOR SEARCHING PRODUCTS----------------*/
 	 $('#product_displayer_btn').click(function(){
+	 	getProduct();
 	 })
 
 	 /*--------------------Editing Quantity at the Shopping List--------------------*/
@@ -35,6 +35,7 @@ $(function(){
 		 	$(cell_id).next().find('span').html(newsubTotal);
 			$('#shopping_list_total_tfoot td:last span').html(totalPayment2)
 			$('#edited_quantity').removeClass('error');
+			$('#payment_tbody tr th:first').html("&#8369; "+totalPayment2);
             totalPayment = parseFloat(totalPayment);
 	 	}else{
 	 		$('#edited_quantity').css({"border-color":"red", "box-shadow":"0 0 1px 2px pink", "color":"#f00"});
@@ -45,10 +46,12 @@ $(function(){
 	 $('#shopping_list_tbody').on('click','th img',function(){
 	 	var row_id = $(this).context.parentNode.parentNode.parentNode.id;
         var selectedProductId = row_id.split("_");
-        var productIDindex = $.inArray("tr_transact_search_"+selectedProductId[3], selectedProductIDs);
+        var productIDindex = $.inArray(selectedProductId[3], selectedProduct_ID);//$.inArray => used to determine the numeric index of a particular array element
+	 	console.log(selectedProduct_ID[0] +" - "+ selectedProduct_ID[1] + " => " + selectedProductId[3]);
+	 	console.log(productIDindex);
 	 	$('#'+row_id).addClass('error');
-	 	$('#dialog2_div').html('Remove From Product List');
-	 	$('#dialog2_div').dialog({
+	 	$('#dialog_div').html('Remove From Product List');
+	 	$('#dialog_div').dialog({
 			title:'Remove',
 			modal:true,
 			show:'blind',
@@ -64,10 +67,10 @@ $(function(){
 				 	$('#shopping_list_total_tfoot').find('td:last span').html(changeToMoneyFormat(totalPayment));
 				 	$('#'+row_id).remove();
 				 	$('#'+row_id).removeClass('error');
-                    selectedProductIDs.splice(productIDindex,1); // removing id from array of product IDs
+                    selectedProduct_ID.splice(productIDindex,1); // removing id from array of product IDs
 				 	$('#tr_transact_search_'+row_id.substring(15)).css('text-decoration','none');
-                    totalPayment = parseFloat(totalPayment); //to make totalPayment a floating point number
-                    console.log("deleted => "+ totalPayment)
+    				$('#payment_tbody tr th:first').html("&#8369; "+changeToMoneyFormat(totalPayment));
+                    totalPayment = parseFloat(totalPayment); //to make totalPayment a floating point number                   
 				 	$(this).dialog('close');
 				},
 				"Cancel" : function(){
@@ -83,126 +86,117 @@ $(function(){
 	 });
 
 	 /*---------------------TRANSACTION OF ITEMS [saving to database]-------------------*/
-	 $('#shopping_list_total_tfoot').on('click','button',function(){
+	 $('#payment_btn').click(function(){
          var tbody = $('#shopping_list_tbody tr').length;
          if(tbody>1){
 		    confirmationDialogForTransaction();
          }
 	 })
-	 $(document).keypress(function(e){
-	 	var rows = $('#shopping_list_tbody tr').length;
-	 	if(e.charCode == 66 && rows > 1){
-            confirmationDialogForTransaction();
-	 	}
-	 })
+
+	 $('#cash_in_hand_input').keyup(function(){
+	 	var regexFloat = /^[0-9,.]+$/;
+	 	if(regexFloat.test($(this).val())){
+	 		var payment = parseFloat($(this).val());
+		 	if(payment > totalPayment){
+		 		var change = payment-totalPayment;
+			 	change = change.toFixed(2);
+			 	$('#payment_tbody tr th:last').html("&#8369; "+changeToMoneyFormat(change));
+			 	$('#payment_tbody tr th:last').css('color','#000');
+			 	$('#payment_btn').removeAttr('disabled');
+			 	$(this).css('color','#000');
+			 }else{
+			 	$('#payment_tbody tr th:last').css('color','#f00');
+			 	$('#payment_btn').attr('disabled','disabled');
+			 }
+		}else{
+			$(this).css('color','#f00');
+			$('#payment_btn').attr('disabled','disabled');
+		}
+	 });
 })
  var totalPayment = 0; //Global variable for the total payment of the products bought...
- var selectedProductIDs = new Array(); //Global array variable used to store all product id that has been already selected...
+ var selectedProduct_ID = new Array(); //Global array variable used to store all product id that has been already selected...
+ var regexInt = /^[0-9]+$/;
 
- /*-----------FUNCTION FOR SEARCHING PRODUCTS [note: i also use this function for displaying the list of products]----------*/
- function searchProductForTransaction(){
-
+ /*-----------FUNCTION FOR Getting PRODUCTS to transact----------*/
+ function getProduct(){
+ 	var existMsg_error = "<h4>Oops..!</h4>That product has already been selected";
+ 	var inputsMsg_error = "<h4>Oops..!</h4>Please Dont Leave Blanks<br/>Quantity Must Be a Number Greather than 0";
+ 	var notfoundMsg_error = "<h4>Oh Crap..!</h4>Unidentified Barcode!";
  	var barCode = $('#product_code').val();
  	var quantity = $('#product_quantity').val();
-	var obj = {toSearch:toSearch, quantity:quantity};
-
-	if(toSearch != ""){
+	var obj = {barCode:barCode};
+	if(barCode != "" && regexInt.test(quantity) && quantity > 0 ){
 		$.ajax({
 			type:"GET",
 			data: obj,
-			url: "../PHP/OBJECTS/transaction/showProductWithCost.php",
+			url: "../PHP/OBJECTS/transaction/getProduct.php",
 			success:function(data){
-				//saveToShoppingList(prodId,prodName,prodCost,prodUnit);
-	            markSelectedProducts();
+				if(data != ""){
+					var prodObj = JSON.parse(data);
+					if(checkIfProductHasntSelected(prodObj.prodID)){
+						displayToShoppingList(prodObj.prodID, prodObj.prodName, prodObj.prodPrice ,prodObj.prodUnit, quantity);
+						selectedProduct_ID.push(prodObj.prodID);
+						$('#alert_productExist_div').fadeOut();
+						$('#alert_error_msg_p').html("");
+					}else{
+						$('#alert_error_msg_p').html(existMsg_error);
+						$('#alert_productExist_div').fadeIn();
+					}
+				}else{
+					$('#alert_error_msg_p').html(notfoundMsg_error);
+					$('#alert_productExist_div').fadeIn();
+				}
+				
 			},
 			error:function(data){
-				alert("Error on Searching products => "+ data);
+				alert("Error on Getting product => [ "+ data['status'] + " ] " + data['statusText']);
 			}
 
 		})
 	}else{
-		$('#products_to_transact_tbody').html("");
-		$('.pagination').html("");
+		$('#alert_error_msg_p').html(inputsMsg_error);
+		$('#alert_productExist_div').fadeIn();
 	}
 	
 }
 
 /*-----------------Function for checking at the selected product if it is already at shopping list--------------*/
-function checkIfExistAtShoppingList(prodName){
-	var tbody = document.getElementById('shopping_list_tbody');
-	var rows = tbody.getElementsByTagName('tr');
-	var doesntExist = false;
-	for(var ctr=1; ctr<rows.length;ctr++){
-		var productName = rows[ctr].getElementsByTagName('td')[0].innerHTML;
-		if(productName == prodName){
-			doesntExist = true;
+function checkIfProductHasntSelected(productID){
+
+	console.log(selectedProduct_ID.length)
+	var not_selected = true;	
+	for(var ctr=0; ctr<selectedProduct_ID.length;ctr++){	
+		if(selectedProduct_ID[ctr] == productID){
+			not_selected = false;
 			break;
 		}
-		
 	}
-	return doesntExist;
+
+	return not_selected;
 }
 
-/*------------------Function for saving products to shopping List--------------*/
 
-function saveToShoppingList(prodId,prodName,prodCost,prodUnit){
-	$('#product_name_to_transact').val(prodName);
-	$('#product_cost_to_transact').val(prodCost+"/"+prodUnit);
-	$('.add-on').html(prodUnit);
-	var regexInt = /^[0-9]+$/;
-	if(prodId != "" || prodId != null){
-		/*$('#dialog_div').dialog({
-				resizable:false,
-				show: 'blind',
-				hide:'blind',
-				modal:true,
-				title: "Quantity",
-			    buttons: {
-			    	"Proceed": function(){*/
-			    		var quantity = $('#product_quantity').val();
-			    		if(regexInt.test(quantity) && quantity > 0){
-			    			displayToShoppingList(prodId,prodName,prodCost,prodUnit,quantity);
-			    			$('#product_to_transact_div').removeClass('control-group error');
-			    			$(tblRow).css({'text-decoration':'line-through'});
-                            selectedProductIDs.push(prodId);
-			    			$(this).dialog('close');
-			    		}else{
-			    			$('#product_to_transact_div').addClass('control-group error');
-			    		}	    		
-						
-			    	/*},
-			    	"Cancel": function(){
-			    		$(this).dialog('close');
-			    	}
+function displayToShoppingList(prodId,prodName,prodPrice,prodUnit,productQuantity){
 
-			    }
+	var subTotal = (parseFloat(prodPrice)*parseInt(productQuantity)).toFixed(2);
 
-			})*/
-	}
-}
-
-function displayToShoppingList(prodId,prodName,prodCost,prodUnit,productQuantity){
-
-	var id = prodId.substring(19);
-	var subTotal = (parseFloat(prodCost)*parseInt(productQuantity)).toFixed(2);
 	totalPayment = totalPayment + parseFloat(subTotal); /*-global totalPayment variable to compute for the total payment-*/
-
-    console.log(totalPayment);
     totalPayment = parseFloat(totalPayment);
+
     subTotal = changeToMoneyFormat(subTotal.toString());
     var totalPayment2 = changeToMoneyFormat((totalPayment.toFixed(2)).toString());
 
-    var newId = "tr_to_transact_"+id;
+    var newId = "tr_to_transact_"+prodId;
 	var tbody = "<tr  id='"+newId+"'>"+
 				"<th><a href='Javascript:void(0)'><img src='../CSS/img_tbls/deleteShoppingList.png' class ='delete_list_img' alt = 'remove row' title='remove' /></a></th>"+
 				"<td>"+prodName+"</td>"+
-				"<td>&#8369; <span>"+prodCost+"</span> / "+prodUnit+"</td>"+
+				"<td>&#8369; <span>"+prodPrice+"</span> / "+prodUnit+"</td>"+
 				"<td><span>"+productQuantity+"</span><img src='../CSS/img_tbls/editShoppingList.png' class =edit_quantity_img alt = edit quanity title=edit quantity/></td>"+
 				"<td>&#8369; <span>"+subTotal+"</span></td>"+
 				"</tr>";
 	var tfoot = "<tr  class='totalpayment_tr'>"+
-				"<td>Total</td>"+
-				"<td colspan='4'><button id='payment_btn' class='btn btn-block btn-primary' title='Shift+b for a shortcut'>PAY</button></td>"+
+				"<td colspan='5'>Total</td>"+
 				"<td>&#8369; <span>"+totalPayment2+"</span></td>"+
 				"</tr>";
 	
@@ -210,6 +204,9 @@ function displayToShoppingList(prodId,prodName,prodCost,prodUnit,productQuantity
 	$('#shopping_list_total_tfoot').html(tfoot);
 	$('#shopping_list_table').show('blind',1000);
     $('#product_quantity').val("");
+    $('#product_code').val("");
+    $('#payment_tbody tr th:first').html("&#8369; "+totalPayment2);
+    $('#cash_in_hand_input').removeAttr('readonly');
 }
 
 function saveTransaction(){
@@ -239,7 +236,7 @@ function saveTransaction(){
             });
             $('#products_to_transact_tbody tr').css({'text-decoration':'none'});
             totalPayment = 0;
-            selectedProductIDs.splice(0,selectedProductIDs.length);
+            selectedProduct_ID.splice(0,selectedProduct_ID.length);
         },
         error:function(data){
             alert("Error on saving transaction => "+ data);
@@ -248,8 +245,8 @@ function saveTransaction(){
 }
 
 function confirmationDialogForTransaction(){
-	$('#dialog2_div').html("Everything will be recorded <br/>Do you want to continue?");
- 	$('#dialog2_div').dialog({
+	$('#dialog_div').html("Everything will be recorded <br/>Do you want to continue?");
+ 	$('#dialog_div').dialog({
 		title:'Confirmation',
 		modal:true,
 		show:'blind',
@@ -264,13 +261,6 @@ function confirmationDialogForTransaction(){
 			}
 		}
 	});
-}
-
-function markSelectedProducts(){
-	//selectedProductIDs -> global array variable that stores the id of products that has already been selected
-    for(var ctr=0;ctr<selectedProductIDs.length;ctr++){
-        $('#'+selectedProductIDs[ctr]).css('text-decoration','line-through');
-    }
 }
 
 function changeToMoneyFormat(toConvert){
