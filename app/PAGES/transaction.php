@@ -30,23 +30,16 @@
             <span id='date_span'>
                 <p class='label label-info'>Date And Time:</p> <span class='text text-info text-right'></span>
             </span>
-            <table class='products_tbl table table-striped table-hover table-bordered'>
-                <thead>
-                    <tr >
-                        <th colspan='2'>
-                            <input type='text' id='search_item' class='input-large search-query' placeholder='Search for an item' />
-                        </th>
-                     </tr>
-                     <tr>                    
-                        <th>Product Name</th>
-                        <th>Product Cost</th>
-                        <th>Product Unit</th>
-                    </tr>
-                </thead>
-                <tbody id='products_to_transact_tbody'>
-                </tbody>                
-            </table>
-
+            <br/> <br/> <br/> 
+            <div id='product_to_transact_div' class="input-prepend">         
+                <span class="add-on">BarCode :</span>
+                <input type='text' id='product_code' class='input-large' />      
+                <span class="add-on">Quantity :</span>
+                <input type='text' id='product_quantity'  class='input-large'/>
+            </div>
+            <br/>
+            <button id='product_displayer_btn' class='btn btn-large'>GO</button>
+                       
             <table id='shopping_list_table' class='table table-striped table-hover table-bordered'>
                 <thead>
                      <tr>
@@ -62,21 +55,7 @@
                 <tfoot id='shopping_list_total_tfoot'></tfoot>
 
             </table>
-            <div id='dialog_div'>
-                Product Name: <br/>
-                <input type='text' id='product_name_to_transact' readonly='readonly' /><br/>
-                Product Cost: <br/>
-                <input type='text' id='product_cost_to_transact' readonly='readonly' /> <br/>             
-                <div id='quantity_div' class="input-prepend">     
-                 <label class='control-label' for='product_quantity' > Product Quantity:</label> <br/>              
-                    <span class="add-on"></span>
-                    <input type='text' id='product_quantity' />
-                </div>
-            </div>
-            <div id='dialog2_div'></div>
-                
-                      
-           
+                            
         </div> <!-- ======= transaction_wrapper_div ======= -->
 
         <!-- ========= IMPORTS =======-->

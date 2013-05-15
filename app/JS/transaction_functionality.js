@@ -4,35 +4,7 @@ $(function(){
 
 
 	 /*------------TRIGGER FOR SEARCHING PRODUCTS----------------*/
-	 $('#search_item').keyup(function(){
-	 	$('#currentPage').val(0);
-	 	searchProductForTransaction();
-	 })
-
-	 /*----------Changing the color of an -tr- element in a -tbody- to identify the products that has been already selected---------*/
-	 $('#products_to_transact_tbody').on('click','tr',function(){
-	 	
-
-	 	if($(this).attr('class') == "" || $(this).attr('class') == null){
-			var prodId = this.id;
-            if(prodId != ""){
-                var cell = document.getElementById(prodId).getElementsByTagName('td');
-                var prodName = cell[0].innerHTML;
-                var prodCost = cell[1].innerHTML;
-                var prodUnit = cell[2].innerHTML;
-                prodCost = prodCost.replace(/\,/g,"");
-                if(!checkIfExistAtShoppingList(prodName)){
-                    saveToShoppingList(prodId,prodName,prodCost,prodUnit,$(this));
-                }else{
-                    $('#dialog2_div').html("It is already on your shopping list\nYou can change its quantity by clicking edit icon");
-                    $('#dialog2_div').dialog({
-                        title:'Exist',
-                        modal:true,
-                        buttons: false
-                    });
-                }
-            }
-	 	}	 	
+	 $('#product_displayer_btn').click(function(){
 	 })
 
 	 /*--------------------Editing Quantity at the Shopping List--------------------*/
@@ -130,16 +102,17 @@ $(function(){
  /*-----------FUNCTION FOR SEARCHING PRODUCTS [note: i also use this function for displaying the list of products]----------*/
  function searchProductForTransaction(){
 
- 	var toSearch = $('#search_item').val();
-	var obj = {toSearch:toSearch};
+ 	var barCode = $('#product_code').val();
+ 	var quantity = $('#product_quantity').val();
+	var obj = {toSearch:toSearch, quantity:quantity};
 
 	if(toSearch != ""){
 		$.ajax({
-			type:"POST",
+			type:"GET",
 			data: obj,
-			url: "../PHP/OBJECTS/transaction/searchProductWithCost.php",
+			url: "../PHP/OBJECTS/transaction/showProductWithCost.php",
 			success:function(data){
-				$('#products_to_transact_tbody').html(data);
+				//saveToShoppingList(prodId,prodName,prodCost,prodUnit);
 	            markSelectedProducts();
 			},
 			error:function(data){
@@ -172,39 +145,39 @@ function checkIfExistAtShoppingList(prodName){
 
 /*------------------Function for saving products to shopping List--------------*/
 
-function saveToShoppingList(prodId,prodName,prodCost,prodUnit,tblRow){
+function saveToShoppingList(prodId,prodName,prodCost,prodUnit){
 	$('#product_name_to_transact').val(prodName);
 	$('#product_cost_to_transact').val(prodCost+"/"+prodUnit);
 	$('.add-on').html(prodUnit);
 	var regexInt = /^[0-9]+$/;
 	if(prodId != "" || prodId != null){
-		$('#dialog_div').dialog({
+		/*$('#dialog_div').dialog({
 				resizable:false,
 				show: 'blind',
 				hide:'blind',
 				modal:true,
 				title: "Quantity",
 			    buttons: {
-			    	"Proceed": function(){
+			    	"Proceed": function(){*/
 			    		var quantity = $('#product_quantity').val();
 			    		if(regexInt.test(quantity) && quantity > 0){
 			    			displayToShoppingList(prodId,prodName,prodCost,prodUnit,quantity);
-			    			$('#quantity_div').removeClass('control-group error');
+			    			$('#product_to_transact_div').removeClass('control-group error');
 			    			$(tblRow).css({'text-decoration':'line-through'});
                             selectedProductIDs.push(prodId);
 			    			$(this).dialog('close');
 			    		}else{
-			    			$('#quantity_div').addClass('control-group error');
+			    			$('#product_to_transact_div').addClass('control-group error');
 			    		}	    		
 						
-			    	},
+			    	/*},
 			    	"Cancel": function(){
 			    		$(this).dialog('close');
 			    	}
 
 			    }
 
-			})
+			})*/
 	}
 }
 

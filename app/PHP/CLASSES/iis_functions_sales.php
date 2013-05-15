@@ -4,7 +4,7 @@
     
     class Iis_functions_sales extends Database_connection {
         /*------------FOR TRANSACTIONS-----------*/
-    	function searchProductWithCost($toSearch){	
+    	function searchProductWithCost($toSearch,$quantity){	
 
     		$this->open_connection();
 

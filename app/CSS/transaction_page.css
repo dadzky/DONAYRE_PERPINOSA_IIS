@@ -23,13 +23,6 @@ body{
     font-family: Consolas;
 }
 
-#search_item{
-    background:url('img_tbls/searchicon.png');
-    background-repeat: no-repeat;
-    background-position: left;
-    padding-left:18px;
-
-}
 
 /*=========tables=========*/
 #transaction_wrapper_div{
@@ -47,9 +40,7 @@ body{
     -webkit-border-bottom-left-radius:10px; 
     -o-border-bottom-left-radius:10px;  
 }
-#products_to_transact_tbody{
-	cursor:url(../CSS/img_tbls/shopping-cart.png), -moz-zoom-in;
-}
+
 #shopping_list_table{
 	display:none;
 }
