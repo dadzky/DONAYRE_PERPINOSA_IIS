@@ -5,6 +5,7 @@ $(function() {
     $("#delete_product_confirmation_div").hide();
     $("#add_product_confirmation_div").hide();
     $("#select_stock_unit_first_option").hide();
+    $("#add_supplier_button").hide();
 
     // ============== APPENDING OPTIONS TO SELECT TAG (display_product_selected_letter) ===================
 
@@ -27,6 +28,26 @@ $(function() {
         for(var ctr=0;ctr<id.length;ctr++){
             var td=$(id[ctr]).context.parentNode;
             $(td).html("<input id='"+$(id[ctr]).attr('id')+"' type='checkbox' />");
+        }
+    });
+
+    //================== ON CLICK EVENTS ===================
+
+    $("#back_to_adding_product_img").click(function() {
+        $("#add_product_form").toggle('slow');
+        $("#add_suppliers_form").slideToggle('slow');
+        $("#add_supplier_button").hide();
+        $("#add_product_button").show();
+    })
+
+    // =============== ON CHANGE EVENTS ==============
+
+    $("#product_supplier").change(function() {
+        if($("#product_supplier").val() == "new supplier") {
+            $("#add_product_form").toggle('slow');
+            $("#add_suppliers_form").slideToggle('slow');
+            $("#add_supplier_button").show();
+            $("#add_product_button").hide();
         }
     });
 

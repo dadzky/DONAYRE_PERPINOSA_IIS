@@ -3,6 +3,7 @@
     padding: 10px;
 }
 
+<<<<<<< HEAD
 #add_suppliers_div {
     display: none;
     width: 300px;
@@ -18,3 +19,8 @@ input[type = "reset"] {
     float: left;
 }
 
+=======
+input[type = "reset"] {
+    float: right;
+}
+>>>>>>> 1f7798dc8bb854ba71c238c04fc487adfe808159

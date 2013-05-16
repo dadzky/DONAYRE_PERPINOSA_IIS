@@ -38,8 +38,8 @@
 
             </div><!-- ======= display products div ends ======= -->
             <div id = "add_product_div">
-                <h4>Add Product here:</h4>
                 <form id = "add_product_form">
+                    <h4>Add Product here:</h4>
                     <input type = "hidden" id = "id" name = "id">
                     <dl>
                     <dt>Product Name:</dt>
@@ -59,16 +59,32 @@
                                 <option>lbs</option>
                                 <option>others</option>
                             </select></dd>
+                    <dt>Product Supplier:</dt>
+                        <dd id = 'supplier'><select name = "product_supplier" id = "product_supplier"></select></dd>
                     </dl>
                     <input type = "reset" value = "reset" class = "btn btn-danger" />
                 </form>
+                <form id = "add_suppliers_form">
+                    <img src = "../CSS/images/down_icon.png" id = "back_to_adding_product_img" title = "back" />
+                    <h4>Add New Supplier here:</h4>
+                    <dl>
+                        <dt>Company Name:</dt>
+                            <dd><input type = "text" name = "company_name" id = "company_name" /></dd>
+                        <dt>Address:</dt>
+                            <dd><input type = "text" name = "address" id = "address" /></dd>
+                        <dt>Contact:</dt>
+                            <dd><input type = "text" name = "contact_number" id = "contact_number" /></dd>
+                    </dl>
+                    <input type = "reset" value = "reset" class = "btn btn-danger" />
+                </form><!-- =========== add suppliers form ends ===========-->
+                <button id = "add_supplier_button" class = "btn btn-primary">DONE</button>
                 <button id = "add_product_button" class = "btn btn-primary">ADD</button>
-
-
             </div><!-- ======= add products div ends ======== -->
+
         </div>
 
-        <!-- ================ HIDDEN FOR DIALOGS ================== -->
+        <!-- ================ HIDDEN ELEMENTS ================== -->
+        <div id = "product_overlay_div_container"></div>
         <div id = "delete_product_confirmation_div" class = "product_warning">
             Sure to delete the selected product(s)?
         </div><!-- ================= delete product confirmation div ends ==================-->
@@ -80,5 +96,6 @@
         <script src = "../JS/jquery-1.9.1.min.js"></script>
         <script src = "../JS/jquery-ui-1.10.2.min.js"></script>
         <script src = "../JS/products.js"></script>
+        <script src = "../JS/suppliers.js"></script>
     </body>
 </html>

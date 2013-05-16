@@ -1,5 +1,5 @@
 <?php
-    include "database_connection.php";
+    include "Database_connection.php";
 
     class Employees_functions_home extends Database_connection {
 
