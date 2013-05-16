@@ -1,6 +1,6 @@
 <?php
 
-    include_once "database_connection.php";
+    include_once "Database_connection.php";
     class Products_functions_home extends Database_connection {
 
         function check_if_product_to_add_already_exist($product_name, $product_id) {
@@ -36,7 +36,7 @@
             $this->close_connection();
         }
 
-        function add_product($product_name, $bar_code, $product_price, $number_of_stocks, $stock_unit, $update) {
+        function add_product($product_name, $bar_code, $product_price, $number_of_stocks, $stock_unit, $update, $product_supplier) {
             $this->open_connection();
 
             if($update == "yes") {
@@ -50,6 +50,14 @@
                 $final_product_price = round($product_price, 2);
                 $insert_statement = $this->db_holder->prepare("INSERT INTO products VALUES (null, ?, ?, ?, ?, ?);");
                 $insert_statement->execute(array($product_name, trim($bar_code), $final_product_price, $number_of_stocks, $stock_unit));
+
+                $product_id = $this->db_holder->lastInsertId();
+
+                $select_statement = $this->db_holder->prepare("SELECT supplier_id FROM suppliers WHERE company_name = ?;");
+                $select_statement->execute(array($product_supplier));
+                $supplier_id = $select_statement->fetch();
+
+
             }
 
             $this->close_connection();

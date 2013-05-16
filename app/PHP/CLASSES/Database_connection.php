@@ -3,8 +3,8 @@
 
 		private $db_host =  "mysql:host=localhost;";
 		private $db_name = "dbname=IIS_DB";
-		private $db_user = "student1";
-		private $db_pass = "password";
+		private $db_user = "root";
+		private $db_pass = "";
         protected $db_holder;
 
         protected function open_connection() {

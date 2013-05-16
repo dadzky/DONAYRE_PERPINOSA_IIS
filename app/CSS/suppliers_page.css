@@ -1,0 +1,8 @@
+#suppliers_main_container_div {
+    background: #f5f5f5;
+    padding: 10px;
+}
+
+input[type = "reset"] {
+    float: right;
+}

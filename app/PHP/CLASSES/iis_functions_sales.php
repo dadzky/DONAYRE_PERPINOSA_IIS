@@ -1,6 +1,6 @@
 <?php
 
-    include "database_connection.php";
+    include "Database_connection.php";
     
     class Iis_functions_sales extends Database_connection {
         /*------------FOR TRANSACTIONS-----------*/
