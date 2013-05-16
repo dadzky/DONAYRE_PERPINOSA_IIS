@@ -22,9 +22,17 @@
     position: relative;
 }
 
-#display_products_table_tbody img {
-    width: 150px;
-    height: 150px;
+#products_to_display_loading {
+    text-align: center;
+    top: 40%;
+    margin-left: 15%;
+    z-index: 1000;
+    position: fixed;
+}
+
+#products_to_display_loading img {
+    width: 90px;
+    height: 90px;
     margin: 0 auto;
 }
 

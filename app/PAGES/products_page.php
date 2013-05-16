@@ -15,6 +15,7 @@
                     <input type = "text" id = "search_product_input_field" class = 'search-query' placeholder = "Search product here" />
                     <select id = "display_product_selected_letter" class = "span1"><option>all</option></select>
                 </div><!-- ========  Product actions div ends ======== -->
+                <div id = "products_to_display_loading"><img id = "loading_image" src = "../CSS/images/loading_image.gif" /></div><!--  products to display loading ends -->
                 <table id = "display_products_table" class = "table table-hover">
                     <thead>
                         <tr>
@@ -32,12 +33,9 @@
                             </th>
                         </tr>
                     </thead>
-                    <tbody id = "display_products_table_tbody">
-                        <tr>
-                            <td colspan = "5"><img id = "loading_image" src = "../CSS/images/loading_image.gif" /></td>
-                        </tr>
-                    </tbody>
+                    <tbody id = "display_products_table_tbody"></tbody>
                 </table>
+
             </div><!-- ======= display products div ends ======= -->
             <div id = "add_product_div">
                 <h4>Add Product here:</h4>

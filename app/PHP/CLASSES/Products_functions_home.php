@@ -1,6 +1,6 @@
 <?php
 
-    include_once "database_connection.php";
+    include_once "Database_connection.php";
     class Products_functions_home extends Database_connection {
 
         function check_if_product_to_add_already_exist($product_name, $product_id) {

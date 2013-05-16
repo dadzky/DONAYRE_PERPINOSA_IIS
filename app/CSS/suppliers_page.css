@@ -1,0 +1,20 @@
+#suppliers_main_container_div {
+    background: #f5f5f5;
+    padding: 10px;
+}
+
+#add_suppliers_div {
+    display: none;
+    width: 300px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+input[type = "reset"] {
+    float: right;
+}
+
+#add_suppliers_button {
+    float: left;
+}
+
