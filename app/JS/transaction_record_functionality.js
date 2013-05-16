@@ -3,12 +3,19 @@ $(function(){
 	displayPager();
     displayBarGraph();
 
+    /*--------------FOR SEARCHING TRANSACTION RECORD------------*/
+    $('#searchBy_ul li a').click(function(){
+        $('#searchBy_btn').html($(this).html()+"<span class='caret'></span>");
+        $('#searchBy_input').val($(this).find('input').val());
+        var toSearch = $('#search_record').val();
+        var searchBy = $(this).find('input').val();
+        searchRecords(toSearch,searchBy);
+        displayPager();
+    })
+
 	$('#pageLimit_form').submit(function(){
         var toSearch = $('#search_record').val();
-        var searchBy = $('#searchBy_select').val();
-        if(searchBy=="employee" && searchBy != ""){
-            searchBy = $('#searchByName_select').val();
-        }
+        var searchBy = $('#searchBy_input').val();
 		var regextInt = /^[0-9]+$/;
 		var pageLimit = parseInt($('#pageLimit').val());
 
@@ -31,49 +38,18 @@ $(function(){
     /*---search---*/
     $('#search_record').keyup(function(){
         var toSearch = $('#search_record').val();
-        var searchBy = $('#searchBy_select').val();
-        if(searchBy=="employee"){
-            searchBy = $('#searchByName_select').val();
-        }
-        searchRecords(toSearch,searchBy);
-        displayPager();
-    });
-
-    $('#searchBy_select').change(function(){
-        var toSearch = $('#search_record').val();
-        var searchBy = $('#searchBy_select').val();
-        if(searchBy=="employee" && searchBy != ""){
-            searchBy = $('#searchByName_select').val();
-        }
-        if($(this).val() == 'employee'){
-            $('#searchByName_select').show();
-        }else {
-            $('#searchByName_select').hide();
-        }
-        searchRecords(toSearch,searchBy);
-        displayPager();
-    });
-
-    $('#searchByName_select').change(function(){
-        var toSearch = $('#search_record').val();
-        var searchBy = $('#searchBy_select').val();
-        if(searchBy=="employee" && searchBy != ""){
-            searchBy = $('#searchByName_select').val();
-        }
+        var searchBy = $('#searchBy_input').val();
         searchRecords(toSearch,searchBy);
         displayPager();
     });
 
 	/*----paganation-----*/
 	$('.pagination').on('click','li a',function(){
-        var searchBy = $('#searchBy_select').val();
-        if(searchBy=="employee" && searchBy != ""){
-            searchBy = $('#searchByName_select').val();
-        }
 		$('.pagination li').removeClass('active');
 		var page = parseInt($(this).html());
 		var parentLI=$(this).context.parentNode;
         var toSearch = $('#search_record').val();
+        var searchBy = $('#searchBy_input').val();
 
 		if(page!=0){
 			$('#currentPage').val(page-1);
@@ -88,10 +64,7 @@ $(function(){
 	})
 
 	$('.pagination').on('click','button',function(){
-        var searchBy = $('#searchBy_select').val();
-        if(searchBy=="employee" && searchBy != ""){
-            searchBy = $('#searchByName_select').val();
-        }
+        var searchBy = $('#searchBy_input').val();
         var toSearch = $('#search_record').val();
 		var pageBtn = $(this).text();
 		var currentPage = parseInt($('#currentPage').val());
@@ -172,10 +145,7 @@ function displayTransactionRecords(){
 
 function displayPager(){
     var toSearch = $('#search_record').val();
-    var searchBy = $('#searchBy_select').val();
-    if(searchBy=="employee" && searchBy != ""){
-        searchBy = $('#searchByName_select').val();
-    }
+    var searchBy = $('#searchBy_input').val();
 	var pageLimit = parseInt($('#pageLimit').val());
 	var currentPage = parseInt($('#currentPage').val())+1;
 	var obj = {pageLimit:pageLimit, toSearch:toSearch, searchBy:searchBy};

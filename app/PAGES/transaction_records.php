@@ -6,23 +6,31 @@
     </head>
     <body>
         <div id = "transaction_record_wrapper_div">
-            <h2>Transaction Records</h2>
+            <h2 id='transaction_record_title_h2'>Transaction Records</h2>
             <div id='pager_info_div'>
-                <input type='text' id='search_record' class='input-large search-query' placeholder='Search record' />
-                <select id='searchBy_select' class='span2'>
-                    <option value='p.product_name'>Product Name</option>
-                    <option value='employee'>Employee Name</option>
-                    <option value='t.transaction_date'>Date</option>
-                </select>
-                <select  id='searchByName_select' class='span2'>
-                    <option value='e.firstname'>First Name</option>
-                    <option value='e.lastname'>Last Name</option>
-                 </select>
+                <div class='input-prepend' >
+
+                    <!-- start experiment-->
+                    <div class='btn-group'>
+                        <input type='hidden' id='searchBy_input' value='t.transaction_date'/>
+                        <button type='button' id='searchBy_btn' class='btn dropdown-toggle' data-toggle='dropdown'>
+                            Date &nbsp;<span class='caret'></span>
+                        </button>
+                        <ul class='dropdown-menu' id='searchBy_ul'>
+                            <li><a href='#' tabindex="-1"> Date <input type='hidden' value='t.transaction_date' /></a></li>
+                            <li><a href='#' tabindex="-1"> Product Name <input type='hidden' value='p.product_name' /></a></li>
+                            <li><a href='#' tabindex="-1"> First Name <input type='hidden' value='e.firstname' /></a></li>
+                            <li><a href='#' tabindex="-1"> Last Name <input type='hidden' value='e.lastname' /></a></li>
+                        </ul>
+                    </div>
+                    <!-- end experiment-->
+                    <input type='text' id='search_record' class='input-xlarge' placeholder='Search record' />
+                </div>
                 <form id='pageLimit_form'>               
-                    PageLimit:                
+                    PageLimit :
                     <input type='text' id='pageLimit' class='input-small' value='2' />
                 </form>                          
-                Page <span class='page_number'>1</span> out of <span class='max_page'></span>      
+                <span class='label label-info'>Page <span class='page_number'>1</span> out of <span class='max_page'></span></span>
                 <img id = 'loading_img' src='../CSS/img_tbls/loading.gif' alt='loading'/>             
             </div><!--page_info_div-->
                
@@ -55,8 +63,9 @@
         <!-- ========= IMPORTS =======-->
         <script src = "../JS/jquery-1.9.1.min.js"></script>
         <script src = "../JS/jquery-ui-1.10.2.min.js"></script>
-        <script src = "../JS/transaction_record_functionality.js"></script>
+        <script src = "../JS/bootstrap.min.js"></script>
         <script src = "../JS/jqBarGraph.js"></script>
+        <script src = "../JS/transaction_record_functionality.js"></script>
 
     </body>
 </html>

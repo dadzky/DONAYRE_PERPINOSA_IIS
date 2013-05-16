@@ -246,6 +246,7 @@ function saveTransaction(){
             	$(this).remove();
             });
 			$('#cash_in_hand_input').attr('readonly','readonly').val("");
+            $('#payment_tbody tr th:first').html('&#8369; 00.00');
 			$('#product_to_transact_form input[type=text]').val("");
             $('#products_to_transact_tbody tr').css({'text-decoration':'none'});
             totalPayment = 0;

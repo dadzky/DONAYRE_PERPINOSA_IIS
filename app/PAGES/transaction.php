@@ -26,7 +26,7 @@
             <span class = 'logout_span label label-important' >[<a id ='logout_a' href = 'logout.php'>LOG OUT</a>]</span>
         </div>
         <div id = "transaction_wrapper_div">
-            <p id='cashier_p' class='label label-info'>Cashier:</p> <span id='cashier_info_span' class='text text-info'> Sample Sample</span>
+            <p id='cashier_p' class='label label-info'>Cashier:</p> <span id='cashier_info_span' class='text text-info'> <?php  echo ucwords($_SESSION['employee_name']) ?></span>
             <span id='date_span'>
                 <p class='label label-info'>Date | Time:</p> <span class='text text-info text-right'></span>
             </span>

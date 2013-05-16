@@ -38,17 +38,23 @@ body{
 #product_quantity,#product_code{
     height: 50px;
     padding-left: 20px;
-    font-size: 20px;
+    font-size: 25px;
     font-weight: bolder;
     font-family: Arial, sans-serif;
+    text-align: center;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius:0;
 }
 #product_code{
+
     -moz-border-top-left-radius: 20px;
     -webkit-border-top-left-radius: 20px;
     border-top-left-radius: 20px;
     -moz-border-top-right-radius: 20px;
     -webkit-border-top-right-radius: 20px;
     border-top-right-radius: 20px;
+
 }
 #product_quantity{
     -moz-border-bottom-left-radius: 20px;
@@ -108,14 +114,14 @@ body{
     -webkit-border-bottom-left-radius:10px; 
     -o-border-bottom-left-radius:10px;  
 }
-#products_to_transact_tbody{
-	cursor:url(img_tbls/shopping-cart.png), -moz-zoom-in;
-}
+
 #shopping_list_table{
 	display:none;
 }
 #shopping_list_table thead tr{
-    background: -moz-linear-gradient(top, #ccc,#fff);
+    background: -moz-linear-gradient(top, #fff,#ccc);
+    background: -webkt-linear-gradient(top, #ccc,#fff);
+    background: -o-linear-gradient(top, #ccc,#fff);
 }
 #shopping_list_total_tfoot{
 	background-color: #DDD;
