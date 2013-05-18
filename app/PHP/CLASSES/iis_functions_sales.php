@@ -128,7 +128,7 @@
                     $recLength = 1;
                     while($rec = $stmt2->fetch()){
                         $records .= "<tr >";
-                        $records .= "<td>".$rec[0]."</td>";
+                        $records .= "<td><i class='icon-time'></i> ".$rec[0]."</td>";
                         $records .= "<td>".ucwords($rec[1])."</td>";
                         $records .= "<td>".$rec[2]."</td>";
                         $records .= "<td>".$rec[3]."</td>";
@@ -139,7 +139,7 @@
                     }
 
                     echo "<tr><th rowspan=".$recLength.">".$date[0]."</th></tr>".$records;
-                    echo "<tr class='info totalIncome_tr'><td colspan='5'>Daily Total Income </td><td>&#8369; ".money_format('%!.2n',$totalIncome)."</td></tr>";
+                    echo "<tr class='info totalIncome_tr'><td colspan='5'>Daily Total Income <i class='icon-hand-right'></i></td><td>&#8369; ".money_format('%!.2n',$totalIncome)."</td></tr>";
                     
                 }
 
@@ -232,6 +232,7 @@
                             LIMIT $currentPage,$pageLimit";
                 $stmt1 = $this->db_holder->prepare($sql1);
                 $stmt1 -> execute(array($toSearch));
+                $found = false;
                 while($transaction = $stmt1->fetch(PDO::FETCH_ASSOC)){
 
                     $records = "";
@@ -259,15 +260,18 @@
                         $records .= "</tr>";
                         $recLength++;
                         $totalIncome = $totalIncome+$rec[4];
+                        $found = true;
                     }
+                
                     echo "<tr><th rowspan=".$recLength.">".$transaction['tdate']."</th></tr>".$records;
-                    echo "<tr class='info totalIncome_tr'><td colspan='5'>Daily Total Income </td><td>&#8369; ".money_format('%!.2n',$totalIncome)."</td></tr>";
+                    echo "<tr class='info totalIncome_tr'><td colspan='5'>Daily Total Income <i class='icon-hand-right'></i></td><td>&#8369; ".money_format('%!.2n',$totalIncome)."</td></tr>";
                 }
 
-            echo "<span class='text-error'><b>No Records Found!</b></span>";
-
-
             $this->close_connection();
+
+            if(!$found){
+                 echo "<tr class='error'><td colspan='6'><span class='text-error'><i class='icon-minus-sign'></i><strong>No Records Found!</strong></span></td></tr>";
+            }
 
         }
         /*-----------END OF TRANSACTION RECORDS---------*/

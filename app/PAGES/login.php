@@ -18,16 +18,12 @@
         <link rel = "shortcut icon" href = "../CSS/images/IIS%20logos/iis0.jpg" />
         <link rel = "stylesheet" href = "../CSS/includes_all_css_files.css" />
     </head>
-    <body>
+    <body id='login-body'>
         <div id = "iis_header_div" class = "container-fluid">
             <div id = "system_name_div">
-                <h2>
-                    <span>I</span><i class='icon-circle-arrow-right'></i>
-                    <span>I</span>NVENTORY
-                    <span>S</span>YSTEM
-                </h2>
+                <img src='../CSS/images/systemName.png' alt='I Inventory System' />
             </div>
-            <button id = "main_log_in_button" class = "btn btn-primary btn-large">LOG-IN</button>
+            <button id = "main_log_in_button" class = "btn btn-info">LOG-IN</button>
 
             <div id='login_as_div' class="alert alert-info">
                 <div id = "arrow_div"></div>
@@ -67,15 +63,16 @@
                                 <li> <a href="Javascript:void(0)" class='sample6'>sample6 &nbsp;&nbsp;<i></i> </a> </li>
                             </ul>
                         </div>
-                        <div id='right_sidebar_div' class="span10">
+                        <div id='right_sidebar_div' class="span7">
 
                         </div>
+                        <div id='image_branch_location_span' ></div>
                     </div>
                 </div>
             </div> <!-- ======= iis related content div ends ======= -->
 
             <div id = "log_in_div">
-                <p id = "logo_p"><img src = "../CSS/images/IIS%20logos/iis0.jpg"> <span> WEW Alinayre's S - Market</span></p>
+                <p id = "logo_p"><img src = "../CSS/images/IIS%20logos/iis0.jpg"> <span>Soon Market</span></p>
                 <span id = "close_log_in_options_span" title = "close"><img src = "../CSS/images/close_icon.png"></span>
                 <form id = "log_in_form" action = "login.php" method = "POST">
                     <input type = "hidden" name = "log_in_as" id = "log_in_as" />

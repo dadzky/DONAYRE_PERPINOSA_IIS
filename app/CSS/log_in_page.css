@@ -1,13 +1,17 @@
+
+#login-body{
+}
 #main_container_div {
     height: 700px;
     width:1000px;
     padding: 10px;
     margin:0 auto;
-    background: #ddf1f9;
+    background: #ffffff;
     border-radius:10px;    
 }
 
 /*--center content---*/
+
 #slide_imgs{
     border:1px solid;
 }
@@ -17,13 +21,15 @@
 }
 #main_log_in_button{
     float:right;
-    margin-top:-60px;
+    margin-top:-40px;
 }
 #login_as_div{
     width: 180px;
     float:right;
     -webkit-float: right;
+    -moz-float: right;
     display:none;
+
 }
 .log_in_option{
     margin-left: 2px;
@@ -121,16 +127,19 @@
 
 /*---abouts---*/
 
-#right_sidebar_div{
-    background-image: url("images/bgtest2.jpg");
+#right_sidebar_div .branch_info{
     background-position: right;
     background-repeat: no-repeat;
-    height: 300px;
+    height: 290px;
+    margin-right:0;
 }
-#right_sidebar_div:hover{
-    background-image: url("images/bgtest3.jpg");
-    background-position: right;
-    background-repeat: no-repeat;
+#image_branch_location_span{
+    width: 228px;
+    height:250px;
+    float:right;
+    margin-left: -1px;
+    background-image:url(../CSS/images/grocerystore1.jpg);
+
 }
 
 .branch_info{
@@ -147,7 +156,7 @@
     left: 95%;
     position: absolute;
     -webkit-position: absolute;
-    margin-top: -25px;
+    margin-top: -15px;
     transform: rotate(30deg);
     -webkit-transform: rotate(45deg);
     -o-transform: rotate(45deg);

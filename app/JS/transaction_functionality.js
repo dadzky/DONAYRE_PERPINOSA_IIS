@@ -21,6 +21,8 @@ $(function(){
 	 $('#shopping_list_tbody').on('blur','input',function(){
 	 	var regexInt = /^[0-9]+$/;
 	 	var newQuantity = $(this).val();
+        var cashInHand = parseFloat($('#cash_in_hand_input').val());
+        var newChange = 0;
 	 	if(regexInt.test(newQuantity) && newQuantity > 0){
 	 		var row_id = $('#cell_id').val();
 		 	var cell_id = document.getElementById(row_id).getElementsByTagName('td')[2];
@@ -38,18 +40,23 @@ $(function(){
 			$('#edited_quantity').removeClass('error');
 			$('#payment_tbody tr th:first').html("&#8369; "+totalPayment2);
             totalPayment = parseFloat(totalPayment);
+            if(regexInt.test(newChange) && newChange!=0){
+                newChange = cashInHand-totalPayment;
+                newChange = newChange.toFixed(2);
+            }
+            $('#payment_tbody tr th:last').html("&#8369; "+changeToMoneyFormat(newChange));
 	 	}else{
 	 		$('#edited_quantity').css({"border-color":"red", "box-shadow":"0 0 1px 2px pink", "color":"#f00"});
 	 	}
 
 	 })
-	 /*----------------------Deleting Item on the shopping-------------*/
+	 /*----------------------Removing Item on the shopping-------------*/
 	 $('#shopping_list_tbody').on('click','th img',function(){
 	 	var row_id = $(this).context.parentNode.parentNode.parentNode.id;
         var selectedProductId = row_id.split("_");
         var productIDindex = $.inArray(selectedProductId[3], selectedProduct_ID);//$.inArray => used to determine the numeric index of a particular array element
-	 	console.log(selectedProduct_ID[0] +" - "+ selectedProduct_ID[1] + " => " + selectedProductId[3]);
-	 	console.log(productIDindex);
+	 	var cashInHand = parseFloat($('#cash_in_hand_input').val());
+        var newChange = 0;
 	 	$('#'+row_id).addClass('error');
 	 	$('#dialog_div').html('Remove From Product List');
 	 	$('#dialog_div').dialog({
@@ -65,12 +72,19 @@ $(function(){
                     subTotal = subTotal.toFixed(2);
 				 	totalPayment = totalPayment - subTotal
                     totalPayment = totalPayment.toFixed(2);
+                    newChange = cashInHand - totalPayment;
+                    newChange = newChange.toFixed(2);
 				 	$('#shopping_list_total_tfoot').find('td:last span').html(changeToMoneyFormat(totalPayment));
 				 	$('#'+row_id).remove();
 				 	$('#'+row_id).removeClass('error');
                     selectedProduct_ID.splice(productIDindex,1); // removing id from array of product IDs
 				 	$('#tr_transact_search_'+row_id.substring(15)).css('text-decoration','none');
     				$('#payment_tbody tr th:first').html("&#8369; "+changeToMoneyFormat(totalPayment));
+    				if(newChange > 0){
+                    	$('#payment_tbody tr th:last').css('color','#000').html("&#8369; "+changeToMoneyFormat(newChange));
+               		}else{
+			 			$('#payment_tbody tr th:last').css('color','#f00').html("&#8369; 00.00");
+               		}
                     totalPayment = parseFloat(totalPayment); //to make totalPayment a floating point number                   
 				 	$(this).dialog('close');
 				},
@@ -110,12 +124,18 @@ $(function(){
 			 	$('#payment_btn').attr('disabled','disabled');
 			 }
 		}else{
-			$(this).css('color','#f00');
+			$('#payment_tbody tr th:last').css('color','#f00').html("&#8369; 00.00");
 			$('#payment_btn').attr('disabled','disabled');
 		}
-	 });
+	 }).click(function(){
+           var payment = parseFloat($(this).val());
+           if(payment == 0){
+               $(this).val("");
+           }
+       });
 
 })
+
  var totalPayment = 0; //Global variable for the total payment of the products bought...
 
  var selectedProduct_ID = new Array(); //Global array variable used to store all product id that has been already selected...
@@ -126,6 +146,8 @@ $(function(){
  	var existMsg_error = "<h4>Oops..!</h4>That product has already been selected";
  	var inputsMsg_error = "<h4>Oops..!</h4>Please Dont Leave Blanks<br/>Quantity Must Be a Number Greater than Zero (0)";
  	var notfoundMsg_error = "<h4>Oh Crap..!</h4>Unidentified Barcode!";
+    var cashInHand = parseFloat($('#cash_in_hand_input').val());
+    var newChange = 0;
  	var barCode = $('#product_code').val();
  	var quantity = $('#product_quantity').val();
 	var obj = {barCode:barCode};
@@ -141,6 +163,11 @@ $(function(){
 					if(checkIfProductHasntSelected(prodObj.prodID)){
 						displayToShoppingList(prodObj.prodID, prodObj.prodName, prodObj.prodPrice ,prodObj.prodUnit, quantity);
 						selectedProduct_ID.push(prodObj.prodID);
+                        if(cashInHand != 0){
+                            newChange = cashInHand - totalPayment;
+                            newChange = newChange.toFixed(2);
+                            $('#payment_tbody tr th:last').html("&#8369; "+changeToMoneyFormat(newChange));
+                        }
 						$('#default_alert_div').hide();
 						$('#alert_productExist_div').fadeOut();
 						$('#alert_error_msg_p').html("");
@@ -155,6 +182,7 @@ $(function(){
 					$('#default_alert_div').hide();
 					$('#success_alert_div').hide();
 					$('#alert_error_msg_p').html(notfoundMsg_error);
+                    $('#product_code').focus();
 					$('#alert_productExist_div').fadeIn();
 				}
 
@@ -207,7 +235,7 @@ function displayToShoppingList(prodId,prodName,prodPrice,prodUnit,productQuantit
 				"<td>&#8369; <span>"+subTotal+"</span></td>"+
 				"</tr>";
 	var tfoot = "<tr  class='totalpayment_tr'>"+
-				"<td colspan='5'>Total</td>"+
+				"<td colspan='5'>TOTAL &nbsp;&nbsp; <i class='icon-hand-right'></i></td>"+
 				"<td>&#8369; <span>"+totalPayment2+"</span></td>"+
 				"</tr>";
 	
@@ -215,9 +243,9 @@ function displayToShoppingList(prodId,prodName,prodPrice,prodUnit,productQuantit
 	$('#shopping_list_total_tfoot').html(tfoot);
 	$('#shopping_list_table').show('blind',1000);
     $('#product_quantity').val("");
-    $('#product_code').val("");
+    $('#product_code').val("").focus();
     $('#payment_tbody tr th:first').html("&#8369; "+totalPayment2);
-    $('#cash_in_hand_input').removeAttr('readonly');
+    $('#cash_in_hand_input').removeAttr('disabled');
 }
 
 function saveTransaction(){
@@ -240,17 +268,7 @@ function saveTransaction(){
         url: "../PHP/OBJECTS/transaction/saveTransaction.php",
         data: obj,
         success:function(data){
-        	$('#shopping_list_table').hide('blind',500);
-            $('#shopping_list_tbody tr').each(function( index ){
-            	if(index != 0)
-            	$(this).remove();
-            });
-			$('#cash_in_hand_input').attr('readonly','readonly').val("");
-            $('#payment_tbody tr th:first').html('&#8369; 00.00');
-			$('#product_to_transact_form input[type=text]').val("");
-            $('#products_to_transact_tbody tr').css({'text-decoration':'none'});
-            totalPayment = 0;
-            selectedProduct_ID.splice(0,selectedProduct_ID.length);
+        	window.location.href = '../PAGES/transaction.php';
         },
         error:function(data){
             alert("Error on saving transaction => "+ data);
@@ -259,12 +277,12 @@ function saveTransaction(){
 }
 
 function markSelectedProduct(prodID){
-	var rowID = "tr_to_transact_"+prodID;
-	$('#'+rowID).addClass('info');
-	var markedProduct=setInterval(function(){
-		$('#'+rowID).removeClass('info');
-		clearInterval(markedProduct);
-	},3000);
+    var rowID = "tr_to_transact_"+prodID;
+    $('#'+rowID).addClass('info');
+    var markedProduct=setInterval(function(){
+        $('#'+rowID).removeClass('info');
+        clearInterval(markedProduct);
+    },3000);
 }
 
 function confirmationDialogForTransaction(){

@@ -1,23 +1,8 @@
 
 #iis_header_div {
     height: 50px;
-    background: -moz-linear-gradient(bottom,deepskyblue,dodgerblue);
-    background: -webkit-linear-gradient(bottom,deepskyblue,dodgerblue);
-    background: -o-linear-gradient(bottom,deepskyblue,dodgerblue);
-    background: linear-gradient(bottom,deepskyblue,dodgerblue);
+    background: #000;
     padding: 5px;
-}
-
-#system_name_div {
-    font-weight: bolder;
-    color: #003399;
-    font-family: cursive;
-}
-
-#system_name_div span {
-    color: #0000ff;
-    font-size: 45px;
-    font-family: Consolas;
 }
 
 #buttons_div {

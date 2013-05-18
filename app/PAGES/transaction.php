@@ -18,17 +18,15 @@
         <div id='header_div'>
             <div id = "system_name_div">
                 <h2>
-                    <span>I</span>-
-                    <span>I</span>NVENTORY
-                    <span>S</span>YSTEM
+                    <img src='../CSS/images/systemName.png' alt='Inventory System' />
                 </h2>
             </div>
-            <span class = 'logout_span label label-important' >[<a id ='logout_a' href = 'logout.php'>LOG OUT</a>]</span>
+            <span class = 'logout_span label label-important' >[<a id ='logout_a' href = 'logout.php'>LOG OUT</a>]  <i class='icon-circle-arrow-right'></i></span>
         </div>
         <div id = "transaction_wrapper_div">
-            <p id='cashier_p' class='label label-info'>Cashier:</p> <span id='cashier_info_span' class='text text-info'> <?php  echo ucwords($_SESSION['employee_name']) ?></span>
+            <p id='cashier_p' class='label label-info'><i class='icon-user'></i> Cashier:</p> <span id='cashier_info_span' class='text text-info'> <?php  echo ucwords($_SESSION['employee_name']) ?></span>
             <span id='date_span'>
-                <p class='label label-info'>Date | Time:</p> <span class='text text-info text-right'></span>
+                <p class='label label-info'><i class='icon-calendar'></i> Date | <i class='icon-time'></i> Time:</p> <span class='text text-info text-right'></span>
             </span>
             <hr/><hr/>
 
@@ -64,7 +62,7 @@
                     <tbody id = 'payment_tbody'>
                         <tr>
                             <th>&#8369; 00.00</th>
-                            <th><input id = 'cash_in_hand_input' type='text' class='input-mini' readonly/></th>
+                            <th><input id = 'cash_in_hand_input' type='text' class='input-mini' value='00.00' disabled/></th>
                             <th>&#8369; 00.00</th>
                         </tr>       
                     </tbody>
@@ -85,7 +83,7 @@
                         <th>Subtotal</th>
                     </tr>
                 </thead>
-                <tbody id='shopping_list_tbody'><tr><th rowspan='1000'>Product List</th></tr></tbody>
+                <tbody id='shopping_list_tbody'><tr><th rowspan='1000'><i class='icon-th-list'></i> Product List</th></tr></tbody>
                 <tfoot id='shopping_list_total_tfoot'></tfoot>
 
             </table>

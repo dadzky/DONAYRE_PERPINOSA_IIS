@@ -7,14 +7,24 @@
 .transaction_record_tbl{
 	width: 90%;
 	margin:30px auto;
+    background: #fff;
+    position:relative;
+}
+.transaction_record_tbl thead{
+    background: -webkit-linear-gradient(top, #ffffff,#cccccc);
+    background: -moz-linear-gradient(top, #ffffff,#cccccc);
+    background: -o-linear-gradient(top, #ffffff,#cccccc);
 }
 .totalIncome_tr{
 	font-weight: bold;
 	font-family: Arial, sans-serif;
 }
 #pager_info_div{
-	padding:  10px 10px;
-	background-color: #ddd;
+	padding:  13px 10px 10px 10px;
+	background: -webkit-linear-gradient(top,#ccc,#ffffff,#ccc);
+	background: -moz-linear-gradient(top,#ccc,#ffffff,#ccc);
+	background: -o-linear-gradient(top,#ccc,#ffffff,#ccc);
+	background: linear-gradient(top,#ccc,#ffffff,#ccc);
 	-moz-border-radius: 13px
 	-webkit-border-radius: 13px;
 	-o-border-radius: 13px;
@@ -22,6 +32,11 @@
 }
 #pageLimit_form{
 	float:right;
+}
+#pageLimit_form span{
+	font-family: Cursive,sans-serif;
+	font-size: 15px;
+	line-height: 25px;
 }
 #pagination_content{
 	background-color: #ddd;
@@ -59,13 +74,23 @@
 	-o-border-bottom-right-radius: 5px;
 	border-bottom-right-radius: 5px;
 }
+#currentPage_info_span{
+	margin-top: -22px;
+	margin-right: 10px;
+	font-size: 13px;
+	font-family: Cursive,sans-serif;
 
+}
 #graph-sales-container-div{
 	width: 700px;
 	height: 450px;
 	margin:35px auto 0 auto;
 	border:1px solid #0088cc;
 	padding: 0 30px;
+	background-color: #ddf1f9;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-o-border-radius: 10px;
 	display: none;
 }
 #graph-sales-div{
@@ -74,32 +99,18 @@
 	-o-border-radius: 5px;
 	border-radius: 5px;
 	margin:0 auto 100px auto;
-	background-color: #eee;
+	padding:0 4px ;
+	background-color: deepskyblue;
 }
 #graph-toggle-div{
-	width:15px;
-	height:15px;
-	border:1px solid;
+	cursor:pointer;
 	float:right;
-	margin-top: -48px;
 	margin-right: 20px;
 	background: -moz-linear-gradient(top left,#0088cc,#0044cc);
 	background: -webkit-linear-gradient(top left,#0088cc,#0044cc);
 	background: -o-linear-gradient(top left,#0088cc,#0044cc);
-	-moz-transform:rotate(45deg);
-	-webkit-transform:rotate(45deg);
-	-o-transform:rotate(45deg);
-	transform:rotate(45deg);
-	text-align: center;
+}
 
-}
-#graph-toggle-div:hover{
-	cursor:pointer;
-	-moz-transform:rotate(0deg);
-	-webkit-transform:rotate(0deg);
-	-o-transform:rotate(0deg);
-	transform:rotate(0deg);
-}
 #bargraph_title_p{
     text-align: center;
 }
@@ -113,9 +124,12 @@
     background-color: inherit;
 }
 
-#loading_img{
-	margin-left: 80px;
-	display: none;
+#loading_div{
+	width:100px;
+	height: 20px;
+	text-align: center;
+	margin: 0 auto -30px auto;
+	padding: 10px;
 }
 #searchBy_select{
     margin-top:10px;
@@ -123,6 +137,9 @@
 #searchByName_select{
     display:none;
     margin-top:10px;
+}
+#searchBy_btn{
+	width: 150px;
 }
 #transaction_record_title_h2{
     margin-left:15px;

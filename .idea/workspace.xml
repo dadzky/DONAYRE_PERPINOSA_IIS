@@ -2,67 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.metadata/.lock" afterPath="$PROJECT_DIR$/.metadata/.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CSS/images/back_icon.png" afterPath="$PROJECT_DIR$/app/CSS/images/back_icon.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CSS/images/down_icon.png" afterPath="$PROJECT_DIR$/app/CSS/images/down_icon.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CSS/images/loading_image1.gif" afterPath="$PROJECT_DIR$/app/CSS/images/loading_image1.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.safetable/org.eclipse.core.resources" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.safetable/org.eclipse.core.resources" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.metadata/.mylyn/repositories.xml.zip" afterPath="$PROJECT_DIR$/.metadata/.mylyn/repositories.xml.zip" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.jdt.launching/.install.xml" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.jdt.launching/.install.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.root/1.tree" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.root/1.tree" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PHP/CLASSES/Database_connection.php" afterPath="$PROJECT_DIR$/app/PHP/CLASSES/Database_connection.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/IIS_DB.sql" afterPath="$PROJECT_DIR$/db/IIS_DB.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.jdt.ui/OpenTypeHistory.xml" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.jdt.ui/OpenTypeHistory.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PHP/CLASSES/Products_functions_home.php" afterPath="$PROJECT_DIR$/app/PHP/CLASSES/Products_functions_home.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.jdt.ui/QualifiedTypeNameHistory.xml" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.jdt.ui/QualifiedTypeNameHistory.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PHP/CLASSES/Suppliers_functions_home.php" afterPath="$PROJECT_DIR$/app/PHP/CLASSES/Suppliers_functions_home.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PHP/OBJECTS/SUPPLIERS/add_supplier.php" afterPath="$PROJECT_DIR$/app/PHP/OBJECTS/SUPPLIERS/add_supplier.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.jst.j2ee.ui/dialog_settings.xml" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.jst.j2ee.ui/dialog_settings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.ui.intro/dialog_settings.xml" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.ui.intro/dialog_settings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.ui.workbench/dialog_settings.xml" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.ui.workbench/dialog_settings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.root/.indexes/history.version" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.root/.indexes/history.version" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CSS/includes_all_css_files.css" afterPath="$PROJECT_DIR$/app/CSS/includes_all_css_files.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.jdt.core/invalidArchivesCache" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.jdt.core/invalidArchivesCache" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.jdt.launching/libraryInfos.xml" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.jdt.launching/libraryInfos.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.jdt.core/nonChainingJarsCache" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.jdt.core/nonChainingJarsCache" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.core.resources.prefs" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.core.resources.prefs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.epp.usagedata.recording.prefs" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.epp.usagedata.recording.prefs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.jdt.core.prefs" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.jdt.core.prefs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.jdt.launching.prefs" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.jdt.launching.prefs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.jdt.ui.prefs" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.jdt.ui.prefs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.jst.j2ee.webservice.ui.prefs" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.jst.j2ee.webservice.ui.prefs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.mylyn.context.core.prefs" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.mylyn.context.core.prefs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.mylyn.monitor.ui.prefs" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.mylyn.monitor.ui.prefs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.team.cvs.ui.prefs" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.team.cvs.ui.prefs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.team.ui.prefs" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.team.ui.prefs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.ui.ide.prefs" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.ui.ide.prefs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.ui.prefs" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.ui.prefs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.ui.workbench.prefs" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.ui.workbench.prefs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CSS/product_page.css" afterPath="$PROJECT_DIR$/app/CSS/product_page.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/JS/products.js" afterPath="$PROJECT_DIR$/app/JS/products.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.root/.indexes/properties.index" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.root/.indexes/properties.index" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.root/.indexes/properties.version" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.root/.indexes/properties.version" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PHP/OBJECTS/SUPPLIERS/retrieve_all_suppliers.php" afterPath="$PROJECT_DIR$/app/PHP/OBJECTS/SUPPLIERS/retrieve_all_suppliers.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/JS/suppliers.js" afterPath="$PROJECT_DIR$/app/JS/suppliers.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CSS/log_in_page.css" afterPath="$PROJECT_DIR$/app/CSS/log_in_page.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/JS/log_in_page_functionality.js" afterPath="$PROJECT_DIR$/app/JS/log_in_page_functionality.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PAGES/login.php" afterPath="$PROJECT_DIR$/app/PAGES/login.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CSS/page_footer.css" afterPath="$PROJECT_DIR$/app/CSS/page_footer.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CSS/page_header.css" afterPath="$PROJECT_DIR$/app/CSS/page_header.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PAGES/page_header.html" afterPath="$PROJECT_DIR$/app/PAGES/page_header.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PAGES/transaction.php" afterPath="$PROJECT_DIR$/app/PAGES/transaction.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/JS/transaction_functionality.js" afterPath="$PROJECT_DIR$/app/JS/transaction_functionality.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CSS/transaction_page.css" afterPath="$PROJECT_DIR$/app/CSS/transaction_page.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/JS/transaction_record_functionality.js" afterPath="$PROJECT_DIR$/app/JS/transaction_record_functionality.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CSS/transaction_record_page.css" afterPath="$PROJECT_DIR$/app/CSS/transaction_record_page.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PAGES/transaction_records.php" afterPath="$PROJECT_DIR$/app/PAGES/transaction_records.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.epp.usagedata.recording/usagedata.csv" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.epp.usagedata.recording/usagedata.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.jdt.core/variablesAndContainers.dat" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.jdt.core/variablesAndContainers.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.metadata/version.ini" afterPath="$PROJECT_DIR$/.metadata/version.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.ui.workbench/workbench.xml" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.ui.workbench/workbench.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="IIS_PROJECT_HUB.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1368739537365" ignored="false" />
-    <file path="/login.php" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1368156208524" ignored="false" />
-    <file path="/log_in_page_functionality.js" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1368154703555" ignored="false" />
+    <file path="/Dummy.txt" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1368850273896" ignored="false" />
+    <file path="/login.php" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1368847465806" ignored="false" />
+    <file path="/log_in_page_functionality.js" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1368847756509" ignored="false" />
     <file path="/log_in_validation.php" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1367975625930" ignored="false" />
     <file path="/iis_functions_home.php" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1367975565194" ignored="false" />
-    <file path="/log_in_page.css" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1368156096817" ignored="false" />
+    <file path="/log_in_page.css" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1368847875928" ignored="false" />
     <file path="/products.js" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1368676543975" ignored="false" />
     <file path="$PROJECT_DIR$/../hotel_information_system/PHP/FUNCTIONS_HOME/database_connection.php" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1367901832408" ignored="false" />
     <file path="/products_page.php" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1368678564058" ignored="false" />
@@ -78,11 +40,11 @@
     <file path="/check_if_product_to_add_already_exist.php" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1368162450039" ignored="false" />
     <file path="/admins_page_functionality.js" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1368158934931" ignored="false" />
     <file path="/iis_functions_sales.php" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1367990221684" ignored="false" />
-    <file path="/transaction_record_functionality.js" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1368745580635" ignored="false" />
+    <file path="/transaction_record_functionality.js" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1368845993246" ignored="false" />
     <file path="/product_page.css" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1368676344401" ignored="false" />
     <file path="/page_footer.html" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1368113463997" ignored="false" />
-    <file path="/page_header.html" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1368158916038" ignored="false" />
-    <file path="/page_header.css" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1368157270097" ignored="false" />
+    <file path="/page_header.html" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1368844141423" ignored="false" />
+    <file path="/page_header.css" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1368844660395" ignored="false" />
     <file path="/suppliers_page.html" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1368158863433" ignored="false" />
     <file path="/suppliers_page.php" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1368602898631" ignored="false" />
     <file path="/check_bar_code.php" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1368590356165" ignored="false" />
@@ -104,11 +66,12 @@
     <file path="/includes_all_css_files.css" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1368602203727" ignored="false" />
     <file path="/retrieve_all_suppliers.php" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1368678890310" ignored="false" />
     <file path="/add_supplier.php" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1368678736935" ignored="false" />
-    <file path="/transaction_functionality.js" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1368739909157" ignored="false" />
-    <file path="/transaction_page.css" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1368740634076" ignored="false" />
-    <file path="/transaction.php" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1368745899054" ignored="false" />
-    <file path="/transaction_records.php" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1368745834981" ignored="false" />
-    <file path="/transaction_record_page.css" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1368741038876" ignored="false" />
+    <file path="/transaction_functionality.js" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1368850862412" ignored="false" />
+    <file path="/transaction_page.css" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1368848928873" ignored="false" />
+    <file path="/transaction.php" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1368850371226" ignored="false" />
+    <file path="/transaction_records.php" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1368846229911" ignored="false" />
+    <file path="/transaction_record_page.css" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1368846718795" ignored="false" />
+    <file path="/page_info.html" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1368847227607" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,28 +91,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="transaction_records.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/PAGES/transaction_records.php">
+      <file leaf-file-name="transaction_page.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/CSS/transaction_page.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="31" selection-start="1675" selection-end="1675" vertical-scroll-proportion="0.5251142">
+            <state line="117" column="57" selection-start="2777" selection-end="2777" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="transaction_record_functionality.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/JS/transaction_record_functionality.js">
+      <file leaf-file-name="transaction.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/PAGES/transaction.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="142" column="12" selection-start="4550" selection-end="4550" vertical-scroll-proportion="-7.8">
+            <state line="64" column="118" selection-start="2854" selection-end="2854" vertical-scroll-proportion="-6.25">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="transaction_record_page.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/CSS/transaction_record_page.css">
+      <file leaf-file-name="transaction_functionality.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/JS/transaction_functionality.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="127" column="18" selection-start="2667" selection-end="2667" vertical-scroll-proportion="0.0">
+            <state line="45" column="13" selection-start="2288" selection-end="2288" vertical-scroll-proportion="0.62780267">
               <folding />
             </state>
           </provider>
@@ -173,30 +136,31 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/CSS/employees_page.css" />
-        <option value="$PROJECT_DIR$/app/CSS/product_page.css" />
-        <option value="$PROJECT_DIR$/app/PAGES/products_page.php" />
-        <option value="$PROJECT_DIR$/app/PHP/OBJECTS/SUPPLIERS/add_supplier.php" />
-        <option value="$PROJECT_DIR$/app/PHP/CLASSES/Suppliers_functions_home.php" />
-        <option value="$PROJECT_DIR$/app/PHP/OBJECTS/SUPPLIERS/retrieve_all_suppliers.php" />
-        <option value="$PROJECT_DIR$/app/JS/products.js" />
         <option value="$PROJECT_DIR$/app/JS/suppliers.js" />
         <option value="$PROJECT_DIR$/app/PHP/CLASSES/Products_functions_home.php" />
+        <option value="$PROJECT_DIR$/app/PAGES/page_header.html" />
+        <option value="$PROJECT_DIR$/app/CSS/page_header.css" />
+        <option value="$PROJECT_DIR$/app/CSS/page_footer.css" />
         <option value="$PROJECT_DIR$/app/PHP/CLASSES/Database_connection.php" />
-        <option value="$PROJECT_DIR$/app/JS/transaction_functionality.js" />
-        <option value="$PROJECT_DIR$/app/CSS/transaction_page.css" />
-        <option value="$PROJECT_DIR$/app/CSS/transaction_record_page.css" />
         <option value="$PROJECT_DIR$/app/JS/transaction_record_functionality.js" />
-        <option value="$PROJECT_DIR$/app/PAGES/transaction.php" />
         <option value="$PROJECT_DIR$/app/PAGES/transaction_records.php" />
+        <option value="$PROJECT_DIR$/app/CSS/transaction_record_page.css" />
+        <option value="$PROJECT_DIR$/app/PAGES/page_info.html" />
+        <option value="$PROJECT_DIR$/app/PAGES/login.php" />
+        <option value="$PROJECT_DIR$/app/CSS/log_in_page.css" />
+        <option value="$PROJECT_DIR$/app/JS/log_in_page_functionality.js" />
+        <option value="$PROJECT_DIR$/app/CSS/transaction_page.css" />
+        <option value="$PROJECT_DIR$/app/PAGES/transaction.php" />
+        <option value="$PROJECT_DIR$/app/JS/transaction_functionality.js" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="y" value="52" />
-    <option name="width" value="1440" />
-    <option name="height" value="824" />
+    <option name="x" value="-1" />
+    <option name="y" value="-3" />
+    <option name="width" value="1442" />
+    <option name="height" value="908" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -224,7 +188,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -435,6 +398,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -481,14 +445,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="52" width="1440" height="824" extended-state="6" />
-    <editor active="true" />
+    <frame x="-1" y="-3" width="1442" height="908" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.241033" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2553802" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -564,114 +528,88 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/PAGES/products_page.php">
+    <entry file="file://$PROJECT_DIR$/app/CSS/log_in_page.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="100" selection-start="3663" selection-end="3679" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="137" column="13" selection-start="2222" selection-end="2222" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/PHP/CLASSES/Suppliers_functions_home.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="31" selection-start="753" selection-end="753" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+    <entry file="file://$PROJECT_DIR$/app/CSS/images/transactionrecords_title.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/JS/products.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="55" column="23" selection-start="2363" selection-end="2363" vertical-scroll-proportion="0.02245509">
-          <folding />
-        </state>
+    <entry file="file://$PROJECT_DIR$/app/CSS/images/show_icon.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/CSS/suppliers_page.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="78" selection-end="78" vertical-scroll-proportion="0.08810572">
-          <folding />
-        </state>
+    <entry file="file://$PROJECT_DIR$/app/CSS/images/shop3.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/JS/suppliers.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="22" selection-start="590" selection-end="590" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+    <entry file="file://$PROJECT_DIR$/app/CSS/images/shop1.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/CSS/product_page.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="131" column="17" selection-start="2377" selection-end="2377" vertical-scroll-proportion="0.73568285">
-          <folding />
-        </state>
+    <entry file="file://$PROJECT_DIR$/app/CSS/images/shop2.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/PHP/CLASSES/Products_functions_home.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="58" selection-start="2789" selection-end="2789" vertical-scroll-proportion="0.023291925">
-          <folding />
-        </state>
+    <entry file="file://$PROJECT_DIR$/app/CSS/images/computer_background.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/PHP/CLASSES/Database_connection.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="36" selection-start="187" selection-end="187" vertical-scroll-proportion="0.1369863">
-          <folding />
-        </state>
+    <entry file="file://$PROJECT_DIR$/app/CSS/images/close_icon1.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/PHP/CLASSES/Employees_functions_home.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+    <entry file="file://$PROJECT_DIR$/app/CSS/images/close_icon.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/PHP/OBJECTS/log_in_validation.php">
+    <entry file="file://$PROJECT_DIR$/app/CSS/images/bgtest3.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/CSS/images/bgtest2.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/JS/log_in_page_functionality.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="38" selection-start="910" selection-end="937" vertical-scroll-proportion="0.5479452">
-          <folding />
-        </state>
+        <state line="77" column="90" selection-start="3468" selection-end="3468" vertical-scroll-proportion="0.020463847" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/CSS/images/systemName.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/CSS/transaction_page.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="20" selection-start="1034" selection-end="1034" vertical-scroll-proportion="0.48932928">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/JS/transaction_functionality.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="248" column="66" selection-start="10219" selection-end="10219" vertical-scroll-proportion="0.63608086">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/CSS/transaction_record_page.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="127" column="18" selection-start="2667" selection-end="2667" vertical-scroll-proportion="0.0">
+        <state line="117" column="57" selection-start="2777" selection-end="2777" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/PAGES/transaction.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="20" selection-start="1901" selection-end="1901" vertical-scroll-proportion="-8.083333">
+        <state line="64" column="118" selection-start="2854" selection-end="2854" vertical-scroll-proportion="-6.25">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/JS/transaction_record_functionality.js">
+    <entry file="file://$PROJECT_DIR$/app/JS/transaction_functionality.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="142" column="12" selection-start="4550" selection-end="4550" vertical-scroll-proportion="-7.8">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/PAGES/transaction_records.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="31" selection-start="1675" selection-end="1675" vertical-scroll-proportion="0.5251142">
+        <state line="45" column="13" selection-start="2288" selection-end="2288" vertical-scroll-proportion="0.62780267">
           <folding />
         </state>
       </provider>

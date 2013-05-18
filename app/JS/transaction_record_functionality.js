@@ -92,7 +92,7 @@ $(function(){
 	$('#graph-toggle-div').click(function(){
 		$('#graph-sales-container-div').slideToggle(1000)
         displayBarGraph();;
-	});
+	}).tooltip('hide');
 
     $('#bargraph_Yr_option').on('change',function(){
         displayBarGraph();
@@ -100,7 +100,6 @@ $(function(){
 });
 
 function searchRecords(toSearch,searchBy){
-    $('#loading_img').show();
     var pageLimit = parseInt($('#pageLimit').val());
     var currentPage = parseInt($('#currentPage').val());
     currentPage = currentPage*pageLimit;
@@ -109,6 +108,9 @@ function searchRecords(toSearch,searchBy){
             type:"POST",
             url:"../PHP/OBJECTS/TRANSACTION_RECORD/searchTransactionRecords.php",
             data:obj,
+            beforeSend:function(){
+                $('#loading_div').show();
+            },  
             success:function(data){;
                 $('#transaction_record_tbody').html(data);
             },
@@ -116,13 +118,12 @@ function searchRecords(toSearch,searchBy){
                 alert("Error on searching transaction records => "+ data['status']+ " "+ data['statusText']);
             },
             complete:function(){
-                $('#loading_img').hide();
+                $('#loading_div').hide();
             }
         })
 }
 
 function displayTransactionRecords(){
-	$('#loading_img').show();
 	var pageLimit = parseInt($('#pageLimit').val());
 	var currentPage = parseInt($('#currentPage').val());
 	currentPage = currentPage*pageLimit;
@@ -131,14 +132,17 @@ function displayTransactionRecords(){
 			type:"POST",
 			url:"../PHP/OBJECTS/TRANSACTION_RECORD/displayTransactionRecords.php",
 			data:obj,
+            beforeSend:function(){
+                $('#loading_div').show();
+            },  
 			success:function(data){
 				$('#transaction_record_tbody').html(data);
 			},
 			error:function(data){
-				//alert("Error on displaying transaction records => "+ data['status']+ " "+ data['statusText']);
+				alert("Error on displaying transaction records => "+ data['status']+ " "+ data['statusText']);
 			},
 			complete:function(){
-				$('#loading_img').hide();
+                $('#loading_div').hide();
 			}
 		})	
 }
@@ -149,7 +153,6 @@ function displayPager(){
 	var pageLimit = parseInt($('#pageLimit').val());
 	var currentPage = parseInt($('#currentPage').val())+1;
 	var obj = {pageLimit:pageLimit, toSearch:toSearch, searchBy:searchBy};
-
 	$.ajax({
 		type: 'POST',
 		url: '../PHP/OBJECTS/TRANSACTION_RECORD/displayPager.php',
@@ -157,6 +160,9 @@ function displayPager(){
 		success:function(data){
 			var pagerContent = JSON.parse(data);
 			$('.pagination').html(pagerContent.pager);
+            if(pagerContent.n_pages == 0){
+                currentPage = 0;
+            }
 			$('.max_page').html(pagerContent.n_pages);
 			$('.page_number').html(currentPage);
             console.log(pagerContent.n_pages)
@@ -178,7 +184,7 @@ function displayBarGraph(){
     }
     if(yearSelected==null){
         yearSelected = currentDate.getFullYear();
-        $('#bargraph_title_p').html("<h2>MONTHLY INCOME</h2><h4>YEAR: <select id='bargraph_Yr_option'>"+ selectOptions +"</select></h4>");
+        $('#bargraph_title_p').html("<h2><img src='../CSS/images/monthlyIncomeTitle.png' alt='Monthly Income' /></h2><hr/><h4>YEAR: <select id='bargraph_Yr_option'>"+ selectOptions +"</select></h4><hr/>");
     }
     $('#bargraph_Yr_option').val(yearSelected);
 

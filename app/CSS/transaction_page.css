@@ -1,6 +1,14 @@
 body{
 	background: #ddf1f9;
 }
+
+#system_name_div {
+    font-weight: bolder;
+    color: #003399;
+    font-family: cursive;
+    width: 500px;
+}
+
 #header_div{
     height: 60px;
     background: -moz-linear-gradient(bottom,deepskyblue,dodgerblue);
@@ -10,18 +18,10 @@ body{
     padding: 5px;
 }
 
-#system_name_div {
-    font-weight: bolder;
-    color: #003399;
-    font-family: cursive;
-    width: 500px;
+#cashier_p, #cashier_info_span, #date_span, #date_span p{
+    font-size: 15px;
 }
 
-#system_name_div span {
-    color: #0000ff;
-    font-size: 45px;
-    font-family: Consolas;
-}
 
 #product_displayer_btn{
     margin-top: 10px;
@@ -81,10 +81,13 @@ body{
     margin-top:-250px;
     border-radius: 10px;
 }
+#payment_tbody tr th:last-child{
+    color:#f00;
+}
 #cash_in_hand_input{
     padding:0;
     border:0;   
-    border-bottom: 0.5px solid;
+    border-bottom: 1px solid;
     font-size: 15px;
     font-family: Arial, sans-serif;
     font-weight: bold;
@@ -104,7 +107,6 @@ body{
 	margin: 0 auto;
     padding: 30px 20px 80px 20px;
     background:#fff;
-    border: 1px #000 outset;
     -moz-border-bottom-right-radius:10px; 
     -webkit-border-bottom-right-radius:10px; 
     -o-border-bottom-right-radius:10px; 
@@ -119,10 +121,11 @@ body{
 	display:none;
 }
 #shopping_list_table thead tr{
-    background: -moz-linear-gradient(top, #fff,#ccc);
-    background: -webkt-linear-gradient(top, #ccc,#fff);
-    background: -o-linear-gradient(top, #ccc,#fff);
+    background: -moz-linear-gradient(top, #fff, #ccc);
+    background: -o-linear-gradient(top, #ccc, #fff);
+    background: -webkit-linear-gradient(top, #ccc, #fff);
 }
+
 #shopping_list_total_tfoot{
 	background-color: #DDD;
 }
@@ -140,7 +143,9 @@ body{
 	display:none;
 }
 .totalpayment_tr{
-	text-decoration: underline;
+    font-size: 20px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
 	color:#0088cc;
 }
 
