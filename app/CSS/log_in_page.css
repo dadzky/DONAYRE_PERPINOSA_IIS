@@ -1,6 +1,11 @@
 
-#login-body{
+#system_name_div h2{
+    color:#fff;
+    font-family: Arial, sans-serif;
+    margin-left: 20px;
+    text-shadow:0 0 0.2em dodgerblue, 0 0 0.2em dodgerblue, 0 0 0.2em dodgerblue, 0 0 0.2em dodgerblue, 0 0 0.2em dodgerblue, 0 0 0.2em dodgerblue;
 }
+
 #main_container_div {
     height: 700px;
     width:1000px;
@@ -156,11 +161,7 @@
     left: 95%;
     position: absolute;
     -webkit-position: absolute;
-<<<<<<< HEAD
-    margin-top: -20px;
-=======
     margin-top: -15px;
->>>>>>> 2bf14b914ae86deab4be2d17f7272fa1ce1e770e
     transform: rotate(30deg);
     -webkit-transform: rotate(45deg);
     -o-transform: rotate(45deg);

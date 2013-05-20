@@ -21,7 +21,7 @@
     <body id='login-body'>
         <div id = "iis_header_div" class = "container-fluid">
             <div id = "system_name_div">
-                <img src='../CSS/images/systemName.png' alt='I Inventory System' />
+                <h2>I - Inventory System</h2>
             </div>
             <button id = "main_log_in_button" class = "btn btn-info">LOG-IN</button>
 
