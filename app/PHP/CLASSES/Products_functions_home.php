@@ -3,6 +3,16 @@
     include_once "Database_connection.php";
     class Products_functions_home extends Database_connection {
 
+        function get_current_date() {
+            $this->open_connection();
+
+            $select_statement = $this->db_holder->query("SELECT CURDATE();");
+            $current_date = $select_statement->fetch();
+
+            $this->close_connection();
+            return $current_date[0];
+        }
+
         function check_if_product_to_add_already_exist($product_name, $product_id) {
             $this->open_connection();
             if($product_id == "") {
@@ -53,11 +63,18 @@
 
                 $product_id = $this->db_holder->lastInsertId();
 
-                $select_statement = $this->db_holder->prepare("SELECT supplier_id FROM suppliers WHERE company_name = ?;");
-                $select_statement->execute(array($product_supplier));
-                $supplier_id = $select_statement->fetch();
+                // =============  SUPPLIERS RELATED  ACTIONS===========
+                $select_statement2 = $this->db_holder->prepare("SELECT supplier_id FROM suppliers WHERE company_name = ?;");
+                $select_statement2->execute(array($product_supplier));
+                $supplier_id = $select_statement2->fetch();
 
+                $insert_statement2 = $this->db_holder->prepare("INSERT INTO product_to_supplier VALUES (?, ?);");
+                $insert_statement2->execute(array($product_id, $supplier_id[0]));
+                echo $product_supplier;
 
+                // ============ ADMINISTRATOR'S TRANSACTION ===========
+                $insert_statement3 = $this->db_holder->prepare("INSERT INTO admins_transaction VALUES (?, ?, ?);");
+                $insert_statement3->execute(array($this->get_current_date(), $product_id, $number_of_stocks));
             }
 
             $this->close_connection();
@@ -67,7 +84,7 @@
             $this->open_connection();
 
             $select_statement = $this->db_holder->query("SELECT product_id,
-                                                                LEFT(product_name, 15),
+                                                                product_name,
                                                                 bar_code,
                                                                 product_price,
                                                                 number_of_stocks,
@@ -80,23 +97,54 @@
                     $formatted_whole_number = number_format($whole_number);
                     $decimal = substr($content[3], $position);
                     $formatted_price = $formatted_whole_number.$decimal;
-                    echo "<tr id = '".$content[0]."'>";
-                    echo    "<td ondblclick = 'edit_products_name(".$content[0].")'>".$content[1]."</td>";
-                    echo    "<td>".$content[2]."</td>";
-                    echo    "<td ondblclick = 'edit_products_price(".$content[0].")'>&#8369;<span id = 'product_price_span'>".$formatted_price."</span></td>";
-                    echo    "<td ondblclick = 'edit_products_number_of_stocks(".$content[0].")'>".$content[4]."</td>";
-                    echo    "<td ondblclick = 'edit_products_stock_unit(".$content[0].")'>".$content[5]."</td>";
-                    echo    "<td class = 'product_delete_action'><input type = 'checkbox' class = 'mark_this' id = 'product_check_box_".$content[0]."' /></td>";
-                    echo "</tr>";
+
+                    // ================== check first product name if characters are greater than 15 ====
+
+                    $product_name_length = strlen($content[1]);
+                    if($product_name_length > 15) {
+                        $shortened_product_name = substr($content[1], 0, 15);
+                        echo "<tr id = '".$content[0]."'>";
+                        echo    "<td ondblclick = 'edit_products_name(".$content[0].")'>".$shortened_product_name."<span onclick = 'show_complete_product_name(".$content[0].")' class = 'label label-info'> ></span></td>";
+                        echo    "<td>".$content[2]."</td>";
+                        echo    "<td ondblclick = 'edit_products_price(".$content[0].")'>&#8369;<span id = 'product_price_span'>".$formatted_price."</span></td>";
+                        echo    "<td ondblclick = 'edit_products_number_of_stocks(".$content[0].")'>".$content[4]."</td>";
+                        echo    "<td ondblclick = 'edit_products_stock_unit(".$content[0].")'>".$content[5]."</td>";
+                        echo    "<td class = 'product_delete_action'><input type = 'checkbox' class = 'mark_this' id = 'product_check_box_".$content[0]."' /></td>";
+                        echo "</tr>";
+                    } else {
+                        echo "<tr id = '".$content[0]."'>";
+                        echo    "<td ondblclick = 'edit_products_name(".$content[0].")'>".$content[1]."</td>";
+                        echo    "<td>".$content[2]."</td>";
+                        echo    "<td ondblclick = 'edit_products_price(".$content[0].")'>&#8369;<span id = 'product_price_span'>".$formatted_price."</span></td>";
+                        echo    "<td ondblclick = 'edit_products_number_of_stocks(".$content[0].")'>".$content[4]."</td>";
+                        echo    "<td ondblclick = 'edit_products_stock_unit(".$content[0].")'>".$content[5]."</td>";
+                        echo    "<td class = 'product_delete_action'><input type = 'checkbox' class = 'mark_this' id = 'product_check_box_".$content[0]."' /></td>";
+                        echo "</tr>";
+                    }
                 } else {
-                    echo "<tr id = '".$content[0]."'>";
-                    echo    "<td ondblclick = 'edit_products_name(".$content[0].")'>".$content[1]."</td>";
-                    echo    "<td>".$content[2]."</td>";
-                    echo    "<td ondblclick = 'edit_products_price(".$content[0].")'>&#8369;<span id = 'product_price_span'>".number_format($content[3]).".00</span></td>";
-                    echo    "<td ondblclick = 'edit_products_number_of_stocks(".$content[0].")'>".$content[4]."</td>";
-                    echo    "<td ondblclick = 'edit_products_stock_unit(".$content[0].")'>".$content[5]."</td>";
-                    echo    "<td class = 'product_delete_action'><input type = 'checkbox' class = 'mark_this' id = 'product_check_box_".$content[0]."' /></td>";
-                    echo "</tr>";
+                    $product_name_length = strlen($content[1]);
+                    if($product_name_length > 15) {
+                        $shortened_product_name = substr($content[1], 0, 15);
+                        echo "<tr id = '".$content[0]."'>";
+                        echo    "<td ondblclick = 'edit_products_name(".$content[0].")'>".$shortened_product_name." <span onclick = 'show_complete_product_name(".$content[0].")' class = 'label label-info'> ></span></td>";
+                        echo    "<td>".$content[2]."</td>";
+                        echo    "<td ondblclick = 'edit_products_price(".$content[0].")'>&#8369;<span id = 'product_price_span'>".number_format($content[3]).".00</span></td>";
+                        echo    "<td ondblclick = 'edit_products_number_of_stocks(".$content[0].")'>".$content[4]."</td>";
+                        echo    "<td ondblclick = 'edit_products_stock_unit(".$content[0].")'>".$content[5]."</td>";
+                        echo    "<td class = 'product_delete_action'><input type = 'checkbox' class = 'mark_this' id = 'product_check_box_".$content[0]."' /></td>";
+                        echo "</tr>";
+
+                    } else {
+                        echo "<tr id = '".$content[0]."'>";
+                        echo    "<td ondblclick = 'edit_products_name(".$content[0].")'>".$content[1]."</td>";
+                        echo    "<td>".$content[2]."</td>";
+                        echo    "<td ondblclick = 'edit_products_price(".$content[0].")'>&#8369;<span id = 'product_price_span'>".number_format($content[3]).".00</span></td>";
+                        echo    "<td ondblclick = 'edit_products_number_of_stocks(".$content[0].")'>".$content[4]."</td>";
+                        echo    "<td ondblclick = 'edit_products_stock_unit(".$content[0].")'>".$content[5]."</td>";
+                        echo    "<td class = 'product_delete_action'><input type = 'checkbox' class = 'mark_this' id = 'product_check_box_".$content[0]."' /></td>";
+                        echo "</tr>";
+                    }
+
                 }
             }
 
@@ -240,6 +288,21 @@
                     echo    "<td class = 'product_delete_action'><input type = 'checkbox' class = 'mark_this' id = 'product_check_box_".$content[0]."' /></td>";
                     echo "</tr>";
                 }
+            }
+
+            $this->close_connection();
+        }
+
+        function show_complete_product_name($id) {
+            $this->open_connection();
+
+            $select_statement = $this->db_holder->prepare("SELECT product_name FROM products WHERE product_id = ?;");
+            $select_statement->execute(array($id));
+            $product_name = $select_statement->fetch();
+
+            $product_name_length = strlen($product_name[0]);
+            if($product_name_length > 15) {
+                echo $product_name[0];
             }
 
             $this->close_connection();

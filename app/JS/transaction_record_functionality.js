@@ -43,7 +43,7 @@ $(function(){
         displayPager();
     });
 
-	/*----paganation-----*/
+	/*----pagination-----*/
 	$('.pagination').on('click','li a',function(){
 		$('.pagination li').removeClass('active');
 		var page = parseInt($(this).html());

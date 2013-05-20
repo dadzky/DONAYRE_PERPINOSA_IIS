@@ -63,7 +63,7 @@
                         <dd id = 'supplier'><select name = "product_supplier" id = "product_supplier"></select></dd>
                     </dl>
                     <input type = "reset" value = "reset" class = "btn btn-danger" />
-                </form>
+                </form><!-- ============ add product form ends ============-->
                 <form id = "add_suppliers_form">
                     <img src = "../CSS/images/down_icon.png" id = "back_to_adding_product_img" title = "back" />
                     <h4>Add New Supplier here:</h4>

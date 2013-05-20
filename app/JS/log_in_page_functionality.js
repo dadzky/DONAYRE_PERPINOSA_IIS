@@ -27,14 +27,14 @@ $(document).ready(function() {
 
     $("#log_in_as_cashier_btn").click(function() {
         $("#log_in_as").val("cashier");
-        $("#log_in_as_span").html("CASHIER LOG-IN")
+        $("#log_in_as_span").html("CASHIER <br /> LOG-IN")
         $("#overlay_div_container").show();
         $("#log_in_div").slideDown(300);
     });
 
     $("#log_in_as_administrator_btn").click(function() {
         $("#log_in_as").val("administrator");
-        $("#log_in_as_span").html("ADMINISTRATOR LOG-IN");
+        $("#log_in_as_span").html("ADMINISTRATOR <br /> LOG-IN");
         $("#overlay_div_container").show();
         $("#log_in_div").slideDown(300);
     });

@@ -4,6 +4,7 @@
         <!-- ======================== IMPORTS [ IMPORTSTANTS :D ]========================= -->
         <script src = "../JS/jquery-1.9.1.min.js"></script>
         <script src = "../JS/jquery-ui-1.10.2.min.js"></script>
+        <script src = "../JS/bootstrap.min.js"></script>
         <script src = "../JS/employees.js"></script>
         <link rel = "shortcut icon" href = "../CSS/images/IIS%20logos/iis0.jpg" />
         <link rel = "stylesheet" href = "../CSS/includes_all_css_files.css" />
@@ -186,6 +187,5 @@
             <button class = "btn btn-primary" id = "submit_firing_remarks_button">submit remarks</button>
         </div>
         <input type = "hidden" id = "id" name = "id" />
-
     </body>
 </html>

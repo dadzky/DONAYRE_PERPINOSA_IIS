@@ -131,7 +131,7 @@ $(function() {
                                                     type: "POST",
                                                     url: "../PHP/OBJECTS/PRODUCTS/add_product.php",
                                                     data: {"products_data": JSON.stringify($("#add_product_form").serializeArray()), "update": "no"},
-                                                    success: function(data) {
+                                                    success: function() {
                                                         display_products();
                                                         $("#stock_unit_dd").html("<select name = 'stock_unit' id = 'stock_unit'><option>piece</option><option>packs</option><option>klg</option><option>g</option> <option>lbs</option><option>others</option></select>");
                                                         $("#number_of_stocks_dd").removeClass("control-group error");
@@ -532,4 +532,27 @@ function delete_products() {
             }
         });
     }
+}
+
+
+function show_complete_product_name(id) {
+    $.ajax({
+        type: "POST",
+        url: "../PHP/OBJECTS/PRODUCTS/show_complete_product_name.php",
+        data: {"id": id},
+        success: function(data) {
+            if(data != "") {
+                var td = document.getElementById(id).getElementsByTagName('td')[0];
+                $("#" + id + " td:first").css({"position": "absolute", "z-index": "2000", "background": "white", "width": "inherit"});
+                td.innerHTML = data;
+                $("#" + id + " td:first").mouseleave(function() {
+                    display_products();
+                })
+            }
+        },
+        error: function(data) {
+            console.log("Error in show_complete_product_name = " + JSON.stringify(data));
+        }
+
+    });
 }

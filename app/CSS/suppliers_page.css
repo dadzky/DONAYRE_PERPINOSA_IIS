@@ -3,7 +3,22 @@
     padding: 10px;
 }
 
-<<<<<<< HEAD
+#display_admins_transaction_div {
+    display: none;
+}
+
+#suppliers_action_div {
+    display: block;
+}
+
+#admins_transaction_table, #admins_transaction_table tr, #admins_transaction_table tr td, #admins_transaction_table tr th{
+    text-align: center;
+}
+
+#show_transaction_span {
+
+}
+
 #add_suppliers_div {
     display: none;
     width: 300px;
@@ -19,8 +34,28 @@ input[type = "reset"] {
     float: left;
 }
 
-=======
 input[type = "reset"] {
     float: right;
+    cursor: pointer;
 }
->>>>>>> 1f7798dc8bb854ba71c238c04fc487adfe808159
+.money_spent_td {
+    font-weight: bolder;
+}
+
+#suppliers_pagination_div {
+    background: #d3d3d3;
+}
+
+#previous_page_button {
+    margin-right: -4px;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    margin-top: -20px;
+}
+
+#next_page_button {
+    margin-left: -4px;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    margin-top: -20px;
+}

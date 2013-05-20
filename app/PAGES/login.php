@@ -43,8 +43,8 @@
                     </ol>
                     <!-- Carousel items -->
                     <div id='slide_imgs' class="carousel-inner">
-                        <div class="active item"><img src='../CSS/img/IIS%20logos/iis1.jpg' class ='slideimg' alt='first'/></div>
-                        <div class="item"><img src='../CSS/img/IIS%20logos/iis7.jpg' class ='slideimg' alt='second'/></div>
+                        <div class="active item"><img src='../CSS/images/IIS%20logos/iis1.jpg' class ='slideimg' alt='first'/></div>
+                        <div class="item"><img src='../CSS/images/IIS%20logos/iis7.jpg' class ='slideimg' alt='second'/></div>
                     </div>
                     <!-- Carousel nav -->
                     <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>

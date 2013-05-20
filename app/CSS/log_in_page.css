@@ -156,7 +156,11 @@
     left: 95%;
     position: absolute;
     -webkit-position: absolute;
+<<<<<<< HEAD
+    margin-top: -20px;
+=======
     margin-top: -15px;
+>>>>>>> 2bf14b914ae86deab4be2d17f7272fa1ce1e770e
     transform: rotate(30deg);
     -webkit-transform: rotate(45deg);
     -o-transform: rotate(45deg);
