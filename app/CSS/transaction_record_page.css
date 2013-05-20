@@ -40,10 +40,9 @@
 }
 #pagination_content{
 	background-color: #ddd;
-	height: 50px;
+	height:40px;
 }
 .pagination{
-    padding-top:10px;
     margin-left:25px;
 }
 #pager_next, #pager_prev{
@@ -54,7 +53,7 @@
 }
 #pager_prev{
 	margin-right: -5px;
-	-moz-border-top0-left-radius: 5px;
+	-moz-border-top-left-radius: 5px;
 	-webkit-border-top-left-radius: 5px;
 	-o-border-top-left-radius: 5px;
 	border-top-left-radius: 5px;
@@ -128,7 +127,7 @@
 	width:100px;
 	height: 20px;
 	text-align: center;
-	margin: 0 auto -30px auto;
+	margin: 0 auto -10px auto;
 	padding: 10px;
 }
 #searchBy_select{

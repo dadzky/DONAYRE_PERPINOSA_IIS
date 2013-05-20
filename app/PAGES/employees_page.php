@@ -19,7 +19,7 @@
                 </ul>
                 <div id = "employees_category_div">
                     <span></span>
-                    <span>categories:</span>
+                    <span style='font-weight:bold'>CATEGORIES:</span>
                     <button id = "cashiers_category_button">cashiers</button>
                     <button id = "packers_category_button">packers</button>
                     <button id = "porters_category_button">porters</button>

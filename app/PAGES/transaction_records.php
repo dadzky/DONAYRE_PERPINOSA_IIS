@@ -6,7 +6,7 @@
     </head>
     <body>
         <div id = "transaction_record_wrapper_div">
-            <h2 id='transaction_record_title_h2'><img src='../CSS/images/transactionrecords_title.png' alt='Taransaction Records'></h2>     
+            <h2 id='transaction_record_title_h2'>SALES</h2>
             <span id='currentPage_info_span' class='pull-right label label-info'><i class='icon-bullhorn'></i> Page <span class='page_number'>1</span> out of <span class='max_page'></span></span>
             <div id='pager_info_div'>
                 <div class='input-prepend' >
@@ -47,9 +47,9 @@
                 <tbody id='transaction_record_tbody'></tbody>
             </table>
             <div id='pagination_content'>
-                <div class='pagination'></div><!-- ========= pagination ============= -->            
-                <input type='hidden' id='currentPage' value='0' />
                 <div id='graph-toggle-div' title='click to toggle bargraph' data-toggle="tooltip"><img src='../CSS/images/bar-chart-icon.png' alt='Open Bargraph'  /></div>
+                <div class='pagination'></div><!-- ========= pagination ============= -->
+                <input type='hidden' id='currentPage' value='0' />
             </div><!--pagination_content-->
             <div id='graph-sales-container-div'>
                 <p id='bargraph_title_p'></p>

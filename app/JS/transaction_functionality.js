@@ -1,5 +1,7 @@
+
+$('#overlay_div').show();
 $(function(){
-		
+     $('#overlay_div').hide();
      displayDateAndTime();
 
 	 /*------------TRIGGER FOR SEARCHING PRODUCTS----------------*/
@@ -40,11 +42,16 @@ $(function(){
 			$('#edited_quantity').removeClass('error');
 			$('#payment_tbody tr th:first').html("&#8369; "+totalPayment2);
             totalPayment = parseFloat(totalPayment);
+            newChange = cashInHand-totalPayment;
             if(regexInt.test(newChange) && newChange!=0){
-                newChange = cashInHand-totalPayment;
                 newChange = newChange.toFixed(2);
+                $('#payment_tbody tr th:last').html("&#8369; "+changeToMoneyFormat(newChange)).css('color','#000');
+                $('#payment_btn').removeAttr('disabled');
+            }else{
+                $('#payment_tbody tr th:last').html("&#8369; 00.00").css('color','#f00');
+                $('#payment_btn').attr('disabled','disabled');
             }
-            $('#payment_tbody tr th:last').html("&#8369; "+changeToMoneyFormat(newChange));
+
 	 	}else{
 	 		$('#edited_quantity').css({"border-color":"red", "box-shadow":"0 0 1px 2px pink", "color":"#f00"});
 	 	}
@@ -82,6 +89,7 @@ $(function(){
     				$('#payment_tbody tr th:first').html("&#8369; "+changeToMoneyFormat(totalPayment));
     				if(newChange > 0){
                     	$('#payment_tbody tr th:last').css('color','#000').html("&#8369; "+changeToMoneyFormat(newChange));
+                        $('#payment_btn').removeAttr('disabled');
                		}else{
 			 			$('#payment_tbody tr th:last').css('color','#f00').html("&#8369; 00.00");
                		}
@@ -163,10 +171,14 @@ $(function(){
 					if(checkIfProductHasntSelected(prodObj.prodID)){
 						displayToShoppingList(prodObj.prodID, prodObj.prodName, prodObj.prodPrice ,prodObj.prodUnit, quantity);
 						selectedProduct_ID.push(prodObj.prodID);
-                        if(cashInHand != 0){
-                            newChange = cashInHand - totalPayment;
+                        newChange = cashInHand - totalPayment;
+                        if(newChange > 0){
                             newChange = newChange.toFixed(2);
-                            $('#payment_tbody tr th:last').html("&#8369; "+changeToMoneyFormat(newChange));
+                            $('#payment_tbody tr th:last').html("&#8369; "+changeToMoneyFormat(newChange)).css('color','#000');
+                            $('#payment_btn').removeAttr('disabled');
+                        }else{
+                            $('#payment_tbody tr th:last').html("&#8369; 00.00").css('color','#f00');
+                            $('#payment_btn').attr('disabled','disabled');
                         }
 						$('#default_alert_div').hide();
 						$('#alert_productExist_div').fadeOut();
@@ -267,6 +279,9 @@ function saveTransaction(){
         type:"POST",
         url: "../PHP/OBJECTS/transaction/saveTransaction.php",
         data: obj,
+        beforeSend:(function(){
+           $('#overlay_div').show();
+        }),
         success:function(data){
         	window.location.href = '../PAGES/transaction.php';
         },

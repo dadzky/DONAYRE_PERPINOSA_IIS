@@ -9,7 +9,7 @@ $(function() {
 
     // ============== APPENDING OPTIONS TO SELECT TAG (display_product_selected_letter) ===================
 
-    var alphabet_array = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',];
+    var alphabet_array = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
     var counter = 0;
     while(counter < alphabet_array.length) {
         $("#display_product_selected_letter").append("<option>" + alphabet_array[counter] + "</option>");

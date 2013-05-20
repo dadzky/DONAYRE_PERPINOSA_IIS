@@ -160,4 +160,17 @@ body{
 #date_span{
     float:right;
 }
+#overlay_div{
+    top:70px;
+    left: 23em;
+    width:59.5%;
+    height:100%;
+    z-index:100;
+    position:absolute;
+    background-color: rgba(225,225,225,.70);
+    display: none;
+}
+#overlay_div h3{
+    text-align: center;
+}
 

@@ -103,6 +103,7 @@ function searchRecords(toSearch,searchBy){
     var pageLimit = parseInt($('#pageLimit').val());
     var currentPage = parseInt($('#currentPage').val());
     currentPage = currentPage*pageLimit;
+    console.log(toSearch);
     var obj = {currentPage:currentPage,pageLimit:pageLimit, toSearch:toSearch, searchBy:searchBy};
         $.ajax({
             type:"POST",
@@ -165,7 +166,6 @@ function displayPager(){
             }
 			$('.max_page').html(pagerContent.n_pages);
 			$('.page_number').html(currentPage);
-            console.log(pagerContent.n_pages)
 			
 		},
 		error:function(data){

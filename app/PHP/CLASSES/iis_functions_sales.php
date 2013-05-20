@@ -39,10 +39,10 @@
                     $prodID = $productIDs[$ctr];
                     $quantity = $quantities[$ctr];
                     $sql2 = "SELECT transaction_id
-                            FROM transactions
-                            WHERE product_id = ?
-                            AND employee_id = ?
-                            AND transaction_date = ?";
+                             FROM sales
+                             WHERE product_id = ?
+                             AND employee_id = ?
+                             AND transaction_date = ?";
 
                     $stmt2  = $this->db_holder->prepare($sql2);
                     $stmt2 -> execute(array($prodID, $employeeID, $dateTime['c_date']));
@@ -54,7 +54,7 @@
                         $this->updateTransactionsInfo($transactionID[0],$quantity);
                     }
 
-                    $sql3 = "UPDATE products AS p, transactions AS t
+                    $sql3 = "UPDATE products AS p, sales AS t
                             SET p.number_of_stocks = p.number_of_stocks - ?
                             WHERE p.product_id = t.product_id
                             AND t.transaction_id = ?";
@@ -69,7 +69,7 @@
 
         function addToTransactionsRecord($prodID, $employeeID, $datee,$timee,$quantity){
 
-            $sql1 = "INSERT INTO transactions
+            $sql1 = "INSERT INTO sales
                     VALUES(null,?,?,?,?)";
             $stmt1  = $this->db_holder->prepare($sql1);
             $stmt1 -> execute(array($prodID, $employeeID, $datee,$timee));
@@ -105,7 +105,7 @@
             $this->open_connection();
 
                 $sql1 = "SELECT DISTINCT transaction_date
-                        FROM transactions
+                        FROM sales
                         ORDER BY transaction_date DESC
                         LIMIT $currentPage,$pageLimit"; 
                 $stmt1 = $this->db_holder->query($sql1);
@@ -116,7 +116,7 @@
                     $totalIncome = 0;
 
                     $sql2 = "SELECT t.transaction_time, CONCAT(e.firstname ,' ', e.lastname), p.product_name, CONCAT(ti.number_of_items, ' ' , p.stock_unit),ti.number_of_items*p.product_price
-                            FROM employees AS e, products AS p, transactions AS t, transactions_info AS ti
+                            FROM employees AS e, products AS p, sales AS t, transactions_info AS ti
                             WHERE p.product_id = t.product_id
                             AND e.employee_id = t.employee_id
                             AND t.transaction_id = ti.transaction_id
@@ -153,7 +153,7 @@
             $this->open_connection();
 
                 $sql = "SELECT COUNT(DISTINCT t.transaction_date) AS pages
-                         FROM transactions AS t, products AS p, employees AS e
+                         FROM sales AS t, products AS p, employees AS e
                          WHERE p.product_id = t.product_id
                          AND e.employee_id = t.employee_id
                          AND $searchBy LIKE ?";
@@ -195,7 +195,7 @@
             $this->open_connection();
 
                 $sql = "SELECT month( t.transaction_date ) , SUM( p.product_price * ti.number_of_items ) AS total
-                        FROM products AS p, transactions AS t, transactions_info AS ti
+                        FROM products AS p, sales AS t, transactions_info AS ti
                         WHERE p.product_id = t.product_id
                         AND t.transaction_id = ti.transaction_id
                         AND year( t.transaction_date ) = ?
@@ -224,7 +224,7 @@
             $this->open_connection();
 
                 $sql1 = "SELECT DISTINCT t.transaction_date AS tdate
-                            FROM transactions AS t, products AS p, employees AS e
+                            FROM sales AS t, products AS p, employees AS e
                             WHERE p.product_id = t.product_id
                             AND e.employee_id = t.employee_id
                             AND $searchBy LIKE ?
@@ -239,7 +239,7 @@
                     $totalIncome = 0;
 
                     $sql2 = "SELECT t.transaction_time, CONCAT(e.firstname ,' ', e.lastname), p.product_name, CONCAT(ti.number_of_items, ' ' , p.stock_unit),ti.number_of_items*p.product_price
-                                FROM employees AS e, products AS p, transactions AS t, transactions_info AS ti
+                                FROM employees AS e, products AS p, sales AS t, transactions_info AS ti
                                 WHERE p.product_id = t.product_id
                                 AND e.employee_id = t.employee_id
                                 AND t.transaction_id = ti.transaction_id

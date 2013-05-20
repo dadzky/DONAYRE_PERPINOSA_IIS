@@ -1,7 +1,7 @@
 ﻿
 Students Name:
-Sanchez, Diosdado 
-Granaderos, Marejean 
+Granaderos, Marejean
+Donayre, Diosdado Jr.
 	
 	System Name: 	INVENTORY SYSTEM
 
@@ -9,30 +9,36 @@ Granaderos, Marejean
 
 				This Inventory System provides accurate transaction manipulation and most efficient for a buy and sell products. Its features may help a company to facilitate monitoring the flow of their sales.
 			
-	Major Features:	
-		
-Log-in and log-out of cashiers, as well as the adminisrator;
-Lists all held transactions;
-Displays them on administrator's page;
-Reserves buyers receipt;
-Determines the number of items each buyers bought;
-Tracks who assisted that particular buyer;
-Determines and displays the sales income daily, weekly, monthly and annually;
-Tracks the stock level of each products;
-Can add products;
-Update products description;
-Delete products if needed;
-Records the employer and supplier's transactions;
-Displays those records according to date of transaction;
-Add new hired employees;
-Can update employees' information;
-Delete employees if fired!;
+	Features:
 
-	Additional Features:
+	    Log-in and log-out of cashiers, as well as the administrator;
 
-Monitors employees daily attendance;
-Determines the number of days employees are present;
-Calculates automaticaly the employees salary monthly;
+        * Administrator:
+
+            Records and supplier's transactions;
+            Lists all held transactions;
+            Displays records according to date of transaction;
+            Displays the monthly sales in a graph;
+            Determines and displays the sales income daily and monthly;
+            Can search a transaction record by a category;
+            Tracks the stock level of each products;
+            Can add products;
+            Update products description;
+            Delete products if needed;
+            Add new hired employees;
+            Can update employees' information;
+            Delete employees if fired!;
+            Can view the list of fired employees;
+
+        * Cashier:
+
+            Displays the current list of items of what buyers bought;
+            Can edit the quantity of an item in the list;
+            Can delete the item in the list;
+            Calculates the Subtotal of an item and Total to all items bought;
+            Records the transaction ;
+
+	
 
 		
 

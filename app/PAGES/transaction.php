@@ -99,6 +99,7 @@
                 </div>
             </div>
             <div id='dialog2_div'></div>
+            <div id='overlay_div'><h3>Loading....<img src='../CSS/img_tbls/loading.gif' alt='loading.....' /></h3></div>
         </div> <!-- ======= transaction_wrapper_div ======= -->
         <div id='dialog_div'></div>
 
