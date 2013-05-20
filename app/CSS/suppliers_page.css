@@ -3,6 +3,23 @@
     padding: 10px;
 }
 
-input[type = "reset"] {
+#display_admins_transaction_div {
+    display: none;
+}
+
+#suppliers_action_div {
+    background: #d3d3d3;
+    height: 50px;
+    width: 100%;
+    padding: 4px;
+    margin-bottom: 10px;
+}
+
+#admins_transaction_table, #admins_transaction_table tr, #admins_transaction_table tr td, #admins_transaction_table tr th{
+    text-align: center;
+}
+
+#show_transaction_span {
     float: right;
+    cursor: pointer;
 }

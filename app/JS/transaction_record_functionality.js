@@ -64,7 +64,7 @@ $(function(){
         displayPager();
     });
 
-	/*----paganation-----*/
+	/*----pagination-----*/
 	$('.pagination').on('click','li a',function(){
         var searchBy = $('#searchBy_select').val();
         if(searchBy=="employee" && searchBy != ""){
