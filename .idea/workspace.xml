@@ -2,34 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cf61416e-a1c1-4955-9085-77497aa2c923" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/CSS/images/transactionrecords_title.png" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CSS/images/bar-chart-icon.png" afterPath="$PROJECT_DIR$/app/CSS/images/bar-chart-icon.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CSS/images/grocerystore1.jpg" afterPath="$PROJECT_DIR$/app/CSS/images/grocerystore1.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CSS/images/grocerystore2.jpg" afterPath="$PROJECT_DIR$/app/CSS/images/grocerystore2.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CSS/images/grocerystore3.jpg" afterPath="$PROJECT_DIR$/app/CSS/images/grocerystore3.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CSS/img_tbls/loading.gif" afterPath="$PROJECT_DIR$/app/CSS/img_tbls/loading.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CSS/images/monthlyIncomeTitle.png" afterPath="$PROJECT_DIR$/app/CSS/images/monthlyIncomeTitle.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CSS/images/systemName.png" afterPath="$PROJECT_DIR$/app/CSS/images/systemName.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/InventorySystemMajorFeatures.txt" afterPath="$PROJECT_DIR$/docs/InventorySystemMajorFeatures.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PHP/OBJECTS/PRODUCTS/display_products.php" afterPath="$PROJECT_DIR$/app/PHP/OBJECTS/PRODUCTS/display_products.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CSS/employees_page.css" afterPath="$PROJECT_DIR$/app/CSS/employees_page.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PAGES/employees_page.php" afterPath="$PROJECT_DIR$/app/PAGES/employees_page.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PHP/CLASSES/iis_functions_sales.php" afterPath="$PROJECT_DIR$/app/PHP/CLASSES/iis_functions_sales.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PAGES/page_header.html" afterPath="$PROJECT_DIR$/app/PAGES/page_header.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/JS/products.js" afterPath="$PROJECT_DIR$/app/JS/products.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PAGES/transaction.php" afterPath="$PROJECT_DIR$/app/PAGES/transaction.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/JS/transaction_functionality.js" afterPath="$PROJECT_DIR$/app/JS/transaction_functionality.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CSS/transaction_page.css" afterPath="$PROJECT_DIR$/app/CSS/transaction_page.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/JS/transaction_record_functionality.js" afterPath="$PROJECT_DIR$/app/JS/transaction_record_functionality.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CSS/transaction_record_page.css" afterPath="$PROJECT_DIR$/app/CSS/transaction_record_page.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PAGES/transaction_records.php" afterPath="$PROJECT_DIR$/app/PAGES/transaction_records.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="IIS_PROJECT_HUB.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="cf61416e-a1c1-4955-9085-77497aa2c923" time="1369020573996" ignored="false" />
+    <file path="/Dummy.txt" changelist="cf61416e-a1c1-4955-9085-77497aa2c923" time="1369029043813" ignored="false" />
     <file path="/transaction_record_functionality.js" changelist="cf61416e-a1c1-4955-9085-77497aa2c923" time="1369015303179" ignored="false" />
-    <file path="/transaction_record_page.css" changelist="cf61416e-a1c1-4955-9085-77497aa2c923" time="1369015825908" ignored="false" />
+    <file path="/transaction_record_page.css" changelist="cf61416e-a1c1-4955-9085-77497aa2c923" time="1369029345242" ignored="false" />
     <file path="/transaction_records.php" changelist="cf61416e-a1c1-4955-9085-77497aa2c923" time="1369021226146" ignored="false" />
     <file path="/transaction.php" changelist="cf61416e-a1c1-4955-9085-77497aa2c923" time="1369016471339" ignored="false" />
     <file path="/transaction_page.css" changelist="cf61416e-a1c1-4955-9085-77497aa2c923" time="1369016572288" ignored="false" />
@@ -56,37 +36,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="transaction.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/PAGES/transaction.php">
+      <file leaf-file-name="transaction_record_page.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/CSS/transaction_record_page.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="69" selection-start="367" selection-end="367" vertical-scroll-proportion="12.125">
+            <state line="129" column="21" selection-start="2992" selection-end="2992" vertical-scroll-proportion="-7.4310346">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="iis_functions_sales.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/PHP/CLASSES/iis_functions_sales.php">
+      <file leaf-file-name="transaction_record_functionality.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/JS/transaction_record_functionality.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="118" column="93" selection-start="4509" selection-end="4526" vertical-scroll-proportion="0.63414633">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="transaction_records.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/PAGES/transaction_records.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="54" selection-start="285" selection-end="285" vertical-scroll-proportion="-5.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="page_header.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/PAGES/page_header.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="26" selection-start="182" selection-end="193" vertical-scroll-proportion="-3.125">
+            <state line="145" column="16" selection-start="4698" selection-end="4698" vertical-scroll-proportion="0.60518295">
               <folding />
             </state>
           </provider>
@@ -110,8 +72,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/JS/transaction_record_functionality.js" />
-        <option value="$PROJECT_DIR$/app/CSS/transaction_record_page.css" />
         <option value="$PROJECT_DIR$/app/PAGES/transaction.php" />
         <option value="$PROJECT_DIR$/app/CSS/transaction_page.css" />
         <option value="$PROJECT_DIR$/app/JS/transaction_functionality.js" />
@@ -119,6 +79,8 @@
         <option value="$PROJECT_DIR$/app/PAGES/transaction_records.php" />
         <option value="$PROJECT_DIR$/app/PAGES/page_header.html" />
         <option value="$PROJECT_DIR$/app/PHP/CLASSES/iis_functions_sales.php" />
+        <option value="$PROJECT_DIR$/app/CSS/transaction_record_page.css" />
+        <option value="$PROJECT_DIR$/app/JS/transaction_record_functionality.js" />
       </list>
     </option>
   </component>
@@ -154,7 +116,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -297,6 +258,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -316,13 +278,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="24" width="1440" height="852" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25792506" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26224783" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -405,19 +367,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/docs/InventorySystemMajorFeatures.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="44" selection-start="730" selection-end="730" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/JS/transaction_record_functionality.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="167" column="48" selection-start="5421" selection-end="5421" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/CSS/transaction_record_page.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="12" selection-start="1072" selection-end="1072" vertical-scroll-proportion="-4.9310346" />
+        <state line="20" column="44" selection-start="730" selection-end="730" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/CSS/images/bar-chart-icon.png">
@@ -452,42 +402,52 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/docs/InventorySystemMajorFeatures.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="24" selection-start="1388" selection-end="1388" vertical-scroll-proportion="0.7027439">
-          <folding />
-        </state>
+        <state line="38" column="24" selection-start="1388" selection-end="1388" vertical-scroll-proportion="0.7027439" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/CSS/page_header.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/PAGES/page_header.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="26" selection-start="182" selection-end="193" vertical-scroll-proportion="-3.125">
+        <state line="5" column="26" selection-start="182" selection-end="193" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/PAGES/transaction_records.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="54" selection-start="285" selection-end="285" vertical-scroll-proportion="-5.0">
+        <state line="8" column="54" selection-start="285" selection-end="285" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/PAGES/transaction.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="69" selection-start="367" selection-end="367" vertical-scroll-proportion="12.125">
+        <state line="11" column="69" selection-start="367" selection-end="367" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/PHP/CLASSES/iis_functions_sales.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="118" column="93" selection-start="4509" selection-end="4526" vertical-scroll-proportion="0.63414633">
+        <state line="118" column="93" selection-start="4509" selection-end="4526" vertical-scroll-proportion="-4.375">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/CSS/transaction_record_page.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="129" column="21" selection-start="2992" selection-end="2992" vertical-scroll-proportion="-7.4310346">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/JS/transaction_record_functionality.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="145" column="16" selection-start="4698" selection-end="4698" vertical-scroll-proportion="0.60518295">
           <folding />
         </state>
       </provider>
