@@ -116,8 +116,19 @@
 
                 echo "<tr id = 'admins_transaction_".$date[0]."'><td rowspan = ".$row_length.">".$date[0]."</td></tr>";
                 echo $row_fetched;
-                echo "<tr class = 'info'><td colspan = '3'></td><td>Money Spent: &#8369;".$daily_spent_money."</td></tr>";
+                echo "<tr class = 'info'><td colspan = '3'></td><td class = 'money_spent_td'>Money Spent: &#8369;".$daily_spent_money."</td></tr>";
             }
+
+            $this->close_connection();
+        }
+
+        function add_supplier($company_name, $address, $contact_number) {
+            $this->open_connection();
+
+            $insert_statement = $this->db_holder->prepare("INSERT INTO suppliers VALUES (null, ?, ?, ?);");
+            $insert_statement->execute(array($company_name, $address, $contact_number));
+
+            echo $company_name;
 
             $this->close_connection();
         }

@@ -46,8 +46,8 @@
                         <dd id = 'product_name_dd'><input type = "text" name = "product_name" id = "product_name" /></dd>
                     <dt>Product's Bar Code:</dt>
                         <dd id = "bar_code_dd"><input type = "text" name = "bar_code" id = "bar_code" /></dd>
-                    <dt>Product Price:</dt>
-                        <dd id = 'product_price_dd'>&#8369;<input type = "text" name = "product_price" id = "product_price" /></dd>
+                    <dt>Product &#8369;rice:</dt>
+                        <dd id = 'product_price_dd'><input type = "text" name = "product_price" id = "product_price" /></dd>
                     <dt>Number of Stock(s):</dt>
                         <dd id = 'number_of_stocks_dd'><input type = "text" name = "number_of_stocks" id = "number_of_stocks" /></dd>
                     <dt>Stock Unit:</dt>

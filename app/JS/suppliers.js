@@ -24,19 +24,20 @@ $(function() {
                 var data = {"suppliers_data": JSON.stringify($("#add_suppliers_form").serializeArray())};
                 var add_request = request("../PHP/OBJECTS/SUPPLIERS/add_supplier.php", data, "adding supplier");
                 add_request.success(function(data) {
-                    retrieve_all_suppliers();
+                    //retrieve_all_suppliers();
                     $("#contact_number_dd").removeClass("control-group error");
-
                     // ====== back in adding products ===
 
                     $("#add_product_form").toggle('slow');
                     $("#add_suppliers_form").slideToggle('slow');
                     $("#add_supplier_button").hide();
                     $("#add_product_button").show();
-                    /*
-                    var option_length = $('#product_supplier option').length;
-                    var index;
-                    for(var counter = 0; counter < option_length; counter++) {
+
+                   // var option_length = $('#product_supplier option').length;
+                   // var index;
+                   /* for(var counter = 0; counter < option_length; counter++) {
+
+                       // console.log($('#product_supplier option')[counter])
                         if($('#product_supplier option')[counter].value == data) {
                             alert(data);
                             console.log($('#product_supplier option')[counter].value);
@@ -44,7 +45,9 @@ $(function() {
                             break;
                         }
                     }*/
+                    $("#product_supplier").prepend("<option>"+data+"</option>");
                     $("#product_supplier").val(data);
+
 
                 });
             } else {
