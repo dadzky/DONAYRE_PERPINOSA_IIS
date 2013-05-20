@@ -1,13 +1,5 @@
 body{
-    background: #ddf1f9;
-}
-#header_div{
-    height: 60px;
-    background: -moz-linear-gradient(bottom,deepskyblue,dodgerblue);
-    background: -webkit-linear-gradient(bottom,deepskyblue,dodgerblue);
-    background: -o-linear-gradient(bottom,deepskyblue,dodgerblue);
-    background: linear-gradient(bottom,deepskyblue,dodgerblue);
-    padding: 5px;
+	background: #ddf1f9;
 }
 
 #system_name_div {
@@ -17,11 +9,19 @@ body{
     width: 500px;
 }
 
-#system_name_div span {
-    color: #0000ff;
-    font-size: 45px;
-    font-family: Consolas;
+#header_div{
+    height: 60px;
+    background: -moz-linear-gradient(bottom,deepskyblue,dodgerblue);
+    background: -webkit-linear-gradient(bottom,deepskyblue,dodgerblue);
+    background: -o-linear-gradient(bottom,deepskyblue,dodgerblue);
+    background: linear-gradient(bottom,deepskyblue,dodgerblue);
+    padding: 5px;
 }
+
+#cashier_p, #cashier_info_span, #date_span, #date_span p{
+    font-size: 15px;
+}
+
 
 #product_displayer_btn{
     margin-top: 10px;
@@ -38,17 +38,23 @@ body{
 #product_quantity,#product_code{
     height: 50px;
     padding-left: 20px;
-    font-size: 20px;
+    font-size: 25px;
     font-weight: bolder;
     font-family: Arial, sans-serif;
+    text-align: center;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius:0;
 }
 #product_code{
+
     -moz-border-top-left-radius: 20px;
     -webkit-border-top-left-radius: 20px;
     border-top-left-radius: 20px;
     -moz-border-top-right-radius: 20px;
     -webkit-border-top-right-radius: 20px;
     border-top-right-radius: 20px;
+
 }
 #product_quantity{
     -moz-border-bottom-left-radius: 20px;
@@ -57,7 +63,7 @@ body{
     -moz-border-bottom-right-radius: 20px;
     -webkit-border-bottom-right-radius: 20px;
     border-bottom-right-radius: 20px;
-}
+ }
 #product_to_transact_div{
     margin-left: -20px;
 }
@@ -75,10 +81,13 @@ body{
     margin-top:-250px;
     border-radius: 10px;
 }
+#payment_tbody tr th:last-child{
+    color:#f00;
+}
 #cash_in_hand_input{
     padding:0;
-    border:0;
-    border-bottom: 0.5px solid;
+    border:0;   
+    border-bottom: 1px solid;
     font-size: 15px;
     font-family: Arial, sans-serif;
     font-weight: bold;
@@ -94,48 +103,50 @@ body{
 
 /*=========tables=========*/
 #transaction_wrapper_div{
-    width: 900px;
-    margin: 0 auto;
+	width: 900px;
+	margin: 0 auto;
     padding: 30px 20px 80px 20px;
     background:#fff;
-    border: 1px #000 outset;
-    -moz-border-bottom-right-radius:10px;
-    -webkit-border-bottom-right-radius:10px;
-    -o-border-bottom-right-radius:10px;
-    border-bottom-right-radius:10px;
+    -moz-border-bottom-right-radius:10px; 
+    -webkit-border-bottom-right-radius:10px; 
+    -o-border-bottom-right-radius:10px; 
+    border-bottom-right-radius:10px; 
     border-bottom-left-radius:10px;
-    -moz-border-bottom-left-radius:10px;
-    -webkit-border-bottom-left-radius:10px;
-    -o-border-bottom-left-radius:10px;
+    -moz-border-bottom-left-radius:10px; 
+    -webkit-border-bottom-left-radius:10px; 
+    -o-border-bottom-left-radius:10px;  
 }
-#products_to_transact_tbody{
-    cursor:url(img_tbls/shopping-cart.png), -moz-zoom-in;
-}
+
 #shopping_list_table{
-    display:none;
+	display:none;
 }
 #shopping_list_table thead tr{
-    background: -moz-linear-gradient(top, #ccc,#fff);
+    background: -moz-linear-gradient(top, #fff, #ccc);
+    background: -o-linear-gradient(top, #ccc, #fff);
+    background: -webkit-linear-gradient(top, #ccc, #fff);
 }
+
 #shopping_list_total_tfoot{
-    background-color: #DDD;
+	background-color: #DDD;
 }
 #edited_quantity{
-    margin: -10px -90px -10px 0;
+	margin: -10px -90px -10px 0;
 }
 #dialog_div{
-    display:none;
+	display:none;
 }
 .edit_quantity_img{
-    float:right;
-    cursor:pointer;
+	float:right;
+	cursor:pointer;
 }
 .shopping_list_del_option{
-    display:none;
+	display:none;
 }
 .totalpayment_tr{
-    text-decoration: underline;
-    color:#0088cc;
+    font-size: 20px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+	color:#0088cc;
 }
 
 #logout_a{
@@ -149,3 +160,17 @@ body{
 #date_span{
     float:right;
 }
+#overlay_div{
+    top:70px;
+    left: 23em;
+    width:59.5%;
+    height:100%;
+    z-index:100;
+    position:absolute;
+    background-color: rgba(225,225,225,.70);
+    display: none;
+}
+#overlay_div h3{
+    text-align: center;
+}
+

@@ -16,10 +16,28 @@
 }
 
 #show_transaction_span {
+
+}
+
+#add_suppliers_div {
+    display: none;
+    width: 300px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+input[type = "reset"] {
+    float: right;
+}
+
+#add_suppliers_button {
+    float: left;
+}
+
+input[type = "reset"] {
     float: right;
     cursor: pointer;
 }
-
 .money_spent_td {
     font-weight: bolder;
 }
