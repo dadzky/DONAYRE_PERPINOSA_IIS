@@ -2,11 +2,12 @@ body{
 	background: #ddf1f9;
 }
 
-#system_name_div {
+#system_name_div h2{
     font-weight: bolder;
-    color: #003399;
-    font-family: cursive;
-    width: 500px;
+    color: #000;
+    font-family: Arial, sans-serif;
+    margin-left: 20px;
+    text-shadow:0 0 0.2em #fff,0 0 0.2em #fff,0 0 0.2em #fff,0 0 0.2em #fff;
 }
 
 #header_div{

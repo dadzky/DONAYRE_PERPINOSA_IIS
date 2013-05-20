@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" name="Default" comment="" />
     <ignored path="IIS_PROJECT_HUB.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -55,6 +56,24 @@
     <file path="/show_complete_product_name.php" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1368693102796" ignored="false" />
     <file path="/display_admins_transaction.php" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1368762657088" ignored="false" />
     <file path="/display_supplier_pager.php" changelist="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" time="1368775988909" ignored="false" />
+=======
+    <list default="true" id="cf61416e-a1c1-4955-9085-77497aa2c923" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PHP/CLASSES/Database_connection.php" afterPath="$PROJECT_DIR$/app/PHP/CLASSES/Database_connection.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/IIS_DB.sql" afterPath="$PROJECT_DIR$/db/IIS_DB.sql" />
+    </list>
+    <ignored path="IIS_PROJECT_HUB.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <file path="/Dummy.txt" changelist="cf61416e-a1c1-4955-9085-77497aa2c923" time="1369032255805" ignored="false" />
+    <file path="/transaction_record_functionality.js" changelist="cf61416e-a1c1-4955-9085-77497aa2c923" time="1369015303179" ignored="false" />
+    <file path="/transaction_record_page.css" changelist="cf61416e-a1c1-4955-9085-77497aa2c923" time="1369029345242" ignored="false" />
+    <file path="/transaction_records.php" changelist="cf61416e-a1c1-4955-9085-77497aa2c923" time="1369021226146" ignored="false" />
+    <file path="/transaction.php" changelist="cf61416e-a1c1-4955-9085-77497aa2c923" time="1369016471339" ignored="false" />
+    <file path="/transaction_page.css" changelist="cf61416e-a1c1-4955-9085-77497aa2c923" time="1369016572288" ignored="false" />
+    <file path="/transaction_functionality.js" changelist="cf61416e-a1c1-4955-9085-77497aa2c923" time="1369016693067" ignored="false" />
+    <file path="/InventorySystemMajorFeatures.txt" changelist="cf61416e-a1c1-4955-9085-77497aa2c923" time="1369018779171" ignored="false" />
+    <file path="/page_header.html" changelist="cf61416e-a1c1-4955-9085-77497aa2c923" time="1369021254812" ignored="false" />
+    <file path="/iis_functions_sales.php" changelist="cf61416e-a1c1-4955-9085-77497aa2c923" time="1369022198680" ignored="false" />
+>>>>>>> 14f40221ef6bc90e9f3abf716d1bf6f6e670a590
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,19 +93,33 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+<<<<<<< HEAD
       <file leaf-file-name="suppliers.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/JS/suppliers.js">
           <provider selected="true" editor-type-id="text-editor">
             <state line="44" column="34" selection-start="2123" selection-end="2123" vertical-scroll-proportion="-19.2">
+=======
+      <file leaf-file-name="transaction_record_page.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/CSS/transaction_record_page.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="129" column="21" selection-start="2992" selection-end="2992" vertical-scroll-proportion="0.0">
+>>>>>>> 14f40221ef6bc90e9f3abf716d1bf6f6e670a590
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="products_page.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/PAGES/products_page.php">
           <provider selected="true" editor-type-id="text-editor">
             <state line="48" column="39" selection-start="2711" selection-end="2711" vertical-scroll-proportion="-15.0">
+=======
+      <file leaf-file-name="transaction_record_functionality.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/JS/transaction_record_functionality.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="166" column="54" selection-start="5381" selection-end="5381" vertical-scroll-proportion="0.0">
+>>>>>>> 14f40221ef6bc90e9f3abf716d1bf6f6e670a590
               <folding />
             </state>
           </provider>
@@ -95,6 +128,7 @@
       <file leaf-file-name="login.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/PAGES/login.php">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state line="21" column="61" selection-start="628" selection-end="628" vertical-scroll-proportion="0.496063">
               <folding />
             </state>
@@ -150,15 +184,25 @@
         <entry file="file://$PROJECT_DIR$/app/PHP/CLASSES/Products_functions_home.php">
           <provider selected="true" editor-type-id="text-editor">
             <state line="298" column="88" selection-start="17718" selection-end="17718" vertical-scroll-proportion="-6.6734695">
+=======
+            <state line="7" column="28" selection-start="196" selection-end="206" vertical-scroll-proportion="-4.375">
+>>>>>>> 14f40221ef6bc90e9f3abf716d1bf6f6e670a590
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="suppliers_page.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/CSS/suppliers_page.css">
           <provider selected="true" editor-type-id="text-editor">
             <state line="40" column="1" selection-start="621" selection-end="635" vertical-scroll-proportion="-15.16">
+=======
+      <file leaf-file-name="iis_functions_sales.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/PHP/CLASSES/iis_functions_sales.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="110" column="32" selection-start="4072" selection-end="4072" vertical-scroll-proportion="0.26107594">
+>>>>>>> 14f40221ef6bc90e9f3abf716d1bf6f6e670a590
               <folding />
             </state>
           </provider>
@@ -183,6 +227,7 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/app/PAGES/transaction.php" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/app/CSS/product_page.css" />
         <option value="$PROJECT_DIR$/app/JS/products.js" />
         <option value="$PROJECT_DIR$/app/PHP/CLASSES/Products_functions_home.php" />
@@ -198,6 +243,18 @@
         <option value="$PROJECT_DIR$/app/PAGES/products_page.php" />
         <option value="$PROJECT_DIR$/app/PHP/CLASSES/Suppliers_functions_home.php" />
         <option value="$PROJECT_DIR$/app/JS/admins_page_functionality.js" />
+=======
+        <option value="$PROJECT_DIR$/app/CSS/transaction_page.css" />
+        <option value="$PROJECT_DIR$/app/JS/transaction_functionality.js" />
+        <option value="$PROJECT_DIR$/docs/InventorySystemMajorFeatures.txt" />
+        <option value="$PROJECT_DIR$/app/PAGES/transaction_records.php" />
+        <option value="$PROJECT_DIR$/app/PAGES/page_header.html" />
+        <option value="$PROJECT_DIR$/app/CSS/transaction_record_page.css" />
+        <option value="$PROJECT_DIR$/app/JS/transaction_record_functionality.js" />
+        <option value="$PROJECT_DIR$/db/IIS_DB.sql" />
+        <option value="$PROJECT_DIR$/app/PHP/CLASSES/Database_connection.php" />
+        <option value="$PROJECT_DIR$/app/PHP/CLASSES/iis_functions_sales.php" />
+>>>>>>> 14f40221ef6bc90e9f3abf716d1bf6f6e670a590
       </list>
     </option>
   </component>
@@ -251,6 +308,24 @@
               <option name="myItemId" value="IIS_PROJECT_HUB" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="docs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="IIS_PROJECT_HUB" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="IIS_PROJECT_HUB" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="db" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -281,114 +356,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="PHP" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="OBJECTS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="IIS_PROJECT_HUB" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="IIS_PROJECT_HUB" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PHP" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="OBJECTS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TRANSACTION_RECORD" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="IIS_PROJECT_HUB" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="IIS_PROJECT_HUB" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PHP" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="OBJECTS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="transaction" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="IIS_PROJECT_HUB" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="IIS_PROJECT_HUB" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PHP" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="OBJECTS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SUPPLIERS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="IIS_PROJECT_HUB" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="IIS_PROJECT_HUB" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PHP" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="OBJECTS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PRODUCTS" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -468,67 +435,51 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="IIS_PROJECT_HUB" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="IIS_PROJECT_HUB" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../hotel_information_system" />
-    <property name="DefaultHtmlFileTemplate" value="Html5" />
-  </component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app/JS" />
-      <recent name="$PROJECT_DIR$/app/CSS" />
-      <recent name="$PROJECT_DIR$/app/CSS/images/IIS logos" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app/PHP/OBJECTS/SUPPLIERS" />
-      <recent name="$PROJECT_DIR$/app/CSS/images" />
-      <recent name="$PROJECT_DIR$/docs" />
-      <recent name="$PROJECT_DIR$/app" />
-      <recent name="$PROJECT_DIR$/db" />
-    </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
-      <TestRunner />
-      <method />
-    </configuration>
-    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
-      <method />
-    </configuration>
-    <configuration default="true" type="JavascriptDebugSession" factoryName="Local" singleton="true">
-      <JSDebuggerConfigurationSettings>
-        <option name="engineId" value="embedded" />
-        <option name="fileUrl" />
-      </JSDebuggerConfigurationSettings>
-      <method />
-    </configuration>
     <list size="0" />
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="1ff5dcd0-c9d0-409d-a2eb-5de4edde035e" name="Default" comment="" />
-      <created>1367886094532</created>
-      <updated>1367886094532</updated>
+      <changelist id="cf61416e-a1c1-4955-9085-77497aa2c923" name="Default" comment="" />
+      <created>1369015154205</created>
+      <updated>1369015154205</updated>
     </task>
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="24" width="1440" height="852" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16738506" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+=======
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2665706" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+>>>>>>> 14f40221ef6bc90e9f3abf716d1bf6f6e670a590
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -566,7 +517,7 @@
     <option name="SHOW_ONLY_CHANGED_IN_SELECTION_DIFF" value="true" />
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
     <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
-    <option name="SHORT_DIFF_HORISONTALLY" value="true" />
+    <option name="SHORT_DIFF_HORIZONTALLY" value="true" />
     <option name="SHORT_DIFF_EXTRA_LINES" value="2" />
     <option name="SOFT_WRAPS_IN_SHORT_DIFF" value="true" />
     <option name="INCLUDE_TEXT_INTO_PATCH" value="false" />
@@ -601,6 +552,7 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/app/PAGES/employees_page.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="22" column="38" selection-start="1236" selection-end="1236" vertical-scroll-proportion="-13.75">
@@ -620,10 +572,26 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
+=======
+    <entry file="file://$PROJECT_DIR$/app/CSS/images/bar-chart-icon.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/CSS/images/grocerystore1.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/CSS/images/monthlyIncomeTitle.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+>>>>>>> 14f40221ef6bc90e9f3abf716d1bf6f6e670a590
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/JS/transaction_functionality.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state line="21" column="0" selection-start="806" selection-end="806" vertical-scroll-proportion="0.0">
           <folding />
         </state>
@@ -681,34 +649,101 @@
     <entry file="file://$PROJECT_DIR$/app/CSS/suppliers_page.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="40" column="1" selection-start="621" selection-end="635" vertical-scroll-proportion="-15.16">
+=======
+        <state line="1" column="25" selection-start="26" selection-end="26" vertical-scroll-proportion="0.022865854" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/CSS/transaction_page.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="146" column="35" selection-start="3221" selection-end="3221" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/dbdesign.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/InventorySystemMajorFeatures.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="24" selection-start="1388" selection-end="1388" vertical-scroll-proportion="0.7027439" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/CSS/page_header.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/PAGES/page_header.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="26" selection-start="182" selection-end="193" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/PAGES/transaction_records.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="54" selection-start="285" selection-end="285" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/PAGES/transaction.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="69" selection-start="367" selection-end="367" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/CSS/transaction_record_page.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="129" column="21" selection-start="2992" selection-end="2992" vertical-scroll-proportion="0.0">
+>>>>>>> 14f40221ef6bc90e9f3abf716d1bf6f6e670a590
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/app/PHP/CLASSES/Suppliers_functions_home.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="118" column="91" selection-start="6335" selection-end="6335" vertical-scroll-proportion="-6.632653">
+=======
+    <entry file="file://$PROJECT_DIR$/db/IIS_DB.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="344" column="0" selection-start="11303" selection-end="11303" vertical-scroll-proportion="0.92574257">
+>>>>>>> 14f40221ef6bc90e9f3abf716d1bf6f6e670a590
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/app/JS/admins_page_functionality.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="4" column="6" selection-start="85" selection-end="85" vertical-scroll-proportion="0.0">
+=======
+    <entry file="file://$PROJECT_DIR$/app/JS/transaction_record_functionality.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="166" column="54" selection-start="5381" selection-end="5381" vertical-scroll-proportion="0.0">
+>>>>>>> 14f40221ef6bc90e9f3abf716d1bf6f6e670a590
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/app/PAGES/products_page.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="48" column="39" selection-start="2711" selection-end="2711" vertical-scroll-proportion="-15.0">
+=======
+    <entry file="file://$PROJECT_DIR$/app/PHP/CLASSES/Database_connection.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="28" selection-start="196" selection-end="206" vertical-scroll-proportion="-4.375">
+>>>>>>> 14f40221ef6bc90e9f3abf716d1bf6f6e670a590
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/app/PAGES/login.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="21" column="61" selection-start="628" selection-end="628" vertical-scroll-proportion="0.496063">
+=======
+    <entry file="file://$PROJECT_DIR$/app/PHP/CLASSES/iis_functions_sales.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="110" column="32" selection-start="4072" selection-end="4072" vertical-scroll-proportion="0.26107594">
+>>>>>>> 14f40221ef6bc90e9f3abf716d1bf6f6e670a590
           <folding />
         </state>
       </provider>

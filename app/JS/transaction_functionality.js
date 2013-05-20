@@ -63,6 +63,7 @@ $(function(){
         var selectedProductId = row_id.split("_");
         var productIDindex = $.inArray(selectedProductId[3], selectedProduct_ID);//$.inArray => used to determine the numeric index of a particular array element
 	 	var cashInHand = parseFloat($('#cash_in_hand_input').val());
+	 	var listLength = $('#shopping_list_tbody tr').length;
         var newChange = 0;
 	 	$('#'+row_id).addClass('error');
 	 	$('#dialog_div').html('Remove From Product List');
@@ -87,11 +88,12 @@ $(function(){
                     selectedProduct_ID.splice(productIDindex,1); // removing id from array of product IDs
 				 	$('#tr_transact_search_'+row_id.substring(15)).css('text-decoration','none');
     				$('#payment_tbody tr th:first').html("&#8369; "+changeToMoneyFormat(totalPayment));
-    				if(newChange > 0){
+    				if(newChange > 0 && listLength > 2){
                     	$('#payment_tbody tr th:last').css('color','#000').html("&#8369; "+changeToMoneyFormat(newChange));
                         $('#payment_btn').removeAttr('disabled');
                		}else{
 			 			$('#payment_tbody tr th:last').css('color','#f00').html("&#8369; 00.00");
+			 			$('#cash_in_hand_input').attr('disabled','disabled');
                		}
                     totalPayment = parseFloat(totalPayment); //to make totalPayment a floating point number                   
 				 	$(this).dialog('close');

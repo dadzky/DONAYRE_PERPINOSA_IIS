@@ -21,4 +21,11 @@
 #buttons_div button {
     height: 33px;
 }
+#system_name_div h2{
+    color:#fff;
+    font-family: Arial, sans-serif;
+    margin-left: 20px;
+    text-shadow:0 0 0.2em dodgerblue, 0 0 0.2em dodgerblue, 0 0 0.2em dodgerblue, 0 0 0.2em dodgerblue, 0 0 0.2em dodgerblue, 0 0 0.2em dodgerblue;
+     
+}
 
