@@ -62,8 +62,10 @@ $(function() {
     });
 
     $("#pagination_content_div").on('click', 'li a', function() {
+        $("#pagination_content_div  li").removeClass("active");
         var current_page = $(this).html();
         $("#current_page").val(current_page - 1);
+        $(this).addClass("active");
         display_suppliers();
     })
 

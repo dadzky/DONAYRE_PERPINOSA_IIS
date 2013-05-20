@@ -13,14 +13,15 @@
                 <div id = "suppliers_action_div">
                     <div id = "suppliers_pagination_div">
                         <div id = "pagination_content_div" class = "pagination">
-                            <!--<button class = "btn btn-primary" id = "previous_page_button"><<</button>-->
+                            <button class = "btn btn-primary" id = "previous_page_button"><<</button>
                             <ul id = "suppliers_pagination_ul"></ul>
-                            <!--<button class = "btn btn-primary" id = "next_page_button">>></button>-->
+                            <button class = "btn btn-primary" id = "next_page_button">>></button>
+                            <span id = "item_limit_span" class = "label label-info">Item Limit:</span>
+                            <input type = "number" id = "item_limit_input" class = "input-mini" />
                         </div>
                         <input type = "hidden" id = "current_page" value = "0" />
                     </div><!-- ======= suppliers pagination div ends ========= -->
-                    <span id = "item_limit_span" class = "label label-info">Item Limit:</span>
-                    <input type = "number" id = "item_limit_input" class = "input-mini" />
+
                 </div><!-- ======== suppliers action div ends ============ -->
                 <table id = "suppliers_table" class = "table table-bordered">
                     <thead>

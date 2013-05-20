@@ -20,7 +20,6 @@
             $this->open_connection();
 
             $select_statement = $this->db_holder->query("SELECT * FROM suppliers LIMIT $current_page, $item_limit;");
-            //$select_statement->execute(array(intval($current_page), intval($item_limit)));
             while($content = $select_statement->fetch()) {
                 $select_statement2 = $this->db_holder->prepare("SELECT p.product_name
                                                                   FROM products AS p,
@@ -41,7 +40,6 @@
                          <td>".$content[3]."</td>
                          </tr>";
             }
-            echo "current page = ".intval($current_page)." --- item limit = ".intval($item_limit);
             $this->close_connection();
         }
 
@@ -116,7 +114,7 @@
 
                 echo "<tr id = 'admins_transaction_".$date[0]."'><td rowspan = ".$row_length.">".$date[0]."</td></tr>";
                 echo $row_fetched;
-                echo "<tr class = 'info'><td colspan = '3'></td><td>Money Spent: &#8369;".$daily_spent_money."</td></tr>";
+                echo "<tr class = 'info'><td colspan = '3'></td><td class = 'money_spent_td'>Money Spent: &#8369;".$daily_spent_money."</td></tr>";
             }
 
             $this->close_connection();

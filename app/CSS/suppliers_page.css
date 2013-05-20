@@ -8,11 +8,7 @@
 }
 
 #suppliers_action_div {
-    background: #d3d3d3;
-    height: 50px;
-    width: 100%;
-    padding: 4px;
-    margin-bottom: 10px;
+    display: block;
 }
 
 #admins_transaction_table, #admins_transaction_table tr, #admins_transaction_table tr td, #admins_transaction_table tr th{
@@ -22,4 +18,26 @@
 #show_transaction_span {
     float: right;
     cursor: pointer;
+}
+
+.money_spent_td {
+    font-weight: bolder;
+}
+
+#suppliers_pagination_div {
+    background: #d3d3d3;
+}
+
+#previous_page_button {
+    margin-right: -4px;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    margin-top: -20px;
+}
+
+#next_page_button {
+    margin-left: -4px;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    margin-top: -20px;
 }
