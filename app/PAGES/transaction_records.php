@@ -64,6 +64,7 @@
         <script src = "../JS/bootstrap.min.js"></script>
         <script src = "../JS/jqBarGraph.js"></script>
         <script src = "../JS/transaction_record_functionality.js"></script>
+        <script src = "../JS/format_number.js"></script>
 
     </body>
 </html>

@@ -56,9 +56,11 @@
             }
             $list = "";
             if(intval($pages > 1)) {
+                /*
                 if($pages > 10){
                     $counter = $pages - 10;
                 }
+                */
                 for($counter; $counter <= intval($pages); $counter++) {
 
                     if($counter == 1) {

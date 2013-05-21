@@ -7,8 +7,7 @@
     <body>
         <div id = "suppliers_main_container_div" class = "container">
             <h1>Suppliers</h1>
-            <span id = 'show_transaction_span' class = 'label label-info'>show admin's transaction</span>
-
+            <span id = 'show_transaction_span' class = 'pull-right label label-info'>show admin's transaction</span><br />
             <div id = "display_suppliers_div">
                 <div id = "suppliers_action_div">
                         <span id = "item_limit_content" class = "pull-right">
