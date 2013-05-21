@@ -50,7 +50,7 @@ $(function() {
     });
 
     $("#item_limit_input").keyup(function() {
-        if($("#item_limit_input").val() > 0) {
+        if($("#item_limit_input").val() > 0 || $("#item_limit_input").val() == "") {
             display_supplier_pager();
             display_suppliers();
             $("#item_limit_content").removeClass("control-group error");
@@ -113,6 +113,7 @@ function display_supplier_pager() {
     var data = {"item_limit": parseInt(item_limit)};
     var display_supplier_pager_request = request("../PHP/OBJECTS/SUPPLIERS/display_supplier_pager.php", data, "displaying supplier pager");
     display_supplier_pager_request.success(function(data) {
+        alert("pager = " + data);
         $("#suppliers_pagination_ul").html(data);
     });
 }
