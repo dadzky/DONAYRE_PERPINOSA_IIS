@@ -5,16 +5,16 @@
     class Iis_functions_sales extends Database_connection {
         /*------------FOR TRANSACTIONS-----------*/
 
-    	function getProductForTransaction($barcode){	
+    	function getProductForTransaction($identifier, $identifier_val){
 
     		$this->open_connection();
 
     			$sql= "SELECT product_id,product_name,product_price,stock_unit
                         FROM products
-                        WHERE bar_code = ?
+                        WHERE $identifier = ?
                         AND number_of_stocks > 0";
                 $stmt = $this->db_holder->prepare($sql);
-                $stmt->bindParam(1, $barcode);
+                $stmt->bindParam(1, $identifier_val);
                 $stmt->execute();
 
     		$this->close_connection();

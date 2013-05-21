@@ -30,6 +30,7 @@
                     <tbody id = "display_suppliers_tbody"></tbody>
                 </table><!-- ======= display suppliers table ends ======== -->
                 <div id = "pagination_content_div" class = "pagination">
+
                     <button class = "btn btn-primary" id = "previous_page_button"><<</button>
                     <ul id = "suppliers_pagination_ul"></ul>
                     <button class = "btn btn-primary" id = "next_page_button">>></button>

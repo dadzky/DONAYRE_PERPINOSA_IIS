@@ -9,7 +9,18 @@ $(function(){
 	 	getProduct();
 	 	return false;
 	 })
+    /*-------Changing Code [barcode or product name]---------*/
 
+    $('#img_alternative_code').click(function(){
+        if($('#product_code').is(':visible')){
+            $('#product_code').removeAttr('required').val("").hide().tooltip('hide');;
+            $('#product_name').attr('required','required').show().tooltip('show');
+        }else{
+            $('#product_name').removeAttr('required').val("").hide().tooltip('hide');
+            $('#product_code').attr('required','required').show().tooltip('show');
+        }
+    }).tooltip('show').tooltip('hide');
+    $('#product_code').tooltip('show');
 	 /*--------------------Editing Quantity at the Shopping List--------------------*/
 	 $('#shopping_list_tbody').on('click','td img',function(){
 
@@ -154,14 +165,20 @@ $(function(){
  /*-----------FUNCTION FOR Getting PRODUCTS to transact----------*/
  function getProduct(){
  	var existMsg_error = "<h4>Oops..!</h4>That product has already been selected";
- 	var inputsMsg_error = "<h4>Oops..!</h4>Please Dont Leave Blanks<br/>Quantity Must Be a Number Greater than Zero (0)";
- 	var notfoundMsg_error = "<h4>Oh Crap..!</h4>Unidentified Barcode!";
+ 	var inputsMsg_error = "<h4>Oops..!</h4>Quantity Must Be a Number Greater than Zero (0)";
+ 	var notfoundMsg_error = "<h4>Oh Crap..!</h4>Unidentified Product!";
     var cashInHand = parseFloat($('#cash_in_hand_input').val());
     var newChange = 0;
  	var barCode = $('#product_code').val();
+    var productName = $('#product_name').val();
+    var obj = "";
+    if(barCode != ""){
+        obj = {'identifier':'bar_code','identifier_val':barCode};
+    }else{
+        obj = {'identifier':'product_name',identifier_val:productName};
+    }
  	var quantity = $('#product_quantity').val();
-	var obj = {barCode:barCode};
-	if(barCode != "" && regexInt.test(quantity) && quantity > 0 ){
+	if(regexInt.test(quantity) && quantity > 0 ){
 		$.ajax({
 			type:"GET",
 			data: obj,
@@ -257,9 +274,13 @@ function displayToShoppingList(prodId,prodName,prodPrice,prodUnit,productQuantit
 	$('#shopping_list_total_tfoot').html(tfoot);
 	$('#shopping_list_table').show('blind',1000);
     $('#product_quantity').val("");
-    $('#product_code').val("").focus();
     $('#payment_tbody tr th:first').html("&#8369; "+totalPayment2);
     $('#cash_in_hand_input').removeAttr('disabled');
+    if($('#product_code').val() != ""){
+       $('#product_code').val("").focus();
+    }else{
+       $('#product_name').val("").focus();
+    }
 }
 
 function saveTransaction(){

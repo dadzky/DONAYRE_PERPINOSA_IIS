@@ -63,12 +63,20 @@ $(function() {
         var current_page = $(this).html();
         $("#current_page").val(current_page - 1);
         display_suppliers();
-        display_supplier_pager();
+        //display_supplier_pager();
     })
     $("#pagination_content_div ul li").on('click', function() {
         alert("wew");
         $("#pagination_content_div li").removeClass("active");
         $(this).addClass("active");
+    })
+    $('#previous_page_list_button').click(function(){
+        testerla = testerla+5;
+        display_supplier_pager();
+    })
+    $('#next_page_list_button').click(function(){
+        testerla = testerla+5;
+        display_supplier_pager();
     })
 
 });
@@ -100,9 +108,10 @@ function display_suppliers() {
 function display_admins_transaction() {
     var display_admins_transaction_request = request("../PHP/OBJECTS/SUPPLIERS/display_admins_transaction.php", null, "displaying admins transaction");
     display_admins_transaction_request.success(function(data) {
-        $("#display_admins_transaction_table").html(data);
+       $("#display_admins_transaction_table").html(data);
     });
 }
+
 
 function display_supplier_pager() {
     var item_limit = $("#item_limit_input").val();
@@ -115,7 +124,6 @@ function display_supplier_pager() {
         $("#suppliers_pagination_ul").html(data);
     });
 }
-
 // =========== AJAX REQUEST ==========
 
 function request(url, data, what_request) {
