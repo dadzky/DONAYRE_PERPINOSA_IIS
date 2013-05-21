@@ -2,7 +2,8 @@
 		
 	include_once "../../CLASSES/iis_functions_sales.php";
 
-	$barCode = $_GET['barCode'];
+	$identifier = $_GET['identifier'];
+    $identifier_val = $_GET['identifier_val'];
 
 	$action = new Iis_functions_sales();
-	$action -> getProductForTransaction($barCode);
+	$action -> getProductForTransaction($identifier,$identifier_val);

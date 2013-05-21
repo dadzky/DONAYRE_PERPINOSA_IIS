@@ -4,7 +4,7 @@ if(!isset($_SESSION['log_in_as']) && $_SESSION['log_in_as'] != "cashier"):
     header('Location: login.php');
 endif;
 ?>
-<!Doctype HTML>
+<!DOCTYPE HTML>
 <html>
 <head>
     <title>Transaction</title>
@@ -45,8 +45,10 @@ endif;
         <br/> <br/> <br/> 
         <div id='product_to_transact_div'> 
             <form id='product_to_transact_form' class='form-horizontal'>
-                <input type='text' id='product_code' class='input-xxlarge' placeholder='Bar Code' require/><br/>
-                <input type='text' id='product_quantity'  class='input-xxlarge' placeholder='Quantity' require/><br/>
+                <input type='text' id='product_code' class='input-xxlarge' placeholder='Bar Code' title='Bar Code' data-toggle='tooltip' required='required' />
+                <input type='text' id='product_name' class='input-xxlarge' placeholder='Product Name' title='Product Name' data-toggle='tooltip'/>
+                <img id='img_alternative_code' src='../CSS/img_tbls/circle-arrow-left.png' title='Change code'/><br/>
+                <input type='text' id='product_quantity'  class='input-xxlarge' placeholder='Quantity' required='required' /><br/>
                 <input type='submit' id='product_displayer_btn' class='btn btn-primary btn-block btn-large' value='GO'>
             </form>
         </div>
@@ -106,6 +108,7 @@ endif;
 <!-- ========= IMPORTS =======-->
 <script src = "../JS/jquery-1.9.1.min.js"></script>
 <script src = "../JS/jquery-ui-1.10.2.min.js"></script>
+<script src= "../JS/bootstrap.min.js"></script>
 <script src = "../JS/transaction_functionality.js"></script>
 
 </body>
