@@ -14,9 +14,9 @@
                     <!-- searching-->
                     <div class='btn-group'>
                         <input type='hidden' id='searchBy_input' value='t.transaction_date'/>
-                        <button type='button' id='searchBy_btn' class='btn dropdown-toggle' data-toggle='dropdown'>
+                        <a type='button' id='searchBy_btn' class='btn dropdown-toggle' data-toggle='dropdown'>
                            <i class='icon-calendar'></i> Date &nbsp;<span class='caret'></span>
-                        </button>
+                        </a>
                         <ul class='dropdown-menu' id='searchBy_ul'>
                             <li><a href='#' tabindex="-1"><i class='icon-calendar'></i> Date <input type='hidden' value='t.transaction_date' /></a></li>
                             <li><a href='#' tabindex="-1"><i class='icon-briefcase'></i> Product Name <input type='hidden' value='p.product_name' /></a></li>
@@ -60,8 +60,8 @@
 
         <!-- ========= IMPORTS =======-->
         <script src = "../JS/jquery-1.9.1.min.js"></script>
-        <script src = "../JS/jquery-ui-1.10.2.min.js"></script>
         <script src = "../JS/bootstrap.min.js"></script>
+        <script src = "../JS/jquery-ui-1.10.2.min.js"></script>
         <script src = "../JS/jqBarGraph.js"></script>
         <script src = "../JS/transaction_record_functionality.js"></script>
 

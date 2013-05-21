@@ -16,6 +16,7 @@
                             <input type = "number" id = "item_limit_input" class = "input-mini" />
                         </span>
                         <input type = "hidden" id = "current_page" value = "0" />
+                        <input type='hidden' id='maxPage_input' />
 
                 </div><!-- ======== suppliers action div ends ============ -->
                 <br/>

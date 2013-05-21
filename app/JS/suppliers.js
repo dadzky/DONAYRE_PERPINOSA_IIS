@@ -60,21 +60,42 @@ $(function() {
     });
 
     $("#pagination_content_div").on('click', 'li a', function() {
-        /*$("#pagination_content_div li").removeClass("active");
-        $(this).addClass("active");*/
+        $("#pagination_content_div li").removeClass("active");
+        var maxPage = parseInt($('#maxPage_input').val());
+        var liParent = $(this.parentNode);
+        var pageNum = liParent.index()+1;
+        var limit=0;
+        liParent.toggleClass("active");
         var current_page = $(this).html();
         $("#current_page").val(current_page - 1);
+        if(maxPage > 6){
+            if((pageNum == 6 || pageNum == 7) && current_page < maxPage){
+                limit = parseInt(current_page)+7;
+                if(limit >= maxPage){
+                    pageOnTracked = maxPage-6;
+                }else{
+                    pageOnTracked = parseInt(current_page) - 1;
+                }
+
+                show_pager(pageOnTracked);
+
+            }else if(pageNum == 1 || pageNum == 2){
+                limit = parseInt(current_page)-7;
+                if(limit <= maxPage && limit > 0){
+                    console.log(maxPage)
+                    pageOnTracked = current_page - 5;
+                }else{
+                    pageOnTracked = 1;
+                }
+                show_pager(pageOnTracked);
+            }
+        }
         display_suppliers();
-        display_supplier_pager();
-    })
-    $("#pagination_content_div").on('click', 'li', function() {
-        $("#pagination_content_div li").removeClass("active");
-        $(this).addClass("active");
     })
 
 });
 
-
+var pageOnTracked = 0;
 function retrieve_all_suppliers() {
     var retrieve_all_suppliers_request = request("../PHP/OBJECTS/SUPPLIERS/retrieve_all_suppliers.php", null, "retrieving all suppliers");
     retrieve_all_suppliers_request.success(function(data) {
@@ -113,8 +134,21 @@ function display_supplier_pager() {
     var data = {"item_limit": parseInt(item_limit)};
     var display_supplier_pager_request = request("../PHP/OBJECTS/SUPPLIERS/display_supplier_pager.php", data, "displaying supplier pager");
     display_supplier_pager_request.success(function(data) {
-        $("#suppliers_pagination_ul").html(data);
+        var obj = JSON.parse(data);
+        $("#suppliers_pagination_ul").html(obj.pager);
+        $('#maxPage_input').val(obj.maxpage);
+        //alert(obj.maxpage)
     });
+}
+
+function show_pager(pageOnTracked){
+    //alert(pageOnTracked)
+    var newPager = "";
+    for(var ctr=1; ctr<=7; ctr++){
+        newPager += "<li><a href = 'Javascript:void(0)'>"+pageOnTracked+"</a></li>";
+        pageOnTracked++;
+    }
+    $("#suppliers_pagination_ul").html(newPager);
 }
 
 // =========== AJAX REQUEST ==========
