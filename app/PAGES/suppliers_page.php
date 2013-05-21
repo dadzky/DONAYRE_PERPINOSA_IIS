@@ -11,18 +11,14 @@
 
             <div id = "display_suppliers_div">
                 <div id = "suppliers_action_div">
-                    <div id = "suppliers_pagination_div">
-                        <div id = "pagination_content_div" class = "pagination">
-                            <button class = "btn btn-primary" id = "previous_page_button"><<</button>
-                            <ul id = "suppliers_pagination_ul"></ul>
-                            <button class = "btn btn-primary" id = "next_page_button">>></button>
+                        <span id = "item_limit_content" class = "pull-right">
                             <span id = "item_limit_span" class = "label label-info">Item Limit:</span>
                             <input type = "number" id = "item_limit_input" class = "input-mini" />
-                        </div>
+                        </span>
                         <input type = "hidden" id = "current_page" value = "0" />
-                    </div><!-- ======= suppliers pagination div ends ========= -->
 
                 </div><!-- ======== suppliers action div ends ============ -->
+                <br/>
                 <table id = "suppliers_table" class = "table table-bordered">
                     <thead>
                         <tr>
@@ -34,6 +30,11 @@
                     </thead>
                     <tbody id = "display_suppliers_tbody"></tbody>
                 </table><!-- ======= display suppliers table ends ======== -->
+                <div id = "pagination_content_div" class = "pagination">
+                    <button class = "btn btn-primary" id = "previous_page_button"><<</button>
+                    <ul id = "suppliers_pagination_ul"></ul>
+                    <button class = "btn btn-primary" id = "next_page_button">>></button>
+                </div><!-- =========== pagination content div ends =============-->
             </div><!-- ======= display suppliers div ends ============ -->
             <div id = "display_admins_transaction_div">
                 <table id = "admins_transaction_table" class = "table table-bordered">

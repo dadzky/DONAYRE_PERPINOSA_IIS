@@ -9,4 +9,4 @@
         $$content['name'] = $content['value'];
     }
 
-    $execute_add->add_supplier($company_name, $address, $contact_number);
+    $execute_add->add_supplier($company_name, $supplier_address, $supplier_contact_number);

@@ -159,6 +159,14 @@ $(function() {
                                             $("#add_employees_div").fadeOut(1000);
                                             $("#overlay_div_container").fadeOut(1000);
                                             display_employees();
+                                            // ========== RESET FORM =====
+                                            $("#add_employees_form select").prop('selectedIndex', 0);
+                                            var inputs = document.getElementById('add_employees_form').getElementsByTagName('input');
+                                            for(var counter = 0; counter < inputs.length; counter++) {
+                                                if(inputs[counter].type == 'text' || inputs[counter].type == 'number') {
+                                                    inputs[counter].value = ' ';
+                                                }
+                                            }
                                         },
                                         error: function(data) {
                                             console.log("Error in adding employee = " + JSON.stringify(data));
@@ -180,7 +188,7 @@ $(function() {
                     $("#password_dd").addClass("control-group error");
                 }
             } else {
-                // not a cashier, so proceed
+                // ========== not a cashier, so proceed
                 // ========== CHECK FIRST IF EMPLOYEE TO ADD WAS ALREADY HIRED TSK, HASSLE MUCH!!! PAULIT-ULIT ANG CODES >.< ================= //
                 $.ajax({
                     type: "POST",
@@ -203,6 +211,14 @@ $(function() {
                                     $("#add_employees_div").fadeOut(1000);
                                     $("#overlay_div_container").fadeOut(1000);
                                     display_employees();
+                                    // ========= RESET THE FORM =========
+                                    $("#add_employees_form select").prop('selectedIndex', 0);
+                                    var inputs = document.getElementById('add_employees_form').getElementsByTagName('input');
+                                    for(var counter = 0; counter < inputs.length; counter++) {
+                                        if(inputs[counter].type == 'text' || inputs[counter].type == 'number') {
+                                            inputs[counter].value = ' ';
+                                        }
+                                    }
                                 },
                                 error: function(data) {
                                     console.log("Error in adding employee = " + JSON.stringify(data));

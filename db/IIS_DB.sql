@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 3.3.9
+-- version 3.4.11.1deb1
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: May 17, 2013 at 10:41 AM
--- Server version: 5.5.8
--- PHP Version: 5.3.5
+-- Generation Time: May 20, 2013 at 04:51 PM
+-- Server version: 5.5.29
+-- PHP Version: 5.4.6-1ubuntu1.2
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -89,7 +90,8 @@ CREATE TABLE IF NOT EXISTS `admins_transaction` (
 INSERT INTO `admins_transaction` (`transaction_date`, `product_id`, `total_items_bought`) VALUES
 ('2013-05-16', 62, 7),
 ('2013-05-17', 63, 8),
-('2013-05-17', 64, 78);
+('2013-05-20', 65, 34),
+('2013-05-20', 66, 3);
 
 -- --------------------------------------------------------
 
@@ -159,7 +161,7 @@ CREATE TABLE IF NOT EXISTS `products` (
   `number_of_stocks` double DEFAULT NULL,
   `stock_unit` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`product_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=65 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=67 ;
 
 --
 -- Dumping data for table `products`
@@ -179,10 +181,10 @@ INSERT INTO `products` (`product_id`, `product_name`, `bar_code`, `product_price
 (58, 'gfd', '756765', 4, 4, 'piece'),
 (59, '   ', '675756', 5, 4, 'g'),
 (60, 'fgfd', '  5645654   ', 56, 4, 'piece'),
-(61, '    fg   fd', '56546', 56, 4, 'pieces'),
 (62, 'Sample90', '896875765', 67, 7, 'piece'),
 (63, 'Sample_Pro', '76875687675', 87, 8, 'piece'),
-(64, 'Sample898', '9867875', 78, 78, 'piece');
+(65, 'aasas', '121212', 1100, 34, 'pack'),
+(66, ' asda', 'asds', 34, 3, 'packs');
 
 -- --------------------------------------------------------
 
@@ -204,7 +206,38 @@ CREATE TABLE IF NOT EXISTS `product_to_supplier` (
 INSERT INTO `product_to_supplier` (`product_id`, `supplier_id`) VALUES
 (62, 5),
 (63, 3),
-(64, 1);
+(65, 31),
+(66, 12);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sales`
+--
+
+CREATE TABLE IF NOT EXISTS `sales` (
+  `transaction_id` int(11) NOT NULL AUTO_INCREMENT,
+  `product_id` int(11) DEFAULT NULL,
+  `employee_id` int(11) DEFAULT NULL,
+  `transaction_date` date NOT NULL,
+  `transaction_time` time NOT NULL,
+  PRIMARY KEY (`transaction_id`),
+  KEY `product_id_transactions_to_products` (`product_id`),
+  KEY `employee_id_transactions_to_employees` (`employee_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=86 ;
+
+--
+-- Dumping data for table `sales`
+--
+
+INSERT INTO `sales` (`transaction_id`, `product_id`, `employee_id`, `transaction_date`, `transaction_time`) VALUES
+(79, 48, NULL, '2013-05-10', '14:15:03'),
+(80, 49, 22, '2013-05-11', '17:13:50'),
+(81, 50, 22, '2013-05-11', '17:13:50'),
+(82, 48, 22, '2013-05-11', '17:13:50'),
+(83, 48, 22, '2013-05-16', '17:32:51'),
+(84, 50, 22, '2013-05-16', '17:32:51'),
+(85, 51, 22, '2013-05-16', '17:32:51');
 
 -- --------------------------------------------------------
 
@@ -218,7 +251,7 @@ CREATE TABLE IF NOT EXISTS `suppliers` (
   `address` varchar(200) DEFAULT NULL,
   `contact_number` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`supplier_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=21 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=35 ;
 
 --
 -- Dumping data for table `suppliers`
@@ -244,37 +277,21 @@ INSERT INTO `suppliers` (`supplier_id`, `company_name`, `address`, `contact_numb
 (17, 'Sample14', 'Sample14', '8798'),
 (18, 'Sample1312', 'kljk', '87'),
 (19, 'samp', 'kjkh', '878'),
-(20, 'Sample3443', 'fsdfds', '4543');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `transactions`
---
-
-CREATE TABLE IF NOT EXISTS `transactions` (
-  `transaction_id` int(11) NOT NULL AUTO_INCREMENT,
-  `product_id` int(11) DEFAULT NULL,
-  `employee_id` int(11) DEFAULT NULL,
-  `transaction_date` date NOT NULL,
-  `transaction_time` time NOT NULL,
-  PRIMARY KEY (`transaction_id`),
-  KEY `product_id_transactions_to_products` (`product_id`),
-  KEY `employee_id_transactions_to_employees` (`employee_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=86 ;
-
---
--- Dumping data for table `transactions`
---
-
-INSERT INTO `transactions` (`transaction_id`, `product_id`, `employee_id`, `transaction_date`, `transaction_time`) VALUES
-(79, 48, NULL, '2013-05-10', '14:15:03'),
-(80, 49, 22, '2013-05-11', '17:13:50'),
-(81, 50, 22, '2013-05-11', '17:13:50'),
-(82, 48, 22, '2013-05-11', '17:13:50'),
-(83, 48, 22, '2013-05-16', '17:32:51'),
-(84, 50, 22, '2013-05-16', '17:32:51'),
-(85, 51, 22, '2013-05-16', '17:32:51');
+(20, 'Sample3443', 'fsdfds', '4543'),
+(21, 'Mao', '908kjghjtrg', '12345678908'),
+(22, 'mjjj', '32', '32'),
+(23, '123333', '123', '123'),
+(24, 'wapakwapa', '2', '2'),
+(25, '555454', '45', '455'),
+(26, '23213213', '2', '2'),
+(27, '3333', '3', '3'),
+(28, '555565656565', '12', '12'),
+(29, 'ppp', 'pp', '3213'),
+(30, 'gana ana', '123', '123'),
+(31, 'qqqeqe', 'qweqwe', '123'),
+(32, 'mj', '32', '32'),
+(33, 'lolz', '32', '32'),
+(34, 'polkdfsaf', '12', '12');
 
 -- --------------------------------------------------------
 
@@ -331,9 +348,9 @@ ALTER TABLE `product_to_supplier`
   ADD CONSTRAINT `product_to_supplier_ibfk_2` FOREIGN KEY (`supplier_id`) REFERENCES `suppliers` (`supplier_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `transactions`
+-- Constraints for table `sales`
 --
-ALTER TABLE `transactions`
+ALTER TABLE `sales`
   ADD CONSTRAINT `employee_id_transactions_to_employees` FOREIGN KEY (`employee_id`) REFERENCES `employees` (`employee_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `product_id_transactions_to_products` FOREIGN KEY (`product_id`) REFERENCES `products` (`product_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
@@ -341,4 +358,8 @@ ALTER TABLE `transactions`
 -- Constraints for table `transactions_info`
 --
 ALTER TABLE `transactions_info`
-  ADD CONSTRAINT `transaction_id_transactions_info_to_transactions` FOREIGN KEY (`transaction_id`) REFERENCES `transactions` (`transaction_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `transaction_id_transactions_info_to_transactions` FOREIGN KEY (`transaction_id`) REFERENCES `sales` (`transaction_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

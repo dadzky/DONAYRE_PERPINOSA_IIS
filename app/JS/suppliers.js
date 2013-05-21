@@ -19,12 +19,11 @@ $(function() {
     display_supplier_pager();
 
     $("#add_supplier_button").click(function() {
-        if($.trim($("#company_name").val()) != "" && $.trim($("#address").val() != "" && $.trim($("#contact_number").val() != ""))) {
-            if(/^[0-9, -]*$/.test($("#contact_number").val())) {
+        if($.trim($("#company_name").val()) != "" && $.trim($("#supplier_address").val()) != "" ) {
+            if(/^[0-9, -]*$/.test($("#supplier_contact_number").val()) && $.trim($("#supplier_contact_number").val()) != "" ) {
                 var data = {"suppliers_data": JSON.stringify($("#add_suppliers_form").serializeArray())};
                 var add_request = request("../PHP/OBJECTS/SUPPLIERS/add_supplier.php", data, "adding supplier");
                 add_request.success(function(data) {
-                    //retrieve_all_suppliers();
                     $("#contact_number_dd").removeClass("control-group error");
                     // ====== back in adding products ===
 
@@ -33,42 +32,44 @@ $(function() {
                     $("#add_supplier_button").hide();
                     $("#add_product_button").show();
 
-                   // var option_length = $('#product_supplier option').length;
-                   // var index;
-                   /* for(var counter = 0; counter < option_length; counter++) {
-
-                       // console.log($('#product_supplier option')[counter])
-                        if($('#product_supplier option')[counter].value == data) {
-                            alert(data);
-                            console.log($('#product_supplier option')[counter].value);
-                            index = counter;
-                            break;
-                        }
-                    }*/
                     $("#product_supplier").prepend("<option>"+data+"</option>");
                     $("#product_supplier").val(data);
 
 
                 });
             } else {
+                alert("not valid");
                 // ========== invalid contact number warning =========
                 $("#contact_number_dd").addClass("control-group error");
             }
         } else {
             // ======= Some fields are blank warning ==========
+            $("#add_supplier_warning").show();
+            $("#add_supplier_warning").fadeOut(7000);
         }
     });
 
     $("#item_limit_input").keyup(function() {
-        display_supplier_pager();
-        display_suppliers();
+        if($("#item_limit_input").val() > 0) {
+            display_supplier_pager();
+            display_suppliers();
+            $("#item_limit_content").removeClass("control-group error");
+        } else {
+            $("#item_limit_content").addClass("control-group error");
+        }
     });
 
     $("#pagination_content_div").on('click', 'li a', function() {
-        $("#pagination_content_div li").removeClass("active");
+        /*$("#pagination_content_div li").removeClass("active");
+        $(this).addClass("active");*/
         var current_page = $(this).html();
         $("#current_page").val(current_page - 1);
         display_suppliers();
+        display_supplier_pager();
+    })
+    $("#pagination_content_div").on('click', 'li', function() {
+        $("#pagination_content_div li").removeClass("active");
+        $(this).addClass("active");
     })
 
 });

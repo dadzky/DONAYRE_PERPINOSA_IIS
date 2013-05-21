@@ -12,7 +12,7 @@
             while($content = $select_statement->fetch()) {
                 echo "<option>".$content[0]."</option>";
             }
-            echo "<option>new supplier</option>";
+            echo "<option id = 'new_supplier_option'>NEW SUPPLIER</option>";
             $this->close_connection();
         }
 
@@ -20,7 +20,6 @@
             $this->open_connection();
 
             $select_statement = $this->db_holder->query("SELECT * FROM suppliers LIMIT $current_page, $item_limit;");
-            //$select_statement->execute(array(intval($current_page), intval($item_limit)));
             while($content = $select_statement->fetch()) {
                 $select_statement2 = $this->db_holder->prepare("SELECT p.product_name
                                                                   FROM products AS p,
@@ -28,10 +27,10 @@
                                                                        product_to_supplier AS ps
                                                                  WHERE p.product_id = ps.product_id AND
                                                                        s.supplier_id = ps.supplier_id AND
-                                                                       s.supplier_id = ?;" );
+                                                                       s.supplier_id = ?;");
                 $select_statement2->execute(array($content[0]));
                 echo "<tr id = 'supplier_".$content[0]."'>
-                        <td>".$content[1]."</td>
+                        <td>".htmlentities($content[1])."</td>
                         <td><table>";
                         while($supplied_product = $select_statement2->fetch()) {
                             echo "<tr><td>".$supplied_product[0]."</td></tr>";
@@ -41,12 +40,13 @@
                          <td>".$content[3]."</td>
                          </tr>";
             }
-            echo "current page = ".intval($current_page)." --- item limit = ".intval($item_limit);
             $this->close_connection();
         }
 
         function display_supplier_pager($item_limit) {
             $this->open_connection();
+
+            $counter = 1;
 
             $select_statement = $this->db_holder->query("SELECT COUNT(DISTINCT company_name) FROM suppliers;");
             $number_of_items = $select_statement->fetch();
@@ -56,8 +56,12 @@
             }
             $list = "";
             if(intval($pages > 1)) {
-                for($counter = 1; $counter <= intval($pages); $counter++) {
-                    if($counter ==1) {
+                if($pages > 10){
+                    $counter = $pages - 10;
+                }
+                for($counter; $counter <= intval($pages); $counter++) {
+
+                    if($counter == 1) {
                         $list .= "<li class = 'active'><a href = 'Javascript:void(0)'>".$counter."</a></li>";
                     } else {
                         $list .= "<li><a href = 'Javascript:void(0)'>".$counter."</a></li>";
@@ -122,11 +126,11 @@
             $this->close_connection();
         }
 
-        function add_supplier($company_name, $address, $contact_number) {
+        function add_supplier($company_name, $supplier_address, $supplier_contact_number) {
             $this->open_connection();
 
             $insert_statement = $this->db_holder->prepare("INSERT INTO suppliers VALUES (null, ?, ?, ?);");
-            $insert_statement->execute(array($company_name, $address, $contact_number));
+            $insert_statement->execute(array($company_name, $supplier_address, $supplier_contact_number));
 
             echo $company_name;
 

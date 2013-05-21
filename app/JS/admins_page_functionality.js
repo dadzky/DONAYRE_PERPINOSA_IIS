@@ -1,14 +1,8 @@
 $(function() {
-
     $("#admins_content_div").load("transaction_records.php");
-
-    //var location = window.location;
-
 
     $("#for_product_button").click(function() {
         $("#admins_content_div").load("products_page.php");
-        //location = location + "prduct page";
-        window.location.href = window.location + "product page";
     });
 
     $("#for_suppliers_button").click(function() {

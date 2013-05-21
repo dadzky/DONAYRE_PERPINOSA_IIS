@@ -43,7 +43,7 @@ $(function() {
     // =============== ON CHANGE EVENTS ==============
 
     $("#product_supplier").change(function() {
-        if($("#product_supplier").val() == "new supplier") {
+        if($("#product_supplier").val() == "NEW SUPPLIER") {
             $("#add_product_form").toggle('slow');
             $("#add_suppliers_form").slideToggle('slow');
             $("#add_supplier_button").show();
@@ -331,7 +331,7 @@ function request_for_editing_product_name(id, new_product_name) {
 }
 
 function edit_products_price(id) {
-    $(document.getElementById(id).getElementsByTagName('td')[1].getElementsByTagName('span')).html("<form id = 'new_product_price_form'><input type = 'text' id = 'new_product_price' class = 'input-mini'/></form>");
+    $(document.getElementById(id).getElementsByTagName('td')[2].getElementsByTagName('span')).html("<form id = 'new_product_price_form'><input type = 'text' id = 'new_product_price' class = 'input-mini'/></form>");
     var data_to_retrieve = "product_price";
     var retrieve_product_price_to_edit = retrieve_product_data(id, data_to_retrieve);
     retrieve_product_price_to_edit.success(function(data) {

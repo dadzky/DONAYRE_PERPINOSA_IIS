@@ -71,9 +71,9 @@
                         <dt>Company Name:</dt>
                             <dd><input type = "text" name = "company_name" id = "company_name" /></dd>
                         <dt>Address:</dt>
-                            <dd><input type = "text" name = "address" id = "address" /></dd>
+                            <dd><input type = "text" name = "supplier_address" id = "supplier_address" /></dd>
                         <dt>Contact:</dt>
-                            <dd><input type = "text" name = "contact_number" id = "contact_number" /></dd>
+                            <dd><input type = "text" name = "supplier_contact_number" id = "supplier_contact_number" /></dd>
                     </dl>
                     <input type = "reset" value = "reset" class = "btn btn-danger" />
                 </form><!-- =========== add suppliers form ends ===========-->

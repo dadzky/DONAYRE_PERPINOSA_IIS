@@ -135,3 +135,10 @@
 #add_suppliers_form {
     display: none;
 }
+
+#new_supplier_option {
+    font-weight: bold;
+    font-size: 20px;
+    background: dimgray;
+    color: #000000;
+}

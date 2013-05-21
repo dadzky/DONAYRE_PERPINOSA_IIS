@@ -1,21 +1,23 @@
 ﻿
 Students Name:
-Granaderos, Marejean
-Donayre, Diosdado Jr.
+    Granaderos, Marejean
+    Sanchez, Diosdado Jr.
 	
-	System Name: 	INVENTORY SYSTEM
+	System Name: 	I-INVENTORY SYSTEM
 
 	Description:		
 
-				This Inventory System provides accurate transaction manipulation and most efficient for a buy and sell products. Its features may help a company to facilitate monitoring the flow of their sales.
+				    This Inventory System provides accurate transaction manipulation and most efficient for a buy and sell products. Its features
+				may help a company to facilitate monitoring the flow of their sales.
 			
 	Features:
 
-	    Log-in and log-out of cashiers, as well as the administrator;
+	    *   Log-in and log-out of cashiers, as well as the administrator;
 
         * Administrator:
 
-            Records and supplier's transactions;
+            Records supplier's transactions;
+            Determines the total cost of each transaction;
             Lists all held transactions;
             Displays records according to date of transaction;
             Displays the monthly sales in a graph;
@@ -23,12 +25,20 @@ Donayre, Diosdado Jr.
             Can search a transaction record by a category;
             Tracks the stock level of each products;
             Can add products;
-            Update products description;
-            Delete products if needed;
+            Update products details;
+            Search specific product;
+            Displays products according to selected first character;
+            Can delete multiple products if needed;
+            Add product supplier;
+            Displays the list of suppliers with the corresponding products they supplied;
+            //-- Can update supplier's info;
             Add new hired employees;
+            Displays the list of employees according to the type of job they have;
+            Search employee;
             Can update employees' information;
-            Delete employees if fired!;
+            Removes the selected employee from the list if fired!;
             Can view the list of fired employees;
+            Can search fired employee;
 
         * Cashier:
 
@@ -36,7 +46,7 @@ Donayre, Diosdado Jr.
             Can edit the quantity of an item in the list;
             Can delete the item in the list;
             Calculates the Subtotal of an item and Total to all items bought;
-            Records the transaction ;
+            Records the transaction;
 
 	
 

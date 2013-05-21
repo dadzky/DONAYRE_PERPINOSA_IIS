@@ -8,7 +8,8 @@
 }
 
 #suppliers_action_div {
-    display: block;
+    width: 100%;
+    background: #d3d3d3;
 }
 
 #admins_transaction_table, #admins_transaction_table tr, #admins_transaction_table tr td, #admins_transaction_table tr th{
@@ -46,15 +47,19 @@ input[type = "reset"] {
     background: #d3d3d3;
 }
 
+#item_limit_content {
+    /*float: right;*/
+}
+
 #previous_page_button {
-    margin-right: -4px;
+    margin-right: -9px;
     border-bottom-left-radius: 10px;
     border-top-left-radius: 10px;
     margin-top: -20px;
 }
 
 #next_page_button {
-    margin-left: -4px;
+    margin-left: -9px;
     border-bottom-right-radius: 10px;
     border-top-right-radius: 10px;
     margin-top: -20px;
