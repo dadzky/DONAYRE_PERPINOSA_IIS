@@ -47,7 +47,7 @@
                 <tbody id='transaction_record_tbody'></tbody>
             </table>
             <div id='pagination_content'>
-                <div id='graph-toggle-div' title='click to toggle bargraph' data-toggle="tooltip"><img src='../CSS/images/bar-chart-icon.png' alt='Open Bargraph'  /></div>
+                <div id='graph-toggle-div' title='click to toggle bargraph'><img src='../CSS/images/bar-chart-icon.png' alt='Open Bargraph'  /></div>
                 <div class='pagination'></div><!-- ========= pagination ============= -->
                 <input type='hidden' id='currentPage' value='0' />
             </div><!--pagination_content-->
@@ -60,8 +60,8 @@
 
         <!-- ========= IMPORTS =======-->
         <script src = "../JS/jquery-1.9.1.min.js"></script>
-        <script src = "../JS/bootstrap.min.js"></script>
         <script src = "../JS/jquery-ui-1.10.2.min.js"></script>
+        <script src = "../JS/bootstrap.min.js"></script>
         <script src = "../JS/jqBarGraph.js"></script>
         <script src = "../JS/transaction_record_functionality.js"></script>
         <script src = "../JS/format_number.js"></script>

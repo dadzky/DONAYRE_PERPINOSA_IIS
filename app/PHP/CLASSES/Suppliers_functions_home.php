@@ -1,6 +1,7 @@
 <?php
 
     include "Database_connection.php";
+    include "Pagination.php";
 
     class Suppliers_functions_home extends Database_connection{
 
@@ -45,11 +46,9 @@
 
         function display_supplier_pager($item_limit) {
             $this->open_connection();
-
-            $counter = 1;
-
             $select_statement = $this->db_holder->query("SELECT COUNT(DISTINCT company_name) FROM suppliers;");
             $number_of_items = $select_statement->fetch();
+
             $pages = $number_of_items[0] / intval($item_limit);
             $pages = ceil($pages);
 
@@ -59,14 +58,13 @@
                 if($pages > 7){
                     $numToView = 7;
                 }
-                for($counter; $counter <= $numToView; $counter++) {
+                for($counter=1; $counter <= $numToView; $counter++) {
                     if($counter == 1) {
                         $list .= "<li class = 'active'><a href = 'Javascript:void(0)'>".$counter."</a></li>";
                     } else {
                         $list .= "<li><a href = 'Javascript:void(0)'>".$counter."</a></li>";
                     }
                 }
-
             }
             //echo $list;
             $obj = array('pager'=>$list, 'maxpage'=>$pages);
@@ -139,3 +137,5 @@
             $this->close_connection();
         }
     }
+
+

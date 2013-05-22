@@ -65,34 +65,44 @@ $(function() {
         var liParent = $(this.parentNode);
         var pageNum = liParent.index()+1;
         var limit=0;
-        liParent.toggleClass("active");
         var current_page = $(this).html();
         $("#current_page").val(current_page - 1);
         if(maxPage > 6){
             if((pageNum == 6 || pageNum == 7) && current_page < maxPage){
-                limit = parseInt(current_page)+7;
+                limit = parseInt(current_page)+5;
                 if(limit >= maxPage){
                     pageOnTracked = maxPage-6;
                 }else{
                     pageOnTracked = parseInt(current_page) - 1;
                 }
-
                 show_pager(pageOnTracked);
-
             }else if(pageNum == 1 || pageNum == 2){
-                limit = parseInt(current_page)-7;
-                if(limit <= maxPage && limit > 0){
-                    console.log(maxPage)
+                limit = parseInt(current_page)-5;
+                if(limit > 0){
                     pageOnTracked = current_page - 5;
                 }else{
                     pageOnTracked = 1;
                 }
                 show_pager(pageOnTracked);
             }
+
+            $('#page_'+current_page).toggleClass('active');
+        }else{
             liParent.toggleClass("active");
         }
         display_suppliers();
     });
+
+    // =========== PAGER NEXT AND PREVIOUS BUTTON ============ //
+
+    $("#previous_page_button").click(function() {
+
+    });
+
+    $("#next_page_button").click(function() {
+
+    });
+
 });
 
 var pageOnTracked = 0;
@@ -133,12 +143,11 @@ function display_supplier_pager() {
         item_limit = 5;
     }
     var data = {"item_limit": parseInt(item_limit)};
-    var display_supplier_pager_request = request("../PHP/OBJECTS/SUPPLIERS/display_supplier_pager.php", data, "displaying supplier pager");
+    var display_supplier_pager_request = request("../PHP/OBJECTS/SUPPLIERS/display_supplier_pager.php", data, "displaying supplieqr pager");
     display_supplier_pager_request.success(function(data) {
         var obj = JSON.parse(data);
         $("#suppliers_pagination_ul").html(obj.pager);
         $('#maxPage_input').val(obj.maxpage);
-        //alert(obj.maxpage)
     });
 }
 
@@ -147,7 +156,7 @@ function show_pager(pageOnTracked){
     //alert(pageOnTracked)
     var newPager = "";
     for(var ctr=1; ctr<=7; ctr++){
-        newPager += "<li><a href = 'Javascript:void(0)'>"+pageOnTracked+"</a></li>";
+        newPager += "<li id=page_"+pageOnTracked+"><a href = 'Javascript:void(0)'>"+pageOnTracked+"</a></li>";
         pageOnTracked++;
     }
     $("#suppliers_pagination_ul").html(newPager);

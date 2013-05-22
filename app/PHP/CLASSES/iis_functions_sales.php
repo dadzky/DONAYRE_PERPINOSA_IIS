@@ -139,7 +139,7 @@
                     }
 
                     echo "<tr><th rowspan=".$recLength.">".$date[0]."</th></tr>".$records;
-                    echo "<tr class='info totalIncome_tr'><td colspan='5'>Daily Total Income <i class='icon-hand-right'></i></td><td>&#8369; ".money_format('%!.2n',$totalIncome)."</td></tr>";
+                    echo "<tr class='info totalIncome_tr'><td colspan='5'>Daily Income <i class='icon-hand-right'></i></td><td>&#8369; ".money_format('%!.2n',$totalIncome)."</td></tr>";
                     
                 }
 
@@ -162,16 +162,19 @@
                 $pages = $stmt->fetch(PDO::FETCH_ASSOC);
 
                 $pages['pages'] = $pages['pages'] / intval($pageLimit);
+                $pages['pages'] = ceil($pages['pages']);
+                $n_pages = $pages['pages'];
+                if($pages['pages'] > 1){
 
-                if(is_float($pages['pages'])){
-                    $pages['pages'] = $pages['pages']+1;
-                }
-                if(intval($pages['pages']) > 1){
-                    for($ctr=1;$ctr<=intval($pages['pages']);$ctr++){
+                    if($pages['pages'] > 7){
+                        $pages['pages'] = 7;
+                    }
+
+                    for($ctr=1;$ctr<=$pages['pages'];$ctr++){
                         if($ctr == 1){
-                             $pagerLI .= "<li class='active'><a href='Javascript:void(0)'>".$ctr."</a></li>";
+                             $pagerLI .= "<li id=page_".$ctr." class='active'><a href='Javascript:void(0)'>".$ctr."</a></li>";
                         }else{
-                             $pagerLI .= "<li><a href='Javascript:void(0)'>".$ctr."</a></li>";
+                             $pagerLI .= "<li id=page_".$ctr." ><a href='Javascript:void(0)'>".$ctr."</a></li>";
                         }                
                     }
                     $pagerContent .="<button class='btn-primary' id='pager_prev'>prev</button>";
@@ -181,9 +184,8 @@
                     $pagerContent .= "<button class='btn-primary' id='pager_next'>next</button>";
                 }
 
-                $n_pages = $pages['pages'];
 
-                $obj = array("pager" => $pagerContent, "n_pages" => intval($n_pages));
+                $obj = array("pager" => $pagerContent, "n_pages" => $n_pages);
                 $encoded = json_encode($obj);
                 echo $encoded;
 
