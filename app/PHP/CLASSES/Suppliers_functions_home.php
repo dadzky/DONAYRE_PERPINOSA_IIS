@@ -56,15 +56,10 @@
             $list = "";
             $numToView = $pages;
             if(intval($pages > 1)) {
-               // if($pages > 10){
-                 //   $counter = $pages - 10;
-               // }
                 if($pages > 7){
                     $numToView = 7;
                 }
-
                 for($counter; $counter <= $numToView; $counter++) {
-
                     if($counter == 1) {
                         $list .= "<li class = 'active'><a href = 'Javascript:void(0)'>".$counter."</a></li>";
                     } else {

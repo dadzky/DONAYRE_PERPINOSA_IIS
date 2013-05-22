@@ -50,7 +50,7 @@ $(function() {
     });
 
     $("#item_limit_input").keyup(function() {
-        if($("#item_limit_input").val() > 0) {
+        if($("#item_limit_input").val() > 0 || $("#item_limit_input").val() == "") {
             display_supplier_pager();
             display_suppliers();
             $("#item_limit_content").removeClass("control-group error");
@@ -92,8 +92,7 @@ $(function() {
             liParent.toggleClass("active");
         }
         display_suppliers();
-    })
-
+    });
 });
 
 var pageOnTracked = 0;
@@ -123,9 +122,10 @@ function display_suppliers() {
 function display_admins_transaction() {
     var display_admins_transaction_request = request("../PHP/OBJECTS/SUPPLIERS/display_admins_transaction.php", null, "displaying admins transaction");
     display_admins_transaction_request.success(function(data) {
-        $("#display_admins_transaction_table").html(data);
+       $("#display_admins_transaction_table").html(data);
     });
 }
+
 
 function display_supplier_pager() {
     var item_limit = $("#item_limit_input").val();
@@ -141,6 +141,7 @@ function display_supplier_pager() {
         //alert(obj.maxpage)
     });
 }
+
 
 function show_pager(pageOnTracked){
     //alert(pageOnTracked)
