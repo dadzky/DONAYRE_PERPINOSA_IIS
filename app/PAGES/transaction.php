@@ -47,10 +47,10 @@ endif;
             <form id='product_to_transact_form' class='form-horizontal'>
                 <input type='text' id='product_code' class='input-xxlarge' placeholder='Bar Code' title='Bar Code' data-toggle='tooltip' required='required' />
                 <input type='text' id='product_name' class='input-xxlarge' placeholder='Product Name' title='Product Name' data-toggle='tooltip'/>
-                <img id='img_alternative_code' src='../CSS/img_tbls/circle-arrow-left.png' title='Change code'/><br/>
                 <input type='text' id='product_quantity'  class='input-xxlarge' placeholder='Quantity' required='required' /><br/>
                 <input type='submit' id='product_displayer_btn' class='btn btn-primary btn-block btn-large' value='GO'>
             </form>
+            <img id='img_alternative_code' src='../CSS/img_tbls/circle-arrow-left.png' title='Change code'/><br/>
         </div>
         <div id='payment_div'>
             <table class='table'>

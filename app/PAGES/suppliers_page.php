@@ -19,15 +19,15 @@
                     <div id = 'search_supplier_div' class = "input-append btn-group">
                         <img src = "../CSS/images/search_icon1.png" />
                         <input type = "text" id = "search_supplier_input" />
-                        <button id = "filter_by_option_button" class = "btn dropdown-toggle">filter by
+                        <a id = "filter_by_option_a" class = "btn dropdown-toggle">filter by
                             <span class="caret"></span>
-                            <ul id = "filter_by_options_ul" class = "dropdown-menu">
-                                <li>Company Name</li>
-                                <li>Product</li>
-                                <li>Address</li>
-                            </ul>
-                        </button>
-
+                        </a>
+                        <ul id = "filter_by_options_ul" class = "dropdown-menu pull-right">
+                            <li id = "search_by_company_name_li"><a href = 'Javascript:void(0)'><i class = "icon-file"></i> Company Name</a></li>
+                            <li id = "search_by_product_name_li"><a href = 'Javascript:void(0)'><i class = "icon-barcode"></i> Product Name</a></li>
+                            <li id = "search_by_supplier_address_li"><a href = 'Javascript:void(0)'><i class = "icon-road"></i> Address</a></li>
+                        </ul>
+                        <input type = "hidden" id = "hidden_search_supplier_by_input" />
                     </div> <!-- ====== search supplier div ends ========= -->
 
                     <span id = "item_limit_content" class = "pull-right">
@@ -51,6 +51,8 @@
                     <tbody id = "display_suppliers_tbody"></tbody>
                 </table><!-- ======= display suppliers table ends ======== -->
                 <div id = "pagination_content_div" class = "pagination pagination-centered">
+                <div id = "pagination_content_div" class = "pagination">
+
                     <button class = "btn btn-primary" id = "previous_page_button"><<</button>
                     <ul id = "suppliers_pagination_ul"></ul>
                     <button class = "btn btn-primary" id = "next_page_button">>></button>
@@ -75,6 +77,7 @@
         </div><!-- main container div ends -->
         <script src = "../JS/jquery-1.9.1.min.js"></script>
         <script src = "../JS/jquery-ui-1.10.2.min.js"></script>
+        <script src = "../JS/bootstrap.min.js"></script>
         <script src = "../JS/suppliers.js"></script>
     </body>
 </html>

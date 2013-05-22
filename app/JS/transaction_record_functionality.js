@@ -31,7 +31,7 @@ $(function(){
 		}else{
 			$(this).css('color', '#f00');		
 		}
-		
+        $('.page_number').html(1);
 		return false;
 	})
 
@@ -45,22 +45,48 @@ $(function(){
 
 	/*----pagination-----*/
 	$('.pagination').on('click','li a',function(){
+
 		$('.pagination li').removeClass('active');
-		var page = parseInt($(this).html());
-		var parentLI=$(this).context.parentNode;
+        var pageOnTracked = 0; //used in paganation
         var toSearch = $('#search_record').val();
         var searchBy = $('#searchBy_input').val();
+        var maxPage = parseInt($('.max_page').html());
+        var liParent = $(this.parentNode);
+        var pageNum = liParent.index()+1;
+        var limit=0;
+        var current_page = $(this).html();
+        $("#currentPage").val(current_page - 1);
+        if(maxPage > 6){
 
-		if(page!=0){
-			$('#currentPage').val(page-1);
-			$('.page_number').html(page);
-			$(parentLI).addClass('active');
-		}
+            if((pageNum == 6 || pageNum == 7) && current_page < maxPage){
+                limit = parseInt(current_page)+5;
+                if(limit >= maxPage){
+                    pageOnTracked = maxPage-6;
+                }else{
+                    pageOnTracked = parseInt(current_page) - 1;
+                }
+                displayListPager(pageOnTracked);
+            }else if(pageNum == 1 || pageNum == 2){
+                limit = parseInt(current_page)-5;
+                if(limit > 0){
+                    pageOnTracked = current_page - 5;
+                }else{
+                    pageOnTracked = 1;
+                }
+                displayListPager(pageOnTracked);
+            }
+
+            $('#page_'+current_page).toggleClass('active');
+        }else{
+            liParent.toggleClass("active");
+        }
         if(toSearch == ""){
-		    displayTransactionRecords();
+            displayTransactionRecords();
         }else{
             searchRecords(toSearch,searchBy);
         }
+
+        $('.page_number').html(current_page);
 	})
 
 	$('.pagination').on('click','button',function(){
@@ -69,12 +95,19 @@ $(function(){
 		var pageBtn = $(this).text();
 		var currentPage = parseInt($('#currentPage').val());
 		var maxPage = parseInt($('.pagination li a:last').html())-1;
+        var firstPageOnlist = parseInt($('.pagination li a:first').html());
 		var pageActive = $('.pagination .active');
+        var activeLi = 0;
 		if(pageBtn == "next" && currentPage < maxPage ){
-			$('#currentPage').val(currentPage+1);
-			pageActive.next().addClass('active');
-			pageActive.removeClass('active');
-			$('.page_number').html(currentPage+2);
+            if(pageActive.index() == 5){
+               
+                displayListPager(firstPageOnlist+1);
+            }
+            $('#currentPage').val(currentPage+1);
+            activeLi = currentPage+2;
+            pageActive.removeClass('active');
+            $('#page_'+activeLi).toggleClass('active');
+            $('.page_number').html(currentPage+2);
 		}else if(pageBtn == "prev" && currentPage > 0){
 			$('#currentPage').val(currentPage-1);
 			pageActive.prev('li').addClass('active');
@@ -88,15 +121,11 @@ $(function(){
             searchRecords(toSearch,searchBy);
         }
 	});
-
 	$('#graph-toggle-div').click(function(){
 		$('#graph-sales-container-div').slideToggle(1000)
-        displayBarGraph();;
+        displayBarGraph();
 	}).tooltip('hide');
 
-    $('#bargraph_Yr_option').on('change',function(){
-        displayBarGraph();
-    })
 });
 
 function searchRecords(toSearch,searchBy){
@@ -165,13 +194,28 @@ function displayPager(){
                 currentPage = 0;
             }
 			$('.max_page').html(pagerContent.n_pages);
-			$('.page_number').html(currentPage);
 			
 		},
 		error:function(data){
 			alert("Error on displaying pager => "+ data['status'] + " " + data['statusText']);
 		}
 	})
+}
+
+function displayListPager(pageOnTracked){
+    var newPagerLi = "";
+    var newPagerAll = "";
+    for(var ctr=1; ctr<=7; ctr++){
+        newPagerLi += "<li id=page_"+pageOnTracked+"><a href = 'Javascript:void(0)'>"+pageOnTracked+"</a></li>";
+        pageOnTracked++;
+    }
+    newPagerAll += "<button class='btn-primary' id='pager_prev'>prev</button>";
+    newPagerAll += "<ul>";
+    newPagerAll +=    newPagerLi;
+    newPagerAll += "</ul>";
+    newPagerAll += "<button class='btn-primary' id='pager_next'>next</button>";
+
+    $(".pagination").html(newPagerAll);
 }
 
 function displayBarGraph(){
@@ -184,7 +228,7 @@ function displayBarGraph(){
     }
     if(yearSelected==null){
         yearSelected = currentDate.getFullYear();
-        $('#bargraph_title_p').html("<h2><img src='../CSS/images/monthlyIncomeTitle.png' alt='Monthly Income' /></h2><hr/><h4>YEAR: <select id='bargraph_Yr_option'>"+ selectOptions +"</select></h4><hr/>");
+        $('#bargraph_title_p').html("<h2><img src='../CSS/images/monthlyIncomeTitle.png' alt='Monthly Income' /></h2><hr/><h4>YEAR: <select id='bargraph_Yr_option' onchange='displayBarGraph()'>"+ selectOptions +"</select></h4><hr/>");
     }
     $('#bargraph_Yr_option').val(yearSelected);
 

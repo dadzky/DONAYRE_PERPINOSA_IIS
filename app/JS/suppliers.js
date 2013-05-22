@@ -85,6 +85,7 @@ $(function() {
                 }
                 show_pager(pageOnTracked);
             }
+
             $('#page_'+current_page).toggleClass('active');
         }else{
             liParent.toggleClass("active");
@@ -121,9 +122,50 @@ $(function() {
     });
 
     // ========= searching employees =======
-    $("#filter_by_option_button").click(function() {
+    $("#filter_by_option_a").click(function() {
+        $("#search_supplier_input").tooltip();
         $("#filter_by_options_ul").toggle();
-    })
+        $("#search_by_company_name_li").click(function() {
+            $("#filter_by_options_ul").css("display", "none");
+            $("#search_supplier_input").attr("data-original-title", "Filter By COMPANY NAME");
+            //$("#search_supplier_input").tooltip();
+            $("#hidden_search_supplier_by_input").val("company_name");
+        });
+        $("#search_by_product_name_li").click(function() {
+            $("#filter_by_options_ul").css("display", "none");
+            $("#search_supplier_input").attr("data-original-title", "Filter By PRODUCT NAME");
+            //$("#search_supplier_input").tooltip();
+            $("#hidden_search_supplier_by_input").val("product_name");
+        });
+        $("#search_by_supplier_address_li").click(function() {
+            $("#filter_by_options_ul").css("display", "none");
+            $("#search_supplier_input").attr("data-original-title", "Filter By SUPPLIER ADDRESS");
+
+            $("#hidden_search_supplier_by_input").val("address");
+        });
+    });
+
+    $("#search_supplier_input").keyup(function() {
+        var item_limit = $("#item_limit_input").val();
+        var current_page = parseInt($("#current_page").val());
+        current_page = current_page * item_limit;
+        if(item_limit == "") {
+            item_limit = 5;
+        } else {
+            item_limit = parseInt(item_limit);
+        }
+        var field_name = $("#search_by_input").val();
+        var search_input_value = $("#search_supplier_input").val();
+
+        var data_object = {"field_name": field_name, "search_input_value": search_input_value, "current_page": current_page, "item_limit": item_limit};
+
+        var search_supplier_request = request("../PHP/OBJECTS/SUPPLIERS/search_supplier.php", data_object, "searching supplier request");
+        search_supplier_request.success(function(data) {
+            $("#display_suppliers_tbody").html(data);
+        });
+    });
+
+
 
 });
 
@@ -149,9 +191,6 @@ function display_suppliers() {
     display_suppliers_request.success(function(data) {
         $("#display_suppliers_tbody").html(data);
         var cur_page = current_page / item_limit * item_limit + 1;
-        if(cur_page == 0) {
-            //cur_page = 1;
-        }
         $("#current_page_span").html(cur_page);
     });
 }
@@ -159,9 +198,10 @@ function display_suppliers() {
 function display_admins_transaction() {
     var display_admins_transaction_request = request("../PHP/OBJECTS/SUPPLIERS/display_admins_transaction.php", null, "displaying admins transaction");
     display_admins_transaction_request.success(function(data) {
-        $("#display_admins_transaction_table").html(data);
+       $("#display_admins_transaction_table").html(data);
     });
 }
+
 
 function display_supplier_pager() {
     var item_limit = $("#item_limit_input").val();
@@ -178,6 +218,7 @@ function display_supplier_pager() {
         display_suppliers();
     });
 }
+
 
 function show_pager(pageOnTracked){
     //alert(pageOnTracked)

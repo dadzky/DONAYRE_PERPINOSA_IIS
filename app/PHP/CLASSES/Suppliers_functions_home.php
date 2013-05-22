@@ -44,7 +44,7 @@
             $this->close_connection();
         }
 
-        function display_supplier_pager($item_limit) {
+        function display_supplier_pager($item_limit, $current_page, $item_limit) {
             $this->open_connection();
             $select_statement = $this->db_holder->query("SELECT COUNT(DISTINCT company_name) FROM suppliers;");
             $number_of_items = $select_statement->fetch();
@@ -66,7 +66,6 @@
                     }
                 }
             }
-            //echo $list;
             $obj = array('pager'=>$list, 'maxpage'=>$pages);
             $encoded = json_encode($obj);
             echo $encoded;
@@ -133,6 +132,36 @@
             $insert_statement->execute(array($company_name, $supplier_address, $supplier_contact_number));
 
             echo $company_name;
+
+            $this->close_connection();
+        }
+
+        function search_supplier($field_name, $search_input_value, $current_page, $item_limit) {
+            $this->open_connection();
+
+            $select_statement = $this->db_holder->prepare("SELECT * FROM suppliers WHERE ".$field_name." LIKE ?  LIMIT $current_page, $item_limit;");
+            $select_statement->execute(array($search_input_value));
+
+            while($content = $select_statement->fetch()) {
+                $select_statement2 = $this->db_holder->prepare("SELECT p.product_name
+                                                                  FROM products AS p,
+                                                                       suppliers AS s,
+                                                                       product_to_supplier AS ps
+                                                                 WHERE p.product_id = ps.product_id AND
+                                                                       s.supplier_id = ps.supplier_id AND
+                                                                       s.supplier_id = ?;");
+                $select_statement2->execute(array($content[0]));
+                echo "<tr id = 'supplier_".$content[0]."'>
+                        <td>".htmlentities($content[1])."</td>
+                        <td><table>";
+                while($supplied_product = $select_statement2->fetch()) {
+                    echo "<tr><td>".$supplied_product[0]."</td></tr>";
+                }
+                echo    "</table></td>
+                         <td>".$content[2]."</td>
+                         <td>".$content[3]."</td>
+                         </tr>";
+            }
 
             $this->close_connection();
         }
