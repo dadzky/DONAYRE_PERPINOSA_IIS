@@ -8,8 +8,9 @@
 }
 
 #suppliers_action_div {
-    width: 100%;
     background: #d3d3d3;
+    height: 40px;
+    padding: 5px;
 }
 
 #admins_transaction_table, #admins_transaction_table tr, #admins_transaction_table tr td, #admins_transaction_table tr th{
@@ -60,4 +61,15 @@ input[type = "reset"] {
     border-bottom-right-radius: 10px;
     border-top-right-radius: 10px;
     margin-top: -20px;
+}
+
+#current_page_content_span {
+    margin: 10px 0px 10px 0px;
+    text-align: center;
+    padding: 3px;
+}
+
+#search_supplier_div {
+    width: 300px;
+    margin: 0 auto;
 }

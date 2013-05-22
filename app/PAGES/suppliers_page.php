@@ -7,16 +7,35 @@
     <body>
         <div id = "suppliers_main_container_div" class = "container">
             <h1>Suppliers</h1>
-            <span id = 'show_transaction_span' class = 'label label-info'>show admin's transaction</span>
-
+            <span id = 'show_transaction_span' class = 'label pull-right'>show admin's transaction</span>
+            <br />
             <div id = "display_suppliers_div">
                 <div id = "suppliers_action_div">
-                        <span id = "item_limit_content" class = "pull-right">
-                            <span id = "item_limit_span" class = "label label-info">Item Limit:</span>
-                            <input type = "number" id = "item_limit_input" class = "input-mini" />
-                        </span>
-                        <input type = "hidden" id = "current_page" value = "0" />
-                        <input type='hidden' id='maxPage_input' />
+                    <span id = 'current_page_content_span' class = 'label label-info pull-left'>PAGE
+                        <span id = 'current_page_span'></span> OUT OF
+                        <span id = 'number_of_pages_span'></span>
+                    </span> <!-- ========= current_page_content_span ======= -->
+
+                    <div id = 'search_supplier_div' class = "input-append btn-group">
+                        <img src = "../CSS/images/search_icon1.png" />
+                        <input type = "text" id = "search_supplier_input" />
+                        <button id = "filter_by_option_button" class = "btn dropdown-toggle">filter by
+                            <span class="caret"></span>
+                            <ul id = "filter_by_options_ul" class = "dropdown-menu">
+                                <li>Company Name</li>
+                                <li>Product</li>
+                                <li>Address</li>
+                            </ul>
+                        </button>
+
+                    </div> <!-- ====== search supplier div ends ========= -->
+
+                    <span id = "item_limit_content" class = "pull-right">
+                        <span id = "item_limit_span" class = "label label-info">Item Limit:</span>
+                        <input type = "number" id = "item_limit_input" class = "input-mini" />
+                    </span>
+                    <input type = "hidden" id = "current_page" value = "0" />
+                    <input type='hidden' id='maxPage_input' />
 
                 </div><!-- ======== suppliers action div ends ============ -->
                 <br/>
@@ -31,7 +50,7 @@
                     </thead>
                     <tbody id = "display_suppliers_tbody"></tbody>
                 </table><!-- ======= display suppliers table ends ======== -->
-                <div id = "pagination_content_div" class = "pagination">
+                <div id = "pagination_content_div" class = "pagination pagination-centered">
                     <button class = "btn btn-primary" id = "previous_page_button"><<</button>
                     <ul id = "suppliers_pagination_ul"></ul>
                     <button class = "btn btn-primary" id = "next_page_button">>></button>

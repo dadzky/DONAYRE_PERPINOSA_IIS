@@ -60,9 +60,9 @@
                 }
                 for($counter=1; $counter <= $numToView; $counter++) {
                     if($counter == 1) {
-                        $list .= "<li class = 'active'><a href = 'Javascript:void(0)'>".$counter."</a></li>";
+                        $list .= "<li id= page_".$counter." class = 'active'><a href = 'Javascript:void(0)'>".$counter."</a></li>";
                     } else {
-                        $list .= "<li><a href = 'Javascript:void(0)'>".$counter."</a></li>";
+                        $list .= "<li id= page_".$counter." ><a href = 'Javascript:void(0)'>".$counter."</a></li>";
                     }
                 }
             }

@@ -95,12 +95,35 @@ $(function() {
     // =========== PAGER NEXT AND PREVIOUS BUTTON ============ //
 
     $("#previous_page_button").click(function() {
+        var current_page = parseInt($("#current_page").val())-1;
+        var liActive = current_page+1;
+        if(current_page >= 0){
+            $("#pagination_content_div li").removeClass("active");
+            $("#current_page").val(current_page);
+            $('#page_'+ liActive).toggleClass('active');
+            display_suppliers();
+        }
 
     });
 
     $("#next_page_button").click(function() {
+        var maxPage = parseInt($('#maxPage_input').val());
+        var current_page = parseInt($("#current_page").val())+1;
+        var liActive = current_page+1;
+
+        if(current_page < maxPage){
+            $("#pagination_content_div li").removeClass("active");
+            $("#current_page").val(current_page);
+            $('#page_'+ liActive).toggleClass('active');
+            display_suppliers();
+        }
 
     });
+
+    // ========= searching employees =======
+    $("#filter_by_option_button").click(function() {
+        $("#filter_by_options_ul").toggle();
+    })
 
 });
 
@@ -120,11 +143,16 @@ function display_suppliers() {
     } else {
         item_limit = parseInt(item_limit);
     }
-    var data = {"item_limit": item_limit, "current_page": current_page*item_limit};
+    var data_object = {"item_limit": item_limit, "current_page": current_page*item_limit};
 
-    var display_suppliers_request = request("../PHP/OBJECTS/SUPPLIERS/display_suppliers.php", data, "displaying suppliers request");
+    var display_suppliers_request = request("../PHP/OBJECTS/SUPPLIERS/display_suppliers.php", data_object, "displaying suppliers request");
     display_suppliers_request.success(function(data) {
         $("#display_suppliers_tbody").html(data);
+        var cur_page = current_page / item_limit * item_limit + 1;
+        if(cur_page == 0) {
+            //cur_page = 1;
+        }
+        $("#current_page_span").html(cur_page);
     });
 }
 
@@ -146,6 +174,8 @@ function display_supplier_pager() {
         var obj = JSON.parse(data);
         $("#suppliers_pagination_ul").html(obj.pager);
         $('#maxPage_input').val(obj.maxpage);
+        $("#number_of_pages_span").html(obj.maxpage);
+        display_suppliers();
     });
 }
 
