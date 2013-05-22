@@ -3,7 +3,7 @@
 
 		private $db_host =  "mysql:host=localhost;";
 		private $db_name = "dbname=IIS_DB";
-		private $db_user = "student1";
+		private $db_user = "student2";
 		private $db_pass = "password";
         protected $db_holder;
 

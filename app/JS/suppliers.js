@@ -123,6 +123,11 @@ $(function() {
 
     // ========= searching employees =======
     $("#filter_by_option_a").click(function() {
+
+        $("#filter_by_options_ul").blur(function() {
+            $(this).css("display", "none");
+        });
+
         $("#search_supplier_input").tooltip();
         $("#filter_by_options_ul").toggle();
         $("#search_by_company_name_li").click(function() {
