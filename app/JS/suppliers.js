@@ -89,6 +89,7 @@ $(function() {
                 }
                 show_pager(pageOnTracked);
             }
+            liParent.toggleClass("active");
         }
         display_suppliers();
     })
