@@ -9,9 +9,18 @@ $(function(){
         $('#searchBy_input').val($(this).find('input').val());
         var toSearch = $('#search_record').val();
         var searchBy = $(this).find('input').val();
+        $('#searchBy_ul').hide();
         searchRecords(toSearch,searchBy);
         displayPager();
+
     })
+    $(this).click(function(){
+        $('#searchBy_ul').hide();
+    })
+    $('#searchBy_btn').click(function(){
+        $('#searchBy_ul').toggle();
+    });
+
 
 	$('#pageLimit_form').submit(function(){
         var toSearch = $('#search_record').val();
@@ -99,19 +108,21 @@ $(function(){
 		var pageActive = $('.pagination .active');
         var activeLi = 0;
 		if(pageBtn == "next" && currentPage < maxPage ){
-            if(pageActive.index() == 5){
-               
+            activeLi = currentPage+2;
+            if(pageActive.index() == 5 && activeLi+1 <= 9){
                 displayListPager(firstPageOnlist+1);
             }
             $('#currentPage').val(currentPage+1);
-            activeLi = currentPage+2;
             pageActive.removeClass('active');
             $('#page_'+activeLi).toggleClass('active');
             $('.page_number').html(currentPage+2);
 		}else if(pageBtn == "prev" && currentPage > 0){
+            if(pageActive.index() == 1 && currentPage > 1){
+                displayListPager(firstPageOnlist-1);
+            }
 			$('#currentPage').val(currentPage-1);
-			pageActive.prev('li').addClass('active');
-			pageActive.removeClass('active');	
+            pageActive.removeClass('active');
+            $('#page_'+currentPage).toggleClass('active');
 			$('.page_number').html(currentPage);	
 		}
 
