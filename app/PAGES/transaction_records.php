@@ -12,7 +12,7 @@
                 <div class='input-prepend' >
 
                     <!-- searching-->
-                    <div class='btn-group'>
+                    <div id='search_record_div' class='btn-group'>
                         <input type='hidden' id='searchBy_input' value='t.transaction_date'/>
                         <a type='button' id='searchBy_btn' class='btn dropdown-toggle' data-toggle = 'dropdown'>
                            <i class='icon-calendar'></i> Date &nbsp;<span class='caret'></span>

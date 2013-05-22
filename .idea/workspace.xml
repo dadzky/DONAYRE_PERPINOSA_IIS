@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="04d7a5b3-6c54-4477-b65a-37c1b7ffdeb7" name="Default" comment="">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/PHP/OBJECTS/SUPPLIERS/search_supplier.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PHP/CLASSES/Database_connection.php" afterPath="$PROJECT_DIR$/app/PHP/CLASSES/Database_connection.php" />
@@ -15,6 +16,9 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PAGES/transaction_records.php" afterPath="$PROJECT_DIR$/app/PAGES/transaction_records.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
+=======
+    <list default="true" id="ecc9abae-a6b5-49d9-b29c-0ee02ea97e0e" name="Default" comment="" />
+>>>>>>> b1c5c4e2edaa41596be4cf8f5624ecac4172f282
     <ignored path="IIS_PROJECT_HUB.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="04d7a5b3-6c54-4477-b65a-37c1b7ffdeb7" time="1369190008099" ignored="false" />
@@ -47,7 +51,11 @@
       <file leaf-file-name="Suppliers_functions_home.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/PHP/CLASSES/Suppliers_functions_home.php">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state line="60" column="69" selection-start="2839" selection-end="2839" vertical-scroll-proportion="0.49133858">
+=======
+            <state line="102" column="0" selection-start="3485" selection-end="3485" vertical-scroll-proportion="0.35953176">
+>>>>>>> b1c5c4e2edaa41596be4cf8f5624ecac4172f282
               <folding />
             </state>
           </provider>
@@ -394,7 +402,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="24" width="1440" height="852" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -583,7 +591,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/PHP/CLASSES/Suppliers_functions_home.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state line="60" column="69" selection-start="2839" selection-end="2839" vertical-scroll-proportion="0.49133858">
+=======
+        <state line="102" column="0" selection-start="3485" selection-end="3485" vertical-scroll-proportion="0.35953176">
+>>>>>>> b1c5c4e2edaa41596be4cf8f5624ecac4172f282
           <folding />
         </state>
       </provider>
