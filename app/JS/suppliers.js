@@ -94,7 +94,13 @@ $(function() {
 
     // =========== PAGER NEXT AND PREVIOUS BUTTON ============ //
 
-    $("#previous_page_button")
+    $("#previous_page_button").click(function() {
+
+    });
+
+    $("#next_page_button").click(function() {
+
+    });
 
 });
 
