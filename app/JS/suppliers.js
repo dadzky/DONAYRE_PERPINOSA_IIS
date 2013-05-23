@@ -2,8 +2,8 @@ $(function() {
 
     $("#show_transaction_span").tooltip();
     $("#show_transaction_span").click(function() {
-        $("#display_admins_transaction_div").toggle('slide', {direction: "right"}, 1000);
-        $("#display_suppliers_div").toggle('slide', {direction: "right"}, 1000);
+        $("#display_admins_transaction_div").slideToggle('slow');
+        $("#display_suppliers_div").slideToggle('slow');
     });
 
     // ================ SUPPLIERS DATA CONTROLLERS ==========
