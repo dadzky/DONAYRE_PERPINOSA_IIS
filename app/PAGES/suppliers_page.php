@@ -18,7 +18,7 @@
 
                     <div id = 'search_supplier_div' class = "input-append btn-group">
                         <img src = "../CSS/images/search_icon1.png" />
-                        <input type = "text" id = "search_supplier_input" />
+                        <input type = "text" id = "search_supplier_input" placeholder = "Search Supplier"/>
                         <a id = "filter_by_option_a" class = "btn dropdown-toggle">filter by
                             <span class="caret"></span>
                         </a>

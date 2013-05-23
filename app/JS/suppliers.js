@@ -124,7 +124,7 @@ $(function() {
     // ========= searching employees =======
     $("#filter_by_option_a").click(function() {
 
-        $("#filter_by_options_ul").blur(function() {
+        $(document).bind('click', function() {
             $(this).css("display", "none");
         });
 
