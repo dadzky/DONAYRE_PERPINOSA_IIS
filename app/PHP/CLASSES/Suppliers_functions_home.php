@@ -138,10 +138,16 @@
 
         function search_supplier($field_name, $search_input_value, $current_page, $item_limit) {
             $this->open_connection();
-
-            $select_statement = $this->db_holder->prepare("SELECT * FROM suppliers WHERE ".$field_name." LIKE ?  LIMIT $current_page, $item_limit;");
-            $select_statement->execute(array($search_input_value));
-
+            if($field_name == "product_name") {
+                $select_statement = $this->db_holder->prepare("SELECT s.* FROM suppliers AS s, products AS p, product_to_supplier AS ps
+                                                                          WHERE p.product_id = ps.product_id AND
+                                                                                s.supplier_id = ps.supplier_id AND
+                                                                                p.product_name LIKE ?;");
+                $select_statement->execute(array($search_input_value));
+            } else {
+                $select_statement = $this->db_holder->prepare("SELECT * FROM suppliers WHERE ".$field_name." LIKE ?  LIMIT $current_page, $item_limit;");
+                $select_statement->execute(array($search_input_value));
+            }
             while($content = $select_statement->fetch()) {
                 $select_statement2 = $this->db_holder->prepare("SELECT p.product_name
                                                                   FROM products AS p,

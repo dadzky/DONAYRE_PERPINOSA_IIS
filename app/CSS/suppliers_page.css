@@ -74,9 +74,9 @@ input[type = "reset"] {
     margin: 0px 100px  0px 150px;
 }
 
-#show_transaction_span:hover {
+#show_transaction_span {
     cursor: pointer;
-    color: #000000;
+    margin-top: -13px;
 }
 
 .pointer {

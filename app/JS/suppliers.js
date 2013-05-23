@@ -1,14 +1,9 @@
 $(function() {
 
+    $("#show_transaction_span").tooltip();
     $("#show_transaction_span").click(function() {
-        $("#display_admins_transaction_div").slideToggle('slow');
-        $("#display_suppliers_div").slideToggle('slow');
-        if($("#show_transaction_span").html() == "show admin's transaction") {
-            $("#show_transaction_span").html("back to suppliers");
-        } else {
-            $("#show_transaction_span").html("show admin's transaction");
-        }
-
+        $("#display_admins_transaction_div").toggle('slide', {direction: "right"}, 1000);
+        $("#display_suppliers_div").toggle('slide', {direction: "right"}, 1000);
     });
 
     // ================ SUPPLIERS DATA CONTROLLERS ==========
@@ -142,7 +137,6 @@ $(function() {
             $("#search_supplier_input").attr("data-original-title", "Filter By PRODUCT NAME");
             $("#hidden_search_supplier_by_input").val("product_name");
             if($.trim($("#search_supplier_input").val()) != "") {
-                alert($("#search_supplier_input").val());
                 search_supplier();
             }
         });
@@ -193,7 +187,6 @@ function search_supplier() {
         var search_supplier_request = request("../PHP/OBJECTS/SUPPLIERS/search_supplier.php", data_object, "searching supplier request");
         search_supplier_request.success(function(data) {
             if(data != "") {
-                alert("data = " + data);
                 $("#display_suppliers_tbody").html(data);
             } else {
                 $("#display_suppliers_tbody").html("<tr class = 'alert alert-danger'><td colspan = '4'>No record found!</td></tr>");

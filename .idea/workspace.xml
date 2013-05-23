@@ -2,22 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f473be9a-6dc6-4c09-b738-baf6f7639912" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/JS/products.js" afterPath="$PROJECT_DIR$/app/JS/products.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PHP/CLASSES/Suppliers_functions_home.php" afterPath="$PROJECT_DIR$/app/PHP/CLASSES/Suppliers_functions_home.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PHP/OBJECTS/SUPPLIERS/search_supplier.php" afterPath="$PROJECT_DIR$/app/PHP/OBJECTS/SUPPLIERS/search_supplier.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/JS/suppliers.js" afterPath="$PROJECT_DIR$/app/JS/suppliers.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CSS/suppliers_page.css" afterPath="$PROJECT_DIR$/app/CSS/suppliers_page.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PAGES/suppliers_page.php" afterPath="$PROJECT_DIR$/app/PAGES/suppliers_page.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="IIS_PROJECT_HUB.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="f473be9a-6dc6-4c09-b738-baf6f7639912" time="1369306518613" ignored="false" />
+    <file path="/Dummy.txt" changelist="f473be9a-6dc6-4c09-b738-baf6f7639912" time="1369308382130" ignored="false" />
     <file path="/products.js" changelist="f473be9a-6dc6-4c09-b738-baf6f7639912" time="1369307168943" ignored="false" />
-    <file path="/suppliers.js" changelist="f473be9a-6dc6-4c09-b738-baf6f7639912" time="1369308310919" ignored="false" />
-    <file path="/suppliers_page.php" changelist="f473be9a-6dc6-4c09-b738-baf6f7639912" time="1369273554180" ignored="false" />
-    <file path="/suppliers_page.css" changelist="f473be9a-6dc6-4c09-b738-baf6f7639912" time="1369277357799" ignored="false" />
+    <file path="/suppliers.js" changelist="f473be9a-6dc6-4c09-b738-baf6f7639912" time="1369310115345" ignored="false" />
+    <file path="/suppliers_page.php" changelist="f473be9a-6dc6-4c09-b738-baf6f7639912" time="1369309966357" ignored="false" />
+    <file path="/suppliers_page.css" changelist="f473be9a-6dc6-4c09-b738-baf6f7639912" time="1369310240049" ignored="false" />
     <file path="/products_page.php" changelist="f473be9a-6dc6-4c09-b738-baf6f7639912" time="1369305518783" ignored="false" />
     <file path="/Products_functions_home.php" changelist="f473be9a-6dc6-4c09-b738-baf6f7639912" time="1369306157178" ignored="false" />
     <file path="/product_page.css" changelist="f473be9a-6dc6-4c09-b738-baf6f7639912" time="1369304259785" ignored="false" />
     <file path="/add_product.php" changelist="f473be9a-6dc6-4c09-b738-baf6f7639912" time="1369304804026" ignored="false" />
     <file path="/display_products.php" changelist="f473be9a-6dc6-4c09-b738-baf6f7639912" time="1369305700519" ignored="false" />
     <file path="/search_product.php" changelist="f473be9a-6dc6-4c09-b738-baf6f7639912" time="1369306190059" ignored="false" />
+    <file path="/search_supplier.php" changelist="f473be9a-6dc6-4c09-b738-baf6f7639912" time="1369308688274" ignored="false" />
+    <file path="/Suppliers_functions_home.php" changelist="f473be9a-6dc6-4c09-b738-baf6f7639912" time="1369309140141" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,19 +43,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="suppliers.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/JS/suppliers.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="195" column="33" selection-start="7956" selection-end="7956" vertical-scroll-proportion="0.70029676">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="suppliers_page.css" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="suppliers_page.css" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/CSS/suppliers_page.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="81" column="1" selection-start="1328" selection-end="1335" vertical-scroll-proportion="0.0">
+            <state line="6" column="18" selection-start="131" selection-end="131" vertical-scroll-proportion="0.13100436">
               <folding />
             </state>
           </provider>
@@ -58,7 +55,7 @@
       <file leaf-file-name="Suppliers_functions_home.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/PHP/CLASSES/Suppliers_functions_home.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="63" selection-start="140" selection-end="140" vertical-scroll-proportion="0.0">
+            <state line="144" column="102" selection-start="7225" selection-end="7628" vertical-scroll-proportion="-10.625">
               <folding />
             </state>
           </provider>
@@ -67,7 +64,7 @@
       <file leaf-file-name="Products_functions_home.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/PHP/CLASSES/Products_functions_home.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="181" column="95" selection-start="10465" selection-end="10465" vertical-scroll-proportion="0.0">
+            <state line="181" column="95" selection-start="10465" selection-end="10465" vertical-scroll-proportion="-2.5">
               <folding />
             </state>
           </provider>
@@ -76,52 +73,34 @@
       <file leaf-file-name="search_product.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/PHP/OBJECTS/PRODUCTS/search_product.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="86" selection-start="394" selection-end="394" vertical-scroll-proportion="0.0">
+            <state line="7" column="86" selection-start="394" selection-end="394" vertical-scroll-proportion="-4.375">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="display_products.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/PHP/OBJECTS/PRODUCTS/display_products.php">
+      <file leaf-file-name="search_supplier.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/PHP/OBJECTS/SUPPLIERS/search_supplier.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="64" selection-start="252" selection-end="252" vertical-scroll-proportion="0.0">
+            <state line="8" column="30" selection-start="333" selection-end="333" vertical-scroll-proportion="-5.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="add_product.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/PHP/OBJECTS/PRODUCTS/add_product.php">
+      <file leaf-file-name="suppliers.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/JS/suppliers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="146" selection-start="509" selection-end="509" vertical-scroll-proportion="0.0">
+            <state line="4" column="42" selection-start="122" selection-end="152" vertical-scroll-proportion="-1.4">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="products_page.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/PAGES/products_page.php">
+      <file leaf-file-name="suppliers_page.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/PAGES/suppliers_page.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="80" selection-start="854" selection-end="878" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="products.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/JS/products.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="253" column="87" selection-start="13413" selection-end="13413" vertical-scroll-proportion="-10.16">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="product_page.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/CSS/product_page.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="54" column="0" selection-start="1036" selection-end="1036" vertical-scroll-proportion="0.0">
+            <state line="59" column="53" selection-start="3703" selection-end="3733" vertical-scroll-proportion="-10.625">
               <folding />
             </state>
           </provider>
@@ -146,9 +125,6 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/app/PHP/CLASSES/Database_connection.php" />
-        <option value="$PROJECT_DIR$/app/PHP/CLASSES/Suppliers_functions_home.php" />
-        <option value="$PROJECT_DIR$/app/PAGES/suppliers_page.php" />
-        <option value="$PROJECT_DIR$/app/CSS/suppliers_page.css" />
         <option value="$PROJECT_DIR$/app/CSS/product_page.css" />
         <option value="$PROJECT_DIR$/app/PHP/OBJECTS/PRODUCTS/add_product.php" />
         <option value="$PROJECT_DIR$/app/PAGES/products_page.php" />
@@ -156,7 +132,11 @@
         <option value="$PROJECT_DIR$/app/PHP/CLASSES/Products_functions_home.php" />
         <option value="$PROJECT_DIR$/app/PHP/OBJECTS/PRODUCTS/search_product.php" />
         <option value="$PROJECT_DIR$/app/JS/products.js" />
+        <option value="$PROJECT_DIR$/app/PHP/OBJECTS/SUPPLIERS/search_supplier.php" />
+        <option value="$PROJECT_DIR$/app/PHP/CLASSES/Suppliers_functions_home.php" />
+        <option value="$PROJECT_DIR$/app/PAGES/suppliers_page.php" />
         <option value="$PROJECT_DIR$/app/JS/suppliers.js" />
+        <option value="$PROJECT_DIR$/app/CSS/suppliers_page.css" />
       </list>
     </option>
   </component>
@@ -192,6 +172,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -257,6 +238,32 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="OBJECTS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="IIS_PROJECT_HUB" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SANGRA_IIS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PHP" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="OBJECTS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SUPPLIERS" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -364,7 +371,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -372,8 +378,8 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="options.lastSelected" value="reference.settingsdialog.IDE.editor.colors" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
@@ -398,7 +404,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18220946" sideWeight="0.9617918" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18364419" sideWeight="0.9617918" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -474,13 +480,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/PHP/CLASSES/Suppliers_functions_home.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="51" selection-start="2248" selection-end="2248" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/JS/suppliers.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="138" column="10" selection-start="5361" selection-end="5361" vertical-scroll-proportion="0.0">
@@ -503,13 +502,6 @@
         <state line="17" column="5" selection-start="471" selection-end="471" vertical-scroll-proportion="-10.625" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/CSS/suppliers_page.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="81" column="1" selection-start="1328" selection-end="1335" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/PHP/OBJECTS/PRODUCTS/add_product.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="14" column="146" selection-start="509" selection-end="509" vertical-scroll-proportion="0.0">
@@ -524,20 +516,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/PHP/CLASSES/Suppliers_functions_home.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="63" selection-start="140" selection-end="140" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/PAGES/suppliers_page.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="56" selection-start="3003" selection-end="3026" vertical-scroll-proportion="-5.5416665">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/PAGES/products_page.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="16" column="80" selection-start="854" selection-end="878" vertical-scroll-proportion="0.0">
@@ -545,37 +523,65 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/PHP/CLASSES/Products_functions_home.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="181" column="95" selection-start="10465" selection-end="10465" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/PHP/OBJECTS/PRODUCTS/search_product.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="86" selection-start="394" selection-end="394" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/CSS/product_page.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="0" selection-start="1036" selection-end="1036" vertical-scroll-proportion="0.0">
+        <state line="54" column="0" selection-start="1036" selection-end="1036" vertical-scroll-proportion="0.021067416">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/JS/products.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="253" column="87" selection-start="13413" selection-end="13413" vertical-scroll-proportion="-10.16">
+        <state line="253" column="87" selection-start="13413" selection-end="13413" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/PHP/CLASSES/Suppliers_functions_home.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="144" column="102" selection-start="7225" selection-end="7628" vertical-scroll-proportion="-10.625">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/PHP/OBJECTS/SUPPLIERS/search_supplier.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="30" selection-start="333" selection-end="333" vertical-scroll-proportion="-5.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/PHP/OBJECTS/PRODUCTS/search_product.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="86" selection-start="394" selection-end="394" vertical-scroll-proportion="-4.375">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/PHP/CLASSES/Products_functions_home.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="181" column="95" selection-start="10465" selection-end="10465" vertical-scroll-proportion="-2.5">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/PAGES/suppliers_page.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="59" column="53" selection-start="3703" selection-end="3733" vertical-scroll-proportion="-10.625">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/JS/suppliers.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="195" column="33" selection-start="7956" selection-end="7956" vertical-scroll-proportion="0.70029676">
+        <state line="4" column="42" selection-start="122" selection-end="152" vertical-scroll-proportion="-1.4">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/CSS/suppliers_page.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="18" selection-start="131" selection-end="131" vertical-scroll-proportion="0.13100436">
           <folding />
         </state>
       </provider>
