@@ -121,6 +121,15 @@ $(function() {
 
     });
 
+    $("#search_supplier_input").on('click', function() {
+        $("#search_supplier_input").on('focus', function() {
+            if($("#hidden_search_supplier_by_input").val() == "") {
+                $("#search_supplier_input").attr("data-original-title", "Select first CATEGORY to FILTER");
+                $("#search_supplier_input").tooltip();
+            }
+        });
+    });
+
     // ========= searching employees =======
     $("#filter_by_option_a").click(function() {
 
