@@ -122,7 +122,7 @@ $(function() {
         }
 
     });
-    // ========= searching employees =======
+    // ========= searching employees =============
     $("#filter_by_option_a").click(function() {
         $(document).bind('click', function() {
             $(this).css("display", "none");
@@ -133,58 +133,83 @@ $(function() {
             $("#filter_by_options_ul").css("display", "none");
             $("#search_supplier_input").attr("data-original-title", "Filter By COMPANY NAME");
             $("#hidden_search_supplier_by_input").val("company_name");
+            if($.trim($("#search_supplier_input").val()) != "") {
+                search_supplier();
+            }
         });
         $("#search_by_product_name_li").click(function() {
             $("#filter_by_options_ul").css("display", "none");
             $("#search_supplier_input").attr("data-original-title", "Filter By PRODUCT NAME");
             $("#hidden_search_supplier_by_input").val("product_name");
+            if($.trim($("#search_supplier_input").val()) != "") {
+                alert($("#search_supplier_input").val());
+                search_supplier();
+            }
         });
         $("#search_by_supplier_address_li").click(function() {
             $("#filter_by_options_ul").css("display", "none");
             $("#search_supplier_input").attr("data-original-title", "Filter By SUPPLIER ADDRESS");
-
             $("#hidden_search_supplier_by_input").val("address");
-        });
-    });
-
-    $("#search_supplier_input").keyup(function() {
-        if($("#hidden_search_supplier_by_input").val() != "") {
-            $("#search_supplier_span").removeClass("control-group error");
-            var item_limit = $("#item_limit_input").val();
-            var current_page = parseInt($("#current_page").val());
-            current_page = current_page * item_limit;
-            if(item_limit == "") {
-                item_limit = 5;
-            } else {
-                item_limit = parseInt(item_limit);
+            if($.trim($("#search_supplier_input").val()) != "") {
+                search_supplier();
             }
-            var field_name = $("#hidden_search_supplier_by_input").val();
-            var search_input_value = $("#search_supplier_input").val();
-
-            var data_object = {"field_name": field_name, "search_input_value": search_input_value, "current_page": current_page, "item_limit": item_limit};
-
-            var search_supplier_request = request("../PHP/OBJECTS/SUPPLIERS/search_supplier.php", data_object, "searching supplier request");
-            search_supplier_request.success(function(data) {
-                if(data != "") {
-                    $("#display_suppliers_tbody").html(data);
-                } else {
-                    $("#display_suppliers_tbody").html("<tr><td colspan = '4'>No record found!</td></tr>");
-                }
-            });
-        } else {
-            $("#search_supplier_input").attr("data-original-title", "Select first CATEGORY to FILTER");
-            $("#search_supplier_input").tooltip();
-            $("#search_supplier_span").addClass("control-group error");
+        });
+        /*
+        var mouse_position = "outside ul";
+        $("#filter_by_options_ul").hover(function() {
+            mouse_position = "inside ul";
+        });
+        if(mouse_position == "outside ul") {
+            $("body").click(function() {
+                $("#filter_by_options_ul").toggle();
+            })
         }
-
-        if($("#search_supplier_input").val() == "") {
-            display_suppliers();
-        }
+        */
+    });
+    $("#search_supplier_input").keyup(function() {
+        search_supplier();
 
     });
 });
 
 var pageOnTracked = 0;
+
+function search_supplier() {
+    if($("#hidden_search_supplier_by_input").val() != "") {
+        $("#search_supplier_span").removeClass("control-group error");
+        var item_limit = $("#item_limit_input").val();
+        var current_page = parseInt($("#current_page").val());
+        current_page = current_page * item_limit;
+        if(item_limit == "") {
+            item_limit = 5;
+        } else {
+            item_limit = parseInt(item_limit);
+        }
+        var field_name = $("#hidden_search_supplier_by_input").val();
+        var search_input_value = $("#search_supplier_input").val();
+
+        var data_object = {"field_name": field_name, "search_input_value": search_input_value, "current_page": current_page, "item_limit": item_limit};
+
+        var search_supplier_request = request("../PHP/OBJECTS/SUPPLIERS/search_supplier.php", data_object, "searching supplier request");
+        search_supplier_request.success(function(data) {
+            if(data != "") {
+                alert("data = " + data);
+                $("#display_suppliers_tbody").html(data);
+            } else {
+                $("#display_suppliers_tbody").html("<tr class = 'alert alert-danger'><td colspan = '4'>No record found!</td></tr>");
+            }
+        });
+    } else {
+        $("#search_supplier_input").attr("data-original-title", "Select first CATEGORY to FILTER");
+        $("#search_supplier_input").tooltip();
+        $("#search_supplier_span").addClass("control-group error");
+    }
+
+    if($("#search_supplier_input").val() == "") {
+        display_suppliers();
+    }
+}
+
 function retrieve_all_suppliers() {
     var retrieve_all_suppliers_request = request("../PHP/OBJECTS/SUPPLIERS/retrieve_all_suppliers.php", null, "retrieving all suppliers");
     retrieve_all_suppliers_request.success(function(data) {

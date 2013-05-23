@@ -226,7 +226,7 @@ $(function() {
                 if(data != "") {
                     $("#display_products_table_tbody").html(data);
                 } else {
-                    $("#display_products_table_tbody").html("<tr><td>No results for '<b>" + $("#search_product_input_field").val() + "</b>'.</td></tr>");
+                    $("#display_products_table_tbody").html("<tr class = 'alert alert-block alert-danger'><td>No results for '<b>" + $("#search_product_input_field").val() + "</b>'.</td></tr>");
                 }
             },
             error: function(data) {
@@ -251,7 +251,7 @@ function display_products() {
             if(data != "") {
                 $("#display_products_table_tbody").html(data);
             } else {
-                $("#display_products_table_tbody").html("<tr class = 'alert alert-danger'><td colspan = '6'>No Product Found!</td></tr>");
+                $("#display_products_table_tbody").html("<tr class = 'alert alert-block alert-danger'><td>No Product Found!</td></tr>");
             }
         },
         complete: function() {

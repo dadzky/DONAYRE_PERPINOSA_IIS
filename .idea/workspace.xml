@@ -2,25 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f473be9a-6dc6-4c09-b738-baf6f7639912" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PHP/CLASSES/Products_functions_home.php" afterPath="$PROJECT_DIR$/app/PHP/CLASSES/Products_functions_home.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PHP/CLASSES/Suppliers_functions_home.php" afterPath="$PROJECT_DIR$/app/PHP/CLASSES/Suppliers_functions_home.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PHP/OBJECTS/PRODUCTS/add_product.php" afterPath="$PROJECT_DIR$/app/PHP/OBJECTS/PRODUCTS/add_product.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PHP/OBJECTS/PRODUCTS/display_products.php" afterPath="$PROJECT_DIR$/app/PHP/OBJECTS/PRODUCTS/display_products.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CSS/product_page.css" afterPath="$PROJECT_DIR$/app/CSS/product_page.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/JS/products.js" afterPath="$PROJECT_DIR$/app/JS/products.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PAGES/products_page.php" afterPath="$PROJECT_DIR$/app/PAGES/products_page.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PHP/OBJECTS/PRODUCTS/search_product.php" afterPath="$PROJECT_DIR$/app/PHP/OBJECTS/PRODUCTS/search_product.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PHP/OBJECTS/SUPPLIERS/search_supplier.php" afterPath="$PROJECT_DIR$/app/PHP/OBJECTS/SUPPLIERS/search_supplier.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/JS/suppliers.js" afterPath="$PROJECT_DIR$/app/JS/suppliers.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CSS/suppliers_page.css" afterPath="$PROJECT_DIR$/app/CSS/suppliers_page.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PAGES/suppliers_page.php" afterPath="$PROJECT_DIR$/app/PAGES/suppliers_page.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="IIS_PROJECT_HUB.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="f473be9a-6dc6-4c09-b738-baf6f7639912" time="1369306518613" ignored="false" />
-    <file path="/products.js" changelist="f473be9a-6dc6-4c09-b738-baf6f7639912" time="1369306270733" ignored="false" />
-    <file path="/suppliers.js" changelist="f473be9a-6dc6-4c09-b738-baf6f7639912" time="1369284759730" ignored="false" />
+    <file path="/products.js" changelist="f473be9a-6dc6-4c09-b738-baf6f7639912" time="1369307168943" ignored="false" />
+    <file path="/suppliers.js" changelist="f473be9a-6dc6-4c09-b738-baf6f7639912" time="1369308310919" ignored="false" />
     <file path="/suppliers_page.php" changelist="f473be9a-6dc6-4c09-b738-baf6f7639912" time="1369273554180" ignored="false" />
     <file path="/suppliers_page.css" changelist="f473be9a-6dc6-4c09-b738-baf6f7639912" time="1369277357799" ignored="false" />
     <file path="/products_page.php" changelist="f473be9a-6dc6-4c09-b738-baf6f7639912" time="1369305518783" ignored="false" />
@@ -48,10 +37,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="suppliers.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="suppliers.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/JS/suppliers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="69" column="24" selection-start="2916" selection-end="2916" vertical-scroll-proportion="0.0">
+            <state line="195" column="33" selection-start="7956" selection-end="7956" vertical-scroll-proportion="0.70029676">
               <folding />
             </state>
           </provider>
@@ -120,10 +109,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="products.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="products.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/JS/products.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="223" column="148" selection-start="12236" selection-end="12236" vertical-scroll-proportion="0.023076924">
+            <state line="253" column="87" selection-start="13413" selection-end="13413" vertical-scroll-proportion="-10.16">
               <folding />
             </state>
           </provider>
@@ -160,7 +149,6 @@
         <option value="$PROJECT_DIR$/app/PHP/CLASSES/Suppliers_functions_home.php" />
         <option value="$PROJECT_DIR$/app/PAGES/suppliers_page.php" />
         <option value="$PROJECT_DIR$/app/CSS/suppliers_page.css" />
-        <option value="$PROJECT_DIR$/app/JS/suppliers.js" />
         <option value="$PROJECT_DIR$/app/CSS/product_page.css" />
         <option value="$PROJECT_DIR$/app/PHP/OBJECTS/PRODUCTS/add_product.php" />
         <option value="$PROJECT_DIR$/app/PAGES/products_page.php" />
@@ -168,15 +156,15 @@
         <option value="$PROJECT_DIR$/app/PHP/CLASSES/Products_functions_home.php" />
         <option value="$PROJECT_DIR$/app/PHP/OBJECTS/PRODUCTS/search_product.php" />
         <option value="$PROJECT_DIR$/app/JS/products.js" />
+        <option value="$PROJECT_DIR$/app/JS/suppliers.js" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="69" />
-    <option name="y" value="24" />
-    <option name="width" value="1432" />
-    <option name="height" value="856" />
+    <option name="y" value="-5" />
+    <option name="width" value="1440" />
+    <option name="height" value="905" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -403,14 +391,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="69" y="24" width="1432" height="856" extended-state="6" />
+    <frame x="0" y="-5" width="1440" height="905" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18326119" sideWeight="0.9617918" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18220946" sideWeight="0.9617918" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -522,13 +510,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/JS/suppliers.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="69" column="24" selection-start="2916" selection-end="2916" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/PHP/OBJECTS/PRODUCTS/add_product.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="14" column="146" selection-start="509" selection-end="509" vertical-scroll-proportion="0.0">
@@ -552,7 +533,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/PAGES/suppliers_page.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="56" selection-start="3003" selection-end="3026" vertical-scroll-proportion="-5.5416665" />
+        <state line="50" column="56" selection-start="3003" selection-end="3026" vertical-scroll-proportion="-5.5416665">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/PAGES/products_page.php">
@@ -576,16 +559,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/JS/products.js">
+    <entry file="file://$PROJECT_DIR$/app/CSS/product_page.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="223" column="148" selection-start="12236" selection-end="12236" vertical-scroll-proportion="0.023076924">
+        <state line="54" column="0" selection-start="1036" selection-end="1036" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/CSS/product_page.css">
+    <entry file="file://$PROJECT_DIR$/app/JS/products.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="0" selection-start="1036" selection-end="1036" vertical-scroll-proportion="0.0">
+        <state line="253" column="87" selection-start="13413" selection-end="13413" vertical-scroll-proportion="-10.16">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/JS/suppliers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="195" column="33" selection-start="7956" selection-end="7956" vertical-scroll-proportion="0.70029676">
           <folding />
         </state>
       </provider>
