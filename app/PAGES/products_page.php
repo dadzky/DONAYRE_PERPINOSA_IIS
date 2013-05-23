@@ -13,7 +13,20 @@
                 <div id = "product_actions">
                     <span class = 'add-on'><img src = "../CSS/images/search_icon1.png"></span>
                     <input type = "text" id = "search_product_input_field" class = 'search-query' placeholder = "Search product here" />
-                    <select id = "display_product_selected_letter" class = "span1"><option>all</option></select>
+                    <span class = "pull-right"><span class = "label label-info">display:</span>
+                        <select class = "span2" name = "product_genre_to_display" id = "product_genre_to_display">
+                            <option>Can Goods</option>
+                            <option>Noodles</option>
+                            <option>Junk Foods/Biscuits</option>
+                            <option>Candies</option>
+                            <option>Wines/Liquors</option>
+                            <option>Shampoos</option>
+                            <option>Soaps</option>
+                            <option>Soap Powders</option>
+                            <option>Others</option>
+                        </select>
+                    </span>
+                    <!--<select id = "display_product_selected_letter" class = "span1"><option>all</option></select>-->
                 </div><!-- ========  Product actions div ends ======== -->
                 <div id = "products_to_display_loading"><img id = "loading_image" src = "../CSS/images/loading_image.gif" /></div><!--  products to display loading ends -->
                 <table id = "display_products_table" class = "table table-hover">
@@ -42,25 +55,39 @@
                     <h4>Add Product here:</h4>
                     <input type = "hidden" id = "id" name = "id">
                     <dl>
-                    <dt>Product Name:</dt>
-                        <dd id = 'product_name_dd'><input type = "text" name = "product_name" id = "product_name" /></dd>
-                    <dt>Product's Bar Code:</dt>
-                        <dd id = "bar_code_dd"><input type = "text" name = "bar_code" id = "bar_code" /></dd>
-                    <dt>Product &#8369;rice:</dt>
-                        <dd id = 'product_price_dd' class = "input-append btn-group"><span class = "add-on">&#8369;</span><input type = "text" name = "product_price" id = "product_price" class = "input-medium"/></dd>
-                    <dt>Number of Stock(s):</dt>
-                        <dd id = 'number_of_stocks_dd'><input type = "text" name = "number_of_stocks" id = "number_of_stocks" /></dd>
-                    <dt>Stock Unit:</dt>
-                        <dd id = "stock_unit_dd"><select name = "stock_unit" id = "stock_unit">
-                                <option>piece</option>
-                                <option>pack</option>
-                                <option>kg</option>
-                                <option>g</option>
-                                <option>lbs</option>
-                                <option>others</option>
-                            </select></dd>
-                    <dt>Product Supplier:</dt>
-                        <dd id = 'supplier'><select name = "product_supplier" id = "product_supplier"></select></dd>
+                        <dt>Product Genre:</dt>
+                            <dd>
+                                <select name = "product_genre" id = "product_genre">
+                                    <option>Can Good</option>
+                                    <option>Noodles</option>
+                                    <option>Junk Food/Biscuit</option>
+                                    <option>Candy</option>
+                                    <option>Wine/Liquor</option>
+                                    <option>Shampoo</option>
+                                    <option>Soap</option>
+                                    <option>Soap Powder</option>
+                                    <option>Others</option>
+                                </select>
+                            </dd>
+                        <dt>Product Name:</dt>
+                            <dd id = 'product_name_dd'><input type = "text" name = "product_name" id = "product_name" /></dd>
+                        <dt>Product's Bar Code:</dt>
+                            <dd id = "bar_code_dd"><input type = "text" name = "bar_code" id = "bar_code" /></dd>
+                        <dt>Product &#8369;rice:</dt>
+                            <dd id = 'product_price_dd' class = "input-append btn-group"><span class = "add-on">&#8369;</span><input type = "text" name = "product_price" id = "product_price" class = "input-medium"/></dd>
+                        <dt>Number of Stock(s):</dt>
+                            <dd id = 'number_of_stocks_dd'><input type = "text" name = "number_of_stocks" id = "number_of_stocks" /></dd>
+                        <dt>Stock Unit:</dt>
+                            <dd id = "stock_unit_dd"><select name = "stock_unit" id = "stock_unit">
+                                    <option>piece</option>
+                                    <option>pack</option>
+                                    <option>kg</option>
+                                    <option>g</option>
+                                    <option>lbs</option>
+                                    <option>others</option>
+                                </select></dd>
+                        <dt>Product Supplier:</dt>
+                            <dd id = 'supplier'><select name = "product_supplier" id = "product_supplier"></select></dd>
                     </dl>
                     <input type = "reset" value = "reset" class = "btn btn-danger" />
                 </form><!-- ============ add product form ends ============-->

@@ -46,7 +46,7 @@
             $this->close_connection();
         }
 
-        function add_product($product_name, $bar_code, $product_price, $number_of_stocks, $stock_unit, $update, $product_supplier) {
+        function add_product($product_name, $bar_code, $product_price, $number_of_stocks, $stock_unit, $update, $product_supplier, $product_genre) {
             $this->open_connection();
 
             if($update == "yes") {
@@ -58,8 +58,8 @@
                 $update_statement->execute(array($total_number_of_stocks, $product_name));
             } else {
                 $final_product_price = round($product_price, 2);
-                $insert_statement = $this->db_holder->prepare("INSERT INTO products VALUES (null, ?, ?, ?, ?, ?);");
-                $insert_statement->execute(array($product_name, trim($bar_code), $final_product_price, $number_of_stocks, $stock_unit));
+                $insert_statement = $this->db_holder->prepare("INSERT INTO products VALUES (null, ?, ?, ?, ?, ?, ?);");
+                $insert_statement->execute(array($product_name, trim($bar_code), $final_product_price, $number_of_stocks, $stock_unit, $product_genre));
 
                 $product_id = $this->db_holder->lastInsertId();
 
@@ -80,46 +80,49 @@
             $this->close_connection();
         }
 
-        function display_products() {
+        function display_products($product_genre_to_display) {
             $this->open_connection();
 
-            $select_statement = $this->db_holder->query("SELECT product_id,
+            $select_statement = $this->db_holder->prepare("SELECT product_id,
                                                                 product_name,
                                                                 bar_code,
                                                                 product_price,
                                                                 number_of_stocks,
-                                                                stock_unit FROM products ORDER BY product_name;");
+                                                                stock_unit FROM products
+                                                           WHERE product_genre = ?
+                                                           ORDER BY product_name;");
+            $select_statement->execute(array($product_genre_to_display));
             while($content = $select_statement->fetch()) {
                 $position = strpos($content[3], ".");
                 if($position != "") {
                     // ========= With decimal prices greater than 0 ============
-                    $whole_number = substr($content[3], 0, $position);
+                    $whole_number = substr($content[3], 0, $position - 1);
                     $formatted_whole_number = number_format($whole_number);
                     $decimal = substr($content[3], $position);
                     $product_price = $formatted_whole_number.$decimal;
                 } else {
-                    $product_price = $content[0].".00";
+                    $product_price = number_format($content[3]).".00";
                 }
                 // ================== check first product name if characters are greater than 15 ====
                 $product_name_length = strlen($content[1]);
                 if($product_name_length > 15) {
-                    $product_name = substr($content[1], 0, 15)." <span onclick = 'show_complete_product_name(".$content[0].")' class = 'label label-info'> ></span>";
+                    $product_name = "<span>".substr($content[1], 0, 15)."</span><span onmouseover = 'show_complete_product_name(".$content[0].")' class = 'label label-info pointer'> ></span>";
                 } else {
-                    $product_name = $content[1];
+                    $product_name = "<span>".$content[1]."</span>";
                 }
-                    echo "<tr id = '".$content[0]."'>";
-                    echo    "<td ondblclick = 'edit_products_name(".$content[0].")'>".$product_name."</td>";
-                    echo    "<td>".$content[2]."</td>";
-                    echo    "<td ondblclick = 'edit_products_price(".$content[0].")'>&#8369;<span id = 'product_price_span'>".$product_price."</span></td>";
-                    echo    "<td ondblclick = 'edit_products_number_of_stocks(".$content[0].")'>".$content[4]."</td>";
-                    echo    "<td ondblclick = 'edit_products_stock_unit(".$content[0].")'>".$content[5]."</td>";
-                    echo    "<td class = 'product_delete_action'><input type = 'checkbox' class = 'mark_this' id = 'product_check_box_".$content[0]."' /></td>";
-                    echo "</tr>";
+                echo "<tr id = '".$content[0]."'>";
+                echo    "<td ondblclick = 'edit_products_name(".$content[0].")'>".$product_name."</td>";
+                echo    "<td>".$content[2]."</td>";
+                echo    "<td ondblclick = 'edit_products_price(".$content[0].")'>&#8369;<span id = 'product_price_span'>".$product_price."</span></td>";
+                echo    "<td ondblclick = 'edit_products_number_of_stocks(".$content[0].")'>".$content[4]."</td>";
+                echo    "<td ondblclick = 'edit_products_stock_unit(".$content[0].")'>".$content[5]."</td>";
+                echo    "<td class = 'product_delete_action'><input type = 'checkbox' class = 'mark_this' id = 'product_check_box_".$content[0]."' /></td>";
+                echo "</tr>";
             }
 
             $this->close_connection();
         }
-
+        /*
         function display_products_by_select_letter($selected_letter) {
             $this->open_connection();
 
@@ -137,19 +140,19 @@
                 $position = strpos($content[3], ".");
                 if($position != "") {
                     // ========= With decimal prices greater than 0 ============
-                    $whole_number = substr($content[3], 0, $position);
+                    $whole_number = substr($content[3], 0, $position - 1);
                     $formatted_whole_number = number_format($whole_number);
                     $decimal = substr($content[3], $position);
                     $product_price = $formatted_whole_number.$decimal;
                 } else {
-                    $product_price = $content[0].".00";
+                    $product_price = number_format($content[3]).".00";
                 }
                 // ================== check first product name if characters are greater than 15 ====
                 $product_name_length = strlen($content[1]);
                 if($product_name_length > 15) {
-                    $product_name = substr($content[1], 0, 15)." <span onclick = 'show_complete_product_name(".$content[0].")' class = 'label label-info'> ></span>";
+                    $product_name = "<span>".substr($content[1], 0, 15)."</span><span onmouseover = 'show_complete_product_name(".$content[0].")' class = 'label label-info pointer'> ></span>";
                 } else {
-                    $product_name = $content[1];
+                    $product_name = "<span>".$content[1]."</span>";
                 }
                 echo "<tr id = '".$content[0]."'>";
                 echo    "<td ondblclick = 'edit_products_name(".$content[0].")'>".$product_name."</td>";
@@ -163,37 +166,38 @@
 
             $this->close_connection();
         }
-
-        function search_product($product_name_to_search) {
+        */
+        function search_product($product_name_to_search, $product_genre_to_display) {
             $this->open_connection();
 
             $select_statement = $this->db_holder->prepare("SELECT product_id,
-                                                                  LEFT(product_name, 18),
-                                                                  product_price,
-                                                                  number_of_stocks,
-                                                                  stock_unit
-                                                           FROM products
-                                                           WHERE product_name LIKE ?
+                                                                product_name,
+                                                                bar_code,
+                                                                product_price,
+                                                                number_of_stocks,
+                                                                stock_unit FROM products
+                                                           WHERE product_name LIKE ? AND
+                                                                 product_genre = ?
                                                            ORDER BY product_name;");
-            $select_statement->execute(array($product_name_to_search));
+            $select_statement->execute(array($product_name_to_search, $product_genre_to_display));
 
             while($content = $select_statement->fetch()) {
                 $position = strpos($content[3], ".");
                 if($position != "") {
                     // ========= With decimal prices greater than 0 ============
-                    $whole_number = substr($content[3], 0, $position);
+                    $whole_number = substr($content[3], 0, $position - 1);
                     $formatted_whole_number = number_format($whole_number);
                     $decimal = substr($content[3], $position);
                     $product_price = $formatted_whole_number.$decimal;
                 } else {
-                    $product_price = $content[0].".00";
+                    $product_price = number_format($content[3]).".00";
                 }
                 // ================== check first product name if characters are greater than 15 ====
                 $product_name_length = strlen($content[1]);
                 if($product_name_length > 15) {
-                    $product_name = substr($content[1], 0, 15)." <span onclick = 'show_complete_product_name(".$content[0].")' class = 'label label-info'> ></span>";
+                    $product_name = "<span>".substr($content[1], 0, 15)."</span><span onmouseover = 'show_complete_product_name(".$content[0].")' class = 'label label-info pointer'> ></span>";
                 } else {
-                    $product_name = $content[1];
+                    $product_name = "<span>".$content[1]."</span>";
                 }
                 echo "<tr id = '".$content[0]."'>";
                 echo    "<td ondblclick = 'edit_products_name(".$content[0].")'>".$product_name."</td>";

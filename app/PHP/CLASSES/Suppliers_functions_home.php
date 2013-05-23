@@ -44,7 +44,7 @@
             $this->close_connection();
         }
 
-        function display_supplier_pager($item_limit, $current_page, $item_limit) {
+        function display_supplier_pager($item_limit) {
             $this->open_connection();
             $select_statement = $this->db_holder->query("SELECT COUNT(DISTINCT company_name) FROM suppliers;");
             $number_of_items = $select_statement->fetch();

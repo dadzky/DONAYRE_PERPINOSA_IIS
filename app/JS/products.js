@@ -184,6 +184,13 @@ $(function() {
         }
     });
 
+    // ===================== DISPLAYING PRODUCTS BY SELECTED GENRE ===================
+
+    $("#product_genre_to_display").change(function() {
+        display_products();
+    });
+
+    /*
     // ===================== DISPLAYING PRODUCTS BY SELECTED letter ===================
 
     $("#display_product_selected_letter").change(function() {
@@ -206,14 +213,15 @@ $(function() {
             }
         });
     });
+    */
 
-    // ================== SEARCHING SPECIFIC PRODUCT ====================
+    // ================== SEARCHING PRODUCT WITH SPECIFIC GENRE ====================
 
     $("#search_product_input_field").keyup(function() {
         $.ajax({
             type: "POST",
             url: "../PHP/OBJECTS/PRODUCTS/search_product.php",
-            data: {"product_name_to_search": $("#search_product_input_field").val()},
+            data: {"product_name_to_search": $("#search_product_input_field").val(), "product_genre_to_display": $("#product_genre_to_display").val()},
             success: function(data) {
                 if(data != "") {
                     $("#display_products_table_tbody").html(data);
@@ -236,9 +244,15 @@ $(function() {
 
 function display_products() {
     $.ajax({
+        type: "POST",
         url: "../PHP/OBJECTS/PRODUCTS/display_products.php",
+        data: {"product_genre_to_display": $("#product_genre_to_display").val()},
         success: function(data) {
-            $("#display_products_table_tbody").html(data);
+            if(data != "") {
+                $("#display_products_table_tbody").html(data);
+            } else {
+                $("#display_products_table_tbody").html("<tr class = 'alert alert-danger'><td colspan = '6'>No Product Found!</td></tr>");
+            }
         },
         complete: function() {
             $("#loading_image").hide();
@@ -356,7 +370,7 @@ function edit_products_price(id) {
                 type: "POST",
                 url: "../PHP/OBJECTS/PRODUCTS/update_products_info.php",
                 data: {"id": id, "product_name": "", "product_price": new_product_price, "products_number_of_stocks": "", "stock_unit": ""},
-                success: function(data) {
+                success: function() {
                     display_products();
                 },
                 error: function(data) {
@@ -545,6 +559,7 @@ function delete_products() {
 
 
 function show_complete_product_name(id) {
+    var shortened_product_name = $("#display_products_table_tbody #" + id + " td:first span:first").html();
     $.ajax({
         type: "POST",
         url: "../PHP/OBJECTS/PRODUCTS/show_complete_product_name.php",
@@ -552,11 +567,13 @@ function show_complete_product_name(id) {
         success: function(data) {
             if(data != "") {
                 var td = document.getElementById(id).getElementsByTagName('td')[0];
-                $("#" + id + " td:first").css({"position": "absolute", "z-index": "2000", "background": "white", "width": "inherit"});
-                td.innerHTML = data;
+                $("#" + id + " td:first").addClass("complete_product_name_style");
+                $("#display_products_table_tbody #" + id + " td:first span:first").html(data);
+                $("#display_products_table_tbody #" + id + " td:first span:eq(1)").hide();
                 $("#" + id + " td:first").mouseleave(function() {
-                    display_products();
-                })
+                    $("#display_products_table_tbody #" + id + " td:first span:first").html(shortened_product_name);
+                    $("#display_products_table_tbody #" + id + " td:first span:eq(1)").show();
+                });
             }
         },
         error: function(data) {

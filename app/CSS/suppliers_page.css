@@ -73,3 +73,12 @@ input[type = "reset"] {
     width: 300px;
     margin: 0px 100px  0px 150px;
 }
+
+#show_transaction_span:hover {
+    cursor: pointer;
+    color: #000000;
+}
+
+.pointer {
+    cursor: pointer;
+}
