@@ -573,6 +573,7 @@ function show_complete_product_name(id) {
                 $("#" + id + " td:first").mouseleave(function() {
                     $("#display_products_table_tbody #" + id + " td:first span:first").html(shortened_product_name);
                     $("#display_products_table_tbody #" + id + " td:first span:eq(1)").show();
+                    $("#" + id + " td:first").removeClass("complete_product_name_style");
                 });
             }
         },
