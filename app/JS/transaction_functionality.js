@@ -155,6 +155,28 @@ $(function(){
            }
        });
 
+    // =============== ============
+
+    $("#product_name").keyup(function() {
+        $.ajax({
+            type: "POST",
+            url: "../PHP/OBJECTS/transaction/retrieve_products.php",
+            data: {"inputted_product": $("#product_name").val()},
+            success: function(data) {
+                var data = JSON.parse(data);
+                /*$("#product_name").autocomplete({
+                    source: data
+                });*/
+                $("#product_name").typeahead({
+                    source: data
+                })
+            },
+            error: function(data) {
+                console.log("Error in retrieving all products = " + data);
+            }
+        });
+    });
+
 })
 
  var totalPayment = 0; //Global variable for the total payment of the products bought...

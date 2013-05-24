@@ -56,6 +56,8 @@
                 $total_number_of_stocks = $product_number_of_stocks[0] + $number_of_stocks;
                 $update_statement = $this->db_holder->prepare("UPDATE products SET number_of_stocks = ? WHERE product_name = ?");
                 $update_statement->execute(array($total_number_of_stocks, $product_name));
+
+
             } else {
                 $final_product_price = round($product_price, 2);
                 $insert_statement = $this->db_holder->prepare("INSERT INTO products VALUES (null, ?, ?, ?, ?, ?, ?);");
@@ -79,6 +81,8 @@
 
             $this->close_connection();
         }
+
+
 
         function display_products($product_genre_to_display) {
             $this->open_connection();

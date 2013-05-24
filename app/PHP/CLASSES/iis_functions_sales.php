@@ -254,7 +254,7 @@
                     $recLength = 1;
                     while($rec = $stmt2->fetch()){
                         $records .= "<tr >";
-                        $records .= "<td>".$rec[0]."</td>";
+                        $records .= "<td><i class='icon-time'></i> ".$rec[0]."</td>";
                         $records .= "<td>".ucwords($rec[1])."</td>";
                         $records .= "<td>".$rec[2]."</td>";
                         $records .= "<td>".$rec[3]."</td>";
@@ -274,8 +274,27 @@
             if(!$found){
                  echo "<tr class='error'><td colspan='6'><span class='text-error'><i class='icon-minus-sign'></i><strong>No Records Found!</strong></span></td></tr>";
             }
-
         }
+
+            function retrieve_products($inputted_product) {
+                $this->open_connection();
+
+                $select_statement = $this->db_holder->prepare("SELECT product_name FROM products WHERE product_name LIKE ?;");
+                $select_statement->execute(array($inputted_product));
+
+                $product_array = array();
+
+                while($product = $select_statement->fetch()) {
+                    array_push($product_array, $product[0]);
+                }
+                echo json_encode($product_array);
+
+
+                $this->close_connection();
+
+            }
+
+
         /*-----------END OF TRANSACTION RECORDS---------*/
 
     }
