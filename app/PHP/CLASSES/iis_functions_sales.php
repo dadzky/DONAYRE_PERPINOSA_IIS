@@ -283,10 +283,10 @@
                 $select_statement->execute(array($inputted_product));
 
                 $product_array = array();
-
                 while($product = $select_statement->fetch()) {
                     array_push($product_array, $product[0]);
                 }
+
                 echo json_encode($product_array);
 
 

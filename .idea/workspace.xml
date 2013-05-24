@@ -2,15 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f473be9a-6dc6-4c09-b738-baf6f7639912" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/CSS/images/page.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/PHP/OBJECTS/transaction/retrieve_products.php" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/SANGRA_PRESENTATION.odp" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/app/CSS/images/other_page.png" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PHP/CLASSES/Products_functions_home.php" afterPath="$PROJECT_DIR$/app/PHP/CLASSES/Products_functions_home.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PHP/CLASSES/iis_functions_sales.php" afterPath="$PROJECT_DIR$/app/PHP/CLASSES/iis_functions_sales.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PAGES/suppliers_page.php" afterPath="$PROJECT_DIR$/app/PAGES/suppliers_page.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/JS/transaction_functionality.js" afterPath="$PROJECT_DIR$/app/JS/transaction_functionality.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="IIS_PROJECT_HUB.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -20,7 +16,7 @@
     <file path="/suppliers_page.php" changelist="f473be9a-6dc6-4c09-b738-baf6f7639912" time="1369309966357" ignored="false" />
     <file path="/suppliers_page.css" changelist="f473be9a-6dc6-4c09-b738-baf6f7639912" time="1369310240049" ignored="false" />
     <file path="/products_page.php" changelist="f473be9a-6dc6-4c09-b738-baf6f7639912" time="1369305518783" ignored="false" />
-    <file path="/Products_functions_home.php" changelist="f473be9a-6dc6-4c09-b738-baf6f7639912" time="1369385735165" ignored="false" />
+    <file path="/Products_functions_home.php" changelist="f473be9a-6dc6-4c09-b738-baf6f7639912" time="1369393530048" ignored="false" />
     <file path="/product_page.css" changelist="f473be9a-6dc6-4c09-b738-baf6f7639912" time="1369304259785" ignored="false" />
     <file path="/add_product.php" changelist="f473be9a-6dc6-4c09-b738-baf6f7639912" time="1369304804026" ignored="false" />
     <file path="/display_products.php" changelist="f473be9a-6dc6-4c09-b738-baf6f7639912" time="1369305700519" ignored="false" />
@@ -53,25 +49,16 @@
       <file leaf-file-name="Suppliers_functions_home.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/PHP/CLASSES/Suppliers_functions_home.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="144" column="102" selection-start="7225" selection-end="7628" vertical-scroll-proportion="-90.0">
+            <state line="18" column="0" selection-start="609" selection-end="609" vertical-scroll-proportion="61.875">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Products_functions_home.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Products_functions_home.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/PHP/CLASSES/Products_functions_home.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="84" column="0" selection-start="3803" selection-end="3803" vertical-scroll-proportion="-24.708334">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="iis_functions_sales.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/PHP/CLASSES/iis_functions_sales.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="289" column="16" selection-start="12388" selection-end="12388" vertical-scroll-proportion="-7.3061223">
+            <state line="73" column="17" selection-start="3560" selection-end="3560" vertical-scroll-proportion="0.03069467">
               <folding />
             </state>
           </provider>
@@ -81,24 +68,6 @@
         <entry file="file://$PROJECT_DIR$/app/JS/suppliers.js">
           <provider selected="true" editor-type-id="text-editor">
             <state line="28" column="0" selection-start="1345" selection-end="1345" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="transaction_functionality.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/JS/transaction_functionality.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="172" column="14" selection-start="7698" selection-end="7698" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="transaction.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/PAGES/transaction.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="109" column="63" selection-start="5336" selection-end="5336" vertical-scroll-proportion="0.7351525">
               <folding />
             </state>
           </provider>
@@ -142,11 +111,11 @@
         <option value="$PROJECT_DIR$/app/JS/suppliers.js" />
         <option value="$PROJECT_DIR$/app/PHP/CLASSES/Database_connection.php" />
         <option value="$PROJECT_DIR$/app/PAGES/suppliers_page.php" />
-        <option value="$PROJECT_DIR$/app/PHP/CLASSES/Products_functions_home.php" />
         <option value="$PROJECT_DIR$/app/PHP/OBJECTS/transaction/retrieve_products.php" />
+        <option value="$PROJECT_DIR$/app/PAGES/transaction.php" />
         <option value="$PROJECT_DIR$/app/PHP/CLASSES/iis_functions_sales.php" />
         <option value="$PROJECT_DIR$/app/JS/transaction_functionality.js" />
-        <option value="$PROJECT_DIR$/app/PAGES/transaction.php" />
+        <option value="$PROJECT_DIR$/app/PHP/CLASSES/Products_functions_home.php" />
       </list>
     </option>
   </component>
@@ -579,9 +548,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/PHP/CLASSES/Products_functions_home.php">
+    <entry file="file://$PROJECT_DIR$/app/PHP/OBJECTS/transaction/retrieve_products.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="84" column="0" selection-start="3803" selection-end="3803" vertical-scroll-proportion="-24.708334">
+        <state line="4" column="55" selection-start="166" selection-end="166" vertical-scroll-proportion="-2.5">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/PAGES/transaction.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="109" column="63" selection-start="5336" selection-end="5336" vertical-scroll-proportion="0.7351525">
           <folding />
         </state>
       </provider>
@@ -595,35 +571,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/PHP/CLASSES/Suppliers_functions_home.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="144" column="102" selection-start="7225" selection-end="7628" vertical-scroll-proportion="-90.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/PHP/OBJECTS/transaction/retrieve_products.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="55" selection-start="166" selection-end="166" vertical-scroll-proportion="-2.5">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/PHP/CLASSES/iis_functions_sales.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="289" column="16" selection-start="12388" selection-end="12388" vertical-scroll-proportion="-7.3061223">
+        <state line="18" column="0" selection-start="609" selection-end="609" vertical-scroll-proportion="61.875">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/JS/transaction_functionality.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="172" column="14" selection-start="7698" selection-end="7698" vertical-scroll-proportion="0.0">
+        <state line="167" column="32" selection-start="7557" selection-end="7557" vertical-scroll-proportion="0.74101794">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/PAGES/transaction.php">
+    <entry file="file://$PROJECT_DIR$/app/PHP/CLASSES/iis_functions_sales.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="109" column="63" selection-start="5336" selection-end="5336" vertical-scroll-proportion="0.7351525">
+        <state line="284" column="41" selection-start="12228" selection-end="12228" vertical-scroll-proportion="0.54813665">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/PHP/CLASSES/Products_functions_home.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="73" column="17" selection-start="3560" selection-end="3560" vertical-scroll-proportion="0.03069467">
           <folding />
         </state>
       </provider>

@@ -57,6 +57,21 @@
                 $update_statement = $this->db_holder->prepare("UPDATE products SET number_of_stocks = ? WHERE product_name = ?");
                 $update_statement->execute(array($total_number_of_stocks, $product_name));
 
+                $select_statement2 = $this->db_holder->prepare("SELECT p.product_id,
+                                                                       s.company_name
+                                                                  FROM products AS p,
+                                                                       suppliers AS s,
+                                                                       product_to_supplier AS ps
+                                                                 WHERE p.product_id = ps.product_id AND
+                                                                       s.supplier_id = ps.supplier_id AND
+                                                                       p.product_name = ?;");
+                $select_statement2->execute(array($product_name));
+                $product_data = $select_statement2->fetch();
+
+                if($product_supplier == $product_data[1]) {
+                    $supplier_id = $this->get_supplier_id($product_supplier);
+                    $this->add_product_to_supplier($product_data[0], $supplier_id);
+                }
 
             } else {
                 $final_product_price = round($product_price, 2);
@@ -66,20 +81,33 @@
                 $product_id = $this->db_holder->lastInsertId();
 
                 // =============  SUPPLIERS RELATED  ACTIONS===========
-                $select_statement2 = $this->db_holder->prepare("SELECT supplier_id FROM suppliers WHERE company_name = ?;");
-                $select_statement2->execute(array($product_supplier));
-                $supplier_id = $select_statement2->fetch();
+                $supplier_id = $this->get_supplier_id($product_supplier);
 
-                $insert_statement2 = $this->db_holder->prepare("INSERT INTO product_to_supplier VALUES (?, ?);");
-                $insert_statement2->execute(array($product_id, $supplier_id[0]));
-                echo $product_supplier;
+                $this->add_product_to_supplier($product_id, $supplier_id);
 
                 // ============ ADMINISTRATOR'S TRANSACTION ===========
-                $insert_statement3 = $this->db_holder->prepare("INSERT INTO admins_transaction VALUES (?, ?, ?);");
-                $insert_statement3->execute(array($this->get_current_date(), $product_id, $number_of_stocks));
+                $this->add_admins_transaction($this->get_current_date(), $product_id, $number_of_stocks);
             }
 
             $this->close_connection();
+        }
+
+        function get_supplier_id($company_name) {
+            $select_statement2 = $this->db_holder->prepare("SELECT supplier_id FROM suppliers WHERE company_name = ?;");
+            $select_statement2->execute(array($company_name));
+            $supplier_id = $select_statement2->fetch();
+
+            return $supplier_id[0];
+        }
+
+        function add_product_to_supplier($product_id, $supplier_id) {
+            $insert_statement2 = $this->db_holder->prepare("INSERT INTO product_to_supplier VALUES (?, ?);");
+            $insert_statement2->execute(array($product_id, $supplier_id));
+        }
+
+        function add_admins_transaction($date, $product_id, $item_bought) {
+            $insert_statement3 = $this->db_holder->prepare("INSERT INTO admins_transaction VALUES (?, ?, ?);");
+            $insert_statement3->execute(array($date, $product_id, $item_bought));
         }
 
 

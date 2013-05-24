@@ -164,9 +164,6 @@ $(function(){
             data: {"inputted_product": $("#product_name").val()},
             success: function(data) {
                 var data = JSON.parse(data);
-                /*$("#product_name").autocomplete({
-                    source: data
-                });*/
                 $("#product_name").typeahead({
                     source: data
                 })
