@@ -2,11 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f473be9a-6dc6-4c09-b738-baf6f7639912" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/JS/suppliers.js" afterPath="$PROJECT_DIR$/app/JS/suppliers.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CSS/images/other_page.png" afterPath="$PROJECT_DIR$/app/CSS/images/other_page.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PHP/CLASSES/Database_connection.php" afterPath="$PROJECT_DIR$/app/PHP/CLASSES/Database_connection.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/IIS_DB.sql" afterPath="$PROJECT_DIR$/db/IIS_DB.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="IIS_PROJECT_HUB.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="f473be9a-6dc6-4c09-b738-baf6f7639912" time="1369310312257" ignored="false" />
+    <file path="/Dummy.txt" changelist="f473be9a-6dc6-4c09-b738-baf6f7639912" time="1369383024349" ignored="false" />
     <file path="/products.js" changelist="f473be9a-6dc6-4c09-b738-baf6f7639912" time="1369307168943" ignored="false" />
     <file path="/suppliers.js" changelist="f473be9a-6dc6-4c09-b738-baf6f7639912" time="1369310366950" ignored="false" />
     <file path="/suppliers_page.php" changelist="f473be9a-6dc6-4c09-b738-baf6f7639912" time="1369309966357" ignored="false" />
@@ -83,10 +86,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="suppliers.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="suppliers.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/JS/suppliers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="53" selection-start="229" selection-end="229" vertical-scroll-proportion="0.115384616">
+            <state line="28" column="0" selection-start="1345" selection-end="1345" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Database_connection.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/PHP/CLASSES/Database_connection.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="6" column="36" selection-start="187" selection-end="187" vertical-scroll-proportion="0.14150943">
               <folding />
             </state>
           </provider>
@@ -119,7 +131,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/PHP/CLASSES/Database_connection.php" />
         <option value="$PROJECT_DIR$/app/CSS/product_page.css" />
         <option value="$PROJECT_DIR$/app/PHP/OBJECTS/PRODUCTS/add_product.php" />
         <option value="$PROJECT_DIR$/app/PAGES/products_page.php" />
@@ -132,15 +143,15 @@
         <option value="$PROJECT_DIR$/app/PAGES/suppliers_page.php" />
         <option value="$PROJECT_DIR$/app/CSS/suppliers_page.css" />
         <option value="$PROJECT_DIR$/app/JS/suppliers.js" />
+        <option value="$PROJECT_DIR$/app/PHP/CLASSES/Database_connection.php" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="69" />
-    <option name="y" value="24" />
-    <option name="width" value="1432" />
-    <option name="height" value="856" />
+    <option name="y" value="52" />
+    <option name="width" value="1440" />
+    <option name="height" value="824" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -186,10 +197,6 @@
               <option name="myItemId" value="SANGRA_IIS" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="docs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -198,6 +205,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="SANGRA_IIS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="docs" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -374,8 +385,8 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="options.lastSelected" value="reference.settingsdialog.IDE.editor.colors" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
@@ -393,14 +404,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="69" y="24" width="1432" height="856" extended-state="6" />
+    <frame x="0" y="52" width="1440" height="824" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18614718" sideWeight="0.9617918" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1886657" sideWeight="0.9617918" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -493,11 +504,6 @@
         <state line="5" column="36" selection-start="154" selection-end="154" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/PHP/CLASSES/Database_connection.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="5" selection-start="471" selection-end="471" vertical-scroll-proportion="-10.625" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/PHP/OBJECTS/PRODUCTS/add_product.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="14" column="146" selection-start="509" selection-end="509" vertical-scroll-proportion="0.0" />
@@ -510,9 +516,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/PAGES/products_page.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="80" selection-start="854" selection-end="878" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="16" column="80" selection-start="854" selection-end="878" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/CSS/product_page.css">
@@ -571,7 +575,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/JS/suppliers.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="53" selection-start="229" selection-end="229" vertical-scroll-proportion="0.115384616">
+        <state line="28" column="0" selection-start="1345" selection-end="1345" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/PHP/CLASSES/Database_connection.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="36" selection-start="187" selection-end="187" vertical-scroll-proportion="0.14150943">
           <folding />
         </state>
       </provider>
