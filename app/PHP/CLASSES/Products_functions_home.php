@@ -68,12 +68,12 @@
                 $select_statement2->execute(array($product_name));
                 $product_data = $select_statement2->fetch();
 
-                if($product_supplier == $product_data[1]) {
+                $this->add_admins_transaction($this->get_current_date(), $product_data[0], $number_of_stocks);
+
+                if($product_data[1] != $product_supplier) {
                     $supplier_id = $this->get_supplier_id($product_supplier);
                     $this->add_product_to_supplier($product_data[0], $supplier_id);
-                    echo "supplier_id = ".$supplier_id;
                 }
-
             } else {
                 $final_product_price = round($product_price, 2);
                 $insert_statement = $this->db_holder->prepare("INSERT INTO products VALUES (null, ?, ?, ?, ?, ?, ?);");
@@ -83,7 +83,6 @@
 
                 // =============  SUPPLIERS RELATED  ACTIONS===========
                 $supplier_id = $this->get_supplier_id($product_supplier);
-
                 $this->add_product_to_supplier($product_id, $supplier_id);
 
                 // ============ ADMINISTRATOR'S TRANSACTION ===========
@@ -94,21 +93,32 @@
         }
 
         function get_supplier_id($company_name) {
+            $this->open_connection();
+
             $select_statement2 = $this->db_holder->prepare("SELECT supplier_id FROM suppliers WHERE company_name = ?;");
             $select_statement2->execute(array($company_name));
             $supplier_id = $select_statement2->fetch();
 
+            $this->close_connection();
             return $supplier_id[0];
         }
 
         function add_product_to_supplier($product_id, $supplier_id) {
+            $this->open_connection();
+
             $insert_statement2 = $this->db_holder->prepare("INSERT INTO product_to_supplier VALUES (?, ?);");
             $insert_statement2->execute(array($product_id, $supplier_id));
+
+            $this->close_connection();
         }
 
         function add_admins_transaction($date, $product_id, $item_bought) {
+            $this->open_connection();
+
             $insert_statement3 = $this->db_holder->prepare("INSERT INTO admins_transaction VALUES (?, ?, ?);");
             $insert_statement3->execute(array($date, $product_id, $item_bought));
+
+            $this->close_connection();
         }
 
 
