@@ -7,7 +7,7 @@
     <body>
         <div id = "suppliers_main_container_div" class = "container">
             <h1>Suppliers</h1>
-            <span id = 'show_transaction_span' class = 'label pull-right' title = "Toggle Records" ><img src = "../CSS/images/other_page.png" class = "img-circle"/></span>
+            <span id = 'show_transaction_span' class = 'label pull-right' title = "Toggle Records" ><img src = "../CSS/images/page.png" class = "img-circle"/></span>
             <br />
             <div id = "display_suppliers_div">
                 <div id = "suppliers_action_div">

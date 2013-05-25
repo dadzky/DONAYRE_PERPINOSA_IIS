@@ -58,15 +58,16 @@
                         <dt>Product Genre:</dt>
                             <dd>
                                 <select name = "product_genre" id = "product_genre">
-                                    <option>Can Good</option>
+                                    <option>Can Goods</option>
                                     <option>Noodles</option>
-                                    <option>Junk Food/Biscuit</option>
-                                    <option>Candy</option>
-                                    <option>Wine/Liquor</option>
-                                    <option>Shampoo</option>
-                                    <option>Soap</option>
-                                    <option>Soap Powder</option>
+                                    <option>Junk Foods/Biscuits</option>
+                                    <option>Candies</option>
+                                    <option>Wines/Liquors</option>
+                                    <option>Shampoos</option>
+                                    <option>Soaps</option>
+                                    <option>Soap Powders</option>
                                     <option>Others</option>
+                                    <option>ALL</option>
                                 </select>
                             </dd>
                         <dt>Product Name:</dt>
