@@ -48,7 +48,20 @@
                     </thead>
                     <tbody id = "display_products_table_tbody"></tbody>
                 </table>
-
+                <div id='pagination__products_div'>
+                    <div id='page_tracker_div' class='label label-info'>
+                       <i class='icon-bullhorn icon-white'></i> Page <span id='current_page_tracker_span'> 1 </span> of <span id='total_page_span'> 5 </span>
+                    </div><!--page_tracker_div-->
+                    <div id='pagination_pager_div' class='pagination pagination-centered pagination-mini'>
+                        <ul id='pager_ul'></ul>
+                    </div><!--pagination_pager_div-->
+                    <div id='pagination_pagelimiter_div'>
+                        <form id='product_pageLimit_form'>
+                            <input type='text' id='product_pageLimit_input' placeholder='Limit' class='input-mini' required />
+                        </form>
+                    </div><!--pagination_pagelimiter_div-->
+                    <input type='hidden' id='product_total_pages' />
+                </div><! ------- pagination_products_div ---------- >
             </div><!-- ======= display products div ends ======= -->
             <div id = "add_product_div">
                 <form id = "add_product_form">
@@ -58,10 +71,10 @@
                         <dt>Product Genre:</dt>
                             <dd>
                                 <select name = "product_genre" id = "product_genre">
+                                    <option>Candies</option>
                                     <option>Can Goods</option>
                                     <option>Noodles</option>
                                     <option>Junk Foods/Biscuits</option>
-                                    <option>Candies</option>
                                     <option>Wines/Liquors</option>
                                     <option>Shampoos</option>
                                     <option>Soaps</option>

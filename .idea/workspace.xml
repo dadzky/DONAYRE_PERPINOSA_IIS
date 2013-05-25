@@ -1,0 +1,500 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="89b24c3e-ac75-40a6-beb0-502516623892" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/PHP/OBJECTS/PRODUCTS/retrieveProductTotalPages.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CSS/images/IIS logos/IIS-blog.png" afterPath="$PROJECT_DIR$/app/CSS/images/IIS logos/IIS-blog.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SANGRA_PRESENTATION.odp" afterPath="$PROJECT_DIR$/SANGRA_PRESENTATION.odp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CSS/images/add_employee_icon.png" afterPath="$PROJECT_DIR$/app/CSS/images/add_employee_icon.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CSS/images/animated-overlay.gif" afterPath="$PROJECT_DIR$/app/CSS/images/animated-overlay.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CSS/images/arrowdown.png" afterPath="$PROJECT_DIR$/app/CSS/images/arrowdown.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CSS/images/back_icon.png" afterPath="$PROJECT_DIR$/app/CSS/images/back_icon.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CSS/images/bar-chart-icon.png" afterPath="$PROJECT_DIR$/app/CSS/images/bar-chart-icon.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CSS/images/bgtest2.jpg" afterPath="$PROJECT_DIR$/app/CSS/images/bgtest2.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CSS/images/bgtest3.jpg" afterPath="$PROJECT_DIR$/app/CSS/images/bgtest3.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CSS/img_tbls/circle-arrow-left.png" afterPath="$PROJECT_DIR$/app/CSS/img_tbls/circle-arrow-left.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CSS/images/close_icon.png" afterPath="$PROJECT_DIR$/app/CSS/images/close_icon.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CSS/images/computer_background.jpg" afterPath="$PROJECT_DIR$/app/CSS/images/computer_background.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/db_design.png" afterPath="$PROJECT_DIR$/docs/db_design.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CSS/images/IIS logos/dcd55b4b401dec8ecf00ba9536d92293.jpg" afterPath="$PROJECT_DIR$/app/CSS/images/IIS logos/dcd55b4b401dec8ecf00ba9536d92293.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CSS/img_tbls/deleteShoppingList.png" afterPath="$PROJECT_DIR$/app/CSS/img_tbls/deleteShoppingList.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CSS/images/down_icon.png" afterPath="$PROJECT_DIR$/app/CSS/images/down_icon.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CSS/img_tbls/editShoppingList.png" afterPath="$PROJECT_DIR$/app/CSS/img_tbls/editShoppingList.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CSS/img/glyphicons-halflings-white.png" afterPath="$PROJECT_DIR$/app/CSS/img/glyphicons-halflings-white.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CSS/img/glyphicons-halflings.png" afterPath="$PROJECT_DIR$/app/CSS/img/glyphicons-halflings.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CSS/images/grocerystore1.jpg" afterPath="$PROJECT_DIR$/app/CSS/images/grocerystore1.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CSS/images/grocerystore2.jpg" afterPath="$PROJECT_DIR$/app/CSS/images/grocerystore2.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CSS/images/grocerystore3.jpg" afterPath="$PROJECT_DIR$/app/CSS/images/grocerystore3.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CSS/images/IIS logos/iis0.jpg" afterPath="$PROJECT_DIR$/app/CSS/images/IIS logos/iis0.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CSS/images/IIS logos/iis1.jpg" afterPath="$PROJECT_DIR$/app/CSS/images/IIS logos/iis1.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CSS/images/IIS logos/iis7.jpg" afterPath="$PROJECT_DIR$/app/CSS/images/IIS logos/iis7.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CSS/images/IIS logos/iis_icon.jpg" afterPath="$PROJECT_DIR$/app/CSS/images/IIS logos/iis_icon.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CSS/images/IIS logos/iis_icon1.jpg" afterPath="$PROJECT_DIR$/app/CSS/images/IIS logos/iis_icon1.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CSS/images/IIS logos/iis_logo.png" afterPath="$PROJECT_DIR$/app/CSS/images/IIS logos/iis_logo.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CSS/img_tbls/loading.gif" afterPath="$PROJECT_DIR$/app/CSS/img_tbls/loading.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CSS/images/loading_image.gif" afterPath="$PROJECT_DIR$/app/CSS/images/loading_image.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CSS/images/loading_image1.gif" afterPath="$PROJECT_DIR$/app/CSS/images/loading_image1.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CSS/images/log_out.png" afterPath="$PROJECT_DIR$/app/CSS/images/log_out.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CSS/images/monthlyIncomeTitle.png" afterPath="$PROJECT_DIR$/app/CSS/images/monthlyIncomeTitle.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CSS/img_tbls/next.png" afterPath="$PROJECT_DIR$/app/CSS/img_tbls/next.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CSS/images/note.jpg" afterPath="$PROJECT_DIR$/app/CSS/images/note.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CSS/images/other_page.png" afterPath="$PROJECT_DIR$/app/CSS/images/other_page.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CSS/images/page.png" afterPath="$PROJECT_DIR$/app/CSS/images/page.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CSS/img_tbls/previous.png" afterPath="$PROJECT_DIR$/app/CSS/img_tbls/previous.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CSS/images/red_trash.png" afterPath="$PROJECT_DIR$/app/CSS/images/red_trash.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CSS/images/search_icon.png" afterPath="$PROJECT_DIR$/app/CSS/images/search_icon.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CSS/images/search_icon1.png" afterPath="$PROJECT_DIR$/app/CSS/images/search_icon1.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CSS/img_tbls/searchicon.png" afterPath="$PROJECT_DIR$/app/CSS/img_tbls/searchicon.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CSS/images/shop1.png" afterPath="$PROJECT_DIR$/app/CSS/images/shop1.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CSS/images/shop2.jpg" afterPath="$PROJECT_DIR$/app/CSS/images/shop2.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CSS/images/shop3.jpg" afterPath="$PROJECT_DIR$/app/CSS/images/shop3.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CSS/img_tbls/shopping-cart.png" afterPath="$PROJECT_DIR$/app/CSS/img_tbls/shopping-cart.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CSS/images/show_icon.png" afterPath="$PROJECT_DIR$/app/CSS/images/show_icon.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CSS/images/trash.png" afterPath="$PROJECT_DIR$/app/CSS/images/trash.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CSS/images/trash1.png" afterPath="$PROJECT_DIR$/app/CSS/images/trash1.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CSS/images/trash_can.gif" afterPath="$PROJECT_DIR$/app/CSS/images/trash_can.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CSS/images/ui-bg_flat_0_aaaaaa_40x100.png" afterPath="$PROJECT_DIR$/app/CSS/images/ui-bg_flat_0_aaaaaa_40x100.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CSS/images/ui-bg_flat_75_ffffff_40x100.png" afterPath="$PROJECT_DIR$/app/CSS/images/ui-bg_flat_75_ffffff_40x100.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CSS/images/ui-bg_glass_55_fbf9ee_1x400.png" afterPath="$PROJECT_DIR$/app/CSS/images/ui-bg_glass_55_fbf9ee_1x400.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CSS/images/ui-bg_glass_65_ffffff_1x400.png" afterPath="$PROJECT_DIR$/app/CSS/images/ui-bg_glass_65_ffffff_1x400.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CSS/images/ui-bg_glass_75_dadada_1x400.png" afterPath="$PROJECT_DIR$/app/CSS/images/ui-bg_glass_75_dadada_1x400.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CSS/images/ui-bg_glass_75_e6e6e6_1x400.png" afterPath="$PROJECT_DIR$/app/CSS/images/ui-bg_glass_75_e6e6e6_1x400.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CSS/images/ui-bg_glass_95_fef1ec_1x400.png" afterPath="$PROJECT_DIR$/app/CSS/images/ui-bg_glass_95_fef1ec_1x400.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CSS/images/ui-bg_highlight-soft_75_cccccc_1x100.png" afterPath="$PROJECT_DIR$/app/CSS/images/ui-bg_highlight-soft_75_cccccc_1x100.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CSS/images/ui-icons_222222_256x240.png" afterPath="$PROJECT_DIR$/app/CSS/images/ui-icons_222222_256x240.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CSS/images/ui-icons_2e83ff_256x240.png" afterPath="$PROJECT_DIR$/app/CSS/images/ui-icons_2e83ff_256x240.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CSS/images/ui-icons_454545_256x240.png" afterPath="$PROJECT_DIR$/app/CSS/images/ui-icons_454545_256x240.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CSS/images/ui-icons_888888_256x240.png" afterPath="$PROJECT_DIR$/app/CSS/images/ui-icons_888888_256x240.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CSS/images/ui-icons_cd0a0a_256x240.png" afterPath="$PROJECT_DIR$/app/CSS/images/ui-icons_cd0a0a_256x240.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CSS/images/warning.png" afterPath="$PROJECT_DIR$/app/CSS/images/warning.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CSS/images/warning2.png" afterPath="$PROJECT_DIR$/app/CSS/images/warning2.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PHP/CLASSES/Database_connection.php" afterPath="$PROJECT_DIR$/app/PHP/CLASSES/Database_connection.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PHP/CLASSES/Employees_functions_home.php" afterPath="$PROJECT_DIR$/app/PHP/CLASSES/Employees_functions_home.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/IIS_DB.sql" afterPath="$PROJECT_DIR$/db/IIS_DB.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/InventorySystemMajorFeatures.txt" afterPath="$PROJECT_DIR$/docs/InventorySystemMajorFeatures.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PHP/CLASSES/Pagination.php" afterPath="$PROJECT_DIR$/app/PHP/CLASSES/Pagination.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PHP/CLASSES/Products_functions_home.php" afterPath="$PROJECT_DIR$/app/PHP/CLASSES/Products_functions_home.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PHP/CLASSES/Suppliers_functions_home.php" afterPath="$PROJECT_DIR$/app/PHP/CLASSES/Suppliers_functions_home.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PHP/OBJECTS/EMPLOYEES/add_employee.php" afterPath="$PROJECT_DIR$/app/PHP/OBJECTS/EMPLOYEES/add_employee.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PHP/OBJECTS/PRODUCTS/add_product.php" afterPath="$PROJECT_DIR$/app/PHP/OBJECTS/PRODUCTS/add_product.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PHP/OBJECTS/SUPPLIERS/add_supplier.php" afterPath="$PROJECT_DIR$/app/PHP/OBJECTS/SUPPLIERS/add_supplier.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PAGES/adminhome.php" afterPath="$PROJECT_DIR$/app/PAGES/adminhome.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/JS/admins_page_functionality.js" afterPath="$PROJECT_DIR$/app/JS/admins_page_functionality.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CSS/bootstrap.min.css" afterPath="$PROJECT_DIR$/app/CSS/bootstrap.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/JS/bootstrap.min.js" afterPath="$PROJECT_DIR$/app/JS/bootstrap.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PHP/OBJECTS/PRODUCTS/check_bar_code.php" afterPath="$PROJECT_DIR$/app/PHP/OBJECTS/PRODUCTS/check_bar_code.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PHP/OBJECTS/EMPLOYEES/check_if_employee_or_username_exist.php" afterPath="$PROJECT_DIR$/app/PHP/OBJECTS/EMPLOYEES/check_if_employee_or_username_exist.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PHP/OBJECTS/PRODUCTS/check_if_product_to_add_already_exist.php" afterPath="$PROJECT_DIR$/app/PHP/OBJECTS/PRODUCTS/check_if_product_to_add_already_exist.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PHP/OBJECTS/PRODUCTS/delete_product.php" afterPath="$PROJECT_DIR$/app/PHP/OBJECTS/PRODUCTS/delete_product.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PHP/OBJECTS/TRANSACTION_RECORD/displayPager.php" afterPath="$PROJECT_DIR$/app/PHP/OBJECTS/TRANSACTION_RECORD/displayPager.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PHP/OBJECTS/TRANSACTION_RECORD/displayTransactionRecords.php" afterPath="$PROJECT_DIR$/app/PHP/OBJECTS/TRANSACTION_RECORD/displayTransactionRecords.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PHP/OBJECTS/SUPPLIERS/display_admins_transaction.php" afterPath="$PROJECT_DIR$/app/PHP/OBJECTS/SUPPLIERS/display_admins_transaction.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PHP/OBJECTS/EMPLOYEES/display_employees.php" afterPath="$PROJECT_DIR$/app/PHP/OBJECTS/EMPLOYEES/display_employees.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PHP/OBJECTS/EMPLOYEES/display_fired_employees.php" afterPath="$PROJECT_DIR$/app/PHP/OBJECTS/EMPLOYEES/display_fired_employees.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PHP/OBJECTS/PRODUCTS/display_products.php" afterPath="$PROJECT_DIR$/app/PHP/OBJECTS/PRODUCTS/display_products.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PHP/OBJECTS/PRODUCTS/display_products_by_select_letter.php" afterPath="$PROJECT_DIR$/app/PHP/OBJECTS/PRODUCTS/display_products_by_select_letter.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PHP/OBJECTS/SUPPLIERS/display_supplier_pager.php" afterPath="$PROJECT_DIR$/app/PHP/OBJECTS/SUPPLIERS/display_supplier_pager.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PHP/OBJECTS/SUPPLIERS/display_suppliers.php" afterPath="$PROJECT_DIR$/app/PHP/OBJECTS/SUPPLIERS/display_suppliers.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/JS/employees.js" afterPath="$PROJECT_DIR$/app/JS/employees.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CSS/employees_page.css" afterPath="$PROJECT_DIR$/app/CSS/employees_page.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PAGES/employees_page.php" afterPath="$PROJECT_DIR$/app/PAGES/employees_page.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PHP/OBJECTS/EMPLOYEES/fire_employee.php" afterPath="$PROJECT_DIR$/app/PHP/OBJECTS/EMPLOYEES/fire_employee.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PHP/OBJECTS/TRANSACTION_RECORD/getMonthlySales.php" afterPath="$PROJECT_DIR$/app/PHP/OBJECTS/TRANSACTION_RECORD/getMonthlySales.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PHP/OBJECTS/transaction/getProduct.php" afterPath="$PROJECT_DIR$/app/PHP/OBJECTS/transaction/getProduct.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PHP/CLASSES/iis_functions_home.php" afterPath="$PROJECT_DIR$/app/PHP/CLASSES/iis_functions_home.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PHP/CLASSES/iis_functions_sales.php" afterPath="$PROJECT_DIR$/app/PHP/CLASSES/iis_functions_sales.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CSS/includes_all_css_files.css" afterPath="$PROJECT_DIR$/app/CSS/includes_all_css_files.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/index.php" afterPath="$PROJECT_DIR$/app/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/JS/jqBarGraph.js" afterPath="$PROJECT_DIR$/app/JS/jqBarGraph.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/JS/jquery-1.9.1.min.js" afterPath="$PROJECT_DIR$/app/JS/jquery-1.9.1.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/JS/jquery-ui-1.10.2.min.js" afterPath="$PROJECT_DIR$/app/JS/jquery-ui-1.10.2.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CSS/jquery-ui.min.css" afterPath="$PROJECT_DIR$/app/CSS/jquery-ui.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CSS/log_in_page.css" afterPath="$PROJECT_DIR$/app/CSS/log_in_page.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/JS/log_in_page_functionality.js" afterPath="$PROJECT_DIR$/app/JS/log_in_page_functionality.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PHP/OBJECTS/log_in_validation.php" afterPath="$PROJECT_DIR$/app/PHP/OBJECTS/log_in_validation.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PAGES/login.php" afterPath="$PROJECT_DIR$/app/PAGES/login.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PAGES/logout.php" afterPath="$PROJECT_DIR$/app/PAGES/logout.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CSS/page_footer.css" afterPath="$PROJECT_DIR$/app/CSS/page_footer.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PAGES/page_footer.html" afterPath="$PROJECT_DIR$/app/PAGES/page_footer.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CSS/page_header.css" afterPath="$PROJECT_DIR$/app/CSS/page_header.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PAGES/page_header.html" afterPath="$PROJECT_DIR$/app/PAGES/page_header.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PAGES/page_info.html" afterPath="$PROJECT_DIR$/app/PAGES/page_info.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CSS/product_page.css" afterPath="$PROJECT_DIR$/app/CSS/product_page.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/JS/products.js" afterPath="$PROJECT_DIR$/app/JS/products.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PAGES/products_page.php" afterPath="$PROJECT_DIR$/app/PAGES/products_page.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PHP/OBJECTS/SUPPLIERS/retrieve_all_suppliers.php" afterPath="$PROJECT_DIR$/app/PHP/OBJECTS/SUPPLIERS/retrieve_all_suppliers.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PHP/OBJECTS/EMPLOYEES/retrieve_employees_data_to_update.php" afterPath="$PROJECT_DIR$/app/PHP/OBJECTS/EMPLOYEES/retrieve_employees_data_to_update.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PHP/OBJECTS/PRODUCTS/retrieve_product_data.php" afterPath="$PROJECT_DIR$/app/PHP/OBJECTS/PRODUCTS/retrieve_product_data.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PHP/OBJECTS/transaction/saveTransaction.php" afterPath="$PROJECT_DIR$/app/PHP/OBJECTS/transaction/saveTransaction.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PHP/OBJECTS/TRANSACTION_RECORD/searchTransactionRecords.php" afterPath="$PROJECT_DIR$/app/PHP/OBJECTS/TRANSACTION_RECORD/searchTransactionRecords.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PHP/OBJECTS/EMPLOYEES/search_employee.php" afterPath="$PROJECT_DIR$/app/PHP/OBJECTS/EMPLOYEES/search_employee.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PHP/OBJECTS/EMPLOYEES/search_fired_employees.php" afterPath="$PROJECT_DIR$/app/PHP/OBJECTS/EMPLOYEES/search_fired_employees.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PHP/OBJECTS/PRODUCTS/search_product.php" afterPath="$PROJECT_DIR$/app/PHP/OBJECTS/PRODUCTS/search_product.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PHP/OBJECTS/SUPPLIERS/search_supplier.php" afterPath="$PROJECT_DIR$/app/PHP/OBJECTS/SUPPLIERS/search_supplier.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PHP/OBJECTS/PRODUCTS/show_complete_product_name.php" afterPath="$PROJECT_DIR$/app/PHP/OBJECTS/PRODUCTS/show_complete_product_name.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/JS/suppliers.js" afterPath="$PROJECT_DIR$/app/JS/suppliers.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CSS/suppliers_page.css" afterPath="$PROJECT_DIR$/app/CSS/suppliers_page.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PAGES/suppliers_page.php" afterPath="$PROJECT_DIR$/app/PAGES/suppliers_page.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PAGES/transaction.php" afterPath="$PROJECT_DIR$/app/PAGES/transaction.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/JS/transaction_functionality.js" afterPath="$PROJECT_DIR$/app/JS/transaction_functionality.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CSS/transaction_page.css" afterPath="$PROJECT_DIR$/app/CSS/transaction_page.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/JS/transaction_record_functionality.js" afterPath="$PROJECT_DIR$/app/JS/transaction_record_functionality.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CSS/transaction_record_page.css" afterPath="$PROJECT_DIR$/app/CSS/transaction_record_page.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PAGES/transaction_records.php" afterPath="$PROJECT_DIR$/app/PAGES/transaction_records.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PHP/OBJECTS/EMPLOYEES/update_employees_data.php" afterPath="$PROJECT_DIR$/app/PHP/OBJECTS/EMPLOYEES/update_employees_data.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PHP/OBJECTS/PRODUCTS/update_products_info.php" afterPath="$PROJECT_DIR$/app/PHP/OBJECTS/PRODUCTS/update_products_info.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
+    <ignored path="DONAYRE_PERPINOSA_IIS.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <file path="/Dummy.txt" changelist="89b24c3e-ac75-40a6-beb0-502516623892" time="1369459360241" ignored="false" />
+    <file path="/products.js" changelist="89b24c3e-ac75-40a6-beb0-502516623892" time="1369469212157" ignored="false" />
+    <file path="/Products_functions_home.php" changelist="89b24c3e-ac75-40a6-beb0-502516623892" time="1369460796807" ignored="false" />
+    <file path="/products_page.php" changelist="89b24c3e-ac75-40a6-beb0-502516623892" time="1369461553528" ignored="false" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DaemonCodeAnalyzer">
+    <disable_hints />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="DONAYRE_PERPINOSA_IIS" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="products.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/JS/products.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="305" column="31" selection-start="15463" selection-end="15463" vertical-scroll-proportion="0.39027777">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Products_functions_home.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/PHP/CLASSES/Products_functions_home.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="165" column="9" selection-start="8567" selection-end="8567" vertical-scroll-proportion="-20.875">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="products_page.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/PAGES/products_page.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="54" column="100" selection-start="3265" selection-end="3265" vertical-scroll-proportion="23.5">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindManager">
+    <FindUsagesManager>
+      <setting name="OPEN_NEW_TAB" value="false" />
+    </FindUsagesManager>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitLogSettings">
+    <option name="myDateState">
+      <MyDateState />
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="changedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/app/PHP/CLASSES/Database_connection.php" />
+        <option value="$PROJECT_DIR$/app/PHP/CLASSES/Products_functions_home.php" />
+        <option value="$PROJECT_DIR$/app/PAGES/products_page.php" />
+        <option value="$PROJECT_DIR$/app/JS/products.js" />
+      </list>
+    </option>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="65" />
+    <option name="y" value="24" />
+    <option name="width" value="1375" />
+    <option name="height" value="876" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectReloadState">
+    <option name="STATE" value="0" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents ProjectPane="true" />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DONAYRE_PERPINOSA_IIS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DONAYRE_PERPINOSA_IIS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DONAYRE_PERPINOSA_IIS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DONAYRE_PERPINOSA_IIS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DONAYRE_PERPINOSA_IIS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DONAYRE_PERPINOSA_IIS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DONAYRE_PERPINOSA_IIS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PHP" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DONAYRE_PERPINOSA_IIS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DONAYRE_PERPINOSA_IIS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PHP" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CLASSES" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DONAYRE_PERPINOSA_IIS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DONAYRE_PERPINOSA_IIS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PAGES" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DONAYRE_PERPINOSA_IIS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DONAYRE_PERPINOSA_IIS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="RunManager">
+    <list size="0" />
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="89b24c3e-ac75-40a6-beb0-502516623892" name="Default" comment="" />
+      <created>1369459359071</created>
+      <updated>1369459359071</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="65" y="24" width="1375" height="876" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.261851" sideWeight="0.9631094" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="CHECK_NEW_TODO" value="true" />
+    <option name="myTodoPanelSettings">
+      <value>
+        <are-packages-shown value="false" />
+        <are-modules-shown value="false" />
+        <flatten-packages value="false" />
+        <is-autoscroll-to-source value="false" />
+      </value>
+    </option>
+    <option name="PERFORM_UPDATE_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_COMMIT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_EDIT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_CHECKOUT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_ADD_REMOVE_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_ROLLBACK_IN_BACKGROUND" value="false" />
+    <option name="CHECK_LOCALLY_CHANGED_CONFLICTS_IN_BACKGROUND" value="false" />
+    <option name="CHANGED_ON_SERVER_INTERVAL" value="60" />
+    <option name="SHOW_ONLY_CHANGED_IN_SELECTION_DIFF" value="true" />
+    <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
+    <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
+    <option name="SHORT_DIFF_HORISONTALLY" value="true" />
+    <option name="SHORT_DIFF_EXTRA_LINES" value="2" />
+    <option name="SOFT_WRAPS_IN_SHORT_DIFF" value="true" />
+    <option name="INCLUDE_TEXT_INTO_PATCH" value="false" />
+    <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
+    <option name="SHOW_FILE_HISTORY_DETAILS" value="true" />
+    <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
+    <option name="SHOW_DIRTY_RECURSIVELY" value="false" />
+    <option name="LIMIT_HISTORY" value="true" />
+    <option name="MAXIMUM_HISTORY_ROWS" value="1000" />
+    <option name="UPDATE_FILTER_SCOPE_NAME" />
+    <option name="USE_COMMIT_MESSAGE_MARGIN" value="false" />
+    <option name="COMMIT_MESSAGE_MARGIN_SIZE" value="72" />
+    <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
+    <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
+    <option name="LAST_COMMIT_MESSAGE" />
+    <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="REFORMAT_BEFORE_FILE_COMMIT" value="false" />
+    <option name="FILE_HISTORY_DIALOG_COMMENTS_SPLITTER_PROPORTION" value="0.8" />
+    <option name="FILE_HISTORY_DIALOG_SPLITTER_PROPORTION" value="0.5" />
+    <option name="ACTIVE_VCS_NAME" />
+    <option name="UPDATE_GROUP_BY_PACKAGES" value="false" />
+    <option name="UPDATE_GROUP_BY_CHANGELIST" value="false" />
+    <option name="UPDATE_FILTER_BY_SCOPE" value="false" />
+    <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
+    <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/app/PHP/CLASSES/Database_connection.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="49" selection-start="82" selection-end="82" vertical-scroll-proportion="-1.875">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/PHP/CLASSES/Products_functions_home.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="165" column="9" selection-start="8567" selection-end="8567" vertical-scroll-proportion="-20.875">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/PAGES/products_page.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="54" column="100" selection-start="3265" selection-end="3265" vertical-scroll-proportion="23.5">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/JS/products.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="305" column="31" selection-start="15463" selection-end="15463" vertical-scroll-proportion="0.39027777">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
+

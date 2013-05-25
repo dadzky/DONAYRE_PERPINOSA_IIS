@@ -123,7 +123,7 @@
 
 
 
-        function display_products($product_genre_to_display) {
+        function display_products($product_genre_to_display, $currentPage, $pageLimit) {
             $this->open_connection();
 
             $select_statement = $this->db_holder->prepare("SELECT product_id,
@@ -133,7 +133,8 @@
                                                                 number_of_stocks,
                                                                 stock_unit FROM products
                                                            WHERE product_genre = ?
-                                                           ORDER BY product_name;");
+                                                           ORDER BY product_name
+                                                           LIMIT $currentPage, $pageLimit;");
             $select_statement->execute(array($product_genre_to_display));
             while($content = $select_statement->fetch()) {
                 $position = strpos($content[3], ".");
@@ -162,7 +163,6 @@
                 echo    "<td class = 'product_delete_action'><input type = 'checkbox' class = 'mark_this' id = 'product_check_box_".$content[0]."' /></td>";
                 echo "</tr>";
             }
-
             $this->close_connection();
         }
         /*
@@ -322,6 +322,27 @@
             }
 
             $this->close_connection();
+        }
+
+        /*=================== [--PAGINATION--] ======================*/
+
+        function getProductTotalPages($productName, $productGenre){
+            $this->open_connection();
+
+                $sql = "SELECT COUNT(product_id) FROM products
+                        WHERE product_name LIKE ?
+                        AND product_genre = ?";
+                $stmt = $this->db_holder->prepare($sql);
+                $stmt -> bindParam(1, $productName);
+                $stmt -> bindParam(2, $productGenre);
+                $stmt -> execute();
+
+            $this->close_connection();
+
+            $totalPages = $stmt->fetch();
+
+            return $totalPages[0];
+
         }
 
     }

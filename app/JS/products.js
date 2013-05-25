@@ -6,6 +6,7 @@ $(function() {
     $("#add_product_confirmation_div").hide();
     $("#select_stock_unit_first_option").hide();
     $("#add_supplier_button").hide();
+    getProductTotalPages();
 
     // ============== APPENDING OPTIONS TO SELECT TAG (display_product_selected_letter) ===================
 
@@ -188,6 +189,7 @@ $(function() {
 
     $("#product_genre_to_display").change(function() {
         display_products();
+        getProductTotalPages();
     });
 
     /*
@@ -238,16 +240,91 @@ $(function() {
             display_products();
         }
     });
+
+    /*============================ [-- PAGINATION --] =============================*/
+    $('#pager_ul').on('click','li a',function(){
+        var maxPage = parseInt($('#product_total_pages').val());
+        var pageSelected = parseInt($(this).html());
+        var liIndex = $($(this).context.parentNode).index();
+        var lilength = parseInt($('#pager_ul li').length)-1;
+        var newSetOfPages = 0;
+        if(regexInt.test(pageSelected)){
+            $('#pager_ul li').removeClass('active');
+            if(liIndex == 6){
+
+                newSetOfPages = pageSelected+4;
+                if(newSetOfPages <= maxPage){
+                    displayProductsPager(pageSelected, newSetOfPages)
+                }else{
+                    newSetOfPages = maxPage-4;
+                    displayProductsPager(newSetOfPages, maxPage)
+                }
+            }else if(liIndex == 2){
+                newSetOfPages = pageSelected-4;
+                if(newSetOfPages>0){
+                    displayProductsPager(newSetOfPages, pageSelected)
+                }else{
+                    if( maxPage < 5 ){
+                        displayProductsPager(1, maxPage)
+                    }else{
+                        displayProductsPager(1, 5)
+                    }
+                }
+            }
+            $('#current_page_tracker_span').html(pageSelected);
+            $('#page_'+pageSelected).addClass('active');
+        }else if(liIndex == 0){ //first pager
+            $('#pager_ul li').removeClass('active');
+            if(maxPage <= 5 ){
+                displayProductsPager(1, maxPage);
+            }else{
+                displayProductsPager(1, 5);
+            }
+
+            $('#pager_ul li:eq(2)').addClass('active');
+            $('#current_page_tracker_span').html(1);
+        }else if(liIndex == lilength){ //last pager
+            $('#pager_ul li').removeClass('active');
+            newSetOfPages = maxPage-4;
+            if(maxPage<=5){
+                newSetOfPages = maxPage+1;
+                displayProductsPager(1, maxPage)
+                $("#pager_ul li:eq("+newSetOfPages +")").addClass('active');
+            }else{
+                displayProductsPager(newSetOfPages, maxPage)
+                $("#pager_ul li:eq(6)").addClass('active');
+
+            }
+
+            $('#current_page_tracker_span').html(maxPage);
+        }
+        display_products();
+    });
+
+    $('#product_pageLimit_form').submit(function(){
+        display_products();
+        getProductTotalPages();
+        return false;
+    });
 });
 
 // =================== DISPLAYS PRODUCTS ============== //
+var regexInt = /^[0-9]+$/;
 
 function display_products() {
+    var prod_genre = $("#product_genre_to_display").val();
+    var currentPage = parseInt($('#current_page_tracker_span').html())-1;
+    var pageLimit = $('#product_pageLimit_input').val();
+    if(!regexInt.test(pageLimit)){
+        pageLimit = 5;
+    }
+    var obj = {'product_genre_to_display':prod_genre, currentPage:currentPage, pageLimit:pageLimit };
     $.ajax({
         type: "POST",
         url: "../PHP/OBJECTS/PRODUCTS/display_products.php",
-        data: {"product_genre_to_display": $("#product_genre_to_display").val()},
+        data: obj,
         success: function(data) {
+             //  alert(data)
             if(data != "") {
                 $("#display_products_table_tbody").html(data);
             } else {
@@ -582,4 +659,76 @@ function show_complete_product_name(id) {
         }
 
     });
+}
+
+/*======================== [--PAGINATION AREA--] ===============================*/
+function getProductTotalPages(){
+    var productName = $('#search_product_input_field').val();
+    var productGenre = $('#product_genre_to_display').val();
+    var pageLimit = $('#product_pageLimit_input').val();
+    var totalPages = 0;
+    if(!regexInt.test(pageLimit)){
+        pageLimit = 5;
+    }
+    pageLimit = parseInt(pageLimit);
+    var obj = {productName:productName, productGenre:productGenre};
+    $.ajax({
+        type:'POST',
+        url: '../PHP/OBJECTS/PRODUCTS/retrieveProductTotalPages.php',
+        data: obj,
+        success:function(data){
+            totalPages = Math.ceil(parseInt(data)/pageLimit)
+            $('#product_total_pages').val(totalPages);
+            $('#total_page_span').html(totalPages);
+            $('#current_page_tracker_span').html(1);
+            if(totalPages < 5){
+                displayProductsPager(1,totalPages);
+            }else{
+                displayProductsPager(1,5);
+            }
+            $('#pager_ul li:eq(2)').addClass('active')
+        },
+        error:function(data){
+            alert(data['statusText'])
+        }
+    })
+}
+
+function displayProductsPager(pages, offset){
+    var maxPage = parseInt($('#product_total_pages').val());
+    var productsPager = "";
+
+    if(maxPage > 1){
+        productsPager += " <li ><a href='#'>&laquo; first</a></li> <li onclick='previousProductPager()'><a href='#'>&lsaquo; prev</a></li>";
+        for(var ctr=pages; ctr<=offset; ctr++){
+            productsPager += "<li id=page_"+ctr+"><a href='javascript:void(0)'>"+ctr+"</a></li>";
+        }
+        productsPager += " <li onclick='nextProductPager()' ><a href='#'>next &rsaquo;</a></li> <li><a href='#'>last &raquo;</a></li>";
+    }else{
+        productsPager = "--------------------------------------------------------";
+    }
+    $('#pager_ul').html(productsPager);
+}
+
+function nextProductPager(){
+    var maxPage = parseInt($('#product_total_pages').val());
+    var currentPage = parseInt($('#current_page_tracker_span').html())+1;
+    var liActive = $('#pager_ul li.active').index();
+    if(currentPage <= maxPage && liActive != 6){
+        $('#pager_ul li').removeClass('active');
+        $('#current_page_tracker_span').html(currentPage);
+        $('#page_'+currentPage).addClass('active');
+        display_products();
+    }
+}
+
+function previousProductPager(){
+    var liActive = $('#pager_ul li.active').index();
+    var currentPage = parseInt($('#current_page_tracker_span').html())-1;
+    if(liActive != 2){
+        $('#pager_ul li').removeClass('active');
+        $('#current_page_tracker_span').html(currentPage);
+        $('#page_'+currentPage).addClass('active');
+        display_products();
+    }
 }
