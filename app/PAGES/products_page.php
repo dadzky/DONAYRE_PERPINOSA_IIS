@@ -15,10 +15,10 @@
                     <input type = "text" id = "search_product_input_field" class = 'search-query' placeholder = "Search product here" />
                     <span class = "pull-right"><span class = "label label-info">display:</span>
                         <select class = "span2" name = "product_genre_to_display" id = "product_genre_to_display">
+                            <option>Candies</option>
                             <option>Can Goods</option>
                             <option>Noodles</option>
                             <option>Junk Foods/Biscuits</option>
-                            <option>Candies</option>
                             <option>Wines/Liquors</option>
                             <option>Shampoos</option>
                             <option>Soaps</option>
