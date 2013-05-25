@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="67e5b230-1b28-446b-a05a-aef0f934c87d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PHP/CLASSES/Database_connection.php" afterPath="$PROJECT_DIR$/app/PHP/CLASSES/Database_connection.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PHP/CLASSES/Products_functions_home.php" afterPath="$PROJECT_DIR$/app/PHP/CLASSES/Products_functions_home.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/JS/products.js" afterPath="$PROJECT_DIR$/app/JS/products.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PAGES/products_page.php" afterPath="$PROJECT_DIR$/app/PAGES/products_page.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PHP/OBJECTS/transaction/retrieve_products.php" afterPath="$PROJECT_DIR$/app/PHP/OBJECTS/transaction/retrieve_products.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="67e5b230-1b28-446b-a05a-aef0f934c87d" name="Default" comment="" />
     <ignored path="IIS_PROJECT_HUB.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="67e5b230-1b28-446b-a05a-aef0f934c87d" time="1369447442794" ignored="false" />
@@ -46,7 +39,7 @@
       <file leaf-file-name="Products_functions_home.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/PHP/CLASSES/Products_functions_home.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="75" column="17" selection-start="3672" selection-end="3672" vertical-scroll-proportion="0.7919255">
+            <state line="75" column="17" selection-start="3672" selection-end="3672" vertical-scroll-proportion="0.7220497">
               <folding />
             </state>
           </provider>
@@ -223,7 +216,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="52" width="1440" height="824" extended-state="6" />
+    <frame x="0" y="52" width="1440" height="824" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -371,7 +364,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/PHP/CLASSES/Products_functions_home.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="75" column="17" selection-start="3672" selection-end="3672" vertical-scroll-proportion="0.7919255">
+        <state line="75" column="17" selection-start="3672" selection-end="3672" vertical-scroll-proportion="0.7220497">
           <folding />
         </state>
       </provider>
