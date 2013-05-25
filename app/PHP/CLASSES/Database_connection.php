@@ -1,10 +1,10 @@
 <?php
     class Database_connection {
 
-		private $db_host =  "mysql:host=localhost;";
+		private $db_host =  "mysql:host=192.168.0.117;";
 		private $db_name = "dbname=IIS_DB";
-		private $db_user = "root";
-		private $db_pass = "";
+		private $db_user = "student2";
+		private $db_pass = "password";
         protected $db_holder;
 
         protected function open_connection() {

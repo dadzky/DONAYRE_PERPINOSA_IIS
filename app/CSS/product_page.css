@@ -149,3 +149,39 @@
     background: #ffffff;
     width: 100%;
 }
+
+/*=================== PAGINATION ================*/
+
+#pagination__products_div{
+    height: 50px;
+    background-color: rgba(0,0,0, .30);
+}
+#pagination__products_div div{
+    float:left;
+}
+#page_tracker_div{
+    text-align: center !important;
+    font-family:Arial, sans-serif;
+    font-size: 15px;
+    width: 120px !important;
+    line-height: 30px !important;
+    margin-top: 8px;
+    margin-left: 5px;
+}
+#pagination_pager_div{
+    width: 358px;
+    height: 28px;
+    padding-top: 4px;
+    padding-bottom: 5px;
+    margin-top: 6px;
+    margin-left:0;
+    border-radius: 5px;
+}
+#pagination_pagelimiter_div{
+    width: 90px;
+    height: 35px;
+    margin-top: 5px;
+    padding-top: 4px;
+    padding-left: 15px;
+    border-left:1px solid #fff;
+}
