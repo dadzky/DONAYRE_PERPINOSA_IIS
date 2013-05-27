@@ -39,6 +39,7 @@ $(function() {
         $("#add_suppliers_form").slideToggle('slow');
         $("#add_supplier_button").hide();
         $("#add_product_button").show();
+        $("#product_supplier").prop('selectedIndex', 0);
     });
 
     $("#product_supplier").click(function() {
